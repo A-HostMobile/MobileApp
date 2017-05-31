@@ -38,6 +38,9 @@
         },
         "cordova-plugin-wkwebview-engine": {
             "PACKAGE_NAME": "io.ionic.conferenceapp"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "io.ionic.conferenceapp"
         }
     },
     "dependent_plugins": {}

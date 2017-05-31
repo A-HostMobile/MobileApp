@@ -39,6 +39,7 @@ import {NewsDetailPage} from "../pages/news-detail/news-detail";
 import {NoInternetModalPage} from "../pages/no-internet-modal/no-internet-modal";
 import {PickupAddressPage} from "../pages/pickup-address/pickup-address";
 import {RegisterModalPage} from "../pages/register-modal/register-modal";
+import {Network} from "@ionic-native/network";
 
 
 
@@ -120,7 +121,8 @@ import {RegisterModalPage} from "../pages/register-modal/register-modal";
     ConferenceData,
     UserData,
     InAppBrowser,
-    SplashScreen
+    SplashScreen,
+    Network
   ]
 })
 export class AppModule { }

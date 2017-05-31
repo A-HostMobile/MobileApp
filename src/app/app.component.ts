@@ -16,6 +16,8 @@ import {LclBookingPage} from "../pages/lcl-booking/lcl-booking";
 import {CourierBookingPage} from "../pages/courier-booking/courier-booking";
 import {LoginPage} from "../pages/login-modal/login-modal";
 import {AgentNetworkPage} from "../pages/agent-network/agent-network";
+import {Network} from "@ionic-native/network";
+import {NoInternetModalPage} from "../pages/no-internet-modal/no-internet-modal";
 
 export interface PageInterface {
   title: string;
@@ -61,7 +63,8 @@ export class TemplateApp {
     public platform: Platform,
     public confData: ConferenceData,
     public splashScreen: SplashScreen,
-    public mdlCtrl: ModalController
+    public mdlCtrl: ModalController,
+    public network: Network
   ) {
 
     confData.load();
@@ -137,5 +140,8 @@ export class TemplateApp {
     }
     return;
   }
+  disconnect = this.network.onDisconnect().subscribe(()=>{
+    this.mdlCtrl.create(NoInternetModalPage).present();
+  })
 
 }
