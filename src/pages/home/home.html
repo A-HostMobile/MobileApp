@@ -1,0 +1,42 @@
+<ion-content class="bg no-scroll">
+    <button menuToggle ion-button icon-only outline clear color="light">
+      <ion-icon ios="ios-menu" md="md-menu"></ion-icon>
+    </button><br/>
+
+    <img class="width-80 margin-left-10 margin-bottom-7" src="assets/img/logo.png" />
+
+    <ion-row class="margin-bottom-7 margin-top-10">
+      <button col ion-button icon-left  class="margin-left-5" (click)="openPage(1)">
+        <ion-icon ios="ios-boat" md="md-boat" ></ion-icon>
+        LCL Booking
+      </button>
+      <button col ion-button icon-left  class="margin-right-5" (click)="openPage(2)">
+        <ion-icon ios="ios-cube" md="md-cube"></ion-icon>
+        Courier
+      </button>
+    </ion-row>
+
+  <div class="dbg">NEWS & PROMOTION</div>
+
+ <div>
+    <ion-slides effect="slide" autoplay="5000" loop pager paginationType="bullet">
+      <ion-slide>
+        <img src="assets/img/slide_1.jpg" />
+      </ion-slide>
+      <ion-slide>
+        <img src="assets/img/slide_2.jpg" />
+      </ion-slide>
+      <ion-slide>
+        <img src="assets/img/slide_3.jpg" />
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title text-center>Version 100</ion-title>
+  </ion-toolbar>
+</ion-footer>
+

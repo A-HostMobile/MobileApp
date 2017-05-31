@@ -1,0 +1,107 @@
+// Media of at most the maximum breakpoint width. No query for the largest breakpoint.
+// Makes the @content apply to the given breakpoint and narrower.
+@mixin media-breakpoint-down($name, $breakpoints: $grid-breakpoints) {
+  $max: breakpoint-max($name, $breakpoints);
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+
+// Name of the next breakpoint, or null for the last breakpoint.
+//
+//    >> breakpoint-next(sm)
+//    md
+//    >> breakpoint-next(sm, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))
+//    md
+//    >> breakpoint-next(sm, $breakpoint-names: (xs sm md lg xl))
+//    md
+@function breakpoint-next($name, $breakpoints: $grid-breakpoints, $breakpoint-names: map-keys($breakpoints)) {
+  $n: index($breakpoint-names, $name);
+  @return if($n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
+}
+
+
+// Maximum breakpoint width. Null for the largest (last) breakpoint.
+// The maximum value is calculated as the minimum of the next one less 0.1.
+//
+//    >> breakpoint-max(sm, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))
+//    767px
+@function breakpoint-max($name, $breakpoints: $grid-breakpoints) {
+  $next: breakpoint-next($name, $breakpoints);
+  @return if($next, breakpoint-min($next, $breakpoints) - 1px, null);
+}
+
+
+// Creates text alignment classes based on screen size
+// TODO this would be nice to add to the framework
+@each $breakpoint in map-keys($grid-breakpoints) {
+  $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+  @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+    // Provide text `[text-{bp}]` attributes for aligning text based on screen size
+    [text#{$infix}-center] {
+      text-align: center;
+    }
+
+    [text#{$infix}-left] {
+      text-align: left;
+    }
+
+    [text#{$infix}-right] {
+      text-align: right;
+    }
+
+    [hidden#{$infix}-up] {
+      display: none;
+    }
+  }
+
+  @include media-breakpoint-down($breakpoint, $grid-breakpoints) {
+    [hidden#{$infix}-down] {
+      display: none;
+    }
+  }
+}
+
+
+
+// Include all of variable in 'configs' folder.
+@import "../scss/configs/variables";    
+
+
+//Include all of item that can use in another project.
+@import "../scss/frameworks/dimensions";
+@import "../scss/frameworks/boxsizings";
+@import "../scss/frameworks/aligns";
+
+
+// Include all of item that used in project.
+@import "../scss/themes/animates";      // animation css
+@import "../scss/themes/backdrops";     // background (Ex. color , img )
+@import "../scss/themes/bars";          // bar
+@import "../scss/themes/bubbles";       // validate bubble
+@import "../scss/themes/buttons";       // button
+@import "../scss/themes/checkboxs";     // custom checkbox
+@import "../scss/themes/forms";         // forms (Ex. input, placeholder)
+@import "../scss/themes/grids";         // grids (Ex. col,row)
+@import "../scss/themes/headers";       // header component , sub menu
+@import "../scss/themes/icons";         // custom icon
+@import "../scss/themes/images";        // img (Ex. width , height )
+@import "../scss/themes/lists";         // lists (Ex. list label , thumbnail )
+@import "../scss/themes/mixins";        // mixin
+@import "../scss/themes/radios";        // custom radio button
+@import "../scss/themes/rangespinner";  // rangespinner (Ex. number range , etc range)
+@import "../scss/themes/ratings";       // rating component (start)
+@import "../scss/themes/selects";       // select list (Ex. option select)
+@import "../scss/themes/sidemenus";     // custom side menu
+@import "../scss/themes/slides";        // custom slidshow (Ex. img slidebox)
+@import "../scss/themes/spinners";      // custom loading (Ex. loading spinner)
+@import "../scss/themes/tabs";          // custom tabs
+@import "../scss/themes/types";         // custom type (Ex. font-size , font-style , font-color)
+@import "../scss/themes/media720";      // respondsive for min-witdh 720
+@import "../scss/themes/media1440";     // respondsive for min-witdh 1440

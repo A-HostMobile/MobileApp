@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>LCL Booking</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="no-scroll">
+
+  <ion-list no-lines>
+
+    <ion-item no-padding>
+      <ion-label>POD</ion-label>
+      <ion-select [(ngModel)]="pod">
+        <ion-option selected value="default">Default</ion-option>
+        <ion-option value="HK">Hongkong</ion-option>
+        <ion-option value="JP">Japan</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item no-padding>
+      <ion-label>Date</ion-label>
+      <ion-datetime displayFormat="DDDD/DD/MMM/YYYY" min="2016" max="2020-10-31" [(ngModel)]="myDate" placeholder="Select Date"></ion-datetime>
+    </ion-item>
+
+    <ion-item no-padding>
+      <ion-label>Volume (CBM) : </ion-label>
+      <ion-input type="text" placeholder="volume"></ion-input>
+    </ion-item>
+
+    <ion-item no-padding>
+      <ion-label>Gross Weight : </ion-label>
+      <ion-input type="text" placeholder="g.w."></ion-input>
+      <ion-select [(ngModel)]="gw">
+        <ion-option selected value="ton">TON</ion-option>
+        <ion-option value="kg">KG</ion-option>
+      </ion-select>
+    </ion-item>
+
+  </ion-list>
+
+  <button (click)="showMore=!showMore" ion-button icon-right small clear class="align-right">
+
+			<span *ngIf="!showMore">More detail
+			  <ion-icon name="arrow-down"></ion-icon>
+			 </span>
+
+    <span *ngIf="showMore">Hide detail
+			  <ion-icon name="arrow-up"></ion-icon>
+			 </span>
+
+  </button>
+
+  <ion-list *ngIf="showMore" no-lines>
+
+    <ion-item no-padding>
+      <ion-label>Commodity</ion-label>
+      <ion-select [(ngModel)]="commodity">
+        <ion-option selected value="default">Cartons</ion-option>
+        <ion-option value="se">Ceramic</ion-option>
+        <ion-option value="gl">Glasses</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item no-padding>
+      <ion-label>Quantity : </ion-label>
+      <ion-input type="text" placeholder="quantity"></ion-input>
+      <ion-select [(ngModel)]="quantity">
+        <ion-option selected value="default">EA</ion-option>
+        <ion-option value="pi">Pieces</ion-option>
+        <ion-option value="bx">Boxs</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item no-padding>
+      <ion-label>Addition Detail : </ion-label>
+      <ion-input type="text" placeholder="addition"></ion-input>
+    </ion-item>
+
+    <br/>
+    <ion-list-header>
+      Shipper Reference
+    </ion-list-header>
+
+    <ion-item no-padding>Carrier :</ion-item>
+    <ion-item no-padding>Vessel :</ion-item>
+    <ion-item no-padding>Feeder :</ion-item>
+    <ion-item no-padding>Closing Date :</ion-item>
+    <ion-item no-padding>ETD :</ion-item>
+    <ion-item no-padding>ETA :</ion-item>
+
+  </ion-list>
+  <button (click)="toSummary();" ion-button icon-right block >
+    Next
+    <ion-icon ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>
+  </button>
+</ion-content>

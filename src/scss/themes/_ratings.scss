@@ -1,0 +1,151 @@
+// /***********modify satr****************/
+// @font-face {
+//   font-family: 'FontAwesome';
+//   src: url('../fonts/fontawesome-webfont.eot?v=3.2.1');
+//   src: url('../fonts/fontawesome-webfont.eot?#iefix&v=3.2.1') format('embedded-opentype'), url('../font/fontawesome-webfont.woff?v=3.2.1') format('woff'), url('../font/fontawesome-webfont.ttf?v=3.2.1') format('truetype'), url('../font/fontawesome-webfont.svg#fontawesomeregular?v=3.2.1') format('svg');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+// .rating { 
+//   border: none;
+//   float: left;
+// }
+
+// .rating > input { display: none; } 
+// .rating > label:before { 
+//   margin: 5px;
+//   font-size: 16px;
+//   font-family: FontAwesome;
+//   display: inline-block;
+//   content: "\f005";
+// }
+
+// /************summary star**********/
+
+// .rating-box:before {
+//     font-family: "FontAwesome";
+//     content: "\f005\20\f005\20\f005\20\f005\20\f005";
+//     width: 69px;
+//     height: 13px;
+//     color: #c3c5c9;
+//     display: block;
+//     font-size: 11px;
+//     line-height: 11px;
+//     padding-top:2px;
+// }
+
+// .rating-box {
+//     width: 63px;
+//     height: 13px;
+//     font-size: 0;
+//     line-height: 0;
+//     // text-indent: -999em;
+//     overflow: hidden;
+//     position: relative;
+// }
+// .rating-box .ratings {
+//     float: left;
+//     height: 13px;
+//     position: absolute;
+//     left: 0;
+//     top: 0;
+//     overflow: hidden;
+// }
+
+// .rating-box .ratings:before {
+//     font-family: "FontAwesome";
+//     content: "\f005\20\f005\20\f005\20\f005\20\f005";
+//     width: 69px;
+//     height: 13px;
+//     color: $main-color;
+//     display: block;
+//     font-size: 11px;
+//     line-height: 11px;
+//     padding-top:2px;
+// }
+
+// .rating .retingDesc {
+//     display: none;
+// }
+// .rating > label { 
+//   color: #ddd; 
+//  float: right; 
+// }
+
+// /***** CSS Magic to Highlight Stars on Hover *****/
+
+// .rating > input:checked ~ label, /* show gold star when clicked */
+// .rating:not(:checked) > label:hover, /* hover current star */
+// .rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+
+// .rating > input:checked + label:hover, /* hover current star when changing rating */
+// .rating > input:checked ~ label:hover,
+// .rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+// .rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
+
+// /***************************************/
+
+// @media only screen and (min-width: 720px) {
+
+// .rating-box:before {
+//     width: 115px;
+//     height: 28px;
+//     font-size: 17px;
+//     padding-top:11px;
+
+// }
+
+// .rating-box {
+//     width: 97.5px;
+//     height: 28px;
+// }
+// .rating-box .ratings {
+//     height: 28px;
+// }
+
+
+// .rating-box .ratings:before {
+//     width: 115px;
+//     height: 28px;
+//     font-size: 17px;
+//     padding-top:11px;
+// }
+
+// .rating > label:before { 
+//   font-size: $font-size-huge + 0.2;
+// }
+
+// }
+
+
+// @media only screen and (min-width: 1440px) {
+
+// .rating-box:before {
+//     width: 170px;
+//     height: 40px;
+//     font-size: 28px;
+//     padding-top:22px;
+
+// }
+
+// .rating-box {
+//     width: 159px;
+//     height: 40px;
+// }
+// .rating-box .ratings {
+//     height: 40px;
+// }
+
+
+// .rating-box .ratings:before {
+//     width: 170px;
+//     height: 40px;
+//     font-size: 28px;
+//     padding-top:22px;
+// }
+
+// .rating > label:before { 
+//   font-size: $font-size-huge + 0.7;
+// }
+
+// }

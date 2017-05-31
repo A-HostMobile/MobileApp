@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-navbar hideBackButton>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>News & Promotion</ion-title>
+  </ion-navbar>
+  <ion-toolbar no-border-top>
+
+    <ion-segment [(ngModel)]="np">
+      <ion-segment-button  value="news">
+        News
+      </ion-segment-button>
+      <ion-segment-button  value="promotion">
+        Promotion
+      </ion-segment-button>
+    </ion-segment>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="no-scroll">
+
+
+  <div *ngIf="np =='news'">
+  <ion-card>
+    <ion-item class="input-wrapper">
+          News 1 
+    </ion-item>
+    <img src="assets/img/slide_1.jpg" />
+    <ion-card-content>
+      
+      <p class="overflow-text">
+        The most popular industrial group ever, and largely
+        The most popular industrial group ever, and largely
+        responsible for bringing the music to a mass audience.
+        responsible for bringing the music to a mass audience.
+      </p>
+
+      <button ion-button icon-right small clear class="align-right">
+
+          <span >More detail
+            <ion-icon name="arrow-forward"></ion-icon>
+           </span>
+
+
+        </button>
+
+      <!-- <button ion-button>Read More</button> -->
+    </ion-card-content>
+  </ion-card>
+  </div>
+
+  <div *ngIf="np =='promotion'">
+  <ion-card>
+    <ion-item class="input-wrapper">
+          Promotion 1 
+    </ion-item>
+    <img src="assets/img/slide_1.jpg" />
+    <ion-card-content>
+      
+      <p class="overflow-text">
+        The Promotion ei ei ei ei.
+      </p>
+
+      <button ion-button icon-right small clear class="align-right">
+
+          <span >More detail
+            <ion-icon name="arrow-forward"></ion-icon>
+           </span>
+
+
+        </button>
+
+      <!-- <button ion-button>Read More</button> -->
+    </ion-card-content>
+  </ion-card>
+  </div>
+
+
+</ion-content>

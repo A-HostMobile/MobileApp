@@ -1,0 +1,32 @@
+// Color
+// ----------------------------------------------
+// $main-color:		#951418;
+// $second-color:		#ff5400;
+// $third-color:		#fd9729;
+// $active-color:		#ff8960;
+// $sub-color: 		#e7e1e3;
+
+
+// Font-family
+// ----------------------------------------------
+// $main-font:			'PSL Text Pro Regular', sans-serif;
+
+//Font-size-responsive
+// ----------------------------------------------
+// $font-size-default:		16px;
+// $font-size-small:		1.1em;
+// $font-size-normal:		1.25em;
+// $font-size-large:		1.35em;
+// $font-size-huge:		1.45em;
+// $br-height:				2em;
+// $respon-lineheight:		100%;
+
+/*.swiper-slide {
+  overflow-y: scroll;
+  display: block;
+}*/
+
+.no-scroll .scroll-content {
+  overflow-y: hidden;
+  /*scroll;*/
+}

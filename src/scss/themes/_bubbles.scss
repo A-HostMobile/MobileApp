@@ -1,0 +1,18 @@
+.bubble {
+    position: absolute;
+    text-align: center;
+    width: auto;
+    color:red;
+    height: auto;
+    padding: 3px;
+    left: 60%;
+    background: -webkit-linear-gradient(90deg, #FFFFFF 5%, #FFFFFF 100%);
+    background: -moz-linear-gradient(90deg, #FFFFFF 5%, #FFFFFF 100%);
+    background: -ms-linear-gradient(90deg, #FFFFFF 5%, #FFFFFF 100%);
+    background: linear-gradient(180deg, #FFFFFF 5%, #FFFFFF 100%);
+    border: red solid 1px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    z-index: 9999;
+}

@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Courier</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding class="no-scroll">
+  <div>
+   <ion-slides>
+      <ion-slide>
+
+        <ion-list no-lines>
+          <ion-item>
+            Pickup Address
+            <button ion-button outline item-right >
+              Select
+            </button>
+          </ion-item>
+          <hr/>
+        </ion-list>
+
+        <ion-list no-lines>
+            <ion-list-header>
+              Destination
+            </ion-list-header>
+            <ion-item>
+              <ion-label >Consignee Name : </ion-label>
+              <ion-input type="text" placeholder="name"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>Address : </ion-label>
+              <ion-input type="text" placeholder="address"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>Country</ion-label>
+              <ion-select [(ngModel)]="country">
+                <ion-option selected value="us">United States</ion-option>
+                <ion-option value="HK">Hongkong</ion-option>
+                <ion-option value="JP">Japan</ion-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
+              <ion-label>Zipcode : </ion-label>
+              <ion-input type="text" placeholder="zipcode"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>Contact Name : </ion-label>
+              <ion-input type="text" placeholder="contact name"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>Tel. : </ion-label>
+              <ion-input type="text" placeholder="tel"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>Remark : </ion-label>
+              <ion-input type="text" placeholder="remark"></ion-input>
+            </ion-item>
+        </ion-list>
+
+        <button ion-button icon-right block >
+          Next
+          <ion-icon ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>
+        </button>
+      </ion-slide>
+    
+
+    <div>
+      <ion-slide>2
+      </ion-slide>
+    </div>
+
+    <div>
+      <ion-slide>3
+      </ion-slide>
+    </div>
+
+    </ion-slides>
+ </div>
+</ion-content>
