@@ -1,24 +1,18 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {ViewController} from 'ionic-angular';
+import {Network} from "@ionic-native/network";
 
-/**
- * Generated class for the NoInternetModalPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-@IonicPage()
 @Component({
   selector: 'page-no-internet-modal',
   templateUrl: 'no-internet-modal.html',
 })
 export class NoInternetModalPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public network: Network,public view: ViewController) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad NoInternetModalPage');
-  }
+  connected = this.network.onConnect().subscribe(()=>{
+    this.view.dismiss();
+  })
 
 }
