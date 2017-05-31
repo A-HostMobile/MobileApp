@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {HistoryDetailPage} from "../history-detail/history-detail";
+import {HistoryDetailCourierPage} from "../history-detail-courier/history-detail-courier";
 
 /**
  * Generated class for the HistoryPage page.
@@ -14,11 +16,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class HistoryPage {
 
+  historyTab: string = "lcl";
+  isAndroid: boolean = false;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HistoryPage');
+  }
+
+  toLCL(){
+  this.navCtrl.push(HistoryDetailPage);
+}
+
+  toCourier(){
+  this.navCtrl.push(HistoryDetailCourierPage);
   }
 
 }

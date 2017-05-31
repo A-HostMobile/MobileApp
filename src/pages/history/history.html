@@ -7,12 +7,185 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>history</ion-title>
+    <ion-title>Booking History</ion-title>
   </ion-navbar>
 
+  <ion-toolbar no-border-top>
+      <ion-segment [(ngModel)]="historyTab">
+        <ion-segment-button  value="lcl">
+          LCL
+        </ion-segment-button>
+        <ion-segment-button  value="courier">
+          Courier
+        </ion-segment-button>
+      </ion-segment>
+  </ion-toolbar>
 </ion-header>
 
 
 <ion-content padding>
+
+  <!--LCL Tab-->
+  <div *ngIf="historyTab =='lcl'">
+
+    <ion-list no-lines>
+
+      <ion-list-header color="primary">
+        BOOKING ID # BL-2017-05-0592
+      </ion-list-header>
+
+      <ion-grid>
+
+        <ion-row>
+          <ion-col  col-6>Destination :</ion-col>
+          <ion-col  col-6>BANGKOK - CHITTAGONG</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col  col-6>Booking Time :</ion-col>
+          <ion-col  col-6>30-MAY-17</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col  col-6>Booking History Type :</ion-col>
+          <ion-col  col-6>LCL</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col  col-6>Status :</ion-col>
+          <ion-col  col-6>Wainting Confirmation</ion-col>
+        </ion-row>
+
+      </ion-grid>
+
+      <button (click)="toLCL();" ion-button icon-right small clear class="align-right">
+			<span>See detail</span>
+			  <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+
+    </ion-list>
+
+    <ion-list no-lines>
+
+      <ion-list-header color="primary">
+        BOOKING ID # BL-2017-05-0591
+      </ion-list-header>
+
+      <ion-grid>
+
+        <ion-row>
+          <ion-col  col-6>Destination :</ion-col>
+          <ion-col  col-6>BANGKOK - CHITTAGONG</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col  col-6>Booking Time :</ion-col>
+          <ion-col  col-6>30-MAY-17</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col  col-6>Booking History Type :</ion-col>
+          <ion-col  col-6>LCL</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col  col-6>Status :</ion-col>
+          <ion-col  col-6>Wainting Confirmation</ion-col>
+        </ion-row>
+
+      </ion-grid>
+
+      <button (click)="toLCL();" ion-button icon-right small clear class="align-right">
+			<span>See detail</span>
+			  <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+
+    </ion-list>
+
+
+  </div>
+
+  <!-- Courier Tab-->
+  <div *ngIf="historyTab =='courier'">
+
+    <ion-list no-lines>
+
+      <ion-list-header color="primary">
+        BOOKING ID # BL-2017-05-0590
+      </ion-list-header>
+
+      <ion-grid>
+
+        <ion-row>
+          <ion-col  col-6>Destination :</ion-col>
+          <ion-col  col-6>BANGKOK - CHITTAGONG</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col  col-6>Booking Time :</ion-col>
+          <ion-col  col-6>30-MAY-17</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col  col-6>Booking History Type :</ion-col>
+          <ion-col  col-6>Courier</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col  col-6>Status :</ion-col>
+          <ion-col  col-6>Wainting Confirmation</ion-col>
+        </ion-row>
+
+      </ion-grid>
+
+      <button (click)="toCourier();" ion-button icon-right small clear class="align-right">
+			<span>See detail</span>
+			  <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+
+    </ion-list>
+
+    <ion-list no-lines>
+
+      <ion-list-header color="primary">
+        BOOKING ID # BL-2017-05-0589
+      </ion-list-header>
+
+      <ion-grid>
+
+        <ion-row>
+          <ion-col  col-6>Destination :</ion-col>
+          <ion-col  col-6>BANGKOK - CHITTAGONG</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col  col-6>Booking Time :</ion-col>
+          <ion-col  col-6>30-MAY-17</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col  col-6>Booking History Type :</ion-col>
+          <ion-col  col-6>Courier</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col  col-6>Status :</ion-col>
+          <ion-col  col-6>Wainting Confirmation</ion-col>
+        </ion-row>
+
+      </ion-grid>
+
+      <button (click)="toCourier();" ion-button icon-right small clear class="align-right">
+			<span>See detail</span>
+			  <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+
+    </ion-list>
+
+
+  </div>
+
+
+
 
 </ion-content>

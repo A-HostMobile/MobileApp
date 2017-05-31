@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {HistoryPage} from "../history/history";
+
 
 @IonicPage()
 @Component({
@@ -14,5 +16,9 @@ export class ProfilePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');
   }
+
+toHistory(){
+  this.navCtrl.push(HistoryPage);
+}
 
 }

@@ -11,14 +11,28 @@
 
 <ion-content class="no-scroll" padding>
 
-  <button  ion-button icon-left block >
+<ion-list no-lines>
+
+  <button ion-item (click)="toHistory();" no-padding>
+    <ion-icon color="primary" name="clock" item-left></ion-icon>
+      Booking History
+  </button>
+
+  <button ion-item no-padding>
+    <ion-icon color="primary" name="navigate" item-left></ion-icon>
+      Pickup Address Manager
+  </button>
+
+</ion-list>
+
+  <!--<button  ion-button icon-left block >
     <ion-icon  name="clock"></ion-icon>
     Booking History
   </button>
 
   <button  ion-button icon-left block >
-    <ion-icon  name="clock"></ion-icon>
+    <ion-icon  name="navigate"></ion-icon>
     Pickup Address Manager
-  </button>
+  </button>-->
 
 </ion-content>
