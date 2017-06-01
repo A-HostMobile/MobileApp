@@ -77,7 +77,7 @@ export class TemplateApp {
     this.enableMenu(true);
 
     this.listenToLoginEvents();
-    this.network.onDisconnect().subscribe(()=> {
+    let discon = this.network.onDisconnect().subscribe(()=> {
         if(this.count==0){
           this.mdlCtrl.create(NoInternetModalPage).present();
           this.count++;
@@ -86,6 +86,7 @@ export class TemplateApp {
     this.network.onConnect().subscribe(()=>{
       this.network.onDisconnect().subscribe(()=> {
         this.mdlCtrl.create(NoInternetModalPage).present();
+        discon.unsubscribe();
       });
     });
   }
