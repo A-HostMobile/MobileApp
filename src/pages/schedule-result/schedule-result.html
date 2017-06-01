@@ -7,12 +7,53 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>scheduleResult</ion-title>
+    <ion-title>Schedule Result</ion-title>
   </ion-navbar>
-
+  <ion-toolbar>
+    <ion-title>
+   Country 1
+    </ion-title>
+  </ion-toolbar>
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+
+
+<ion-card>
+  <ion-card-header text-wrap color="primary">
+    Bangkok - Hongkong
+    <button (click)="toLCLBooking();" ion-button class="align-right" small outline>BOOKING</button>
+  </ion-card-header>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col  col-6>Carrier :</ion-col>
+          <ion-col  col-6>YANGMING / WAN HAI</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col  col-6>Feeder :</ion-col>
+          <ion-col  col-6>WAN HAI 163 N261</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col  col-6>Closing Date :</ion-col>
+          <ion-col  col-6>20-FEB-2017</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col  col-6>ETD :</ion-col>
+          <ion-col  col-6>21-FAB-2017</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col  col-6>ETA :</ion-col>
+          <ion-col  col-6>26-FAB-2017</ion-col>
+        </ion-row>
+      </ion-grid>
+</ion-card>
+
+
 
 </ion-content>
