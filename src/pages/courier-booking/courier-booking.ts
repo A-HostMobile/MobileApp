@@ -2,6 +2,7 @@ import {Component, ViewChild} from '@angular/core';
 import {Navbar, NavController, NavParams, ViewController, ModalController, Nav} from 'ionic-angular';
 import {UserData} from "../../providers/user-data";
 import {LoginPage} from "../login-modal/login-modal";
+import {CourierBooking2Page} from "../courier-booking2/courier-booking2";
 
 @Component({
   selector: 'page-courier-booking',
@@ -44,6 +45,10 @@ export class CourierBookingPage {
         }
       })){
     }
+  }
+
+  toCourier2(){
+    this.navCtrl.push(CourierBooking2Page);
   }
 
 
