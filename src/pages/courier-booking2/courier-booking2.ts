@@ -21,4 +21,8 @@ export class CourierBooking2Page {
     console.log('ionViewDidLoad CourierBooking2Page');
   }
 
+  toEdit(){
+    this.navCtrl.pop();
+  }
+
 }
