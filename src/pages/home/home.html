@@ -1,9 +1,9 @@
-<ion-content class="bg no-scroll">
+<ion-content class=" no-scroll bg" style="background-image: url('assets/img/bgExam.jpg')">
     <button menuToggle ion-button icon-only outline clear >
       <ion-icon ios="ios-menu" md="md-menu"></ion-icon>
     </button><br/>
 
-    <img class="width-80 margin-left-10 margin-bottom-7" src="assets/img/logo_template.png" />
+    <img class="width-80 margin-left-10 margin-bottom-7" src="assets/img/logoExam-01.png" />
 
     <ion-row class="margin-bottom-7 margin-top-10">
       <button col ion-button icon-left  class="margin-left-5" (click)="openPage(1)">
@@ -17,26 +17,22 @@
     </ion-row>
 
   <div class="dbg">NEWS & PROMOTION</div>
-
- <div>
+ <ion-card>
     <ion-slides effect="slide" autoplay="5000" loop pager paginationType="bullet">
       <ion-slide>
-        <img src="assets/img/slide_1.jpg" />
+        <img src="assets/img/banner01.jpg" />
       </ion-slide>
       <ion-slide>
-        <img src="assets/img/slide_2.jpg" />
-      </ion-slide>
-      <ion-slide>
-        <img src="assets/img/slide_3.jpg" />
+        <img src="assets/img/banner02.jpg" />
       </ion-slide>
     </ion-slides>
-  </div>
+  </ion-card>
 
+ <ion-fab right bottom>
+    Version 1.0.0
+  </ion-fab>
+  
 </ion-content>
 
-<ion-footer>
-  <ion-toolbar>
-    <ion-title text-center>Version 100</ion-title>
-  </ion-toolbar>
-</ion-footer>
+
 
