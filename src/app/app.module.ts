@@ -22,6 +22,7 @@ import {LoginPage} from "../pages/login-modal/login-modal";
 import {ScheduleSearchPage} from "../pages/schedule-search/schedule-search";
 import {ScheduleResultPage} from "../pages/schedule-result/schedule-result";
 import {CourierBookingPage} from "../pages/courier-booking/courier-booking";
+import {CourierBooking2Page} from "../pages/courier-booking2/courier-booking2";
 import {AgentNetworkPage} from "../pages/agent-network/agent-network";
 import {LclSummaryPage} from "../pages/lcl-summary/lcl-summary";
 import {CourierItemModalPage} from "../pages/courier-item-modal/courier-item-modal";
@@ -54,6 +55,7 @@ import {Network} from "@ionic-native/network";
     ContactMapModalPage,
     CountryModalPage,
     CourierBookingPage,
+    CourierBooking2Page,
     CourierItemModalPage,
     CourierSummaryPage,
     DgPopupModalPage,
@@ -95,6 +97,7 @@ import {Network} from "@ionic-native/network";
     ContactMapModalPage,
     CountryModalPage,
     CourierBookingPage,
+    CourierBooking2Page,
     CourierItemModalPage,
     CourierSummaryPage,
     DgPopupModalPage,
