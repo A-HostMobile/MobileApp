@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import {NoInternetModalPage} from "../no-internet-modal/no-internet-modal";
 
 @Component({
   selector: 'page-agent-network',
@@ -12,6 +13,9 @@ export class AgentNetworkPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AgentNetworkPage');
+  }
+  gotoNo(){
+    this.navCtrl.push(NoInternetModalPage);
   }
 
 }

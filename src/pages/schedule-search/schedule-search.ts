@@ -15,8 +15,8 @@ export class ScheduleSearchPage {
     console.log('ionViewDidLoad ScheduleSearchPage');
   }
 
-toCountry() {
-    let countryModal = this.mdlCtrl.create(CountryModalPage);
+toCountry(region: String) {
+    let countryModal = this.mdlCtrl.create(CountryModalPage,{region});
     countryModal.present();
   }
 
