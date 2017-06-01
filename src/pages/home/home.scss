@@ -10,10 +10,16 @@ page-home {
     // background: linear-gradient(to bottom, rgba(255,124,43,1) 0%, rgba(255,124,43,1) 34%, rgba(255,50,0,1) 100%);
     // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff7c2b', endColorstr='#ff3200', GradientType=0 );
     // border-color: transparent;
+    // background: #fff7e0;
+    background-image: url("assets/img/bgExam.jpg") no-repeat center center fixed !important; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; 
   }
   .dbg{
     margin-top: 40px;
-    background-color: white;
+    // background-color: white;
     text-align: center;
     vertical-align: middle;
     line-height: 25px;

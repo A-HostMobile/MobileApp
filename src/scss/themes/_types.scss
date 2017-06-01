@@ -12,9 +12,8 @@
   font-style: normal;
 }
 
-body, span, button, h1, h2, h3, h4, h5, h6, p, ion-item, ion-title , ion-card {
+body, span, button, h1, h2, h3, h4, h5, h6, p, ion-item, ion-title , ion-card,div {
 font-family: 'Josefin Sans' !important;
-}
-*{
-  font-size: 15px;
+font-size: 16px;
+font-weight: 500;
 }
