@@ -19,6 +19,7 @@ import {AgentNetworkPage} from "../pages/agent-network/agent-network";
 import {Network} from "@ionic-native/network";
 import {NoInternetModalPage} from "../pages/no-internet-modal/no-internet-modal";
 
+
 export interface PageInterface {
   title: string;
   name: string;
@@ -37,7 +38,7 @@ export class TemplateApp {
 
   @ViewChild(Nav) nav: Nav;
   usn: any;
-  count:number = -1;
+  count:number = 0;
   appPages: PageInterface[] = [
     { title: 'Home', name: 'HomePage', component: HomePage, icon: 'ios-home' },
     { title: 'Schedule', name: 'SchedulePage', component: ScheduleSearchPage, icon: 'md-calendar' },
@@ -76,25 +77,16 @@ export class TemplateApp {
     this.enableMenu(true);
 
     this.listenToLoginEvents();
-    /*if(this.count==0){
-      this.count++;
-      return;
-    }
-    else {
-      this.network.onDisconnect().subscribe(()=>{
+    this.network.onDisconnect().subscribe(()=> {
+        if(this.count==0){
           this.mdlCtrl.create(NoInternetModalPage).present();
-      });
-    }*/
+          this.count++;
+        }
+    });
     this.network.onConnect().subscribe(()=>{
-      alert('test');
-    })
-    this.network.onDisconnect().subscribe(()=>{
-      if(this.count==0){
-        this.count++;
-        return;
-      } else {
+      this.network.onDisconnect().subscribe(()=> {
         this.mdlCtrl.create(NoInternetModalPage).present();
-      }
+      });
     });
   }
   openPage(page: PageInterface) {
