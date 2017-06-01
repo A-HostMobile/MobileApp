@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {IonicPage, NavController, NavParams, ViewController} from 'ionic-angular';
 import {LclBookingPage} from "../lcl-booking/lcl-booking";
 /**
  * Generated class for the ScheduleResultPage page.
@@ -14,7 +14,7 @@ import {LclBookingPage} from "../lcl-booking/lcl-booking";
 })
 export class ScheduleResultPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
   }
 
   ionViewDidLoad() {
@@ -22,7 +22,8 @@ export class ScheduleResultPage {
   }
 
   toLCLBooking(){
-    this.navCtrl.push(LclBookingPage);
+    this.navCtrl.push(LclBookingPage,1).then(()=>this.navCtrl.first().dismiss());
+
   }
 
 }

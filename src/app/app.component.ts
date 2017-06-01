@@ -41,11 +41,11 @@ export class TemplateApp {
   count:number = 0;
   appPages: PageInterface[] = [
     { title: 'Home', name: 'HomePage', component: HomePage, icon: 'ios-home' },
-    { title: 'Schedule', name: 'SchedulePage', component: ScheduleSearchPage, icon: 'md-calendar' },
-    { title: 'LCL Booking', name: 'BookingPage', component: LclBookingPage, icon: 'md-boat' },
-    { title: 'Courier', name: 'CourierPage', component: CourierBookingPage, icon: 'ios-cube' },
+    { title: 'Schedule', name: 'ScheduleSearchPage', component: ScheduleSearchPage, icon: 'md-calendar' },
+    { title: 'LCL Booking', name: 'LclBookingPage', component: LclBookingPage, icon: 'md-boat' },
+    { title: 'Courier', name: 'CourierBookingPage', component: CourierBookingPage, icon: 'ios-cube' },
     { title: 'News & Promotion', name: 'NewsPage', component: NewsPage, icon: 'md-star' },
-    { title: 'Agent Network', name: 'NetworkPage', component: AgentNetworkPage, icon: 'md-globe' },
+    { title: 'Agent Network', name: 'AgentNetworkPage', component: AgentNetworkPage, icon: 'md-globe' },
     { title: 'Contact US', name: 'ContactPage', component: ContactPage, icon: 'ios-contact' },
     { title: 'Help', name: 'HelpPage', component: HelpPage, icon: 'md-help-circle' }
   ];
