@@ -6,14 +6,14 @@
 }
 
 @font-face {
-  font-family: 'Josefin Sans';
-  src: url('../assets/fonts/JosefinSans-SemiBold.ttf') format('ttf');
+  font-family: 'Lato';
+  src: url('../assets/fonts/Lato-Regular.ttf') format('ttf');
   font-weight: normal;
   font-style: normal;
 }
 
 body, span, button, h1, h2, h3, h4, h5, h6, p, ion-item, ion-title , ion-card,div {
-font-family: 'Josefin Sans' !important;
+font-family: 'Lato', sans-serif !important;
 font-size: 16px;
-font-weight: 500;
+// font-weight: 500;
 }
