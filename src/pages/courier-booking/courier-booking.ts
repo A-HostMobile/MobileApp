@@ -1,5 +1,7 @@
 import {Component, ViewChild} from '@angular/core';
-import {Navbar, NavController, NavParams, ViewController , Slides} from 'ionic-angular';
+import {Navbar, NavController, NavParams, ViewController, ModalController, Nav} from 'ionic-angular';
+import {UserData} from "../../providers/user-data";
+import {LoginPage} from "../login-modal/login-modal";
 
 @Component({
   selector: 'page-courier-booking',
@@ -7,8 +9,12 @@ import {Navbar, NavController, NavParams, ViewController , Slides} from 'ionic-a
 })
 export class CourierBookingPage {
 
-  @ViewChild(Navbar,Slides) navbar: Navbar;slides: Slides;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
+  @ViewChild(Navbar) navbar: Navbar;
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public viewCtrl: ViewController,
+              public mdlCtrl: ModalController,
+              public userData: UserData) {
   }
 
   ionViewDidLoad() {
@@ -25,9 +31,20 @@ export class CourierBookingPage {
     }
   }
 
-//  goToSlide() {
-//     this.slides.slideTo(2, 500);
-//   }
+  ionViewCanEnter(){
+    let modal = this.mdlCtrl.create(LoginPage, CourierBookingPage);
+    if(this.userData.hasLoggedIn().then((hasLoggedIn) => {
+        if (hasLoggedIn === true) {
+          return true;
+        }
+        else {
+          this.navCtrl.popToRoot();
+          modal.present();
+          return false;
+        }
+      })){
+    }
+  }
 
 
 }

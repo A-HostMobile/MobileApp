@@ -1,7 +1,10 @@
 import {Component, ViewChild} from '@angular/core';
-import {Navbar, NavController, NavParams, ViewController} from 'ionic-angular';
+import {ModalController, Nav, Navbar, NavController, NavParams, ViewController} from 'ionic-angular';
 import {LclSummaryPage} from "../lcl-summary/lcl-summary";
 import {ScheduleResultPage} from "../schedule-result/schedule-result";
+import {LoginPage} from "../login-modal/login-modal";
+import {UserData} from "../../providers/user-data";
+import {HomePage} from "../home/home";
 
 @Component({
   selector: 'page-lcl-booking',
@@ -9,7 +12,11 @@ import {ScheduleResultPage} from "../schedule-result/schedule-result";
 })
 export class LclBookingPage {
   @ViewChild(Navbar) navbar : Navbar;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public viewCtrl: ViewController,
+              public mdlCtrl: ModalController,
+              public userData: UserData) {
 
   }
 
@@ -33,11 +40,22 @@ export class LclBookingPage {
     }
   }
 
-
-  toSummary(){
-    this.navCtrl.push(LclSummaryPage);
+  ionViewCanEnter(){
+    let modal = this.mdlCtrl.create(LoginPage, LclBookingPage);
+    if(this.userData.hasLoggedIn().then((hasLoggedIn) => {
+        if (hasLoggedIn === true) {
+          return true;
+        }
+        else {
+          this.navCtrl.popToRoot();
+          modal.present();
+          return false;
+        }
+      })){
+    }
   }
 
-
-
+  toSummary(){
+    this.navCtrl.push(LclSummaryPage).then(()=>this.navCtrl.first().dismiss());
+  }
 }

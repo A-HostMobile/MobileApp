@@ -96,19 +96,7 @@ export class TemplateApp {
       this.nav.popToRoot();
     }
     else if (page.component == LclBookingPage||page.component == CourierBookingPage){
-      if(this.userData.hasLoggedIn().then((hasLoggedIn) => {
-        if(hasLoggedIn === true){
-          this.nav.push(page.component);
-        }
-        else {
-          this.nav.popToRoot();
-          modal.present();
-        }
-      })){
-      }
-      else {
-        this.nav.push(page.component, page.component);
-      }
+      this.nav.push(page.component);
     }
     else if(page.component == LoginPage){
       this.nav.popToRoot();
