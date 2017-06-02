@@ -23,4 +23,8 @@ export class DgPopupModalPage {
     console.log('ionViewDidLoad DgPopupModalPage');
   }
 
+  closemodal() {
+  this.viewCtrl.dismiss();
+  }
+
 }

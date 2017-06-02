@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,ModalController } from 'ionic-angular';
+import {CompletedPage} from "../completed/completed";
+import {DgPopupModalPage} from "../dg-popup-modal/dg-popup-modal";
+
 
 /**
  * Generated class for the CourierSummaryPage page.
@@ -14,11 +17,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CourierSummaryPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public mdlCtrl: ModalController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CourierSummaryPage');
+  }
+
+
+  toComplete(){
+    this.navCtrl.push(CompletedPage);
+  }
+
+  dgModalShow() {
+    let dgModal = this.mdlCtrl.create(DgPopupModalPage);
+    dgModal.present();
   }
 
 }
