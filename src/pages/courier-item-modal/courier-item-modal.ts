@@ -26,4 +26,11 @@ export class CourierItemModalPage {
   closemodal() {
     this.viewCtrl.dismiss();
   }
+
+  addItem(){ 
+      this.viewCtrl.dismiss();
+    }
+  editItem(){
+ this.viewCtrl.dismiss();
+  }
 }

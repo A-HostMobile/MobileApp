@@ -15,7 +15,7 @@
 
 <ion-content padding class="no-scroll">
 
-    <ion-list>
+    <ion-list class="margin-bottom-10">
       <ion-list-header>
         <h4>Booking Detail</h4>
         <button color="calm" (click)="toEditMasterDetail();" ion-button outline item-right icon-left >
@@ -145,7 +145,7 @@
 
 
 
-        <button ion-button icon-right block >
+        <button (click)="toSummary();" ion-button icon-right block >
           Next
           <ion-icon ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>
         </button>

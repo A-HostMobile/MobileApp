@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams ,ModalController } from 'ionic-angular';
 import {CourierItemModalPage} from "../courier-item-modal/courier-item-modal";
-
+import {CourierSummaryPage} from "../courier-summary/courier-summary";
 
 @Component({
   selector: 'page-courier-booking2',
@@ -23,6 +23,10 @@ export class CourierBooking2Page {
   toManageItem(status: String) {
     let manageItem = this.mdlCtrl.create(CourierItemModalPage,{status});
     manageItem.present();
+  }
+
+  toSummary(){
+    this.navCtrl.push(CourierSummaryPage);
   }
 
 }
