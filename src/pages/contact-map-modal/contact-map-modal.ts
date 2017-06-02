@@ -9,13 +9,7 @@ export class ContactMapModalPage {
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              public viewCtrl: ViewController,
-              public platform: Platform) {
-    this.platform.ready().then(() => {
-      this.platform.registerBackButtonAction(() => {
-        this.viewCtrl.dismiss();
-      })
-    })
+              public viewCtrl: ViewController,) {
   }
 
   ionViewDidLoad() {

@@ -15,19 +15,11 @@ export class LoginPage {
   submitted = false;
   page : any;
 
-  constructor(public navCtrl: NavController,
-              public userData: UserData,
+  constructor(public userData: UserData,
               public navParam: NavParams,
               public viewCtrl: ViewController,
-              public app: App,
-              public platform: Platform) {
+              public app: App,) {
     this.page = this.navParam.data;
-    this.platform.ready().then(()=> {
-      this.platform.registerBackButtonAction(() => {
-        this.viewCtrl.dismiss();
-        this.app.getRootNav().popToRoot();
-      })
-    })
   }
 
   onLogin(form: NgForm) {

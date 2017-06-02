@@ -14,6 +14,7 @@ export class HomePage {
   bpress: number = 0;
   @ViewChild(Nav) nav:Nav;
   private unregisterCustomBackActionFunction: any;
+  modal:any;
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public mdlCtrl: ModalController,
@@ -28,14 +29,16 @@ export class HomePage {
       this.unregisterCustomBackActionFunction = this.platform.registerBackButtonAction(() => {
         let activeView: ViewController = this.navCtrl.getActive();
 
-        if (activeView != null && ((<any> activeView).instance instanceof HomePage)) {
-          this.exit();
-        } else {
+        if (activeView != null && (<any> activeView).instance instanceof HomePage){
+            this.exit();
+/*          } else {
+            this.viewCtrl.dismiss();
+          }*/
+        }else{
           this.navCtrl.pop();
         }
-      });
-    });
-
+      })
+    })
   }
   exit(){
     let toast = this.toastCtrl.create({message:'Press back button again to exit',duration:2000,position: 'bottom'});
