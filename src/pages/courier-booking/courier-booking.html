@@ -9,7 +9,7 @@
 
 
         <ion-list no-lines>
-          <ion-item>
+          <ion-item no-padding>
             Pickup Address
             <button (click)="openPickupModal();" color="calm" ion-button outline item-right >
               Select
@@ -18,40 +18,40 @@
           <hr/>
         </ion-list>
 
-        <ion-list no-lines>
+        <ion-list no-padding no-lines>
             <ion-list-header>
               Destination
             </ion-list-header>
-            <ion-item>
-              <ion-label >Consignee Name : </ion-label>
+            <ion-item no-padding>
+              <ion-label no-padding col-6>Consignee Name : </ion-label>
               <ion-input type="text" placeholder="name"></ion-input>
             </ion-item>
-            <ion-item>
-              <ion-label>Address : </ion-label>
+            <ion-item no-padding>
+              <ion-label no-padding col-6>Address : </ion-label>
               <ion-input type="text" placeholder="address"></ion-input>
             </ion-item>
-            <ion-item>
-              <ion-label>Country</ion-label>
+            <ion-item no-padding>
+              <ion-label no-padding col-6>Country</ion-label>
               <ion-select [(ngModel)]="country">
                 <ion-option selected value="us">United States</ion-option>
                 <ion-option value="HK">Hongkong</ion-option>
                 <ion-option value="JP">Japan</ion-option>
               </ion-select>
             </ion-item>
-            <ion-item>
-              <ion-label>Zipcode : </ion-label>
+            <ion-item no-padding>
+              <ion-label no-padding col-6>Zipcode : </ion-label>
               <ion-input type="text" placeholder="zipcode"></ion-input>
             </ion-item>
-            <ion-item>
-              <ion-label>Contact Name : </ion-label>
+            <ion-item no-padding>
+              <ion-label no-padding col-6>Contact Name : </ion-label>
               <ion-input type="text" placeholder="contact name"></ion-input>
             </ion-item>
-            <ion-item>
-              <ion-label>Tel. : </ion-label>
+            <ion-item no-padding>
+              <ion-label no-padding col-6>Tel. : </ion-label>
               <ion-input type="text" placeholder="tel"></ion-input>
             </ion-item>
-            <ion-item>
-              <ion-label>Remark : </ion-label>
+            <ion-item no-padding>
+              <ion-label no-padding col-6>Remark : </ion-label>
               <ion-input type="text" placeholder="remark"></ion-input>
             </ion-item>
         </ion-list>
