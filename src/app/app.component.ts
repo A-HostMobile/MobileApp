@@ -99,7 +99,6 @@ export class TemplateApp {
       this.nav.push(page.component);
     }
     else if(page.component == LoginPage){
-      this.nav.popToRoot();
       modal.present();
     }
     else{

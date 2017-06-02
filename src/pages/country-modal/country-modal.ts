@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {  NavController, NavParams } from 'ionic-angular';
+import {App, NavController, NavParams, ViewController} from 'ionic-angular';
 import {ScheduleResultPage} from "../schedule-result/schedule-result";
 
 @Component({
@@ -9,7 +9,10 @@ import {ScheduleResultPage} from "../schedule-result/schedule-result";
 export class CountryModalPage {
   Region: String;
   regname: String;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public viewCtrl:ViewController,
+              public app: App) {
   }
 
   ionViewDidLoad() {
@@ -19,13 +22,12 @@ export class CountryModalPage {
 
 
 closemodal() {
-    this.navCtrl.popToRoot()
-      .then(() => this.navCtrl.first().dismiss());
+  this.viewCtrl.dismiss();
   }
 
  toSearchResult(){
-   this.navCtrl.push(ScheduleResultPage)
-   .then(() => this.navCtrl.first().dismiss());
+   this.viewCtrl.dismiss();
+   this.app.getRootNav().push(ScheduleResultPage);
  }
 
 

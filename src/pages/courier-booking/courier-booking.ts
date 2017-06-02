@@ -1,5 +1,5 @@
 import {Component, ViewChild} from '@angular/core';
-import {Navbar, NavController, NavParams, ViewController, ModalController, Nav} from 'ionic-angular';
+import {Navbar, NavController, NavParams, ViewController, ModalController} from 'ionic-angular';
 import {UserData} from "../../providers/user-data";
 import {LoginPage} from "../login-modal/login-modal";
 import {CourierBooking2Page} from "../courier-booking2/courier-booking2";
@@ -20,16 +20,6 @@ export class CourierBookingPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CourierBookingPage');
-    this.navbar.backButtonClick = (e: UIEvent) => {
-      if (this.viewCtrl.index == 0) {
-        this.navCtrl.popToRoot().then(() => {
-          this.navCtrl.first().dismiss();
-        });
-      }
-      else {
-        this.navCtrl.popToRoot();
-      }
-    }
   }
 
   ionViewCanEnter(){
@@ -50,7 +40,6 @@ export class CourierBookingPage {
   toCourier2(){
     this.navCtrl.push(CourierBooking2Page);
   }
-
 
 }
 

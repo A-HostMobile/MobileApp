@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { HomePage } from "../home/home";
+import { NavController, NavParams } from 'ionic-angular';
 import {HistoryPage} from "../history/history";
 
 
-@IonicPage()
 @Component({
   selector: 'page-completed',
   templateUrl: 'completed.html',

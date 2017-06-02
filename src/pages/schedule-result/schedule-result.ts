@@ -18,8 +18,7 @@ export class ScheduleResultPage {
   }
 
   toLCLBooking(){
-    this.navCtrl.push(LclBookingPage,1).then(()=>this.navCtrl.first().dismiss());
-
+    this.navCtrl.push(LclBookingPage);
   }
 
 }
