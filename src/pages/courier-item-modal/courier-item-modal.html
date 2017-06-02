@@ -11,11 +11,67 @@
         <span ion-text>Close</span>
       </button>
     </ion-buttons>
-    <ion-title>Manage Packing List</ion-title>
+    <ion-title>{{StatusText}}</ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
+
+  <ion-list no-lines>
+
+    <ion-item no-padding>
+      <ion-label>Commodity </ion-label>
+      <ion-select [(ngModel)]="commodity">
+        <ion-option selected value="default">Default</ion-option>
+        <ion-option value="ex1">example1</ion-option>
+        <ion-option value="ex2">example2</ion-option>
+      </ion-select>
+    </ion-item>
+
+   </ion-list>
+
+   <ion-list no-lines>
+      <ion-list-header>
+        <h4>Dimension</h4>
+      </ion-list-header>
+
+      <ion-item no-padding>
+        <ion-label>Width : </ion-label>
+        <ion-input type="text" placeholder="Width"></ion-input>
+      </ion-item>
+
+      <ion-item no-padding>
+        <ion-label>Length : </ion-label>
+        <ion-input type="text" placeholder="Length"></ion-input>
+      </ion-item>
+
+      <ion-item no-padding>
+        <ion-label>Height : </ion-label>
+        <ion-input type="text" placeholder="Height"></ion-input>
+      </ion-item>
+  
+
+   </ion-list>
+
+   <ion-list no-lines>
+      <ion-item no-padding>
+        <ion-label>Weight : </ion-label>
+        <ion-input type="text" placeholder="Weight"></ion-input>
+        <ion-note item-end>
+      Kgs.
+      </ion-note>
+      </ion-item>
+
+      <ion-item no-padding>
+        <ion-label>Quantity : </ion-label>
+        <ion-input type="text" placeholder="Quantity"></ion-input>
+      </ion-item>
+
+  </ion-list>
+ 
+  <button ion-button block >
+    {{StatusText}}
+  </button>
 
 </ion-content>

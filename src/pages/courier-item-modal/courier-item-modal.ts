@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
  * Generated class for the CourierItemModalPage page.
@@ -13,12 +13,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'courier-item-modal.html',
 })
 export class CourierItemModalPage {
+  StatusText: String;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CourierItemModalPage');
+    this.StatusText = this.navParams.get('status');
   }
 
 

@@ -30,8 +30,4 @@ export class CourierBooking2Page {
     manageItem.present();
   }
 
-  closemodal() {
-   this.navCtrl.first().dismiss();
-  }
-
 }
