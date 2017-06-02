@@ -9,13 +9,7 @@ export class CourierItemModalPage {
   StatusText: String;
 
   constructor(public viewCtrl: ViewController,
-              public platform: Platform,
               public navParams: NavParams) {
-    this.platform.ready().then(()=> {
-      this.platform.registerBackButtonAction(() => {
-        this.viewCtrl.dismiss();
-      })
-    })
   }
 
   ionViewDidLoad() {
@@ -27,7 +21,7 @@ export class CourierItemModalPage {
     this.viewCtrl.dismiss();
   }
 
-  addItem(){ 
+  addItem(){
       this.viewCtrl.dismiss();
     }
   editItem(){

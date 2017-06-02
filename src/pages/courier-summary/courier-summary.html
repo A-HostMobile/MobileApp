@@ -96,13 +96,12 @@
         </ion-list>
         <ion-list no-lines>
             <ion-col>
-             By clicking "confirm" you are agreeing that your packing list(s) are excluded <span class="hilight">Prohibited Items</span>.
+             By clicking "confirm" you are agreeing that your packing list(s) are excluded <span (click)="dgModalShow();" class="hilight">Prohibited Items</span>.
             </ion-col>
         </ion-list>
 
-     <button ion-button icon-right block >
+     <button (click)="toComplete();" ion-button icon-right block >
           Confirm
           <ion-icon name="checkmark"></ion-icon>
-        </button>
-
+    </button>
 </ion-content>

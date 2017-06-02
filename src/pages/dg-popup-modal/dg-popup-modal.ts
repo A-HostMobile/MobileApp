@@ -9,18 +9,16 @@ export class DgPopupModalPage {
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              public viewCtrl: ViewController,
-              public platform: Platform) {
+              public viewCtrl: ViewController,) {
 
-    this.platform.ready().then(()=> {
-      this.platform.registerBackButtonAction(() => {
-        this.viewCtrl.dismiss();
-      })
-    })
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DgPopupModalPage');
+  }
+
+  closemodal() {
+  this.viewCtrl.dismiss();
   }
 
 }

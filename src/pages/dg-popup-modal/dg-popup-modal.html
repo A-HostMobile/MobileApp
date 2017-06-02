@@ -5,14 +5,68 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>dgPopupModal</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="closemodal()">
+        <span ion-text>Close</span>
+      </button>
+    </ion-buttons>
+    <ion-title>Prohibited Item</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+
+  <ion-card>
+    <ion-card-header color="danger">
+      Prohibited Item
+    </ion-card-header>
+
+    <ion-list>
+
+      <ion-item text-wrap>
+        <ion-icon color="danger"  name="cash" item-right></ion-icon>
+        1. Money related items.
+      </ion-item>
+
+      <ion-item text-wrap>
+        <ion-icon color="danger" name="flame" item-right></ion-icon>
+        2. Flammable and combustible liquids.
+      </ion-item>
+
+      <ion-item text-wrap>
+        <ion-icon color="danger" name="battery-charging" item-right></ion-icon>
+        3. Battery / lithium ion battery.
+      </ion-item>
+
+      <ion-item text-wrap>
+        <ion-icon color="danger" name="cut" item-right></ion-icon>
+        4. Non-concealable.
+      </ion-item>
+
+      <ion-item text-wrap>
+        <ion-icon color="danger" name="flask" item-right></ion-icon>
+        5. Drug.
+      </ion-item>
+
+      <ion-item text-wrap>
+        <ion-icon color="danger" name="paw" item-right></ion-icon>
+        6. Live animals.
+      </ion-item>
+
+      <ion-item text-wrap>
+        <ion-icon color="danger" name="transgender" item-right></ion-icon>
+        7. Pornographic or obscene material.
+      </ion-item>
+
+      <ion-item text-wrap>
+        <ion-icon color="danger" name="water" item-right></ion-icon>
+        8. Liquids , gel and aerosols.
+      </ion-item>
+
+
+    </ion-list>
+  </ion-card>
 
 </ion-content>

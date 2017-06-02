@@ -3,6 +3,7 @@ import {Navbar, NavController, NavParams, ViewController, ModalController} from 
 import {UserData} from "../../providers/user-data";
 import {LoginPage} from "../login-modal/login-modal";
 import {CourierBooking2Page} from "../courier-booking2/courier-booking2";
+import {PickupAddressPage} from "../pickup-address/pickup-address";
 
 @Component({
   selector: 'page-courier-booking',
@@ -39,6 +40,13 @@ export class CourierBookingPage {
 
   toCourier2(){
     this.navCtrl.push(CourierBooking2Page);
+  }
+
+  openPickupModal(){
+
+    let openPickup = this.mdlCtrl.create(PickupAddressPage);
+    openPickup.present();
+  
   }
 
 }
