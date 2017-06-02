@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { IonicPage, NavController, NavParams ,ViewController ,ModalController} from 'ionic-angular';
+import {AddPickupModalPage} from "../add-pickup-modal/add-pickup-modal";
 /**
  * Generated class for the PickupAddressPage page.
  *
@@ -14,11 +14,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PickupAddressPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public viewCtrl:ViewController,public mdlCtrl: ModalController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PickupAddressPage');
   }
+
+  openManagePickup(){
+    let managePickup = this.mdlCtrl.create(AddPickupModalPage);
+    managePickup.present();
+  }
+
+  closemodal() {
+  this.viewCtrl.dismiss();
+}
 
 }
