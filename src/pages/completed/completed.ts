@@ -19,7 +19,7 @@ export class CompletedPage {
   }
 
   toHome(){
-    this.navCtrl.pop
+    this.navCtrl.popToRoot();
   }
   toHistory(){
     this.navCtrl.push(HistoryPage);

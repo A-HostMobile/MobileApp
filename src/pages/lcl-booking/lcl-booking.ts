@@ -56,6 +56,6 @@ export class LclBookingPage {
   }
 
   toSummary(){
-    this.navCtrl.push(LclSummaryPage).then(()=>this.navCtrl.first().dismiss());
+    this.navCtrl.push(LclSummaryPage);
   }
 }

@@ -19,12 +19,6 @@ export class HomePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad HomePage');
   }
-  ionViewWillEnter(){
-    /*if(this.viewCtrl.index>0)
-    {
-      this.navCtrl.popToRoot();
-    }*/
-  }
 
   openPage(page: number) {
 
