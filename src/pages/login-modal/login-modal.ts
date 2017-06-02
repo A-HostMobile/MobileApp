@@ -1,5 +1,5 @@
 import {Component, ViewChild} from '@angular/core';
-import {App, Navbar, NavController, NavParams, ViewController} from 'ionic-angular';
+import {App, Navbar, NavController, NavParams, Platform, ViewController} from 'ionic-angular';
 import {UserData} from "../../providers/user-data";
 import {NgForm} from "@angular/forms";
 import {LclBookingPage} from "../lcl-booking/lcl-booking";
@@ -19,9 +19,14 @@ export class LoginPage {
               public userData: UserData,
               public navParam: NavParams,
               public viewCtrl: ViewController,
-              public app: App
-  ) {
+              public app: App,
+              public platform: Platform) {
     this.page = this.navParam.data;
+    this.platform.ready().then(()=> {
+      this.platform.registerBackButtonAction(() => {
+        this.viewCtrl.dismiss();
+      })
+    })
   }
 
   onLogin(form: NgForm) {
