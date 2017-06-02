@@ -18,7 +18,7 @@
     <ion-list>
       <ion-list-header>
         <h4>Booking Detail</h4>
-        <button color="calm" (click)="toEdit();" ion-button outline item-right icon-left >
+        <button color="calm" (click)="toEditMasterDetail();" ion-button outline item-right icon-left >
           <ion-icon name="construct"></ion-icon>
               Edit
         </button>
@@ -81,7 +81,7 @@
     <ion-list>
       <ion-list-header>
         <h4>Packing List</h4>
-        <button color="calm" ion-button outline item-right icon-left >
+        <button (click)="toManageItem();" color="calm" ion-button outline item-right icon-left >
           <ion-icon name="add"></ion-icon>
               Add
         </button>
@@ -124,20 +124,6 @@
 </ion-card>
 
 <ion-list>
-      <!--<ion-list-header>
-        <h4>Booking Detail</h4>
-        <button color="calm" (click)="toEdit();" ion-button outline item-right icon-left >
-          <ion-icon name="construct"></ion-icon>
-              Edit
-        </button>
-        <button (click)="showDetail=!showDetail" *ngIf="!showDetail" ion-button clear item-right icon-only >
-          <ion-icon color="calm" name="arrow-up"></ion-icon>
-        </button>
-        <button (click)="showDetail=!showDetail" *ngIf="showDetail" ion-button clear item-right icon-only >
-          <ion-icon color="calm" name="arrow-down"></ion-icon>
-        </button>
-      </ion-list-header>-->
-
       <ion-grid>
 
         <ion-row>

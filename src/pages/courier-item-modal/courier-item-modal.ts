@@ -21,4 +21,9 @@ export class CourierItemModalPage {
     console.log('ionViewDidLoad CourierItemModalPage');
   }
 
+
+  closemodal() {
+    this.navCtrl.popToRoot()
+      .then(() => this.navCtrl.first().dismiss());
+  }
 }
