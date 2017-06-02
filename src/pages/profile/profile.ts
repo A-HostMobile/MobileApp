@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams , ModalController } from 'ionic-angular';
 import {HistoryPage} from "../history/history";
-
+import {PickupAddressPage} from "../pickup-address/pickup-address";
 
 @IonicPage()
 @Component({
@@ -10,7 +10,7 @@ import {HistoryPage} from "../history/history";
 })
 export class ProfilePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public mdlCtrl: ModalController) {
   }
 
   ionViewDidLoad() {
@@ -20,5 +20,12 @@ export class ProfilePage {
 toHistory(){
   this.navCtrl.push(HistoryPage);
 }
+
+openPickupModal(){
+
+    let openPickup = this.mdlCtrl.create(PickupAddressPage);
+    openPickup.present();
+  
+  }
 
 }
