@@ -10,7 +10,10 @@ export class NoInternetModalPage {
   bpress: number = 0;
 
 
-  constructor(public network: Network,public view: ViewController,public platform: Platform,public toastCtrl: ToastController) {
+  constructor(public network: Network,
+              public view: ViewController,
+              public platform: Platform,
+              public toastCtrl: ToastController) {
     this.platform.ready().then(()=>{
       this.platform.registerBackButtonAction(()=>{
         let toast = this.toastCtrl.create({message:'Press back button again to exit',duration:2000,position: 'bottom'});
