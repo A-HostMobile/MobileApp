@@ -9,7 +9,7 @@
   <ion-list no-lines>
 
     <ion-item no-padding>
-      <ion-label>POD</ion-label>
+      <ion-label col-6 >POD</ion-label>
       <ion-select [(ngModel)]="pod">
         <ion-option selected value="default">Default</ion-option>
         <ion-option value="HK">Hongkong</ion-option>
@@ -18,17 +18,17 @@
     </ion-item>
 
     <ion-item no-padding>
-      <ion-label>Date</ion-label>
-      <ion-datetime displayFormat="DDDD/DD/MMM/YYYY" min="2016" max="2020-10-31" [(ngModel)]="myDate" placeholder="Select Date"></ion-datetime>
+      <ion-label col-6 >Date</ion-label>
+      <ion-datetime  displayFormat="DDDD/DD/MMM/YYYY" min="2016" max="2020-10-31" [(ngModel)]="myDate" placeholder="select date"></ion-datetime>
     </ion-item>
 
     <ion-item no-padding>
-      <ion-label>Volume (CBM) : </ion-label>
+      <ion-label col-6 >Volume (CBM)</ion-label>
       <ion-input type="text" placeholder="volume"></ion-input>
     </ion-item>
 
     <ion-item no-padding>
-      <ion-label>Gross Weight : </ion-label>
+      <ion-label col-6>Gross Weight</ion-label>
       <ion-input type="text" placeholder="g.w."></ion-input>
       <ion-select [(ngModel)]="gw">
         <ion-option selected value="ton">TON</ion-option>
@@ -53,7 +53,7 @@
   <ion-list *ngIf="showMore" no-lines>
 
     <ion-item no-padding>
-      <ion-label>Commodity</ion-label>
+      <ion-label col-6>Commodity</ion-label>
       <ion-select [(ngModel)]="commodity">
         <ion-option selected value="default">Cartons</ion-option>
         <ion-option value="se">Ceramic</ion-option>
@@ -62,7 +62,7 @@
     </ion-item>
 
     <ion-item no-padding>
-      <ion-label>Quantity : </ion-label>
+      <ion-label col-6>Quantity</ion-label>
       <ion-input type="text" placeholder="quantity"></ion-input>
       <ion-select [(ngModel)]="quantity">
         <ion-option selected value="default">EA</ion-option>
@@ -72,7 +72,7 @@
     </ion-item>
 
     <ion-item no-padding>
-      <ion-label>Addition Detail : </ion-label>
+      <ion-label col-6>Addition Detail</ion-label>
       <ion-input type="text" placeholder="addition"></ion-input>
     </ion-item>
 
@@ -81,12 +81,12 @@
       Shipper Reference
     </ion-list-header>
 
-    <ion-item no-padding>Carrier :</ion-item>
-    <ion-item no-padding>Vessel :</ion-item>
-    <ion-item no-padding>Feeder :</ion-item>
-    <ion-item no-padding>Closing Date :</ion-item>
-    <ion-item no-padding>ETD :</ion-item>
-    <ion-item no-padding>ETA :</ion-item>
+    <ion-item no-padding col-5>Carrier :</ion-item>
+    <ion-item no-padding col-5>Vessel :</ion-item>
+    <ion-item no-padding col-5>Feeder :</ion-item>
+    <ion-item no-padding col-5>Closing Date :</ion-item>
+    <ion-item no-padding col-5>ETD :</ion-item>
+    <ion-item no-padding col-5>ETA :</ion-item>
 
   </ion-list>
   <button (click)="toSummary();" ion-button icon-right block >
