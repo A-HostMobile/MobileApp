@@ -1,20 +1,22 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {NavController, NavParams, Platform, ViewController} from 'ionic-angular';
 
-/**
- * Generated class for the AddPickupModalPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-@IonicPage()
 @Component({
   selector: 'page-add-pickup-modal',
   templateUrl: 'add-pickup-modal.html',
 })
 export class AddPickupModalPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public viewCtrl: ViewController,
+              public platform: Platform) {
+
+    this.platform.ready().then(()=> {
+      this.platform.registerBackButtonAction(() => {
+        this.viewCtrl.dismiss();
+      })
+    })
   }
 
   ionViewDidLoad() {

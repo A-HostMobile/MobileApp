@@ -25,6 +25,7 @@ export class LoginPage {
     this.platform.ready().then(()=> {
       this.platform.registerBackButtonAction(() => {
         this.viewCtrl.dismiss();
+        this.app.getRootNav().popToRoot();
       })
     })
   }
