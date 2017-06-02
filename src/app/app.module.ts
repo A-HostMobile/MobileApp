@@ -42,6 +42,7 @@ import {PickupAddressPage} from "../pages/pickup-address/pickup-address";
 import {RegisterModalPage} from "../pages/register-modal/register-modal";
 import {Network} from "@ionic-native/network";
 import { AdvertisementProvider } from '../providers/advertisement/advertisement';
+import { AgentNetworkServiceProvider } from '../providers/agent-network-service/agent-network-service';
 
 
 
@@ -127,7 +128,8 @@ import { AdvertisementProvider } from '../providers/advertisement/advertisement'
     InAppBrowser,
     SplashScreen,
     Network,
-    AdvertisementProvider
+    AdvertisementProvider,
+    AgentNetworkServiceProvider
   ]
 })
 export class AppModule { }
