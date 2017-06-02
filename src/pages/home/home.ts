@@ -1,3 +1,4 @@
+import { resolveForwardRef } from '@angular/core/core';
 import {Component, ViewChild} from '@angular/core';
 import {NavController, NavParams, ModalController, ViewController, Platform, ToastController, Nav} from 'ionic-angular';
 
@@ -5,6 +6,7 @@ import {UserData} from "../../providers/user-data";
 import {LclBookingPage} from "../lcl-booking/lcl-booking";
 import {CourierBookingPage} from "../courier-booking/courier-booking";
 import {LoginPage} from "../login-modal/login-modal";
+import {AdvertisementProvider} from "../../providers/advertisement/advertisement"
 
 @Component({
   selector: 'page-home',
@@ -12,6 +14,8 @@ import {LoginPage} from "../login-modal/login-modal";
 })
 export class HomePage {
   bpress: number = 0;
+  advertisementHome:any;
+  errorMessage:string;
   @ViewChild(Nav) nav:Nav;
   private unregisterCustomBackActionFunction: any;
   constructor(public navCtrl: NavController,
@@ -20,7 +24,8 @@ export class HomePage {
               public userData: UserData,
               public viewCtrl:ViewController,
               public platform: Platform,
-              public toastCtrl: ToastController) {
+              public toastCtrl: ToastController,
+              public advertisementProvider:AdvertisementProvider) {
 
   }
   ionViewDidEnter(){
@@ -51,6 +56,17 @@ export class HomePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HomePage');
+    this.advertisementProvider.getHomeAdvertisement().subscribe(
+        (res)=> this.advertisementHome = res
+        ,(error)=> this.errorMessage = <any>error);
+  }
+
+  convertImg(img:string,type:string){
+      return "data:"+type+";base64,"+img;
+  }
+
+  clickImg(index:string){
+      console.log("Index :"+index);
   }
 
   openPage(page: number) {

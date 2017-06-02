@@ -18,12 +18,9 @@
 
   <div class="dbg">NEWS & PROMOTION</div>
  <ion-card>
-    <ion-slides effect="slide" autoplay="5000" loop pager paginationType="bullet">
-      <ion-slide>
-        <img src="assets/img/banner01.jpg" />
-      </ion-slide>
-      <ion-slide>
-        <img src="assets/img/banner02.jpg" />
+    <ion-slides effect="slide" paginationType="bullet" >
+      <ion-slide *ngFor="let advertisement of advertisementHome">
+        <img [src]="convertImg(advertisement.image,advertisement.ba_mime_type)" (click)="clickImg(advertisement.b_item_id)" />
       </ion-slide>
     </ion-slides>
   </ion-card>

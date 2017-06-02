@@ -41,6 +41,7 @@ import {NoInternetModalPage} from "../pages/no-internet-modal/no-internet-modal"
 import {PickupAddressPage} from "../pages/pickup-address/pickup-address";
 import {RegisterModalPage} from "../pages/register-modal/register-modal";
 import {Network} from "@ionic-native/network";
+import { AdvertisementProvider } from '../providers/advertisement/advertisement';
 
 
 
@@ -125,7 +126,8 @@ import {Network} from "@ionic-native/network";
     UserData,
     InAppBrowser,
     SplashScreen,
-    Network
+    Network,
+    AdvertisementProvider
   ]
 })
 export class AppModule { }
