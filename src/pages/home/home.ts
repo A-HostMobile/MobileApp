@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import {NavController, NavParams, ModalController, ViewController} from 'ionic-angular';
+import {Component, ViewChild} from '@angular/core';
+import {NavController, NavParams, ModalController, ViewController, Platform, ToastController, Nav} from 'ionic-angular';
 
 import {UserData} from "../../providers/user-data";
 import {LclBookingPage} from "../lcl-booking/lcl-booking";
@@ -11,9 +11,42 @@ import {LoginPage} from "../login-modal/login-modal";
   templateUrl: 'home.html',
 })
 export class HomePage {
+  bpress: number = 0;
+  @ViewChild(Nav) nav:Nav;
+  private unregisterCustomBackActionFunction: any;
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public mdlCtrl: ModalController,
+              public userData: UserData,
+              public viewCtrl:ViewController,
+              public platform: Platform,
+              public toastCtrl: ToastController) {
 
+  }
+  ionViewDidEnter(){
+    this.platform.ready().then(() => {
+      this.unregisterCustomBackActionFunction = this.platform.registerBackButtonAction(() => {
+        let activeView: ViewController = this.navCtrl.getActive();
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public mdlCtrl: ModalController, public userData: UserData, public  viewCtrl:ViewController) {
+        if (activeView != null && ((<any> activeView).instance instanceof HomePage)) {
+          this.exit();
+        } else {
+          this.navCtrl.pop();
+        }
+      });
+    });
+
+  }
+  exit(){
+    let toast = this.toastCtrl.create({message:'Press back button again to exit',duration:2000,position: 'bottom'});
+    toast.present();
+    this.bpress++;
+    setTimeout(()=>{
+      this.bpress=0;
+    },2000);
+    if(this.bpress==2){
+      this.platform.exitApp();
+    }
   }
 
   ionViewDidLoad() {

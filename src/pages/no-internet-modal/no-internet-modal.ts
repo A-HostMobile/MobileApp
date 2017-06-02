@@ -21,7 +21,7 @@ export class NoInternetModalPage {
         this.bpress++;
         setTimeout(()=>{
           this.bpress=0;
-        },2000)
+        },2000);
         if(this.bpress==2){
           this.platform.exitApp();
         }
