@@ -1,6 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
 
-import {Events, MenuController, ModalController, Nav, Platform} from 'ionic-angular';
+import {
+  App, Events, MenuController, ModalController, Nav, Platform, ToastController,
+  ViewController
+} from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 
@@ -36,9 +39,10 @@ export interface PageInterface {
 })
 export class TemplateApp {
 
-  @ViewChild(Nav) nav: Nav;
-  usn: any;
+  @ViewChild(Nav,ViewController) nav: Nav;viewCtrl:ViewController
+
   count:number = 0;
+  bpress:number = 0;
   appPages: PageInterface[] = [
     { title: 'Home', name: 'HomePage', component: HomePage, icon: 'ios-home' },
     { title: 'Schedule', name: 'ScheduleSearchPage', component: ScheduleSearchPage, icon: 'md-calendar' },
@@ -65,8 +69,10 @@ export class TemplateApp {
     public platform: Platform,
     public confData: ConferenceData,
     public splashScreen: SplashScreen,
+    public toastCtrl: ToastController,
     public mdlCtrl: ModalController,
-    public network: Network
+    public network: Network,
+    public app: App
   ) {
 
     confData.load();
@@ -76,12 +82,77 @@ export class TemplateApp {
     });
     this.enableMenu(true);
 
-    this.listenToLoginEvents();
-    let discon = this.network.onDisconnect().subscribe(()=> {
-        if(this.count==0){
-          this.mdlCtrl.create(NoInternetModalPage).present();
-          this.count++;
+    this.checkConnection();
+
+    this.listenToEvents();
+
+    this.backButton();
+
+  }
+
+  exit() {
+    let toast = this.toastCtrl.create({message:'Press back button again to exit',duration:2000,position: 'bottom'});
+    toast.present();
+    this.bpress++;
+    setTimeout(()=>{
+      this.bpress=0;
+    },2000);
+    if(this.bpress==2){
+      this.platform.exitApp();
+    }
+  }
+
+  backButton() {
+    this.platform.ready().then(() => {
+      this.platform.registerBackButtonAction(() => {
+        let nav = this.app.getActiveNav();
+        let activeView = nav.getActive();
+
+        if (activeView != null){
+          if(nav.canGoBack()) {
+            alert('Pop')
+            nav.pop();
+          } else if(activeView.instance instanceof HomePage){
+            this.exit();
+          } else {
+            alert('Dismiss');
+            nav.pop();
+          }
         }
+      })
+    })
+  }
+
+  platformReady() {
+    this.platform.ready().then(() => {
+      this.splashScreen.hide();
+    });
+  }
+
+  listenToEvents() {
+    this.events.subscribe('user:login', () => {
+      this.enableMenu(true);
+    });
+
+    this.events.subscribe('user:logout', () => {
+      this.enableMenu(false);
+    });
+
+    this.events.subscribe('backButton',()=>{
+      this.backButton();
+    });
+
+    this.events.subscribe('exit',()=>{
+      this.exit();
+    });
+  }
+
+  checkConnection() {
+    let discon = this.network.onDisconnect().subscribe(()=> {
+      if(this.count==0){
+        this.mdlCtrl.create(NoInternetModalPage).present();
+        this.count++;
+      }
     });
     this.network.onConnect().subscribe(()=>{
       this.network.onDisconnect().subscribe(()=> {
@@ -90,8 +161,9 @@ export class TemplateApp {
       });
     });
   }
+
   openPage(page: PageInterface) {
-    let modal = this.mdlCtrl.create(LoginPage, page.component);
+    let modal =  this.mdlCtrl.create(LoginPage,page.component);
     if(page.component == HomePage){
       this.nav.popToRoot();
     }
@@ -111,25 +183,9 @@ export class TemplateApp {
     }
   }
 
-  listenToLoginEvents() {
-    this.events.subscribe('user:login', () => {
-      this.enableMenu(true);
-    });
-
-    this.events.subscribe('user:logout', () => {
-      this.enableMenu(false);
-    });
-  }
-
   enableMenu(loggedIn: boolean) {
     this.menu.enable(loggedIn, 'loggedInMenu');
     this.menu.enable(!loggedIn, 'loggedOutMenu');
-  }
-
-  platformReady() {
-    this.platform.ready().then(() => {
-      this.splashScreen.hide();
-    });
   }
 
   isActive(page: PageInterface) {

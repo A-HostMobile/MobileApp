@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {NavController, NavParams, Platform, ViewController,} from 'ionic-angular';
+import { ViewController} from 'ionic-angular';
 
 @Component({
   selector: 'page-add-pickup-modal',
@@ -7,16 +7,8 @@ import {NavController, NavParams, Platform, ViewController,} from 'ionic-angular
 })
 export class AddPickupModalPage {
 
-  constructor(public navCtrl: NavController,
-              public navParams: NavParams,
-              public viewCtrl: ViewController,
-              public platform: Platform) {
+  constructor(public viewCtrl: ViewController) {
 
-    this.platform.ready().then(()=> {
-      this.platform.registerBackButtonAction(() => {
-        this.viewCtrl.dismiss();
-      })
-    })
   }
 
   ionViewDidLoad() {

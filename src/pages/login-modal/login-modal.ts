@@ -1,9 +1,10 @@
 import {Component, ViewChild} from '@angular/core';
-import {App, Navbar, NavController, NavParams, Platform, ViewController} from 'ionic-angular';
+import {App, Navbar, NavParams, ViewController} from 'ionic-angular';
 import {UserData} from "../../providers/user-data";
 import {NgForm} from "@angular/forms";
 import {LclBookingPage} from "../lcl-booking/lcl-booking";
 import {CourierBookingPage} from "../courier-booking/courier-booking";
+import {ScheduleResultPage} from "../schedule-result/schedule-result";
 
 @Component({
   selector: 'page-login-modal',
@@ -31,19 +32,16 @@ export class LoginPage {
         this.app.getRootNav().push(this.page);
       }
       else {
-        this.viewCtrl.dismiss();
-        this.app.getRootNav().popToRoot();
+        this.closemodal();
       }
     }
   }
 
   closemodal() {
     this.viewCtrl.dismiss();
-    this.app.getRootNav().popToRoot();
-  }
-
-  ionViewDidLoad(){
-    console.log(this.navParam.data);
+    if(this.app.getRootNav().getActive().component!=ScheduleResultPage){
+      this.app.getRootNav().popToRoot();
+    }
   }
 
   username(): String {

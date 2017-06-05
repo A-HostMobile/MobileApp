@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {App, NavController, NavParams, Platform, ViewController} from 'ionic-angular';
+import {App, NavController, NavParams, ViewController} from 'ionic-angular';
 import {ScheduleResultPage} from "../schedule-result/schedule-result";
 
 @Component({
@@ -11,13 +11,7 @@ export class CountryModalPage {
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public viewCtrl:ViewController,
-              public app: App,
-              public platform: Platform) {
-    this.platform.ready().then(()=> {
-      this.platform.registerBackButtonAction(() => {
-        this.viewCtrl.dismiss();
-      })
-    })
+              public app: App) {
   }
 
   ionViewDidLoad() {

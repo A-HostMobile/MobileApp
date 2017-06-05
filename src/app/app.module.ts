@@ -3,7 +3,7 @@ import { HttpModule } from '@angular/http';
 import { NgModule, ErrorHandler } from '@angular/core';
 
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-
+import { Network } from "@ionic-native/network";
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { IonicStorageModule } from '@ionic/storage';
@@ -14,9 +14,6 @@ import { ProfilePage } from "../pages/profile/profile";
 import { NewsPage } from "../pages/news/news";
 import { HelpPage } from "../pages/help/help";
 import { HomePage } from "../pages/home/home";
-
-import { ConferenceData } from '../providers/conference-data';
-import { UserData } from '../providers/user-data';
 import {LclBookingPage} from "../pages/lcl-booking/lcl-booking";
 import {LoginPage} from "../pages/login-modal/login-modal";
 import {ScheduleSearchPage} from "../pages/schedule-search/schedule-search";
@@ -40,12 +37,16 @@ import {NewsDetailPage} from "../pages/news-detail/news-detail";
 import {NoInternetModalPage} from "../pages/no-internet-modal/no-internet-modal";
 import {PickupAddressPage} from "../pages/pickup-address/pickup-address";
 import {RegisterModalPage} from "../pages/register-modal/register-modal";
-import {Network} from "@ionic-native/network";
+
 import { AdvertisementProvider } from '../providers/advertisement/advertisement';
 import { AgentNetworkServiceProvider } from '../providers/agent-network-service/agent-network-service';
 
+import { ConferenceData } from '../providers/conference-data';
+import { UserData } from '../providers/user-data';
+
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import { ContinentServiceProvider } from '../providers/continent-service/continent-service';
+
 
 
 @NgModule({

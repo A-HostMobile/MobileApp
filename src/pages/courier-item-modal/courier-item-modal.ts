@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {IonicPage, NavController, NavParams, Platform, ViewController} from 'ionic-angular';
+import { NavParams, ViewController} from 'ionic-angular';
 
 @Component({
   selector: 'page-courier-item-modal',

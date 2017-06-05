@@ -24,17 +24,10 @@ export class LclBookingPage {
 
   ionViewCanEnter(){
     let modal = this.mdlCtrl.create(LoginPage, LclBookingPage);
-    if(this.userData.hasLoggedIn().then((hasLoggedIn) => {
-        if (hasLoggedIn === true) {
-          return true;
-        }
-        else {
-          this.navCtrl.popToRoot();
-          modal.present();
-          return false;
-        }
-      })){
-    }
+    this.userData.hasLoggedIn().then((hasLoggedIn) => {
+      if (hasLoggedIn === true) { return true; }
+      else { this.navCtrl.pop(); modal.present(); return false; }
+    });
   }
 
   toSummary(){

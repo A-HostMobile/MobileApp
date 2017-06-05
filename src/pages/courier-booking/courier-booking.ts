@@ -25,17 +25,10 @@ export class CourierBookingPage {
 
   ionViewCanEnter(){
     let modal = this.mdlCtrl.create(LoginPage, CourierBookingPage);
-    if(this.userData.hasLoggedIn().then((hasLoggedIn) => {
-        if (hasLoggedIn === true) {
-          return true;
-        }
-        else {
-          this.navCtrl.popToRoot();
-          modal.present();
-          return false;
-        }
-      })){
-    }
+    this.userData.hasLoggedIn().then((hasLoggedIn) => {
+      if (hasLoggedIn === true) { return true; }
+      else { this.navCtrl.pop(); modal.present(); return false; }
+    });
   }
 
   toCourier2(){
@@ -43,10 +36,8 @@ export class CourierBookingPage {
   }
 
   openPickupModal(){
-
     let openPickup = this.mdlCtrl.create(PickupAddressPage);
     openPickup.present();
-  
   }
 
 }
