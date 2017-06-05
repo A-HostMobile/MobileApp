@@ -7,6 +7,22 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content class="no-scroll">
+<ion-content id="page-agent-network"class="no-scroll">
+  <sebm-google-map
+      [latitude]="lat"
+      [longitude]="lng"
+      [zoom]="4"
+      [disableDefaultUI]="false"
+      [zoomControl]="false"
+      [streetViewControl]="false">
 
+    <sebm-google-map-marker *ngFor="let a of agent"
+          [latitude]="convertStringToNumber(a.A_LATTITUDE)"
+          [longitude]="convertStringToNumber(a.A_LONGTITUDE)">
+        <sebm-google-map-info-window>
+              <strong>{{a.A_LABEL}}</strong>
+        </sebm-google-map-info-window>
+    </sebm-google-map-marker>
+
+  </sebm-google-map>
 </ion-content>

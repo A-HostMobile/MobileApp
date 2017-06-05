@@ -1,6 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Response } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
+
+import { AgentModel } from '../../models/agent';
 
 /*
   Generated class for the AgentNetworkServiceProvider provider.
@@ -11,8 +16,16 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class AgentNetworkServiceProvider {
 
-  constructor(public http: Http) {
-    console.log('Hello AgentNetworkServiceProvider Provider');
+  constructor(public http: Http) {}
+
+  getAgent():Observable<AgentModel[]>{
+    return this.http.get('http://172.25.51.21/api_leo/getAgentList.php')
+    .map((res:Response) => <AgentModel[]> res.json().responseData)
+    .catch(this.handleError);
+  }
+
+  private handleError(error:any){
+    return Observable.throw(error.json().errorMessage||'Error From Server!');
   }
 
 }

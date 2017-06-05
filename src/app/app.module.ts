@@ -44,7 +44,7 @@ import {Network} from "@ionic-native/network";
 import { AdvertisementProvider } from '../providers/advertisement/advertisement';
 import { AgentNetworkServiceProvider } from '../providers/agent-network-service/agent-network-service';
 
-
+import { AgmCoreModule } from 'angular2-google-maps/core';
 
 
 @NgModule({
@@ -87,7 +87,10 @@ import { AgentNetworkServiceProvider } from '../providers/agent-network-service/
         { component: HomePage, name: 'HomePage', segment: 'home' }
       ]
     }),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBPEEdhkhbFKC2cBu9uPIsK9DxcFqRf_WA'
+    }),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
