@@ -45,6 +45,7 @@ import { AdvertisementProvider } from '../providers/advertisement/advertisement'
 import { AgentNetworkServiceProvider } from '../providers/agent-network-service/agent-network-service';
 
 import { AgmCoreModule } from 'angular2-google-maps/core';
+import { ContinentServiceProvider } from '../providers/continent-service/continent-service';
 
 
 @NgModule({
@@ -132,7 +133,8 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
     SplashScreen,
     Network,
     AdvertisementProvider,
-    AgentNetworkServiceProvider
+    AgentNetworkServiceProvider,
+    ContinentServiceProvider
   ]
 })
 export class AppModule { }

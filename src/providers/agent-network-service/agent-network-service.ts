@@ -6,6 +6,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 
 import { AgentModel } from '../../models/agent';
+import { SettingAPI } from '../AppSettings';
 
 /*
   Generated class for the AgentNetworkServiceProvider provider.
@@ -19,7 +20,7 @@ export class AgentNetworkServiceProvider {
   constructor(public http: Http) {}
 
   getAgent():Observable<AgentModel[]>{
-    return this.http.get('http://172.25.51.21/api_leo/getAgentList.php')
+    return this.http.get(SettingAPI.API+'getAgentList.php')
     .map((res:Response) => <AgentModel[]> res.json().responseData)
     .catch(this.handleError);
   }
