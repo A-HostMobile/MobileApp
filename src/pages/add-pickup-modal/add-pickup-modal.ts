@@ -8,7 +8,6 @@ import { ViewController} from 'ionic-angular';
 export class AddPickupModalPage {
 
   constructor(public viewCtrl: ViewController) {
-
   }
 
   ionViewDidLoad() {

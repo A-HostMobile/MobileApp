@@ -1,25 +1,21 @@
 import { Component, ViewChild } from '@angular/core';
-
-import {
-  App, Events, MenuController, ModalController, Nav, Platform, ToastController,
-  ViewController
-} from 'ionic-angular';
+import {Network} from "@ionic-native/network";
 import { SplashScreen } from '@ionic-native/splash-screen';
+import {App, Events, MenuController, ModalController, Nav, Platform, ToastController} from 'ionic-angular';
 
-
-import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
+import { ConferenceData } from '../providers/conference-data';
+
 import {HomePage} from "../pages/home/home";
 import {HelpPage} from "../pages/help/help";
+import {NewsPage} from "../pages/news/news";
 import {ContactPage} from "../pages/contact/contact";
 import {ProfilePage} from "../pages/profile/profile";
-import {NewsPage} from "../pages/news/news";
-import {ScheduleSearchPage} from "../pages/schedule-search/schedule-search";
-import {LclBookingPage} from "../pages/lcl-booking/lcl-booking";
-import {CourierBookingPage} from "../pages/courier-booking/courier-booking";
 import {LoginPage} from "../pages/login-modal/login-modal";
+import {LclBookingPage} from "../pages/lcl-booking/lcl-booking";
 import {AgentNetworkPage} from "../pages/agent-network/agent-network";
-import {Network} from "@ionic-native/network";
+import {CourierBookingPage} from "../pages/courier-booking/courier-booking";
+import {ScheduleSearchPage} from "../pages/schedule-search/schedule-search";
 import {NoInternetModalPage} from "../pages/no-internet-modal/no-internet-modal";
 
 
@@ -29,9 +25,6 @@ export interface PageInterface {
   component: any;
   icon: string;
   logsOut?: boolean;
-  index?: number;
-  tabName?: string;
-  tabComponent?: any;
 }
 
 @Component({
@@ -39,10 +32,12 @@ export interface PageInterface {
 })
 export class TemplateApp {
 
-  @ViewChild(Nav,ViewController) nav: Nav;viewCtrl:ViewController
+  @ViewChild(Nav) nav: Nav;
 
-  count:number = 0;
-  bpress:number = 0;
+  count: number = 0;
+  bpress: number = 0;
+  rootPage: any = HomePage;
+
   appPages: PageInterface[] = [
     { title: 'Home', name: 'HomePage', component: HomePage, icon: 'ios-home' },
     { title: 'Schedule', name: 'ScheduleSearchPage', component: ScheduleSearchPage, icon: 'md-calendar' },
@@ -60,7 +55,6 @@ export class TemplateApp {
   loggedOutPages: PageInterface[] = [
     { title: 'Login', name: 'LoginPage', component: LoginPage, icon: 'ios-log-in' }
   ];
-  rootPage: any = HomePage;
 
   constructor(
     public events: Events,
@@ -80,6 +74,7 @@ export class TemplateApp {
     this.userData.hasLoggedIn().then((hasLoggedIn) => {
       this.enableMenu(hasLoggedIn === true);
     });
+
     this.enableMenu(true);
 
     this.checkConnection();
@@ -110,12 +105,10 @@ export class TemplateApp {
 
         if (activeView != null){
           if(nav.canGoBack()) {
-            alert('Pop')
             nav.pop();
           } else if(activeView.instance instanceof HomePage){
             this.exit();
           } else {
-            alert('Dismiss');
             nav.pop();
           }
         }

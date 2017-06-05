@@ -45,20 +45,13 @@ export class HomePage {
 
     let  view: any;
 
-    if(page == 1){
-      view = LclBookingPage;
-    }
-    else {
-      view = CourierBookingPage
-    }
+    if(page == 1){ view = LclBookingPage; }
+    else { view = CourierBookingPage; }
+
     let modal = this.mdlCtrl.create(LoginPage, view);
-    if (this.userData.hasLoggedIn().then((hasLoggedIn) => {
-        if (hasLoggedIn === true) {
-          this.navCtrl.push(view);
-        } else {
-          modal.present();
-        }
-      })) {
-    }
+    this.userData.hasLoggedIn().then((hasLoggedIn) => {
+        if (hasLoggedIn === true) { this.navCtrl.push(view); }
+        else { modal.present(); }
+    });
   }
 }

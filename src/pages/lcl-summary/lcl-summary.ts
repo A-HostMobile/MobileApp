@@ -1,9 +1,7 @@
 import {Component, ViewChild} from '@angular/core';
-import {IonicPage, Navbar, NavController, NavParams} from 'ionic-angular';
+import {Navbar, NavController, NavParams} from 'ionic-angular';
 import {CompletedPage} from "../completed/completed";
 
-
-@IonicPage()
 @Component({
   selector: 'page-lcl-summary',
   templateUrl: 'lcl-summary.html',

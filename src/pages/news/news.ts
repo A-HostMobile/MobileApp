@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import {IonicPage, ViewController, NavController } from 'ionic-angular';
+import { ViewController, NavController } from 'ionic-angular';
 import {NewsDetailPage} from "../news-detail/news-detail";
 
-@IonicPage()
 @Component({
   selector: 'page-news',
   templateUrl: 'news.html',
@@ -18,7 +17,7 @@ export class NewsPage {
   }
 
   toDetail(){
-this.navCtrl.push(NewsDetailPage);
+    this.navCtrl.push(NewsDetailPage);
   }
-  
+
 }

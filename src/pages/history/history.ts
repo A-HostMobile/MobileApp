@@ -1,15 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import {HistoryDetailPage} from "../history-detail/history-detail";
 import {HistoryDetailCourierPage} from "../history-detail-courier/history-detail-courier";
 
-/**
- * Generated class for the HistoryPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-@IonicPage()
+
 @Component({
   selector: 'page-history',
   templateUrl: 'history.html',
