@@ -38,6 +38,10 @@ import {NoInternetModalPage} from "../pages/no-internet-modal/no-internet-modal"
 import {PickupAddressPage} from "../pages/pickup-address/pickup-address";
 import {RegisterModalPage} from "../pages/register-modal/register-modal";
 
+import {HowtoCourierPage} from "../pages/howto-courier/howto-courier";
+import {HowtoHistoryPage} from "../pages/howto-history/howto-history";
+import {HowtoLclPage} from "../pages/howto-lcl/howto-lcl";
+
 import { AdvertisementProvider } from '../providers/advertisement/advertisement';
 import { AgentNetworkServiceProvider } from '../providers/agent-network-service/agent-network-service';
 
@@ -79,7 +83,10 @@ import { ContinentServiceProvider } from '../providers/continent-service/contine
     ProfileEditPage,
     RegisterModalPage,
     ScheduleSearchPage,
-    ScheduleResultPage
+    ScheduleResultPage,
+    HowtoCourierPage,
+    HowtoHistoryPage,
+    HowtoLclPage
   ],
   imports: [
     BrowserModule,
@@ -124,7 +131,10 @@ import { ContinentServiceProvider } from '../providers/continent-service/contine
     ProfileEditPage,
     RegisterModalPage,
     ScheduleSearchPage,
-    ScheduleResultPage
+    ScheduleResultPage,
+    HowtoCourierPage,
+    HowtoHistoryPage,
+    HowtoLclPage
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },
