@@ -11,16 +11,16 @@ import {HowtoLclPage} from "../howto-lcl/howto-lcl";
 export class HelpPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public plt: Platform) {
-    if (this.plt.is('ios')) {
-      // This will only print when on iOS
-      console.log("I'm an iOS device!");
-    }
-      else if (this.plt.is('android')){
-        console.log("I'm android Device!");
-      }
-      else {
-        console.log("I'm another Device!");
-      }
+    // Check platform
+    // if (this.plt.is('ios')) {
+    //   console.log("I'm an iOS device!");
+    // }
+    //   else if (this.plt.is('android')){
+    //     console.log("I'm android Device!");
+    //   }
+    //   else {
+    //     console.log("I'm another Device!");
+    //   }
    
 
   }
