@@ -1,6 +1,6 @@
 
 import {Component, ViewChild} from '@angular/core';
-import {NavController, NavParams, ModalController, ViewController, Platform, Nav} from 'ionic-angular';
+import {NavController, NavParams, ModalController, ViewController, Platform, Nav, MenuController} from 'ionic-angular';
 
 import {UserData} from "../../providers/user-data";
 import {LclBookingPage} from "../lcl-booking/lcl-booking";
@@ -17,12 +17,13 @@ export class HomePage {
   advertisementHome:any;
   errorMessage:string;
   @ViewChild(Nav) nav:Nav;
-  constructor(public navCtrl: NavController,
-              public navParams: NavParams,
-              public mdlCtrl: ModalController,
+  constructor(public platform: Platform,
               public userData: UserData,
-              public viewCtrl:ViewController,
-              public platform: Platform,
+              public navParams: NavParams,
+              public navCtrl: NavController,
+              public mdlCtrl: ModalController,
+              public viewCtrl: ViewController,
+              public menuCtrl: MenuController,
               public advertisementProvider:AdvertisementProvider) {
   }
 
@@ -31,6 +32,8 @@ export class HomePage {
     this.advertisementProvider.getHomeAdvertisement().subscribe(
         (res)=> this.advertisementHome = res
         ,(error)=> this.errorMessage = <any>error);
+    this.menuCtrl.swipeEnable(false,'loggedOutMenu');
+    this.menuCtrl.swipeEnable(false,'loggedInMenu');
   }
 
   convertImg(img:string,type:string){

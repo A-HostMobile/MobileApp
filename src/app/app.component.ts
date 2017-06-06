@@ -57,17 +57,17 @@ export class TemplateApp {
   ];
 
   constructor(
+    public app: App,
     public events: Events,
+    public network: Network,
     public userData: UserData,
-    public menu: MenuController,
     public platform: Platform,
+    public menu: MenuController,
+    public mdlCtrl: ModalController,
     public confData: ConferenceData,
     public splashScreen: SplashScreen,
     public toastCtrl: ToastController,
-    public mdlCtrl: ModalController,
-    public network: Network,
-    public app: App
-  ) {
+    public menuCtrl: MenuController) {
 
     confData.load();
 
@@ -95,6 +95,12 @@ export class TemplateApp {
     if(this.bpress==2){
       this.platform.exitApp();
     }
+  }
+
+
+  ionViewDidEnter(){
+    this.menuCtrl.swipeEnable(false,'loggedOutMenu');
+    this.menuCtrl.swipeEnable(false,'loggedInMenu');
   }
 
   backButton() {
