@@ -1,18 +1,26 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Response } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
 
-/*
-  Generated class for the ContinentServiceProvider provider.
+import { CountryModel } from '../../models/countries';
+import { SettingAPI } from '../AppSettings';
 
-  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
-  for more info on providers and Angular 2 DI.
-*/
 @Injectable()
 export class ContinentServiceProvider {
 
-  constructor(public http: Http) {
-    console.log('Hello ContinentServiceProvider Provider');
+  constructor(public http: Http) {}
+
+  getContinent():Observable<CountryModel[]>{
+    return this.http.get(SettingAPI.API+'getContinent.php')
+    .map((res:Response)=><CountryModel[]>res.json().responseData)
+    .catch(this.handleError);
+  }
+
+  private handleError(error:any){
+    return Observable.throw(error.json().errorMessage||'Error from server!');
   }
 
 }
