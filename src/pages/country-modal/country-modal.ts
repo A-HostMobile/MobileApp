@@ -2,45 +2,43 @@ import { Component } from '@angular/core';
 import {App, NavController, NavParams, ViewController} from 'ionic-angular';
 import {ScheduleResultPage} from "../schedule-result/schedule-result";
 
+import { ContinentServiceProvider } from '../../providers/continent-service/continent-service';
+import { CountryModel } from '../../models/countries';
+import { Subscription } from 'rxjs/Subscription';
+
 @Component({
   selector: 'page-country-modal',
   templateUrl: 'country-modal.html',
 })
 export class CountryModalPage {
+
   Region: String;
+  Country: Array<CountryModel>;
+  sub: Subscription;
+
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public viewCtrl:ViewController,
-              public app: App) {
+              public app: App,
+              private conService: ContinentServiceProvider
+            ) {
+
+        this.Region = this.navParams.get('region');
+        this.Country = this.navParams.get('city');
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CountryModalPage');
-    this.Region = this.navParams.get('region');
+    console.log(this.Country);
+    console.log(this.Region);
   }
 
-
-closemodal() {
-  this.viewCtrl.dismiss();
+  closemodal() {
+    this.viewCtrl.dismiss();
   }
 
  toSearchResult(){
    this.viewCtrl.dismiss();
    this.app.getRootNav().push(ScheduleResultPage);
  }
-
-
-items = [
-    'Country 1',
-    'Country 2',
-    'Country 3',
-    'Country 4',
-    'Country 5',
-    'Country 6',
-    'Country 7',
-    'Country 8',
-    'Country 9',
-    'Country 0'
-  ];
 
 }

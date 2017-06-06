@@ -21,14 +21,15 @@ export class ScheduleSearchPage {
 
   ionViewWillEnter(){
     this.getContinent();
+    console.log(this.sub);
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ScheduleSearchPage');
   }
 
-  toCountry(region: String) {
-    let countryModal = this.mdlCtrl.create(CountryModalPage,{region});
+  toCountry(region: any,city: any) {
+    let countryModal = this.mdlCtrl.create(CountryModalPage,{region, city});
     countryModal.present();
   }
 

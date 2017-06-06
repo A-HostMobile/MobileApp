@@ -13,9 +13,9 @@
 <ion-content padding>
 
   <ion-list>
-    <button (click)="toSearchResult();" ion-item *ngFor="let item of items" >
-      {{ item }}
+    <button (click)="toSearchResult();" ion-item *ngFor="let item of Country" >
+      {{ item.country_name }}
     </button>
-</ion-list>
+  </ion-list>
 
 </ion-content>

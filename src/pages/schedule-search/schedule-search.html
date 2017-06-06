@@ -13,7 +13,7 @@
 
   <div class="row unlimited-items">
 
-    <div *ngFor="let con of continent" (click)="toCountry(con.continent)" class="continent-grid">
+    <div *ngFor="let con of continent" (click)="toCountry(con.continent, con.city)" class="continent-grid">
       <img src="assets/img/continent/{{con.continent}}.png"/>
       <p class="text-center">{{con.continent}}</p>
     </div>
