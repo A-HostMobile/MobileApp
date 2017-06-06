@@ -17,9 +17,7 @@ export class CountryModalPage {
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public viewCtrl:ViewController,
-              public app: App,
-              private conService: ContinentServiceProvider
-            ) {
+              public app: App) {
 
         this.Region = this.navParams.get('region');
         this.Country = this.navParams.get('city');
@@ -34,9 +32,9 @@ export class CountryModalPage {
     this.viewCtrl.dismiss();
   }
 
- toSearchResult(){
+ toSearchResult(country: String){
    this.viewCtrl.dismiss();
-   this.app.getRootNav().push(ScheduleResultPage);
+   this.app.getRootNav().push(ScheduleResultPage,country);
  }
 
 }

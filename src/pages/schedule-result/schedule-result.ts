@@ -10,8 +10,11 @@ import {LclBookingPage} from "../lcl-booking/lcl-booking";
 })
 export class ScheduleResultPage {
 
+  cname: string;
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
+    this.cname = this.navParams.data;
   }
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ScheduleResultPage');

@@ -13,7 +13,7 @@
 <ion-content padding>
 
   <ion-list>
-    <button (click)="toSearchResult();" ion-item *ngFor="let item of Country" >
+    <button  ion-item *ngFor="let item of Country" (click)="toSearchResult(item.country_name)">
       {{ item.country_name }}
     </button>
   </ion-list>

@@ -7,8 +7,10 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/3.3/taskArtifacts/taskArtifacts.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/3.3/taskArtifacts/taskArtifacts.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.component.ts" afterPath="$PROJECT_DIR$/src/app/app.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/home/home.ts" afterPath="$PROJECT_DIR$/src/pages/home/home.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/country-modal/country-modal.html" afterPath="$PROJECT_DIR$/src/pages/country-modal/country-modal.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/country-modal/country-modal.ts" afterPath="$PROJECT_DIR$/src/pages/country-modal/country-modal.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/schedule-result/schedule-result.html" afterPath="$PROJECT_DIR$/src/pages/schedule-result/schedule-result.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/schedule-result/schedule-result.ts" afterPath="$PROJECT_DIR$/src/pages/schedule-result/schedule-result.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,11 +25,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="contact-map-modal.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/contact-map-modal/contact-map-modal.scss">
+      <file leaf-file-name="country-modal.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/country-modal/country-modal.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="255">
+              <caret line="15" column="93" lean-forward="false" selection-start-line="15" selection-start-column="93" selection-end-line="15" selection-end-column="93" />
               <folding />
             </state>
           </provider>
@@ -36,24 +38,29 @@
       <file leaf-file-name="country-modal.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/country-modal/country-modal.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+            <state relative-caret-position="595">
+              <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="schedule-search.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/schedule-search/schedule-search.ts">
+      <file leaf-file-name="schedule-result.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pages/schedule-result/schedule-result.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-              <folding>
-                <element signature="n#!!block;n#ionViewWillEnter#0;n#ScheduleSearchPage#0" expanded="false" />
-                <element signature="n#!!block;n#ionViewDidLoad#0;n#ScheduleSearchPage#0" expanded="false" />
-                <element signature="n#!!block;n#toCountry#0;n#ScheduleSearchPage#0" expanded="false" />
-                <element signature="n#!!block;n#getContinent#0;n#ScheduleSearchPage#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="425">
+              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="schedule-result.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/schedule-result/schedule-result.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="663">
+              <caret line="39" column="41" lean-forward="false" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -68,20 +75,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.component.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="653">
-              <caret line="173" column="9" lean-forward="false" selection-start-line="173" selection-start-column="9" selection-end-line="173" selection-end-column="9" />
+            <state relative-caret-position="619">
+              <caret line="145" column="0" lean-forward="false" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
               <folding>
                 <element signature="e#0#53#0" expanded="true" />
+                <element signature="e#1396#2165#0" expanded="false" />
+                <element signature="e#2202#2394#0" expanded="false" />
+                <element signature="e#2432#2521#0" expanded="false" />
+                <element signature="e#2942#2994#0" expanded="false" />
                 <element signature="n#!!block;n#exit#0;n#TemplateApp#0" expanded="false" />
+                <element signature="n#!!block;n#backButton#0;n#TemplateApp#0" expanded="false" />
                 <element signature="n#!!block;n#platformReady#0;n#TemplateApp#0" expanded="false" />
                 <element signature="n#!!block;n#listenToEvents#0;n#TemplateApp#0" expanded="false" />
                 <element signature="e#4348#4385#0" expanded="false" />
                 <element signature="e#4432#4464#0" expanded="false" />
                 <element signature="e#4505#4531#0" expanded="false" />
                 <element signature="n#!!block;n#checkConnection#0;n#TemplateApp#0" expanded="false" />
+                <element signature="n#!!block;n#openPage#0;n#TemplateApp#0" expanded="false" />
                 <element signature="n#!!block;n#enableMenu#0;n#TemplateApp#0" expanded="false" />
                 <element signature="n#!!block;n#isActive#0;n#TemplateApp#0" expanded="false" />
               </folding>
@@ -120,18 +133,6 @@
             <state relative-caret-position="17">
               <caret line="1" column="34" lean-forward="false" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="completed.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/completed/completed.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="16" column="3" lean-forward="false" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
-              <folding>
-                <element signature="e#0#42#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -191,12 +192,10 @@
         <option value="$PROJECT_DIR$/src/pages/home/home.html" />
         <option value="$PROJECT_DIR$/src/providers/Internet.ts" />
         <option value="$PROJECT_DIR$/src/pages/contact/contact.html" />
-        <option value="$PROJECT_DIR$/src/pages/schedule-result/schedule-result.html" />
         <option value="$PROJECT_DIR$/src/pages/no-internet-modal/no-internet-modal.scss" />
         <option value="$PROJECT_DIR$/src/pages/no-internet-modal/no-internet-modal.html" />
         <option value="$PROJECT_DIR$/src/pages/schedule-search/schedule-search.html" />
         <option value="$PROJECT_DIR$/src/pages/schedule-search/schedule-search.ts" />
-        <option value="$PROJECT_DIR$/src/pages/country-modal/country-modal.html" />
         <option value="$PROJECT_DIR$/src/pages/agent-network/agent-network.html" />
         <option value="$PROJECT_DIR$/src/pages/agent-network/agent-network.ts" />
         <option value="$PROJECT_DIR$/src/pages/courier-booking2/courier-booking2.ts" />
@@ -206,11 +205,9 @@
         <option value="$PROJECT_DIR$/src/pages/contact-map-modal/contact-map-modal.ts" />
         <option value="$PROJECT_DIR$/src/providers/ModalCreator.ts" />
         <option value="$PROJECT_DIR$/src/app/app.module.ts" />
-        <option value="$PROJECT_DIR$/src/pages/schedule-result/schedule-result.ts" />
         <option value="$PROJECT_DIR$/src/pages/lcl-booking/lcl-booking.ts" />
         <option value="$PROJECT_DIR$/src/pages/login-modal/login-modal.ts" />
         <option value="$PROJECT_DIR$/src/pages/courier-booking/courier-booking.ts" />
-        <option value="$PROJECT_DIR$/src/pages/country-modal/country-modal.ts" />
         <option value="$PROJECT_DIR$/src/pages/no-internet-modal/no-internet-modal.ts" />
         <option value="$PROJECT_DIR$/src/pages/lcl-summary/lcl-summary.html" />
         <option value="$PROJECT_DIR$/src/pages/history/history.html" />
@@ -231,6 +228,10 @@
         <option value="$PROJECT_DIR$/src/app/app.template.html" />
         <option value="$PROJECT_DIR$/src/pages/home/home.ts" />
         <option value="$PROJECT_DIR$/src/app/app.component.ts" />
+        <option value="$PROJECT_DIR$/src/pages/schedule-result/schedule-result.html" />
+        <option value="$PROJECT_DIR$/src/pages/country-modal/country-modal.html" />
+        <option value="$PROJECT_DIR$/src/pages/country-modal/country-modal.ts" />
+        <option value="$PROJECT_DIR$/src/pages/schedule-result/schedule-result.ts" />
       </list>
     </option>
   </component>
@@ -1092,12 +1093,12 @@
       <workItem from="1496636902793" duration="130000" />
       <workItem from="1496638131731" duration="18946000" />
       <workItem from="1496718336702" duration="4676000" />
-      <workItem from="1496724480676" duration="1574000" />
+      <workItem from="1496724480676" duration="4337000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="158104000" />
+    <option name="totallyTimeSpent" value="160867000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1157,13 +1158,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/schedule-result/schedule-result.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="671">
-          <caret line="46" column="18" lean-forward="true" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/home/home.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -1204,6 +1198,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="884">
           <caret line="52" column="17" lean-forward="false" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#58#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1271,13 +1268,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/schedule-result/schedule-result.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="3" lean-forward="true" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/register-modal/register-modal.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1307,6 +1297,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1437,36 +1428,20 @@
         <state relative-caret-position="238">
           <caret line="16" column="3" lean-forward="false" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
           <folding>
-            <element signature="e#0#42#0" expanded="true" />
+            <element signature="e#0#42#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/country-modal/country-modal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/schedule-search/schedule-search.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding>
-            <element signature="n#!!block;n#ionViewWillEnter#0;n#ScheduleSearchPage#0" expanded="false" />
-            <element signature="n#!!block;n#ionViewDidLoad#0;n#ScheduleSearchPage#0" expanded="false" />
             <element signature="n#!!block;n#toCountry#0;n#ScheduleSearchPage#0" expanded="false" />
-            <element signature="n#!!block;n#getContinent#0;n#ScheduleSearchPage#0" expanded="false" />
+            <marker date="1496730109449" expanded="false" signature="771:800" ph="{...}" />
+            <marker date="1496730109449" expanded="false" signature="1081:1244" ph="{...}" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/schedule-search/schedule-search.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="35" lean-forward="false" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1499,6 +1474,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="619">
+          <caret line="145" column="0" lean-forward="false" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
+            <element signature="e#1396#2165#0" expanded="false" />
+            <element signature="e#2202#2394#0" expanded="false" />
+            <element signature="e#2432#2521#0" expanded="false" />
+            <element signature="e#2942#2994#0" expanded="false" />
+            <element signature="n#!!block;n#exit#0;n#TemplateApp#0" expanded="false" />
+            <element signature="n#!!block;n#backButton#0;n#TemplateApp#0" expanded="false" />
+            <element signature="n#!!block;n#platformReady#0;n#TemplateApp#0" expanded="false" />
+            <element signature="n#!!block;n#listenToEvents#0;n#TemplateApp#0" expanded="false" />
+            <element signature="e#4348#4385#0" expanded="false" />
+            <element signature="e#4432#4464#0" expanded="false" />
+            <element signature="e#4505#4531#0" expanded="false" />
+            <element signature="n#!!block;n#checkConnection#0;n#TemplateApp#0" expanded="false" />
+            <element signature="n#!!block;n#openPage#0;n#TemplateApp#0" expanded="false" />
+            <element signature="n#!!block;n#enableMenu#0;n#TemplateApp#0" expanded="false" />
+            <element signature="n#!!block;n#isActive#0;n#TemplateApp#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/contact-map-modal/contact-map-modal.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1507,30 +1507,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/country-modal/country-modal.ts">
+    <entry file="file://$PROJECT_DIR$/src/pages/schedule-search/schedule-search.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        <state relative-caret-position="255">
+          <caret line="15" column="35" lean-forward="false" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
+    <entry file="file://$PROJECT_DIR$/src/pages/country-modal/country-modal.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="653">
-          <caret line="173" column="9" lean-forward="false" selection-start-line="173" selection-start-column="9" selection-end-line="173" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#53#0" expanded="true" />
-            <element signature="n#!!block;n#exit#0;n#TemplateApp#0" expanded="false" />
-            <element signature="n#!!block;n#platformReady#0;n#TemplateApp#0" expanded="false" />
-            <element signature="n#!!block;n#listenToEvents#0;n#TemplateApp#0" expanded="false" />
-            <element signature="e#4348#4385#0" expanded="false" />
-            <element signature="e#4432#4464#0" expanded="false" />
-            <element signature="e#4505#4531#0" expanded="false" />
-            <element signature="n#!!block;n#checkConnection#0;n#TemplateApp#0" expanded="false" />
-            <element signature="n#!!block;n#enableMenu#0;n#TemplateApp#0" expanded="false" />
-            <element signature="n#!!block;n#isActive#0;n#TemplateApp#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="255">
+          <caret line="15" column="93" lean-forward="false" selection-start-line="15" selection-start-column="93" selection-end-line="15" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/country-modal/country-modal.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/schedule-result/schedule-result.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" column="41" lean-forward="false" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/schedule-result/schedule-result.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
