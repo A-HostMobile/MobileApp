@@ -66,8 +66,7 @@ export class TemplateApp {
     public mdlCtrl: ModalController,
     public confData: ConferenceData,
     public splashScreen: SplashScreen,
-    public toastCtrl: ToastController,
-    public menuCtrl: MenuController) {
+    public toastCtrl: ToastController) {
 
     confData.load();
 
@@ -97,21 +96,20 @@ export class TemplateApp {
     }
   }
 
-
-  ionViewDidEnter(){
-    this.menuCtrl.swipeEnable(false,'loggedOutMenu');
-    this.menuCtrl.swipeEnable(false,'loggedInMenu');
-  }
-
   backButton() {
     this.platform.ready().then(() => {
       this.platform.registerBackButtonAction(() => {
         let nav = this.app.getActiveNav();
         let activeView = nav.getActive();
+        let cp = nav.getActive().component;
 
         if (activeView != null){
           if(nav.canGoBack()) {
-            nav.pop();
+            if(cp==NewsPage||cp==AgentNetworkPage||cp==HelpPage||cp==ProfilePage||cp==ContactPage||cp==ScheduleSearchPage){
+              nav.popToRoot();
+            }else{
+              nav.pop();
+            }
           } else if(activeView.instance instanceof HomePage){
             this.exit();
           } else {
@@ -167,14 +165,15 @@ export class TemplateApp {
       this.nav.popToRoot();
     }
     else if (page.component == LclBookingPage||page.component == CourierBookingPage){
+      this.nav.popToRoot({animate:false});
       this.nav.push(page.component);
     }
     else if(page.component == LoginPage){
       modal.present();
     }
     else{
-      this.nav.push(page.component).catch((err: any)=>{
-        console.log('push error');
+      this.nav.push(page.component).then(()=>{
+        this.nav.pop;
       });
     }
     if (page.logsOut === true) {
