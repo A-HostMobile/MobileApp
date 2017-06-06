@@ -9,6 +9,25 @@
 
 </ion-header>
 
-<ion-content class="no-scroll">
+<ion-content class="no-scroll" padding>
+
+  <ion-list no-lines>
+
+    <button (click)="toLclHelp();" ion-item  no-padding>
+      <ion-icon color="primary" name="help" item-left></ion-icon>
+        How to do LCL Booking
+    </button>
+
+    <button (click)="toCourierHelp();"  ion-item no-padding>
+      <ion-icon color="primary" name="help" item-left></ion-icon>
+        How to do Courier Booking
+    </button>
+
+    <button (click)="toHistoryHelp();" ion-item no-padding>
+      <ion-icon color="primary" name="help" item-left></ion-icon>
+        How to see History Detail
+    </button>
+
+  </ion-list>
 
 </ion-content>
