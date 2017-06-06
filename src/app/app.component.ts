@@ -45,7 +45,7 @@ export class TemplateApp {
     { title: 'Courier', name: 'CourierBookingPage', component: CourierBookingPage, icon: 'ios-cube' },
     { title: 'News & Promotion', name: 'NewsPage', component: NewsPage, icon: 'md-star' },
     { title: 'Agent Network', name: 'AgentNetworkPage', component: AgentNetworkPage, icon: 'md-globe' },
-    { title: 'Contact US', name: 'ContactPage', component: ContactPage, icon: 'ios-contact' },
+    { title: 'Contact Us', name: 'ContactPage', component: ContactPage, icon: 'ios-contact' },
     { title: 'Help', name: 'HelpPage', component: HelpPage, icon: 'md-help-circle' }
   ];
   loggedInPages: PageInterface[] = [
