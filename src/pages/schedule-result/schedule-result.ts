@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {IonicPage, NavController, NavParams, ViewController} from 'ionic-angular';
-import {LclBookingPage} from "../lcl-booking/lcl-booking";
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { LclBookingPage } from "../lcl-booking/lcl-booking";
 
 
 @IonicPage()
@@ -11,6 +11,7 @@ import {LclBookingPage} from "../lcl-booking/lcl-booking";
 export class ScheduleResultPage {
 
   cname: string;
+  
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
     this.cname = this.navParams.data;
   }

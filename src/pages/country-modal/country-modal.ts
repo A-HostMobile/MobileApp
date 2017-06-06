@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import {App, NavController, NavParams, ViewController} from 'ionic-angular';
 import {ScheduleResultPage} from "../schedule-result/schedule-result";
 
-import { ContinentServiceProvider } from '../../providers/continent-service/continent-service';
 import { CountryModel } from '../../models/countries';
 
 @Component({
