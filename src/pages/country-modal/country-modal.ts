@@ -4,7 +4,6 @@ import {ScheduleResultPage} from "../schedule-result/schedule-result";
 
 import { ContinentServiceProvider } from '../../providers/continent-service/continent-service';
 import { CountryModel } from '../../models/countries';
-import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'page-country-modal',
@@ -14,7 +13,6 @@ export class CountryModalPage {
 
   Region: String;
   Country: Array<CountryModel>;
-  sub: Subscription;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
