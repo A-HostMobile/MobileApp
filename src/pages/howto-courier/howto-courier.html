@@ -22,14 +22,14 @@
     1.Press &nbsp; <span class="hilight">COURIER BOOKING</span> &nbsp; button.
   </ion-row>
 
-  <img class="width-100  margin-top-2 margin-bottom-5" src="assets/img/howto/ios/howtoCourier/ios_courier_01.jpg" />
-
+  <img *ngIf="isIos" class="width-100  margin-top-2 margin-bottom-5" src="assets/img/howto/ios/howtoCourier/ios_courier_01.jpg" />
+  <img *ngIf="!isIos" class="width-100  margin-top-2 margin-bottom-5" src="assets/img/howto/android/howtoCourier/and_courier_01.jpg" />
    <ion-row>
     2.Select &nbsp; <span class="hilight">Pickup Address</span>.
     </ion-row>
   
-   <img class="width-100 margin-top-2 margin-bottom-5" src="assets/img/howto/ios/howtoCourier/ios_courier_02.jpg" />
-
+   <img *ngIf="isIos" class="width-100 margin-top-2 margin-bottom-5" src="assets/img/howto/ios/howtoCourier/ios_courier_02.jpg" />
+  <img *ngIf="!isIos" class="width-100  margin-top-2 margin-bottom-5" src="assets/img/howto/android/howtoCourier/and_courier_02.jpg" />
   <ion-row>
    3.Press &nbsp;<span class="hilight">Select</span> &nbsp; button for set pickup address.
   </ion-row>
@@ -38,37 +38,43 @@
    ( Press &nbsp;<span class="hilight">+</span> &nbsp; button for add new . )
   </ion-row>
 
-   <img class="width-100 margin-top-2 margin-bottom-5" src="assets/img/howto/ios/howtoCourier/ios_courier_03.jpg" />
+   <img *ngIf="isIos" class="width-100 margin-top-2 margin-bottom-5" src="assets/img/howto/ios/howtoCourier/ios_courier_03.jpg" />
+  <img *ngIf="!isIos" class="width-100  margin-top-2 margin-bottom-5" src="assets/img/howto/android/howtoCourier/and_courier_03.jpg" />
 
   <ion-row>
   4. Input courier detail. 
   </ion-row>
 
-    <img class="width-100 margin-top-2 margin-bottom-5" src="assets/img/howto/ios/howtoCourier/ios_courier_04.jpg" />
+    <img *ngIf="isIos" class="width-100 margin-top-2 margin-bottom-5" src="assets/img/howto/ios/howtoCourier/ios_courier_04.jpg" />
+    <img *ngIf="!isIos" class="width-100  margin-top-2 margin-bottom-5" src="assets/img/howto/android/howtoCourier/and_courier_04.jpg" />
 
    <ion-row>
   5.Press &nbsp; <span class="hilight"> Add </span> &nbsp; for add packing list.
     </ion-row>
   
-   <img class="width-100 margin-top-2 margin-bottom-5" src="assets/img/howto/ios/howtoCourier/ios_courier_05.jpg" />
+   <img *ngIf="isIos" class="width-100 margin-top-2 margin-bottom-5" src="assets/img/howto/ios/howtoCourier/ios_courier_05.jpg" />
+   <img *ngIf="!isIos" class="width-100  margin-top-2 margin-bottom-5" src="assets/img/howto/android/howtoCourier/and_courier_05.jpg" />
 
    <ion-row>
   6.Select &nbsp; <span class="hilight"> Commodity </span> &nbsp; and input field.
     </ion-row>
   
-   <img class="width-100 margin-top-2 margin-bottom-5" src="assets/img/howto/ios/howtoCourier/ios_courier_06.jpg" />
+   <img *ngIf="isIos" class="width-100 margin-top-2 margin-bottom-5" src="assets/img/howto/ios/howtoCourier/ios_courier_06.jpg" />
+   <img *ngIf="!isIos" class="width-100  margin-top-2 margin-bottom-5" src="assets/img/howto/android/howtoCourier/and_courier_06.jpg" />
 
   <ion-row>
   7.Check your packing list and press &nbsp; <span class="hilight"> Next </span>.
   </ion-row>
   
-   <img class="width-100 margin-top-2 margin-bottom-5" src="assets/img/howto/ios/howtoCourier/ios_courier_07.jpg" />
+   <img *ngIf="isIos" class="width-100 margin-top-2 margin-bottom-5" src="assets/img/howto/ios/howtoCourier/ios_courier_07.jpg" />
+   <img *ngIf="!isIos" class="width-100  margin-top-2 margin-bottom-5" src="assets/img/howto/android/howtoCourier/and_courier_07.jpg" />
 
   <ion-row>
   8.Check your booking summary and press &nbsp; <span class="hilight"> Confirm </span>.
     </ion-row>
   
-   <img class="width-100 margin-top-2 margin-bottom-5" src="assets/img/howto/ios/howtoCourier/ios_courier_08.jpg" />
+   <img *ngIf="isIos" class="width-100 margin-top-2 margin-bottom-5" src="assets/img/howto/ios/howtoCourier/ios_courier_08.jpg" />
+   <img *ngIf="!isIos" class="width-100  margin-top-2 margin-bottom-5" src="assets/img/howto/android/howtoCourier/and_courier_08.jpg" />
 
   <ion-row>
   9. Booking completed. 
@@ -82,6 +88,7 @@
     - Press &nbsp; <span class="hilight">Booking History</span>&nbsp; button to see  booking detail.
   </ion-row>
 
-    <img class="width-100 margin-top-2 margin-bottom-5" src="assets/img/howto/ios/howtoCourier/ios_courier_09.jpg" />
+    <img *ngIf="isIos" class="width-100 margin-top-2 margin-bottom-5" src="assets/img/howto/ios/howtoCourier/ios_courier_09.jpg" />
+    <img *ngIf="!isIos" class="width-100  margin-top-2 margin-bottom-5" src="assets/img/howto/android/howtoCourier/and_courier_09.jpg" />
 
 </ion-content>

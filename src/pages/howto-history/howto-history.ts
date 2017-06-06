@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,Platform } from 'ionic-angular';
 
 /**
  * Generated class for the HowtoHistoryPage page.
@@ -14,11 +14,23 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class HowtoHistoryPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public plt: Platform) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HowtoHistoryPage');
+    this.checkPlatform();
   }
+
+isIos: boolean;
+checkPlatform(){
+if (this.plt.is('ios')) {
+      this.isIos = true;
+    }
+      else {
+         this.isIos = false;
+      }
+      console.log("Platform is IOS: "+this.isIos);
+}
 
 }

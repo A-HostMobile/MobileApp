@@ -21,24 +21,27 @@
     1.Press &nbsp; <span class="hilight">Menu</span> &nbsp; button on top left.
   </ion-row>
 
-    <img class="width-100 margin-top-2 margin-bottom-5" src="assets/img/howto/ios/howtoHistory/ios_his_01.jpg" />
+    <img *ngIf="isIos" class="width-100 margin-top-2 margin-bottom-5" src="assets/img/howto/ios/howtoHistory/ios_his_01.jpg" />
+    <img *ngIf="!isIos" class="width-100 margin-top-2 margin-bottom-5" src="assets/img/howto/android/howtoHistory/and_his_01.jpg" />
 
    <ion-row>
     2.Select &nbsp; <span class="hilight">Profile</span>.
   </ion-row>
   
-  <img class="width-100 margin-top-2 margin-bottom-5" src="assets/img/howto/ios/howtoHistory/ios_his_02.jpg" />
+  <img *ngIf="isIos" class="width-100 margin-top-2 margin-bottom-5" src="assets/img/howto/ios/howtoHistory/ios_his_02.jpg" />
+  <img *ngIf="!isIos" class="width-100 margin-top-2 margin-bottom-5" src="assets/img/howto/android/howtoHistory/and_his_02.jpg" />
 
   <ion-row>
    3.Press &nbsp;<span class="hilight">Booking History</span> &nbsp; button.
   </ion-row>
 
-  <img class="width-100 margin-top-2 margin-bottom-5" src="assets/img/howto/ios/howtoHistory/ios_his_03.jpg" />
+  <img *ngIf="isIos" class="width-100 margin-top-2 margin-bottom-5" src="assets/img/howto/ios/howtoHistory/ios_his_03.jpg" />
+  <img *ngIf="!isIos" class="width-100 margin-top-2 margin-bottom-5" src="assets/img/howto/android/howtoHistory/and_his_03.jpg" />
 
   <ion-row>
    4.Press &nbsp;<span class="hilight">see detail</span>.
   </ion-row>
 
-   <img class="width-100 margin-top-2 margin-bottom-5" src="assets/img/howto/ios/howtoHistory/ios_his_04.jpg" />
-
+   <img *ngIf="isIos" class="width-100 margin-top-2 margin-bottom-5" src="assets/img/howto/ios/howtoHistory/ios_his_04.jpg" />
+   <img *ngIf="!isIos" class="width-100 margin-top-2 margin-bottom-5" src="assets/img/howto/android/howtoHistory/and_his_04.jpg" />
 </ion-content>
