@@ -18,14 +18,14 @@ export class ProfilePage {
   }
 
 toHistory(){
-  this.navCtrl.push(HistoryPage);
+  this.navCtrl.push(HistoryPage,ProfilePage);
 }
 
 openPickupModal(){
 
     let openPickup = this.mdlCtrl.create(PickupAddressPage);
     openPickup.present();
-  
+
   }
 
 }

@@ -17,6 +17,8 @@ import {AgentNetworkPage} from "../pages/agent-network/agent-network";
 import {CourierBookingPage} from "../pages/courier-booking/courier-booking";
 import {ScheduleSearchPage} from "../pages/schedule-search/schedule-search";
 import {NoInternetModalPage} from "../pages/no-internet-modal/no-internet-modal";
+import {HistoryPage} from "../pages/history/history";
+import {CompletedPage} from "../pages/completed/completed";
 
 
 export interface PageInterface {
@@ -107,7 +109,9 @@ export class TemplateApp {
           if(nav.canGoBack()) {
             if(cp==NewsPage||cp==AgentNetworkPage||cp==HelpPage||cp==ProfilePage||cp==ContactPage||cp==ScheduleSearchPage){
               nav.popToRoot();
-            }else{
+            }else if (cp==CompletedPage) {
+
+            }else {
               nav.pop();
             }
           } else if(activeView.instance instanceof HomePage){
