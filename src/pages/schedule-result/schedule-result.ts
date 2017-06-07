@@ -42,12 +42,4 @@ export class ScheduleResultPage {
       );
   }
 
-  // private setCountriesName(c_name:string){
-  //   this.cname = c_name;
-  // }
-
-  // public getCountriesName(){
-  //   return this.cname;
-  // }
-
 }

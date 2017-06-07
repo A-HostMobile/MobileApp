@@ -7,9 +7,6 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 import { ScheduleModel } from '../../models/schedule';
 
-import { ScheduleResultPage } from '../../pages/schedule-result/schedule-result';
-//import { NavParams } from 'ionic-angular';
-
 @Injectable()
 export class ScheduleServiceProvider {
 
@@ -27,11 +24,6 @@ export class ScheduleServiceProvider {
     .map((res:Response)=><ScheduleModel[]>res.json().responseData)
     .catch(this.handleError);
   }
-  // getSchedules(){
-  //     return this.http.get(SettingAPI.UrlAPI+'schedule/JAKARTA')
-  //                     .map((res:Response)=>res.json().responseData)
-  //                     .catch(this.handleError);
-  // }
 
   private handleError(error:any){
     return Observable.throw(error.json().errorMessage||'Error from server!');
