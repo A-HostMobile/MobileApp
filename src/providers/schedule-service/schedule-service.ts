@@ -10,17 +10,10 @@ import { ScheduleModel } from '../../models/schedule';
 @Injectable()
 export class ScheduleServiceProvider {
 
-  countries: string;
+  constructor(public http: Http) {}
 
-  constructor(public http: Http) {
-
-      // this.countries = scheduleResultPage.getCountriesName();
-      // console.log(this.countries);, public scheduleResult:ScheduleResultPage
-
-  }
-
-  getSchedules():Observable<ScheduleModel[]>{
-    return this.http.get(SettingAPI.UrlAPI+'schedule/JAKARTA')
+  getSchedules(countries_name:string):Observable<ScheduleModel[]>{
+    return this.http.get(SettingAPI.UrlAPI+'schedule/'+countries_name)
     .map((res:Response)=><ScheduleModel[]>res.json().responseData)
     .catch(this.handleError);
   }

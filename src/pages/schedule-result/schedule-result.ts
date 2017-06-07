@@ -36,7 +36,7 @@ export class ScheduleResultPage {
   }
 
   private getSchedule(){
-      this.sub = this.scheduleService.getSchedules().subscribe(
+      this.sub = this.scheduleService.getSchedules(this.cname).subscribe(
         (res) => this.schedule = res,
         (error) => this.errorMessage = <any> error
       );
