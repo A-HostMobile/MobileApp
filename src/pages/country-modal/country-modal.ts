@@ -31,9 +31,9 @@ export class CountryModalPage {
     this.viewCtrl.dismiss();
   }
 
- toSearchResult(country: String){
+ toSearchResult(countries_name: String){
    this.viewCtrl.dismiss();
-   this.app.getRootNav().push(ScheduleResultPage,country);
+   this.app.getRootNav().push(ScheduleResultPage,countries_name);
  }
 
 }
