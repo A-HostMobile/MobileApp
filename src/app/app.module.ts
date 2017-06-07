@@ -51,6 +51,7 @@ import { UserData } from '../providers/user-data';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import { ContinentServiceProvider } from '../providers/continent-service/continent-service';
 import { ScheduleServiceProvider } from '../providers/schedule-service/schedule-service';
+import {StatusBar} from "@ionic-native/status-bar";
 
 
 
@@ -147,7 +148,8 @@ import { ScheduleServiceProvider } from '../providers/schedule-service/schedule-
     AdvertisementProvider,
     AgentNetworkServiceProvider,
     ContinentServiceProvider,
-    ScheduleServiceProvider
+    ScheduleServiceProvider,
+    StatusBar
   ]
 })
 export class AppModule { }
