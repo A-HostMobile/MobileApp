@@ -44,14 +44,18 @@ import {HowtoLclPage} from "../pages/howto-lcl/howto-lcl";
 
 import { AdvertisementProvider } from '../providers/advertisement/advertisement';
 import { AgentNetworkServiceProvider } from '../providers/agent-network-service/agent-network-service';
+import { ContinentServiceProvider } from '../providers/continent-service/continent-service';
+import { ScheduleServiceProvider } from '../providers/schedule-service/schedule-service';
 
 import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
 
 import { AgmCoreModule } from 'angular2-google-maps/core';
-import { ContinentServiceProvider } from '../providers/continent-service/continent-service';
-import { ScheduleServiceProvider } from '../providers/schedule-service/schedule-service';
+
+import { OrderByPipe } from '../pipes/OrderByPipe';
+
 import {StatusBar} from "@ionic-native/status-bar";
+
 
 
 
@@ -88,7 +92,8 @@ import {StatusBar} from "@ionic-native/status-bar";
     ScheduleResultPage,
     HowtoCourierPage,
     HowtoHistoryPage,
-    HowtoLclPage
+    HowtoLclPage,
+    OrderByPipe
   ],
   imports: [
     BrowserModule,
@@ -136,7 +141,7 @@ import {StatusBar} from "@ionic-native/status-bar";
     ScheduleResultPage,
     HowtoCourierPage,
     HowtoHistoryPage,
-    HowtoLclPage
+    HowtoLclPage,
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },

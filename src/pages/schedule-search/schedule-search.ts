@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {  NavController, NavParams ,ModalController} from 'ionic-angular';
+import { NavController, NavParams ,ModalController } from 'ionic-angular';
 import { CountryModalPage } from "../country-modal/country-modal";
 
 import { CountryModel } from '../../models/countries';
