@@ -51,7 +51,12 @@ import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
 
 import { AgmCoreModule } from 'angular2-google-maps/core';
+
 import { OrderByPipe } from '../pipes/OrderByPipe';
+
+import {StatusBar} from "@ionic-native/status-bar";
+
+
 
 
 @NgModule({
@@ -148,7 +153,8 @@ import { OrderByPipe } from '../pipes/OrderByPipe';
     AdvertisementProvider,
     AgentNetworkServiceProvider,
     ContinentServiceProvider,
-    ScheduleServiceProvider
+    ScheduleServiceProvider,
+    StatusBar
   ]
 })
 export class AppModule { }

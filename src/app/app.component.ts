@@ -19,6 +19,7 @@ import {ScheduleSearchPage} from "../pages/schedule-search/schedule-search";
 import {NoInternetModalPage} from "../pages/no-internet-modal/no-internet-modal";
 import {HistoryPage} from "../pages/history/history";
 import {CompletedPage} from "../pages/completed/completed";
+import {StatusBar} from "@ionic-native/status-bar";
 
 
 export interface PageInterface {
@@ -62,6 +63,7 @@ export class TemplateApp {
     public app: App,
     public events: Events,
     public network: Network,
+    public status: StatusBar,
     public userData: UserData,
     public platform: Platform,
     public menu: MenuController,
@@ -83,6 +85,8 @@ export class TemplateApp {
     this.listenToEvents();
 
     this.backButton();
+
+    this.status.hide();
 
   }
 
