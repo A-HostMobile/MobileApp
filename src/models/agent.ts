@@ -1,7 +1,7 @@
 export class AgentModel{
   constructor(
-    public A_LABEL:string,
-    public A_LATTITUDE:string,
-    public A_LONGTITUDE:string
+    public a_label:string,
+    public a_lattitude:string,
+    public a_longtitude:string
   ){}
 }

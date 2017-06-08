@@ -14,7 +14,7 @@ export class ContinentServiceProvider {
   constructor(public http: Http) {}
 
   getContinent():Observable<CountryModel[]>{
-    return this.http.get(SettingAPI.API+'getContinent.php')
+    return this.http.get(SettingAPI.UrlAPI+'continent')
     .map((res:Response)=><CountryModel[]>res.json().responseData)
     .catch(this.handleError);
   }

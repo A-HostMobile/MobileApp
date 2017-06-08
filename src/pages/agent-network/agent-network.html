@@ -17,10 +17,10 @@
       [streetViewControl]="false">
 
     <sebm-google-map-marker *ngFor="let a of agent"
-          [latitude]="convertStringToNumber(a.A_LATTITUDE)"
-          [longitude]="convertStringToNumber(a.A_LONGTITUDE)">
+          [latitude]="convertStringToNumber(a.a_lattitude)"
+          [longitude]="convertStringToNumber(a.a_longtitude)">
         <sebm-google-map-info-window>
-              <strong>{{a.A_LABEL}}</strong>
+              <strong>{{a.a_label}}</strong>
         </sebm-google-map-info-window>
     </sebm-google-map-marker>
 

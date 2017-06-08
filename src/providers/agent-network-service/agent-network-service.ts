@@ -20,7 +20,7 @@ export class AgentNetworkServiceProvider {
   constructor(public http: Http) {}
 
   getAgent():Observable<AgentModel[]>{
-    return this.http.get(SettingAPI.API+'getAgentList.php')
+    return this.http.get(SettingAPI.UrlAPI+'agent')
     .map((res:Response) => <AgentModel[]> res.json().responseData)
     .catch(this.handleError);
   }

@@ -25,6 +25,12 @@ export class ScheduleResultPage {
 
   ionViewWillEnter(){
     this.getSchedule();
+     console.log(this.sub);
+  }
+
+  ionViewDidEnter(){
+    console.log('test '+this.schedule);
+    console.log(JSON.stringify(this.schedule));
   }
 
   ionViewDidLoad() {

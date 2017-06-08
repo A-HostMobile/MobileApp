@@ -27,6 +27,7 @@ export class AgentNetworkPage {
 
   ionViewWillEnter(){
     this.getAgent();
+    console.log(this.agent);
   }
 
   private getAgent(){
