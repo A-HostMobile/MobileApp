@@ -20,7 +20,7 @@
  <ion-card>
     <ion-slides effect="slide" paginationType="bullet" >
       <ion-slide *ngFor="let advertisement of advertisementHome">
-        <img [src]="convertImg(advertisement.image,advertisement.ba_mime_type)" (click)="clickImg(advertisement.b_item_id)" />
+        <img [src]="advertisement.image" (click)="clickImg(advertisement.b_item_id)" />
       </ion-slide>
     </ion-slides>
   </ion-card>
