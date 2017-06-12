@@ -10,13 +10,29 @@
 </ion-header>
 
 
-<ion-content class="no-scroll">
+<ion-content id="page-contact" class="no-scroll">
 
 	<ion-card>
 
-		<img src="assets/img/google_map.JPG">
+		<sebm-google-map
+      [latitude]="13.771182"
+      [longitude]="100.5408221"
+      [zoom]="15"
+      [disableDefaultUI]="false"
+      [zoomControl]="false"
+      [streetViewControl]="false">
+
+			<sebm-google-map-marker
+						[latitude]="13.771182"
+						[longitude]="100.5408221">
+					<sebm-google-map-info-window>
+								<strong>A-Host</strong>
+					</sebm-google-map-info-window>
+			</sebm-google-map-marker>
+  	</sebm-google-map>
+
 		<ion-fab right top>
-			<button color="danger" ion-fab>
+			<button color="danger" ion-fab onclick="window.open('https://www.google.co.th/maps/place/A-HOST+Company+Limited/@13.771182,100.5408221,15z/data=!4m5!3m4!1s0x0:0x2aa4e08fb8eba30e!8m2!3d13.771182!4d100.5408221', '_system', 'location=yes'); return false;">
 			  <ion-icon  name="pin"></ion-icon>
 			</button>
 		</ion-fab>
