@@ -6,7 +6,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 
 import { CountryModel } from '../../models/countries';
-import { SettingAPI } from '../AppSettings';
+import { AppSettings } from '../AppSettings';
 
 @Injectable()
 export class ContinentServiceProvider {
@@ -14,7 +14,7 @@ export class ContinentServiceProvider {
   constructor(public http: Http) {}
 
   getContinent():Observable<CountryModel[]>{
-    return this.http.get(SettingAPI.UrlAPI+'continent')
+    return this.http.get(AppSettings.API_ENDPOINT+'continent')
     .map((res:Response)=><CountryModel[]>res.json().responseData)
     .catch(this.handleError);
   }

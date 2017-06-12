@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
-import { SettingAPI } from '../AppSettings';
+import { AppSettings } from '../AppSettings';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
@@ -13,7 +13,7 @@ export class ScheduleServiceProvider {
   constructor(public http: Http) {}
 
   getSchedules(countries_name:string):Observable<ScheduleModel[]>{
-    return this.http.get(SettingAPI.UrlAPI+'schedule/'+countries_name)
+    return this.http.get(AppSettings.API_ENDPOINT+'schedule/'+countries_name)
     .map((res:Response)=><ScheduleModel[]>res.json().responseData)
     .catch(this.handleError);
   }
