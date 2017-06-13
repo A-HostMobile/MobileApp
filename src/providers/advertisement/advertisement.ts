@@ -24,6 +24,12 @@ export class AdvertisementProvider {
                       .catch(this.handleError);
   }
 
+  getNewsAdvertisment():Observable<any>{
+      return this.http.get(AppSettings.API_ENDPOINT+'advertisement/news')
+                    .map((res:Response)=><any>res.json().responseData)
+                    .catch(this.handleError);
+  }
+
   private handleError(error:any){
       return Observable.throw(error.json().errorMessage || "Error From Server");
   }

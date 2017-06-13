@@ -23,18 +23,15 @@
 
 
   <div *ngIf="np =='news'">
-  <ion-card>
-    <img src="assets/img/slide_1.jpg" />
+  <ion-card *ngFor="let n of news">
+    <img [src]="n.image" />
     <ion-card-content>
       <ion-card-title>
-        Nine Inch Nails Live
+        {{n.b_topic}}
       </ion-card-title>
 
       <p class="overflow-text">
-        The most popular industrial group ever, and largely
-        The most popular industrial group ever, and largely
-        responsible for bringing the music to a mass audience.
-        responsible for bringing the music to a mass audience.
+        {{n.b_short_desc}}
       </p>
 
       <button (click)="toDetail();" ion-button icon-right small clear class="align-right">
