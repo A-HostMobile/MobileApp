@@ -23,46 +23,46 @@
 
 
   <div *ngIf="np =='news'">
-  <ion-card *ngFor="let n of news">
-    <img [src]="n.image" />
-    <ion-card-content>
-      <ion-card-title>
-        {{n.b_topic}}
-      </ion-card-title>
+    <ion-card *ngFor="let n of news">
+      <img [src]="n.image" />
+      <ion-card-content>
+        <ion-card-title>
+          {{n.b_topic}}
+        </ion-card-title>
 
-      <p class="overflow-text">
-        {{n.b_short_desc}}
-      </p>
+        <p class="overflow-text">
+          {{n.b_short_desc}}
+        </p>
 
-      <button (click)="toDetail();" ion-button icon-right small clear class="align-right">
-          <span >More detail
-            <ion-icon name="arrow-forward"></ion-icon>
-           </span>
-      </button>
-    </ion-card-content>
-  </ion-card>
+        <button (click)="toDetail(n.b_item_id);" ion-button icon-right small clear class="align-right">
+            <span >More detail
+              <ion-icon name="arrow-forward"></ion-icon>
+             </span>
+        </button>
+      </ion-card-content>
+    </ion-card>
   </div>
 
   <div *ngIf="np =='promotion'">
-  <ion-card>
-    <img src="assets/img/slide_1.jpg" />
-    <ion-card-content>
-      <ion-card-title>
-        Promotion last week.
-      </ion-card-title>
-      <p class="overflow-text">
-        The Promotion example.
-      </p>
+    <ion-card *ngFor="let p of promotions">
+      <img [src]="p.image" />
+      <ion-card-content>
+        <ion-card-title>
+          {{p.b_topic}}
+        </ion-card-title>
+        <p class="overflow-text">
+          {{p.b_short_desc}}
+        </p>
 
-      <button (click)="toDetail();" ion-button icon-right small clear class="align-right">
-          <span >More detail
-            <ion-icon name="arrow-forward"></ion-icon>
-           </span>
-      </button>
+        <button (click)="toDetail(p.b_item_id);" ion-button icon-right small clear class="align-right">
+            <span >More detail
+              <ion-icon name="arrow-forward"></ion-icon>
+             </span>
+        </button>
 
-      <!-- <button ion-button>Read More</button> -->
-    </ion-card-content>
-  </ion-card>
+        <!-- <button ion-button>Read More</button> -->
+      </ion-card-content>
+    </ion-card>
   </div>
 
 

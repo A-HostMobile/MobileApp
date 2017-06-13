@@ -9,33 +9,21 @@
 
 <ion-content>
 
-  <ion-card>
+  <ion-card *ngFor="let d of NewsDetail">
     <div>
     <ion-slides effect="slide" autoplay="5000" loop pager paginationType="bullet">
-      <ion-slide>
-        <img src="assets/img/slide_1.jpg" />
-      </ion-slide>
-      <ion-slide>
-        <img src="assets/img/slide_2.jpg" />
-      </ion-slide>
-      <ion-slide>
-        <img src="assets/img/slide_3.jpg" />
+      <ion-slide *ngFor="let de of d.detail">
+        <img [src]="de.img" />
       </ion-slide>
     </ion-slides>
     </div>
 
     <ion-card-content>
-      <ion-card-title>
-        Nine Inch Nails Live
+        <ion-card-title>
+          {{d.master.topic}}
         </ion-card-title>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-           nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-             Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-              mollit anim id est laborum.
+        {{d.master.content}}
       </p>
     </ion-card-content>
   </ion-card>

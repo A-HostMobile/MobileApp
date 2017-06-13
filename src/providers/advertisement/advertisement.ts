@@ -30,6 +30,18 @@ export class AdvertisementProvider {
                     .catch(this.handleError);
   }
 
+  getPromotionAdvertisment():Observable<any>{
+      return this.http.get(AppSettings.API_ENDPOINT+'advertisement/promotions')
+                    .map((res:Response)=><any>res.json().responseData)
+                    .catch(this.handleError);
+  }
+
+  getNewsDetails(item_id:number):Observable<any>{
+    return this.http.get(AppSettings.API_ENDPOINT+'advertisement/detail/'+item_id)
+                  .map((res:Response)=><any>res.json().responseData)
+                  .catch(this.handleError);
+  }
+
   private handleError(error:any){
       return Observable.throw(error.json().errorMessage || "Error From Server");
   }
