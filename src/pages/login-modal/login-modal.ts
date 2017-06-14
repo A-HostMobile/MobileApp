@@ -1,10 +1,10 @@
 import {Component, ViewChild} from '@angular/core';
 import {App, Navbar, NavParams, ViewController} from 'ionic-angular';
-import {UserData} from "../../providers/user-data";
-import {NgForm} from "@angular/forms";
+import {AbstractControl, FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {LclBookingPage} from "../lcl-booking/lcl-booking";
 import {CourierBookingPage} from "../courier-booking/courier-booking";
 import {ScheduleResultPage} from "../schedule-result/schedule-result";
+import {UserData} from "../../providers/user-data";
 
 @Component({
   selector: 'page-login-modal',
@@ -12,21 +12,29 @@ import {ScheduleResultPage} from "../schedule-result/schedule-result";
 })
 export class LoginPage {
   @ViewChild(Navbar) navbar : Navbar;
-  login: {username?: string, password?: string} = {};
   submitted = false;
   page : any;
+  authForm: FormGroup;
+  username: AbstractControl;
+  password: AbstractControl;
 
-  constructor(public userData: UserData,
+  constructor(public app: App,
               public navParam: NavParams,
+              public userData: UserData,
               public viewCtrl: ViewController,
-              public app: App,) {
+              public formBuilder: FormBuilder) {
     this.page = this.navParam.data;
+    this.authForm = formBuilder.group({
+      'username':['',Validators.compose([Validators.required,Validators.pattern('[a-zA-Z]*[0-9]*')])],
+      'password':['',Validators.compose([Validators.minLength(6),Validators.required,Validators.pattern('[a-zA-Z]*[0-9]*')])]
+    });
+    this.username = this.authForm.controls['username'];
+    this.password = this.authForm.controls['password'];
   }
 
-  onLogin(form: NgForm) {
-    this.submitted = true;
-    if (form.valid) {
-      this.userData.login(this.login.username);
+  onLogin(usn:string,pass:string) {
+    if(this.authForm.valid){
+      this.userData.login(usn,pass);
       if(this.page == LclBookingPage||this.page == CourierBookingPage) {
         this.viewCtrl.dismiss();
         this.app.getRootNav().push(this.page);
@@ -34,6 +42,7 @@ export class LoginPage {
       else {
         this.closemodal();
       }
+      console.log()
     }
   }
 
@@ -44,8 +53,8 @@ export class LoginPage {
     }
   }
 
-  username(): String {
-    return this.login.username;
+  message(text: string){
+    return
   }
 
 }

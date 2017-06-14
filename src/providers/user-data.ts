@@ -15,7 +15,7 @@ export class UserData {
     public storage: Storage
   ) {}
 
-  login(username: string): void {
+  login(username: string,password: string): void {
     this.storage.set(this.HAS_LOGGED_IN, true);
     this.setUsername(username);
     this.events.publish('user:login');

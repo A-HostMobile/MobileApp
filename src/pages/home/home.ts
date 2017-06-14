@@ -57,5 +57,4 @@ export class HomePage {
         else { modal.present(); }
     });
   }
-
 }
