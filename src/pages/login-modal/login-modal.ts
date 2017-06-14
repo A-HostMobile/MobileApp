@@ -35,7 +35,7 @@ export class LoginPage {
     this.page = this.navParam.data;
     this.authForm = formBuilder.group({
       'username':['',Validators.compose([Validators.required,Validators.pattern('[a-zA-Z]*[0-9]*')])],
-      'password':['',Validators.compose([Validators.minLength(5),Validators.required,Validators.pattern('[a-zA-Z]*[0-9]*')])]
+      'password':['',Validators.compose([Validators.minLength(6),Validators.required,Validators.pattern('[a-zA-Z]*[0-9]*')])]
     });
     this.username = this.authForm.controls['username'];
     this.password = this.authForm.controls['password'];

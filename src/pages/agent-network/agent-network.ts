@@ -34,7 +34,7 @@ export class AgentNetworkPage {
   private getAgent(){
     let loading = this.loadCtrl.create({
       content: "Please wait...",
-      duration: 3000
+      spinner: 'hide'
     });
     loading.present();
     this.sub = this.agentService.getAgent().subscribe(

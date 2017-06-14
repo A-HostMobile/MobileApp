@@ -37,10 +37,10 @@ export class NewsDetailPage {
   private getDetails(){
     let loading = this.loadCtrl.create({
       content: "Please wait...",
-      duration: 3000
+      spinner: 'hide'
     });
     loading.present();
-    
+
     this.sub = this.advertiseService.getNewsDetails(this.itemId).subscribe(
       (res) => this.NewsDetail = res,
       (error) => {  this.errorMessage = <any> error,

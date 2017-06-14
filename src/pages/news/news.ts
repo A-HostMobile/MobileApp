@@ -43,7 +43,7 @@ export class NewsPage {
   private getNews(){
     let loading = this.loadCtrl.create({
       content: "Please wait...",
-      duration: 3000
+      spinner: 'hide'
     });
     loading.present();
 

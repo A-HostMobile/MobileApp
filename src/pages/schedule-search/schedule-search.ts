@@ -39,7 +39,7 @@ export class ScheduleSearchPage {
   private getContinent(){
     let loading = this.loadCtrl.create({
       content: "Please wait...",
-      duration: 3000
+      spinner: 'hide'
     });
     loading.present();
 
