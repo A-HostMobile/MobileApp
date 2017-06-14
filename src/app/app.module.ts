@@ -55,6 +55,7 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
 import { OrderByPipe } from '../pipes/OrderByPipe';
 
 import {StatusBar} from "@ionic-native/status-bar";
+import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 
 
 
@@ -154,7 +155,8 @@ import {StatusBar} from "@ionic-native/status-bar";
     AgentNetworkServiceProvider,
     ContinentServiceProvider,
     ScheduleServiceProvider,
-    StatusBar
+    StatusBar,
+    AuthServiceProvider,
   ]
 })
 export class AppModule { }

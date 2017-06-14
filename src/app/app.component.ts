@@ -70,7 +70,8 @@ export class TemplateApp {
     public mdlCtrl: ModalController,
     public confData: ConferenceData,
     public splashScreen: SplashScreen,
-    public toastCtrl: ToastController) {
+    public toastCtrl: ToastController,
+  ) {
 
     confData.load();
 

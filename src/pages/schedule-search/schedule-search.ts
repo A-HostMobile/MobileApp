@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams ,ModalController } from 'ionic-angular';
+import { NavController, NavParams , ModalController, LoadingController } from 'ionic-angular';
 import { CountryModalPage } from "../country-modal/country-modal";
 
 import { CountryModel } from '../../models/countries';
@@ -16,17 +16,20 @@ export class ScheduleSearchPage {
   sub: Subscription;
   errorMessage: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public mdlCtrl: ModalController, public conService:ContinentServiceProvider) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public mdlCtrl: ModalController,
+    public conService:ContinentServiceProvider,
+    public loadCtrl:LoadingController
+  ) {
   }
 
   ionViewWillEnter(){
     this.getContinent();
-    console.log(this.sub);
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ScheduleSearchPage');
-  }
+  ionViewDidLoad() {}
 
   toCountry(region: any,city: any) {
     let countryModal = this.mdlCtrl.create(CountryModalPage,{region, city});
@@ -34,9 +37,17 @@ export class ScheduleSearchPage {
   }
 
   private getContinent(){
+    let loading = this.loadCtrl.create({
+      content: "Please wait...",
+      duration: 3000
+    });
+    loading.present();
+
       this.sub = this.conService.getContinent().subscribe(
         (res) => this.continent = res,
-        (error) => this.errorMessage = <any> error
+        (error) => {  this.errorMessage = <any> error,
+                      loading.dismiss() },
+                () => loading.dismiss()
       );
   }
 

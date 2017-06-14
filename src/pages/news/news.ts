@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ViewController, NavController } from 'ionic-angular';
+import { ViewController, NavController, LoadingController } from 'ionic-angular';
 import { NewsDetailPage } from "../news-detail/news-detail";
 import { AdvertisementProvider } from '../../providers/advertisement/advertisement';
 import { Subscription } from 'rxjs/Subscription';
@@ -19,8 +19,12 @@ export class NewsPage {
 
   promotions: Array<any>;
 
-  constructor(public navCtrl: NavController,public viewCtrl:ViewController,public advertiseService:AdvertisementProvider) {
-  }
+  constructor(
+    public navCtrl: NavController,
+    public viewCtrl:ViewController,
+    public advertiseService:AdvertisementProvider,
+    public loadCtrl:LoadingController
+  ) {}
 
   ionViewWillEnter(){
     this.getNews();
@@ -28,25 +32,40 @@ export class NewsPage {
     console.log(this.sub);
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad NewsPage');
-  }
+  // ionViewDidLoad() {
+  //   console.log('ionViewDidLoad NewsPage');
+  // }
 
   toDetail(item_id:number){
     this.navCtrl.push(NewsDetailPage,item_id);
   }
 
   private getNews(){
+    let loading = this.loadCtrl.create({
+      content: "Please wait...",
+      duration: 3000
+    });
+    loading.present();
+
     this.sub = this.advertiseService.getNewsAdvertisment().subscribe(
       (res) => this.news = res,
-      (error) => this.errorMessage = <any> error
+      (error) => {  this.errorMessage = <any> error
+                    loading.dismiss() },
+              () => loading.dismiss()
     );
   }
 
   private getPromotions(){
+    let loading = this.loadCtrl.create({
+      content: "Please wait...",
+      duration: 3000
+    });
+
     this.sub = this.advertiseService.getPromotionAdvertisment().subscribe(
       (res) => this.promotions = res,
-      (error) => this.errorMessage = <any> error
+      (error) => {  this.errorMessage = <any> error
+                    loading.dismiss() },
+              () => loading.dismiss()
     );
   }
 

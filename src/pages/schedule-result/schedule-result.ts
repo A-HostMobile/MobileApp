@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, LoadingController } from 'ionic-angular';
 import { LclBookingPage } from "../lcl-booking/lcl-booking";
 
 import { ScheduleServiceProvider } from '../../providers/schedule-service/schedule-service';
@@ -18,33 +18,46 @@ export class ScheduleResultPage {
   schedule: Array<ScheduleModel>;
   sub: Subscription;
   errorMessage:string;
-  
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public scheduleService:ScheduleServiceProvider) {
+
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public viewCtrl: ViewController,
+    public scheduleService:ScheduleServiceProvider,
+    public loadCtrl:LoadingController
+  ) {
     this.cname = this.navParams.data;
 }
 
   ionViewWillEnter(){
     this.getSchedule();
-     console.log(this.sub);
   }
 
-  ionViewDidEnter(){
-    console.log('test '+this.schedule);
-    console.log(JSON.stringify(this.schedule));
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ScheduleResultPage');
-  }
+  // ionViewDidEnter(){
+  //   console.log('test '+this.schedule);
+  //   console.log(JSON.stringify(this.schedule));
+  // }
+  //
+  // ionViewDidLoad() {
+  //   console.log('ionViewDidLoad ScheduleResultPage');
+  // }
 
   toLCLBooking(){
     this.navCtrl.push(LclBookingPage);
   }
 
   private getSchedule(){
+      let loading = this.loadCtrl.create({
+        content: "Please wait...",
+        duration: 3000
+      });
+      loading.present();
+
       this.sub = this.scheduleService.getSchedules(this.cname).subscribe(
         (res) => this.schedule = res,
-        (error) => this.errorMessage = <any> error
+        (error) => {  this.errorMessage = <any> error,
+                      loading.dismiss() },
+                () => loading.dismiss()
       );
   }
 
