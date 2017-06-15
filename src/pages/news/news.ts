@@ -29,7 +29,7 @@ export class NewsPage {
   ionViewWillEnter(){
     this.getNews();
     this.getPromotions();
-    console.log(this.sub);
+    // console.log(this.sub);
   }
 
   // ionViewDidLoad() {
@@ -58,7 +58,7 @@ export class NewsPage {
   private getPromotions(){
     let loading = this.loadCtrl.create({
       content: "Please wait...",
-      duration: 3000
+      spinner: 'hide'
     });
 
     this.sub = this.advertiseService.getPromotionAdvertisment().subscribe(

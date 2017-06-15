@@ -42,7 +42,7 @@ export class LoginPage {
     if(this.authForm.valid){
       let loading = this.loadingCtrl.create({
         content: "loggingIn...",
-        duration: 3000
+        spinner: 'hide'
       });
       loading.present();
       this.authService.doLogin(username,password).subscribe(
@@ -52,10 +52,10 @@ export class LoginPage {
             this.authService.getProfile().subscribe((res) => {
               let profile = res;
               this.userData.login(profile);
-              console.log(res); //log check object but now get error
+              // console.log(res); //log check object but now get error
             });
 
-            console.log('login ok');
+            // console.log('login ok');
             if(this.page == LclBookingPage||this.page == CourierBookingPage) {
               this.viewCtrl.dismiss();
               this.app.getRootNav().push(this.page);
@@ -76,7 +76,7 @@ export class LoginPage {
           loading.dismiss();
         },() => loading.dismiss()
       )
-      console.log(username,password);
+      // console.log(username,password);
     }
   }
 

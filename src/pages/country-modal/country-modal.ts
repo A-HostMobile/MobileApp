@@ -23,8 +23,8 @@ export class CountryModalPage {
   }
 
   ionViewDidLoad() {
-    console.log(this.Country);
-    console.log(this.Region);
+    // console.log(this.Country);
+    // console.log(this.Region);
   }
 
   closemodal() {
