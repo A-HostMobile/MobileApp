@@ -3,8 +3,10 @@ import {ModalController, Navbar, NavController, NavParams, ViewController} from 
 import {LclSummaryPage} from "../lcl-summary/lcl-summary";
 import {LoginPage} from "../login-modal/login-modal";
 import {UserData} from "../../providers/user-data";
-import {NgForm} from "@angular/forms";
 import {AuthServiceProvider} from '../../providers/auth-service/auth-service';
+
+import {FormBuilder, FormGroup, NgForm, Validators} from "@angular/forms";
+
 
 @Component({
   selector: 'page-lcl-booking',
@@ -12,7 +14,7 @@ import {AuthServiceProvider} from '../../providers/auth-service/auth-service';
 })
 export class LclBookingPage {
   @ViewChild(Navbar) navbar : Navbar;
-  lcl:{pod?:string,myDate?:string,volume?:string,gw?:string,gwtk?:string,commodity?:string,adetail?:string,quantity?:string} = {};
+  lcl:{pod?:string,myDate?:string,volume?:string,gw?:string,gtype?:string,commodity?:string,adetail?:string,quantity?:string,qtype?:string} = {};
   submitted = false;
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -22,8 +24,10 @@ export class LclBookingPage {
               public authService: AuthServiceProvider
             ) {}
 
+
   ionViewWillEnter() {
     this.authService.SubscribeProfile();
+    this.lcl = {pod:'TH',gtype:'ton',commodity:'ct',qtype:'ea'};
   }
 
   ionViewDidLoad(){
@@ -42,10 +46,10 @@ export class LclBookingPage {
   toSummary(form: NgForm){
     this.submitted = true;
     if(form.valid){
-      console.log('YES');
+      console.log(this.lcl);
+      //this.navCtrl.push(LclSummaryPage);
     } else {
       console.log('FUCK');
     }
-    //this.navCtrl.push(LclSummaryPage);
   }
 }
