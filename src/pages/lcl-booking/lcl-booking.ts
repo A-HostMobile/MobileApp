@@ -3,7 +3,7 @@ import {ModalController, Navbar, NavController, NavParams, ViewController} from 
 import {LclSummaryPage} from "../lcl-summary/lcl-summary";
 import {LoginPage} from "../login-modal/login-modal";
 import {UserData} from "../../providers/user-data";
-import {NgForm} from "@angular/forms";
+import {FormBuilder, FormGroup, NgForm, Validators} from "@angular/forms";
 
 @Component({
   selector: 'page-lcl-booking',
@@ -11,13 +11,15 @@ import {NgForm} from "@angular/forms";
 })
 export class LclBookingPage {
   @ViewChild(Navbar) navbar : Navbar;
-  lcl:{pod?:string,myDate?:string,volume?:string,gw?:string,gwtk?:string,commodity?:string,adetail?:string,quantity?:string} = {};
+  lcl:{pod?:string,myDate?:string,volume?:string,gw?:string,gtype?:string,commodity?:string,adetail?:string,quantity?:string,qtype?:string} = {};
   submitted = false;
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public viewCtrl: ViewController,
               public mdlCtrl: ModalController,
               public userData: UserData) {
+
+    this.lcl = {pod:'TH',gtype:'ton',commodity:'ct',qtype:'ea'};
 
   }
 
@@ -33,13 +35,13 @@ export class LclBookingPage {
     });
   }
 
-  toSummary(form: NgForm){
+  toSummary(form: FormGroup){
     this.submitted = true;
     if(form.valid){
-      console.log('YES');
+      console.log(this.lcl);
+      //this.navCtrl.push(LclSummaryPage);
     } else {
       console.log('FUCK');
     }
-    //this.navCtrl.push(LclSummaryPage);
   }
 }
