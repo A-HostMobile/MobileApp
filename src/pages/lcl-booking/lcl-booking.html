@@ -5,32 +5,33 @@
 </ion-header>
 
 <ion-content padding>
-
+<form #lclbooking="ngForm" novalidate>
   <ion-list no-lines>
 
     <ion-item no-padding>
       <ion-label no-padding col-6 >POD</ion-label>
-      <ion-select [(ngModel)]="pod">
+      <ion-select [(ngModel)]="lcl.pod" name="pod" #pod="ngModel" required>
         <ion-option selected value="default">Thailand</ion-option>
         <ion-option value="HK">Hongkong</ion-option>
         <ion-option value="JP">Japan</ion-option>
       </ion-select>
     </ion-item>
+    <p [hidden]="!pod.valid||submitted" >YESSSSSS</p>
 
     <ion-item no-padding>
       <ion-label no-padding col-6 >Date</ion-label>
-      <ion-datetime  displayFormat="DDDD/DD/MMM/YYYY" min="2016" max="2020-10-31" [(ngModel)]="myDate" placeholder="select date"></ion-datetime>
+      <ion-datetime  displayFormat="DDDD/DD/MMM/YYYY" min="2016" max="2020-10-31" [(ngModel)]="lcl.myDate" name="myDate" #myDate="ngModel" placeholder="select date" required></ion-datetime>
     </ion-item>
 
     <ion-item no-padding>
       <ion-label no-padding col-6 >Volume (CBM)</ion-label>
-      <ion-input type="text" placeholder="volume"></ion-input>
+      <ion-input [(ngModel)]="lcl.volume" name="volume" type="text" placeholder="volume" #volume="ngModel" required></ion-input>
     </ion-item>
 
     <ion-item no-padding>
       <ion-label no-padding col-6>Gross Weight</ion-label>
-      <ion-input type="text" placeholder="g.w."></ion-input>
-      <ion-select [(ngModel)]="gw">
+      <ion-input [(ngModel)]="lcl.gw" name="gw" #gw="ngModel" type="text" placeholder="g.w." required></ion-input>
+      <ion-select [(ngModel)]="lcl.gwtk" name="gwtk" #gwtk="ngModel" form>
         <ion-option selected value="ton">TON</ion-option>
         <ion-option value="kg">KG</ion-option>
       </ion-select>
@@ -54,7 +55,7 @@
 
     <ion-item no-padding>
       <ion-label no-padding col-6>Commodity</ion-label>
-      <ion-select [(ngModel)]="commodity">
+      <ion-select [(ngModel)]="lcl.commodity" name="commodity">
         <ion-option selected value="default">Cartons</ion-option>
         <ion-option value="se">Ceramic</ion-option>
         <ion-option value="gl">Glasses</ion-option>
@@ -64,7 +65,7 @@
     <ion-item no-padding>
       <ion-label no-padding col-6>Quantity</ion-label>
       <ion-input type="text" placeholder="quantity"></ion-input>
-      <ion-select [(ngModel)]="quantity">
+      <ion-select [(ngModel)]="lcl.quantity" name="quantity">
         <ion-option selected value="default">EA</ion-option>
         <ion-option value="pi">Pieces</ion-option>
         <ion-option value="bx">Boxs</ion-option>
@@ -73,7 +74,7 @@
 
     <ion-item no-padding>
       <ion-label no-padding col-6>Addition Detail</ion-label>
-      <ion-input type="text" placeholder="addition"></ion-input>
+      <ion-input type="text" placeholder="addition" [(ngModel)]="lcl.adetail" name="adetail"></ion-input>
     </ion-item>
 
     <br/>
@@ -89,8 +90,9 @@
     <ion-item no-padding col-5>ETA :</ion-item>
 
   </ion-list>
-  <button (click)="toSummary();" ion-button icon-right block >
+  <button (click)="toSummary(lclbooking)" ion-button icon-right block type="submit">
     Next
     <ion-icon ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>
   </button>
+</form>
 </ion-content>

@@ -12,21 +12,18 @@
 <ion-content class="no-scroll">
 <img class="width-80 margin-left-10 margin-bottom-7" src="assets/img/logoExam.png" />
   <form [formGroup]="authForm" (ngSubmit)="onLogin(authForm.value.username,authForm.value.password)">
-    <ion-item [class.error]="!username.valid && username.touched">
+    <ion-item>
       <ion-label floating>Username</ion-label>
       <ion-input type="text" value="" formControlName="username" [(ngModel)]="user"></ion-input>
-      <ion-badge *ngIf="username.hasError('required') && username.touched" item-end>Username Required</ion-badge>
-      <ion-badge *ngIf="username.hasError('pattern') && username.touched" item-end>Patteen corrupt</ion-badge>
+      <ion-badge *ngIf="username.hasError('required') && submitted" item-end>Username Required</ion-badge>
     </ion-item>
-    <ion-item [class.error]="!password.valid && password.touched">
+    <ion-item>
       <ion-label floating>Password</ion-label>
       <ion-input type="password" value="" formControlName="password" [(ngModel)]="pass"></ion-input>
-      <ion-badge *ngIf="password.hasError('required') && password.touched" item-end>Password Required</ion-badge>
-      <ion-badge *ngIf="password.hasError('pattern') && password.touched" item-end>Patteen corrupt</ion-badge>
-      <ion-badge *ngIf="password.hasError('minlength') && password.touched && !password.hasError('pattern')" item-end>At least 6 characters</ion-badge>
+      <ion-badge *ngIf="password.hasError('required') && submitted" item-end>Password Required</ion-badge>
     </ion-item>
     <br/><br/>
-    <button ion-button [disabled]="!authForm.valid" type="submit" block>Login</button>
+    <button ion-button type="submit" block>Login</button>
   </form>
 
 </ion-content>
