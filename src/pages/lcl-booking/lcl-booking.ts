@@ -26,12 +26,12 @@ export class LclBookingPage {
 
 
   ionViewWillEnter() {
-    this.authService.SubscribeProfile();
+    // this.authService.SubscribeProfile();
     this.lcl = {pod:'TH',gtype:'ton',commodity:'ct',qtype:'ea'};
   }
 
   ionViewDidLoad(){
-    this.authService.SubscribeProfile();
+    // this.authService.SubscribeProfile();
   }
 
   ionViewCanEnter(){

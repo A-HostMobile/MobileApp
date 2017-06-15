@@ -25,6 +25,7 @@ export class HomePage {
               public mdlCtrl: ModalController,
               public viewCtrl: ViewController,
               public menuCtrl: MenuController,
+              public authService: AuthServiceProvider,
               public advertisementProvider:AdvertisementProvider) {
   }
 
@@ -58,7 +59,9 @@ export class HomePage {
 
     let modal = this.mdlCtrl.create(LoginPage, view);
     this.userData.hasLoggedIn().then((hasLoggedIn) => {
-        if (hasLoggedIn === true) { this.navCtrl.push(view); }
+        if (hasLoggedIn === true) {
+          this.authService.SubscribeProfile();
+          this.navCtrl.push(view); }
         else { modal.present(); }
     });
   }
