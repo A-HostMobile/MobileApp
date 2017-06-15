@@ -39,18 +39,15 @@ export class AuthServiceProvider {
     let token = localStorage.getItem('token');
     // console.log(token);
 
-    let myHeader = new Headers;
-    myHeader.append('Content-Type','application/x-www-form-urlencoded');
-    myHeader.append('Accept','application/json');
-    myHeader.append('Authorization',`Bearer ${token}`);
+    let myHeader = new Headers({ 'Authorization': `Bearer ${token}` });
+    let _options = new RequestOptions({headers: myHeader});
+    let _body = {};
 
-    let options = new RequestOptions({headers:myHeader});
+    // console.log(myHeader);
 
-    console.log(myHeader);
-
-    return this.http.post(AppSettings.API_ENDPOINT+'details',options)
+    return this.http.post(AppSettings.API_ENDPOINT+'details',_body,_options)
     .map((res:Response) => {
-      let profile = <object>res.json();
+      let profile = <object>res.json().responseData;
       if(profile){
         localStorage.setItem('profile', JSON.stringify(profile));
         return profile;

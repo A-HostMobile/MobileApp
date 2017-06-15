@@ -14,9 +14,9 @@ export class UserData {
     public storage: Storage
   ) {}
 
-  login(): void {
+  login(profile:any): void {
     this.storage.set(this.HAS_LOGGED_IN, true);
-    this.events.publish('user:login');
+    this.events.publish('user:login',profile);
   };
 
   logout(): void {

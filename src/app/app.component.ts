@@ -40,6 +40,7 @@ export class TemplateApp {
   count: number = 0;
   bpress: number = 0;
   rootPage: any = HomePage;
+  _profile:any;
 
   appPages: PageInterface[] = [
     { title: 'Home', name: 'HomePage', component: HomePage, icon: 'ios-home' },
@@ -76,6 +77,10 @@ export class TemplateApp {
     confData.load();
 
     this.userData.hasLoggedIn().then((hasLoggedIn) => {
+      let profile = localStorage.getItem('profile');
+      if (profile){
+          this._profile = JSON.parse(profile);
+      }
       this.enableMenu(hasLoggedIn === true);
     });
 
@@ -136,11 +141,15 @@ export class TemplateApp {
   }
 
   listenToEvents() {
-    this.events.subscribe('user:login', () => {
+    this.events.subscribe('user:login', (profile:any) => {
+      this._profile = profile;
+      // console.log(this._profile);
       this.enableMenu(true);
     });
 
     this.events.subscribe('user:logout', () => {
+      localStorage.removeItem('token');
+      localStorage.removeItem('profile');
       this.enableMenu(false);
     });
 
