@@ -49,12 +49,7 @@ export class LoginPage {
         res => {
           let signin:boolean = res;
           if(signin == true){
-            this.authService.getProfile().subscribe((res) => {
-              let profile = res;
-              this.userData.login(profile);
-              // console.log(res); //log check object but now get error
-            });
-
+            this.authService.SubscribeProfile();
             // console.log('login ok');
             if(this.page == LclBookingPage||this.page == CourierBookingPage) {
               this.viewCtrl.dismiss();

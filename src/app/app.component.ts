@@ -20,6 +20,7 @@ import {NoInternetModalPage} from "../pages/no-internet-modal/no-internet-modal"
 import {HistoryPage} from "../pages/history/history";
 import {CompletedPage} from "../pages/completed/completed";
 import {StatusBar} from "@ionic-native/status-bar";
+import {AuthServiceProvider} from '../providers/auth-service/auth-service';
 
 
 export interface PageInterface {
@@ -72,16 +73,28 @@ export class TemplateApp {
     public confData: ConferenceData,
     public splashScreen: SplashScreen,
     public toastCtrl: ToastController,
+    public authService: AuthServiceProvider
   ) {
 
     confData.load();
 
     this.userData.hasLoggedIn().then((hasLoggedIn) => {
-      let profile = localStorage.getItem('profile');
-      if (profile){
-          this._profile = JSON.parse(profile);
+      this.authService.SubscribeProfile();
+      let token = localStorage.getItem('token');
+      if(token){
+        this.authService.SubscribeProfile();
+        let profile = localStorage.getItem('profile');
+          if (profile){
+              this._profile = JSON.parse(profile);
+          }
+          this.enableMenu(hasLoggedIn === true);
+      }else{
+        this.userData.hasLoggedIn().then((hasLoggedIn)=>{
+          console.log('login False')
+          this.enableMenu(hasLoggedIn === false);
+        });
       }
-      this.enableMenu(hasLoggedIn === true);
+
     });
 
     this.enableMenu(true);
@@ -93,6 +106,10 @@ export class TemplateApp {
     this.backButton();
 
     this.status.hide();
+
+  }
+
+  statusLogin(){
 
   }
 
@@ -148,9 +165,9 @@ export class TemplateApp {
     });
 
     this.events.subscribe('user:logout', () => {
+      this.enableMenu(false);
       localStorage.removeItem('token');
       localStorage.removeItem('profile');
-      this.enableMenu(false);
     });
 
     this.events.subscribe('backButton',()=>{
@@ -159,6 +176,10 @@ export class TemplateApp {
 
     this.events.subscribe('exit',()=>{
       this.exit();
+    });
+
+    this.events.subscribe('status',()=>{
+      this.statusLogin();
     });
   }
 

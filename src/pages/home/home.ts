@@ -7,6 +7,7 @@ import {LclBookingPage} from "../lcl-booking/lcl-booking";
 import {CourierBookingPage} from "../courier-booking/courier-booking";
 import {LoginPage} from "../login-modal/login-modal";
 import {AdvertisementProvider} from "../../providers/advertisement/advertisement"
+import {AuthServiceProvider} from '../../providers/auth-service/auth-service';
 
 @Component({
   selector: 'page-home',
@@ -34,6 +35,10 @@ export class HomePage {
         ,(error)=> this.errorMessage = <any>error);
     this.menuCtrl.swipeEnable(false,'loggedOutMenu');
     this.menuCtrl.swipeEnable(false,'loggedInMenu');
+  }
+
+  ionViewWillLeave(){
+    alert('leave')
   }
 
   convertImg(img:string,type:string){

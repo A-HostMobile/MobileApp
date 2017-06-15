@@ -6,11 +6,12 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 
 import { AppSettings } from '../AppSettings';
+import { UserData } from '../user-data';
 
 @Injectable()
 export class AuthServiceProvider {
 
-  constructor(public http: Http) {}
+  constructor(public http: Http, public userData: UserData) {}
   //login
   public doLogin(username:string, password:string):Observable<boolean>{
 
@@ -26,7 +27,7 @@ export class AuthServiceProvider {
     .map((res:Response) => {
       let _token = res.json().responseData.token;
       if(_token){
-        console.log(_token);
+        // console.log(_token);
         localStorage.setItem('token',_token);
         return true;
       }else{
@@ -55,6 +56,18 @@ export class AuthServiceProvider {
     }).catch(this.handleError);
   }
 
+  public SubscribeProfile(){
+    this.getProfile().subscribe((res) => {
+      let profile = res;
+      if(profile == ["Get customer data error"]){
+        console.log('logout')
+        this.userData.logout();
+      }else{
+        console.log('login')
+        this.userData.login(profile);
+      }
+    });
+  }
 
   private handleError(error:any){
       return Observable.throw(error.json().error_description || "the username or password is incorrect!");

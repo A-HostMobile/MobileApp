@@ -4,6 +4,7 @@ import {LclSummaryPage} from "../lcl-summary/lcl-summary";
 import {LoginPage} from "../login-modal/login-modal";
 import {UserData} from "../../providers/user-data";
 import {NgForm} from "@angular/forms";
+import {AuthServiceProvider} from '../../providers/auth-service/auth-service';
 
 @Component({
   selector: 'page-lcl-booking',
@@ -17,15 +18,20 @@ export class LclBookingPage {
               public navParams: NavParams,
               public viewCtrl: ViewController,
               public mdlCtrl: ModalController,
-              public userData: UserData) {
+              public userData: UserData,
+              public authService: AuthServiceProvider
+            ) {}
 
+  ionViewWillEnter() {
+    this.authService.SubscribeProfile();
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LclBookingPage');
+  ionViewDidLoad(){
+    this.authService.SubscribeProfile();
   }
 
   ionViewCanEnter(){
+    this.authService.SubscribeProfile();
     let modal = this.mdlCtrl.create(LoginPage, LclBookingPage);
     this.userData.hasLoggedIn().then((hasLoggedIn) => {
       if (hasLoggedIn === true) { return true; }
