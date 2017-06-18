@@ -1,6 +1,6 @@
 
 import {Component, ViewChild} from '@angular/core';
-import {NavController, NavParams, ModalController, ViewController, Platform, Nav, MenuController} from 'ionic-angular';
+import {NavController, NavParams, ModalController, ViewController, Platform, Nav, MenuController, LoadingController} from 'ionic-angular';
 
 import {UserData} from "../../providers/user-data";
 import {LclBookingPage} from "../lcl-booking/lcl-booking";
@@ -17,6 +17,7 @@ export class HomePage {
   bpress: number = 0;
   advertisementHome:any;
   errorMessage:string;
+
   @ViewChild(Nav) nav:Nav;
   constructor(public platform: Platform,
               public userData: UserData,
@@ -26,6 +27,7 @@ export class HomePage {
               public viewCtrl: ViewController,
               public menuCtrl: MenuController,
               public authService: AuthServiceProvider,
+              public loadingCtrl: LoadingController,
               public advertisementProvider:AdvertisementProvider) {
   }
 
@@ -38,10 +40,6 @@ export class HomePage {
     this.menuCtrl.swipeEnable(false,'loggedInMenu');
   }
 
-  ionViewWillLeave(){
-    alert('leave')
-  }
-
   convertImg(img:string,type:string){
       return "data:"+type+";base64,"+img;
   }
@@ -50,18 +48,35 @@ export class HomePage {
       console.log("Index :"+index);
   }
 
-  openPage(page: number) {
+  CheckSts(page: number){
+    this.authService.getProfile().subscribe((res)=>{
+      let profile = res;
+      console.log(profile);
+      if(profile.responseCode == 3){
+        console.log('logout from home')
+        this.userData.logout();
+        this.openPage(page);
+      }else{
+        console.log('login from home')
+        this.userData.login(profile);
+        this.openPage(page);
+      }
+    });
+  }
+
+  openPage(pageNb: number) {
 
     let  view: any;
 
-    if(page == 1){ view = LclBookingPage; }
+    if(pageNb == 1){ view = LclBookingPage; }
     else { view = CourierBookingPage; }
 
     let modal = this.mdlCtrl.create(LoginPage, view);
     this.userData.hasLoggedIn().then((hasLoggedIn) => {
+
         if (hasLoggedIn === true) {
-          this.authService.SubscribeProfile();
-          this.navCtrl.push(view); }
+          this.navCtrl.push(view);
+        }
         else { modal.present(); }
     });
   }

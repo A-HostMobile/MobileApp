@@ -41,7 +41,7 @@ export class TemplateApp {
   count: number = 0;
   bpress: number = 0;
   rootPage: any = HomePage;
-  _profile:any;
+  _profile: any;
 
   appPages: PageInterface[] = [
     { title: 'Home', name: 'HomePage', component: HomePage, icon: 'ios-home' },
@@ -79,19 +79,28 @@ export class TemplateApp {
     confData.load();
 
     this.userData.hasLoggedIn().then((hasLoggedIn) => {
-      this.authService.SubscribeProfile();
+
       let token = localStorage.getItem('token');
       if(token){
-        this.authService.SubscribeProfile();
+        this.authService.getProfile().subscribe((res)=>{
+          let profile = res;
+          if(profile.responseCode == 3){
+                console.log('get profile error')
+                this.userData.logout();
+              }else{
+                console.log('loggedIn from component')
+                this.userData.login(profile);
+              }
+        });
         let profile = localStorage.getItem('profile');
           if (profile){
               this._profile = JSON.parse(profile);
           }
-          this.enableMenu(hasLoggedIn === true);
+          this.events.publish('user:login');
       }else{
         this.userData.hasLoggedIn().then((hasLoggedIn)=>{
-          console.log('login False')
-          this.enableMenu(hasLoggedIn === false);
+          console.log('Have not login')
+          this.events.publish('user:logout');
         });
       }
 
@@ -106,10 +115,6 @@ export class TemplateApp {
     this.backButton();
 
     this.status.hide();
-
-  }
-
-  statusLogin(){
 
   }
 
@@ -177,10 +182,6 @@ export class TemplateApp {
     this.events.subscribe('exit',()=>{
       this.exit();
     });
-
-    this.events.subscribe('status',()=>{
-      this.statusLogin();
-    });
   }
 
   checkConnection() {
@@ -204,8 +205,17 @@ export class TemplateApp {
       this.nav.popToRoot();
     }
     else if (page.component == LclBookingPage||page.component == CourierBookingPage){
-      this.nav.popToRoot({animate:false});
-      this.nav.push(page.component);
+      this.authService.getProfile().subscribe((res)=>{
+        let profile = res;
+        if(profile.responseCode == 3){
+          this.userData.logout();
+          this.nav.popToRoot({animate:false});
+          this.nav.push(page.component);
+        }else{
+          this.nav.popToRoot({animate:false});
+          this.nav.push(page.component);
+        }
+      });
     }
     else if(page.component == LoginPage){
       modal.present();

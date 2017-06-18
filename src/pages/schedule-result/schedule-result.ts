@@ -5,6 +5,8 @@ import { LclBookingPage } from "../lcl-booking/lcl-booking";
 import { ScheduleServiceProvider } from '../../providers/schedule-service/schedule-service';
 import { ScheduleModel } from '../../models/schedule';
 import { Subscription } from 'rxjs/Subscription';
+import { UserData } from '../../providers/user-data';
+import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 
 @IonicPage()
 @Component({
@@ -24,7 +26,9 @@ export class ScheduleResultPage {
     public navParams: NavParams,
     public viewCtrl: ViewController,
     public scheduleService:ScheduleServiceProvider,
-    public loadCtrl:LoadingController
+    public loadCtrl:LoadingController,
+    public userData: UserData,
+    public authService: AuthServiceProvider
   ) {
     this.cname = this.navParams.data;
 }
@@ -43,7 +47,18 @@ export class ScheduleResultPage {
   // }
 
   toLCLBooking(){
-    this.navCtrl.push(LclBookingPage);
+    this.authService.getProfile().subscribe((res)=>{
+      let profile = res;
+      if(profile.responseCode == 3){
+        this.userData.logout();
+        alert('Please try to logIn again');
+        console.log('logout from schedule result');
+      }else{
+        console.log('login from schedule result');
+        this.userData.login(profile);
+        this.navCtrl.push(LclBookingPage);
+      }
+    });
   }
 
   private getSchedule(){

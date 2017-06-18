@@ -13,7 +13,7 @@ export class AuthServiceProvider {
 
   constructor(public http: Http, public userData: UserData) {}
   //login
-  public doLogin(username:string, password:string):Observable<boolean>{
+  public doLogin(username:string, password:string):Observable<any>{
 
     let myHeader = new Headers;
     myHeader.append('Content-Type','application/x-www-form-urlencoded');
@@ -25,10 +25,11 @@ export class AuthServiceProvider {
 
     return this.http.post(AppSettings.API_ENDPOINT+'login',body,{headers:myHeader})
     .map((res:Response) => {
-      let _token = res.json().responseData.token;
-      if(_token){
+      let _token = res.json();
+      let sts:boolean;
+      if(_token.responseData.token){
         // console.log(_token);
-        localStorage.setItem('token',_token);
+        localStorage.setItem('token',_token.responseData.token);
         return true;
       }else{
         return false;
@@ -36,7 +37,7 @@ export class AuthServiceProvider {
     }).catch(this.handleError);
   }
   //profile
-  public getProfile():Observable<object>{
+  public getProfile():Observable<any>{
     let token = localStorage.getItem('token');
     // console.log(token);
 
@@ -48,25 +49,12 @@ export class AuthServiceProvider {
 
     return this.http.post(AppSettings.API_ENDPOINT+'details',_body,_options)
     .map((res:Response) => {
-      let profile = <object>res.json().responseData;
+      let profile = <any>res.json();
       if(profile){
-        localStorage.setItem('profile', JSON.stringify(profile));
+        localStorage.setItem('profile', JSON.stringify(profile.responseData));
         return profile;
       }
     }).catch(this.handleError);
-  }
-
-  public SubscribeProfile(){
-    this.getProfile().subscribe((res) => {
-      let profile = res;
-      if(profile == ["Get customer data error"]){
-        console.log('logout')
-        this.userData.logout();
-      }else{
-        console.log('login')
-        this.userData.login(profile);
-      }
-    });
   }
 
   private handleError(error:any){

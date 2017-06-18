@@ -49,15 +49,26 @@ export class LoginPage {
         res => {
           let signin:boolean = res;
           if(signin == true){
-            this.authService.SubscribeProfile();
+            this.authService.getProfile().subscribe((res) => {
+               let profile = res;
+               if(profile.responseCode == 3){
+                 console.log('logout')
+                 this.userData.logout();
+               }else{
+                 console.log('login')
+                 this.userData.login(profile);
+                 
+                 if(this.page == LclBookingPage||this.page == CourierBookingPage) {
+                   this.viewCtrl.dismiss();
+                   this.app.getRootNav().push(this.page);
+                 }
+                 else {
+                   this.closemodal();
+                 }
+               }
+             });
             // console.log('login ok');
-            if(this.page == LclBookingPage||this.page == CourierBookingPage) {
-              this.viewCtrl.dismiss();
-              this.app.getRootNav().push(this.page);
-            }
-            else {
-              this.closemodal();
-            }
+
           }else {
             console.log('login response data fail')
           }

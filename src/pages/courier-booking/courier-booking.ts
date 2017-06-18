@@ -4,6 +4,7 @@ import {UserData} from "../../providers/user-data";
 import {LoginPage} from "../login-modal/login-modal";
 import {CourierBooking2Page} from "../courier-booking2/courier-booking2";
 import {PickupAddressPage} from "../pickup-address/pickup-address";
+import {AuthServiceProvider} from '../../providers/auth-service/auth-service';
 
 @Component({
   selector: 'page-courier-booking',
@@ -16,7 +17,9 @@ export class CourierBookingPage {
               public navParams: NavParams,
               public viewCtrl: ViewController,
               public mdlCtrl: ModalController,
-              public userData: UserData) {
+              public userData: UserData,
+              public authService: AuthServiceProvider
+            ) {
   }
 
   ionViewDidLoad() {
@@ -32,7 +35,18 @@ export class CourierBookingPage {
   }
 
   toCourier2(){
-    this.navCtrl.push(CourierBooking2Page);
+    this.authService.getProfile().subscribe((res)=>{
+      let profile = res;
+      if(profile.responseCode == 3){
+        this.userData.logout();
+        alert('Please try to logIn again');
+        console.log('logOut from courier page 1');
+      }else{
+        console.log('login from courier page 1')
+        this.userData.login(profile);
+        this.navCtrl.push(CourierBooking2Page);
+      }
+    });
   }
 
   openPickupModal(){
@@ -41,4 +55,3 @@ export class CourierBookingPage {
   }
 
 }
-
