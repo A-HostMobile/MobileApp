@@ -29,8 +29,8 @@
         <ion-label no-padding col-6 >Volume (CBM)</ion-label>
         <ion-input [(ngModel)]="lcl.volume" name="volume" type="number" placeholder="volume" required></ion-input>
       </ion-item>
-      <p ion-text [hidden]="myDate.valid || submitted == false" color="danger" padding-left>
-        Date is required
+      <p ion-text [hidden]="volume.valid || submitted == false" color="danger" padding-left>
+        Volume is required
       </p>
 
       <ion-item no-padding>
@@ -41,8 +41,8 @@
           <ion-option value="kg">KG</ion-option>
         </ion-select>
       </ion-item>
-      <p ion-text [hidden]="myDate.valid || submitted == false" color="danger" padding-left>
-        Date is required
+      <p ion-text [hidden]="gw.valid || submitted == false" color="danger" padding-left>
+        Groos Weight is required
       </p>
 
     </ion-list>
