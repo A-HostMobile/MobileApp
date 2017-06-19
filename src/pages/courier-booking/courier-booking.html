@@ -5,60 +5,62 @@
 
 </ion-header>
 
-<ion-content padding class="no-scroll">
+<ion-content padding>
 
-        <ion-list no-lines>
-          <ion-item no-padding>
-            Pickup Address
-            <button (click)="openPickupModal();" color="calm" ion-button outline item-right>
-              Select
-            </button>
-          </ion-item>
-          <hr/>
-        </ion-list>
+  <ion-list no-lines>
+    <ion-item no-padding>
+      Pickup Address
+      <button *ngIf="pickadd == ''" (click)="openPickupModal();" color="calm" ion-button outline item-right>Select</button>
+      <button *ngIf="pickadd != ''" (click)="openPickupModal();" color="calm" ion-button outline item-right>{{pickadd}}</button>
+    </ion-item>
+    <p ion-text [hidden]="pickadd != '' || submitted == false" color="danger"  align="right" style="margin-top: -0.25%">Address is required</p>
+  </ion-list>
 
-        <ion-list no-padding no-lines>
-            <ion-list-header>
-              Destination
-            </ion-list-header>
-            <ion-item no-padding>
-              <ion-label no-padding col-6>Consignee Name </ion-label>
-              <ion-input type="text" placeholder="name"></ion-input>
-            </ion-item>
-            <ion-item no-padding>
-              <ion-label no-padding col-6>Address </ion-label>
-              <ion-input type="text" placeholder="address"></ion-input>
-            </ion-item>
-            <ion-item no-padding>
-              <ion-label no-padding col-6>Country</ion-label>
-              <ion-select [(ngModel)]="country">
-                <ion-option selected value="us">United States</ion-option>
-                <ion-option value="HK">Hongkong</ion-option>
-                <ion-option value="JP">Japan</ion-option>
-              </ion-select>
-            </ion-item>
-            <ion-item no-padding>
-              <ion-label no-padding col-6>Zipcode </ion-label>
-              <ion-input type="text" placeholder="zipcode"></ion-input>
-            </ion-item>
-            <ion-item no-padding>
-              <ion-label no-padding col-6>Contact Name </ion-label>
-              <ion-input type="text" placeholder="contact name"></ion-input>
-            </ion-item>
-            <ion-item no-padding>
-              <ion-label no-padding col-6>Tel. </ion-label>
-              <ion-input type="text" placeholder="tel."></ion-input>
-            </ion-item>
-            <ion-item no-padding>
-              <ion-label no-padding col-6>Remark </ion-label>
-              <ion-input type="text" placeholder="remark"></ion-input>
-            </ion-item>
-        </ion-list>
-
-        <button (click)="toCourier2();" ion-button icon-right block >
-          Next
-          <ion-icon ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>
-        </button>
-
-
+  <form #courierbooking="ngForm" novalidate>
+    <ion-list no-padding no-lines>
+      <ion-list-header>
+        Destination
+      </ion-list-header>
+      <ion-item no-padding style="margin-top: -5%">
+        <ion-label no-padding col-6>Consignee Name </ion-label>
+        <ion-input [(ngModel)]="courier.conname" name="conname" #conname="ngModel" type="text" placeholder="name" required></ion-input>
+      </ion-item>
+      <p ion-text [hidden]="conname.valid || submitted == false" color="danger"  align="right" style="margin-top: -0.25%; margin-bottom: 0.5%">Con is required</p>
+      <ion-item no-padding>
+        <ion-label no-padding col-6>Address </ion-label>
+        <ion-input [(ngModel)]="courier.address" name="address" #address="ngModel" type="text" placeholder="address" required></ion-input>
+      </ion-item>
+      <p ion-text [hidden]="address.valid || submitted == false" color="danger" align="right" style="margin-top: -0.25%; margin-bottom: 0.5%">Address is required</p>
+      <ion-item no-padding>
+        <ion-label no-padding col-6>Country</ion-label>
+        <ion-select [(ngModel)]="courier.country" name="country">
+          <ion-option value="US">United States</ion-option>
+          <ion-option value="HK">Hongkong</ion-option>
+          <ion-option value="JP">Japan</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item no-padding>
+        <ion-label no-padding col-6>Zipcode </ion-label>
+        <ion-input [(ngModel)]="courier.zip" name="zip" type="text" placeholder="zipcode"></ion-input>
+      </ion-item>
+      <ion-item no-padding>
+        <ion-label no-padding col-6>Contact Name </ion-label>
+        <ion-input [(ngModel)]="courier.contname" name="contname" #contname="ngModel" type="text" placeholder="contact name" required></ion-input>
+      </ion-item>
+      <p ion-text [hidden]="contname.valid || submitted == false" color="danger"  align="right" style="margin-top: -0.25%; margin-bottom: 0.5%">Contact name is required</p>
+      <ion-item no-padding>
+        <ion-label no-padding col-6>Tel. </ion-label>
+        <ion-input [(ngModel)]="courier.tel" name="tel" #tel="ngModel" type="tel" placeholder="tel." required></ion-input>
+      </ion-item>
+      <p ion-text [hidden]="tel.valid || submitted == false" color="danger"  align="right" style="margin-top: -0.25%; margin-bottom: 0.5%">Tel. is required</p>
+      <ion-item no-padding>
+        <ion-label no-padding col-6>Remark </ion-label>
+        <ion-input [(ngModel)]="courier.rmk" name="rmk" type="text" placeholder="remark"></ion-input>
+      </ion-item>
+    </ion-list>
+  </form>
+  <button (click)="toCourier2(courierbooking)" ion-button icon-right block >
+    Next
+    <ion-icon ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>
+  </button>
 </ion-content>

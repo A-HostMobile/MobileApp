@@ -14,7 +14,9 @@ import {AddPickupModalPage} from "../add-pickup-modal/add-pickup-modal";
 })
 export class PickupAddressPage {
 
+  address: string;
   constructor(public navCtrl: NavController, public navParams: NavParams,public viewCtrl:ViewController,public mdlCtrl: ModalController) {
+    this.address = 'Somewhere 987/645-1 example address state province 99999';
   }
 
   ionViewDidLoad() {
@@ -27,7 +29,7 @@ export class PickupAddressPage {
   }
 
   closemodal() {
-  this.viewCtrl.dismiss();
+  this.viewCtrl.dismiss(this.address);
 }
 
 }

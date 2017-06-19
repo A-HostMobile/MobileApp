@@ -14,7 +14,7 @@ import {FormBuilder, FormGroup, NgForm, Validators} from "@angular/forms";
 })
 export class LclBookingPage {
   @ViewChild(Navbar) navbar : Navbar;
-  lcl:{pod?:string,myDate?:string,volume?:string,gw?:string,gtype?:string,commodity?:string,adetail?:string,quantity?:string,qtype?:string} = {};
+  lcl:{pod?:string,myDate?:string,volume?:string,gw?:string,gtype?:string,commodity?:string,adetail?:string,quantity?:string,qtype?:string} = {pod:'TH',gtype:'ton',commodity:'ct',qtype:'ea'};
   submitted = false;
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -22,11 +22,8 @@ export class LclBookingPage {
               public mdlCtrl: ModalController,
               public userData: UserData,
               public authService: AuthServiceProvider
-            ) {}
+            ) {
 
-
-  ionViewWillEnter() {
-    this.lcl = {pod:'TH',gtype:'ton',commodity:'ct',qtype:'ea'};
   }
 
   ionViewCanEnter(){
@@ -57,10 +54,9 @@ export class LclBookingPage {
   toSummary(form: NgForm){
     this.submitted = true;
     if(form.valid){
-      console.log(this.lcl);
-      //this.navCtrl.push(LclSummaryPage);
+      this.navCtrl.push(LclSummaryPage,this.lcl);
     } else {
-      console.log('FUCK Form not finish');
+      console.log('NOOO!!');
     }
   }
 }
