@@ -5,6 +5,7 @@ import {LoginPage} from "../login-modal/login-modal";
 import {CourierBooking2Page} from "../courier-booking2/courier-booking2";
 import {PickupAddressPage} from "../pickup-address/pickup-address";
 import {AuthServiceProvider} from '../../providers/auth-service/auth-service';
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'page-courier-booking',
@@ -13,6 +14,16 @@ import {AuthServiceProvider} from '../../providers/auth-service/auth-service';
 export class CourierBookingPage {
 
   @ViewChild(Navbar) navbar: Navbar;
+  pickadd:string = '';
+  submitted: boolean = false;
+  courier:{pick?:string,
+    conname?:string,
+    address?:string,
+    country?:string,
+    zip?:string,
+    contname?:string,
+    tel?:string,
+    rmk?:string} = {country:'US'};
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public viewCtrl: ViewController,
@@ -34,7 +45,8 @@ export class CourierBookingPage {
     });
   }
 
-  toCourier2(){
+  toCourier2(form: NgForm){
+    this.submitted = true;
     this.authService.getProfile().subscribe((res)=>{
       let profile = res;
       if(profile.responseCode == 3){
@@ -42,9 +54,9 @@ export class CourierBookingPage {
         alert('Please try to logIn again');
         console.log('logOut from courier page 1');
       }else{
-        console.log('login from courier page 1')
+        console.log('login from courier page 1');
         this.userData.login(profile);
-        this.navCtrl.push(CourierBooking2Page);
+        this.navCtrl.push(CourierBooking2Page,this.courier);
       }
     });
   }
@@ -52,6 +64,9 @@ export class CourierBookingPage {
   openPickupModal(){
     let openPickup = this.mdlCtrl.create(PickupAddressPage);
     openPickup.present();
+    openPickup.onDidDismiss(data=>{
+      this.courier.pick = this.pickadd = data;
+    });
   }
 
 }

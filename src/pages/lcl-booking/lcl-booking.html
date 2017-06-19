@@ -27,7 +27,7 @@
 
       <ion-item no-padding>
         <ion-label no-padding col-6 >Volume (CBM)</ion-label>
-        <ion-input [(ngModel)]="lcl.volume" name="volume" type="number" placeholder="volume" required></ion-input>
+        <ion-input [(ngModel)]="lcl.volume" name="volume" type="number" placeholder="volume" #volume="ngModel" required></ion-input>
       </ion-item>
       <p ion-text [hidden]="volume.valid || submitted == false" color="danger" padding-left>
         Volume is required
@@ -35,7 +35,7 @@
 
       <ion-item no-padding>
         <ion-label no-padding col-6>Gross Weight</ion-label>
-        <ion-input [(ngModel)]="lcl.gw" name="gw" type="number" placeholder="g.w." required></ion-input>
+        <ion-input [(ngModel)]="lcl.gw" name="gw" type="number" placeholder="g.w." #gw="ngModel" required></ion-input>
         <ion-select [(ngModel)]="lcl.gtype" name="gtype">
           <ion-option value="ton">TON</ion-option>
           <ion-option value="kg">KG</ion-option>

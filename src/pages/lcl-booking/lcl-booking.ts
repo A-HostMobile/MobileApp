@@ -5,7 +5,7 @@ import {LoginPage} from "../login-modal/login-modal";
 import {UserData} from "../../providers/user-data";
 import {AuthServiceProvider} from '../../providers/auth-service/auth-service';
 
-import {FormBuilder, FormGroup, NgForm, Validators} from "@angular/forms";
+import {NgForm} from "@angular/forms";
 
 
 @Component({
