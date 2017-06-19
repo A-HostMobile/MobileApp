@@ -8,15 +8,14 @@ import {QuickcodeProvider} from '../../providers/quickcode/quickcode';
 
 import {NgForm} from "@angular/forms";
 
-export interface value{
-  va:string;name:string;
-}
 @Component({
   selector: 'page-lcl-booking',
   templateUrl: 'lcl-booking.html',
 })
+
 export class LclBookingPage {
   @ViewChild(Navbar) navbar : Navbar;
+  
   
   pods: Array<any>;
   gwunits: Array<any>;
@@ -24,17 +23,7 @@ export class LclBookingPage {
   commodities: Array<any>;
   scheduleData:any;
   errorMessage: string;
-  // pods:value[]=[
-  //               {va:'TH',name:'Thailand'},
-  //               {va:'HK',name:'Hongkong'},
-  //               {va:'JP',name:'Japan'}
-  //              ];
-
-  // gtypes:value[]= [
-  //                   {va:'ton',name:'TON'},
-  //                   {va:'kg',name:'KG'}
-  //                 ];
-
+  
   lcl:{pod?:string,loadDate?:string,volume?:string,gw?:string,gwunit?:string,commodities?:string,detail?:string,quantity?:string,package?:string} = {pod:null,gwunit:null,commodities:null,package:null};
   //lcl:{pod:string,myDate:string,volume:string,gw:string,gwunit:string,commodity:string,adetail:string,quantity:string,qtype:string};
   submitted = false;
@@ -48,7 +37,7 @@ export class LclBookingPage {
             ) {
 
       this.scheduleData = this.navParams.data;
-      console.log("schedule Data:"+JSON.stringify(this.navParams.data));
+      console.log("schedule Data:"+JSON.stringify(this.scheduleData));
       this.quickcodeService.getPod().subscribe(
         (res) => this.pods = res.responseData,
         (error) => {  this.errorMessage = <any> error});

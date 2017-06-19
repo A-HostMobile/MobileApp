@@ -46,7 +46,7 @@ export class ScheduleResultPage {
   //   console.log('ionViewDidLoad ScheduleResultPage');
   // }
 
-  toLCLBooking(schData:any){
+  toLCLBooking(schData:Array<ScheduleModel>){
     this.authService.getProfile().subscribe((res)=>{
       let profile = res;
       if(profile.responseCode == 3){

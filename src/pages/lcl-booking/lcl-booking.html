@@ -11,9 +11,10 @@
       <ion-item no-padding>
         <ion-label no-padding col-6 >POD</ion-label>
 
-        <ion-select [(ngModel)]="lcl.pod" name="pod" placeholder="Please Select" required>
+        <ion-select [(ngModel)]="lcl.pod" *ngIf="(scheduleData | json) == ({} | json)" name="pod" placeholder="Please Select" required>
           <ion-option *ngFor="let pod of pods" [value]="pod">{{pod.qc_lookup_value2}}</ion-option>
         </ion-select>
+        <ion-label *ngIf="(scheduleData | json) != ({} | json)" no-padding >{{scheduleData.s_to}}</ion-label>
       </ion-item>
 
       <ion-item no-padding>
@@ -84,13 +85,14 @@
         <ion-list-header>
           Shipper Reference
         </ion-list-header>
-
-        <ion-item no-padding col-5>Carrier :</ion-item>
-        <ion-item no-padding col-5>Vessel :</ion-item>
-        <ion-item no-padding col-5>Feeder :</ion-item>
-        <ion-item no-padding col-5>Closing Date :</ion-item>
-        <ion-item no-padding col-5>ETD :</ion-item>
-        <ion-item no-padding col-5>ETA :</ion-item>
+        <ion-list>
+            <ion-item *ngIf="scheduleData.s_carrier!=null" no-padding >Carrier : &nbsp;&nbsp;{{scheduleData.s_carrier}}</ion-item>
+            <ion-item *ngIf="scheduleData.s_vessel!=null" no-padding >Vessel : &nbsp;&nbsp;{{scheduleData.s_vessel}}&nbsp;&nbsp;{{scheduleData.s_voy}}</ion-item>
+            <ion-item *ngIf="scheduleData.s_feeder!=null" no-padding >Feeder : &nbsp;&nbsp;{{scheduleData.s_feeder}}&nbsp;&nbsp;{{scheduleData.s_fvoy}}</ion-item>
+            <ion-item *ngIf="scheduleData.s_closing_date!=null" no-padding>Closing Date : &nbsp;&nbsp;{{scheduleData.s_closing_date}}</ion-item>
+            <ion-item *ngIf="scheduleData.s_etd!=null" no-padding >ETD : &nbsp;&nbsp;{{scheduleData.s_etd}}</ion-item>
+            <ion-item *ngIf="scheduleData.s_eta!=null" no-padding >ETA : &nbsp;&nbsp;{{scheduleData.s_eta}}</ion-item>
+        </ion-list>
       </div>
 
     </ion-list>
