@@ -4,6 +4,7 @@ import {LclSummaryPage} from "../lcl-summary/lcl-summary";
 import {LoginPage} from "../login-modal/login-modal";
 import {UserData} from "../../providers/user-data";
 import {AuthServiceProvider} from '../../providers/auth-service/auth-service';
+import {QuickcodeProvider} from '../../providers/quickcode/quickcode';
 
 import {NgForm} from "@angular/forms";
 
@@ -16,20 +17,48 @@ export interface value{
 })
 export class LclBookingPage {
   @ViewChild(Navbar) navbar : Navbar;
+/*<<<<<<< HEAD
   pods:value[]=[{va:'TH',name:'Thailand'},{va:'HK',name:'Hongkong'},{va:'JP',name:'Japan'}];
   commo:value[]=[{va:'ct',name:'Cartons'},{va:'se',name:'Ceramic'},{va:'gl',name:'Glasses'}];
   gtypes:value[]=[{va:'ton',name:'TON'},{va:'kg',name:'KG'}];
   qtypes:value[]=[{va:'ea',name:'EA'},{va:'pi',name:'Pieces'},{va:'bx',name:'Boxes'}];
   lcl:{pod?:string,myDate?:string,volume?:string,gw?:string,gtype?:string,commodity?:string,adetail?:string,quantity?:string,qtype?:string};
+=======*/
+
+  pods: Array<any>;
+  gwunits: Array<any>;
+  packages: Array<any>;
+  commodities: Array<any>;
+  scheduleData:any;
+  errorMessage: string;
+
+  lcl:{pod?:string,loadDate?:string,volume?:string,gw?:string,gwunit?:string,commodities?:string,detail?:string,quantity?:string,package?:string} = {pod:null,gwunit:null,commodities:null,package:null};
+
   submitted = false;
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public viewCtrl: ViewController,
               public mdlCtrl: ModalController,
               public userData: UserData,
-              public authService: AuthServiceProvider
+              public authService: AuthServiceProvider,
+              public quickcodeService :QuickcodeProvider
             ) {
-      this.lcl = {pod:'TH',gtype:'ton',commodity:'ct',qtype:'ea'};
+
+      this.scheduleData = this.navParams.data;
+      console.log("schedule Data:"+JSON.stringify(this.navParams.data));
+      this.quickcodeService.getPod().subscribe(
+        (res) => this.pods = res.responseData,
+        (error) => {  this.errorMessage = <any> error});
+      this.quickcodeService.getGwunit().subscribe(
+        (res) => this.gwunits = res.responseData,
+        (error) => {  this.errorMessage = <any> error});
+      this.quickcodeService.getPackage().subscribe(
+        (res) => this.packages = res.responseData,
+        (error) => {  this.errorMessage = <any> error});
+      this.quickcodeService.getCommodities().subscribe(
+        (res) => this.commodities = res.responseData,
+        (error) => {  this.errorMessage = <any> error});
+
   }
 
   ionViewCanEnter(){
@@ -37,6 +66,7 @@ export class LclBookingPage {
   }
 
   CheckSts(form: NgForm){
+
     this.authService.getProfile().subscribe((res)=>{
       let profile = res;
       if(profile.responseCode == 3){

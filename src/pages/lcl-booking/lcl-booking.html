@@ -10,16 +10,19 @@
 
       <ion-item no-padding>
         <ion-label no-padding col-6 >POD</ion-label>
-        <ion-select [(ngModel)]="lcl.pod" name="pod" required>
-          <ion-option *ngFor="let pod of pods" value="{{pod.va}}">{{pod.name}}</ion-option>
+
+        <ion-select [(ngModel)]="lcl.pod" name="pod" #pod="ngModel" placeholder="Please Select" required>
+          <ion-option *ngFor="let pod of pods" [value]="pod">{{pod.qc_lookup_value2}}</ion-option>
         </ion-select>
+
       </ion-item>
+      <ion-badge *ngIf="loadDate.valid && pod.invalid" [hidden]="pod.valid" float-end>Please select POD</ion-badge>
 
       <ion-item no-padding>
-        <ion-label no-padding col-6>Date</ion-label>
-        <ion-datetime  displayFormat="DDD DD/MMM/YYYY" min="2016" max="2020-10-31" [(ngModel)]="lcl.myDate" name="myDate" #myDate="ngModel" placeholder="select date" required></ion-datetime>
+        <ion-label no-padding col-6>Loading Date</ion-label>
+        <ion-datetime  displayFormat="DDD DD/MMM/YYYY" min="2016" max="2020-10-31" [(ngModel)]="lcl.loadDate" name="loadDate" #loadDate="ngModel" placeholder="Please Select" required></ion-datetime>
       </ion-item>
-      <ion-badge ion-text *ngIf="!myDate.valid" float-end>
+      <ion-badge ion-text *ngIf="loadDate.invalid" float-end>
         Please Select Date
       </ion-badge>
 
@@ -34,8 +37,8 @@
       <ion-item no-border no-padding>
         <ion-label no-padding col-6>Gross Weight</ion-label>
         <ion-input [(ngModel)]="lcl.gw" name="gw" type="number" placeholder="g.w." #gw="ngModel" required></ion-input>
-        <ion-select [(ngModel)]="lcl.gtype" name="gtype">
-          <ion-option *ngFor="let gtype of gtypes" value="{{gtype.va}}">{{gtype.name}}</ion-option>
+        <ion-select [(ngModel)]="lcl.gwunit" name="gwunit" >
+          <ion-option *ngFor="let gwunit of gwunits" [value]="gwunit" [selected]="gwunit.qc_lookup_value1 == 'kg.'">{{gwunit.qc_lookup_value1}}</ion-option>
         </ion-select>
       </ion-item>
       <ion-badge ion-text *ngIf="gw.invalid" [hidden]="!gw.touched" float-end>
@@ -60,35 +63,37 @@
 
       <ion-item no-padding>
         <ion-label no-padding col-6>Commodity</ion-label>
-        <ion-select [(ngModel)]="lcl.commodity" name="commodity">
-          <ion-option *ngFor="let commod of commo" value="{{commod.va}}">{{commod.name}}</ion-option>
+        <ion-select [(ngModel)]="lcl.commodities" name="commodities">
+           <ion-option *ngFor="let commodity of commodities" [value]="commodity">{{commodity.qc_lookup_value1}}</ion-option>
         </ion-select>
       </ion-item>
 
       <ion-item no-padding>
         <ion-label no-padding col-6>Quantity</ion-label>
         <ion-input type="text" [(ngModel)]="lcl.quantity" name="quantity" placeholder="quantity"></ion-input>
-        <ion-select [(ngModel)]="lcl.qtype" name="qtype">
-          <ion-option *ngFor="let qtype of qtypes" value="{{qtype.va}}">{{qtype.name}}</ion-option>
+        <ion-select [(ngModel)]="lcl.package" name="package">
+          <ion-option *ngFor="let package of packages" [value]="package">{{package.qc_lookup_value1}}</ion-option>
         </ion-select>
       </ion-item>
 
       <ion-item no-padding>
         <ion-label no-padding col-6>Addition Detail</ion-label>
-        <ion-input type="text" placeholder="addition" [(ngModel)]="lcl.adetail" name="adetail"></ion-input>
+        <ion-input type="text" placeholder="addition" [(ngModel)]="lcl.detail" name="detail"></ion-input>
       </ion-item>
 
       <br/>
-      <ion-list-header>
-        Shipper Reference
-      </ion-list-header>
+      <div *ngIf="(scheduleData | json) != ({} | json)" >
+        <ion-list-header>
+          Shipper Reference
+        </ion-list-header>
 
-      <ion-item no-padding col-5>Carrier :</ion-item>
-      <ion-item no-padding col-5>Vessel :</ion-item>
-      <ion-item no-padding col-5>Feeder :</ion-item>
-      <ion-item no-padding col-5>Closing Date :</ion-item>
-      <ion-item no-padding col-5>ETD :</ion-item>
-      <ion-item no-padding col-5>ETA :</ion-item>
+        <ion-item no-padding col-5>Carrier :</ion-item>
+        <ion-item no-padding col-5>Vessel :</ion-item>
+        <ion-item no-padding col-5>Feeder :</ion-item>
+        <ion-item no-padding col-5>Closing Date :</ion-item>
+        <ion-item no-padding col-5>ETD :</ion-item>
+        <ion-item no-padding col-5>ETA :</ion-item>
+      </div>
 
     </ion-list>
     <button (click)="CheckSts(lclbooking)" ion-button icon-right block type="submit" [disabled]="!lclbooking.form.valid">
