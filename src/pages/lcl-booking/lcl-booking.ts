@@ -27,11 +27,7 @@ export class LclBookingPage {
   }
 
   ionViewCanEnter(){
-    let modal = this.mdlCtrl.create(LoginPage, LclBookingPage);
-    this.userData.hasLoggedIn().then((hasLoggedIn) => {
-      if (hasLoggedIn === true) { console.log('login from lcl'); return true; }
-      else { console.log('false lcl'); this.navCtrl.pop(); modal.present(); return false; }
-    });
+      this.CheckPage();
   }
 
   CheckSts(form: NgForm){
@@ -40,13 +36,30 @@ export class LclBookingPage {
       if(profile.responseCode == 3){
         this.userData.logout();
         console.log('logout from lcl booking: Get profile error');
+        this.CheckPage();
       }else if(profile.responseCode == 1 || profile.responseCode == 2){
         this.userData.logout();
         console.log('logout from lcl booking: Have a problem from DB');
-        alert('Please try to logIn again');
+        this.CheckPage();
       }else{
         this.toSummary(form);
         console.log('loggedIn from lcl booking');
+      }
+    });
+  }
+
+  CheckPage(){
+    let modal = this.mdlCtrl.create(LoginPage, LclBookingPage);
+    this.userData.hasLoggedIn().then((hasLoggedIn) => {
+      if (hasLoggedIn === true) {
+        console.log('login from lcl before open lcl page');
+        return true;
+      }
+      else {
+        console.log('fail before open lcl');
+        this.navCtrl.pop();
+        modal.present();
+        return false;
       }
     });
   }
