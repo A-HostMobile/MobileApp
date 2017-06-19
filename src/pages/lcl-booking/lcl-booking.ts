@@ -7,13 +7,19 @@ import {AuthServiceProvider} from '../../providers/auth-service/auth-service';
 
 import {NgForm} from "@angular/forms";
 
-
+export interface value{
+  va:string;name:string;
+}
 @Component({
   selector: 'page-lcl-booking',
   templateUrl: 'lcl-booking.html',
 })
 export class LclBookingPage {
   @ViewChild(Navbar) navbar : Navbar;
+  pods:value[]=[{va:'TH',name:'Thailand'},
+    {va:'HK',name:'Hongkong'},
+    {va:'JP',name:'Japan'}];
+  gtypes:value[]=[{va:'ton',name:'TON'},{va:'kg',name:'KG'}];
   lcl:{pod?:string,myDate?:string,volume?:string,gw?:string,gtype?:string,commodity?:string,adetail?:string,quantity?:string,qtype?:string} = {pod:'TH',gtype:'ton',commodity:'ct',qtype:'ea'};
   submitted = false;
   constructor(public navCtrl: NavController,
@@ -67,6 +73,7 @@ export class LclBookingPage {
   toSummary(form: NgForm){
     this.submitted = true;
     if(form.valid){
+      console.log(this.lcl);
       this.navCtrl.push(LclSummaryPage,this.lcl);
     } else {
       console.log('NOOO!!');
