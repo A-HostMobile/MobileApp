@@ -46,7 +46,7 @@ export class ScheduleResultPage {
   //   console.log('ionViewDidLoad ScheduleResultPage');
   // }
 
-  toLCLBooking(){
+  toLCLBooking(schData:any){
     this.authService.getProfile().subscribe((res)=>{
       let profile = res;
       if(profile.responseCode == 3){
@@ -60,7 +60,7 @@ export class ScheduleResultPage {
       }else{
         console.log('login from schedule result');
         this.userData.login(profile);
-        this.navCtrl.push(LclBookingPage);
+        this.navCtrl.push(LclBookingPage,schData);
       }
     });
   }

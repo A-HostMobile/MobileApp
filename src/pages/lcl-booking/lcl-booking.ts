@@ -19,6 +19,10 @@ export class LclBookingPage {
   @ViewChild(Navbar) navbar : Navbar;
   
   pods: Array<any>;
+  gwunits: Array<any>;
+  packages: Array<any>;
+  commodities: Array<any>;
+  scheduleData:any;
   errorMessage: string;
   // pods:value[]=[
   //               {va:'TH',name:'Thailand'},
@@ -26,12 +30,13 @@ export class LclBookingPage {
   //               {va:'JP',name:'Japan'}
   //              ];
 
-  gtypes:value[]= [
-                    {va:'ton',name:'TON'},
-                    {va:'kg',name:'KG'}
-                  ];
+  // gtypes:value[]= [
+  //                   {va:'ton',name:'TON'},
+  //                   {va:'kg',name:'KG'}
+  //                 ];
 
-  lcl:{pod?:string,myDate?:string,volume?:string,gw?:string,gtype?:string,commodity?:string,adetail?:string,quantity?:string,qtype?:string} = {pod:null,gtype:'ton',commodity:'ct',qtype:'ea'};
+  lcl:{pod?:string,loadDate?:string,volume?:string,gw?:string,gwunit?:string,commodities?:string,detail?:string,quantity?:string,package?:string} = {pod:null,gwunit:null,commodities:null,package:null};
+  //lcl:{pod:string,myDate:string,volume:string,gw:string,gwunit:string,commodity:string,adetail:string,quantity:string,qtype:string};
   submitted = false;
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -41,9 +46,22 @@ export class LclBookingPage {
               public authService: AuthServiceProvider,
               public quickcodeService :QuickcodeProvider
             ) {
+
+      this.scheduleData = this.navParams.data;
+      console.log("schedule Data:"+JSON.stringify(this.navParams.data));
       this.quickcodeService.getPod().subscribe(
         (res) => this.pods = res.responseData,
         (error) => {  this.errorMessage = <any> error});
+      this.quickcodeService.getGwunit().subscribe(
+        (res) => this.gwunits = res.responseData,
+        (error) => {  this.errorMessage = <any> error});
+      this.quickcodeService.getPackage().subscribe(
+        (res) => this.packages = res.responseData,
+        (error) => {  this.errorMessage = <any> error});
+      this.quickcodeService.getCommodities().subscribe(
+        (res) => this.commodities = res.responseData,
+        (error) => {  this.errorMessage = <any> error});
+
   }
 
   ionViewCanEnter(){
