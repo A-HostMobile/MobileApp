@@ -21,6 +21,7 @@ import {HistoryPage} from "../pages/history/history";
 import {CompletedPage} from "../pages/completed/completed";
 import {StatusBar} from "@ionic-native/status-bar";
 import {AuthServiceProvider} from '../providers/auth-service/auth-service';
+import { QuickcodeProvider } from '../providers/quickcode/quickcode';
 
 
 export interface PageInterface {
@@ -42,6 +43,11 @@ export class TemplateApp {
   bpress: number = 0;
   rootPage: any = HomePage;
   _profile: any;
+  _quickcode_pod:any;
+  _quickcode_package:any;
+  _quickcode_gwunit:any;
+  _quickcode_countrycode:any;
+   _quickcode_commodities:any;
 
   appPages: PageInterface[] = [
     { title: 'Home', name: 'HomePage', component: HomePage, icon: 'ios-home' },
@@ -73,7 +79,8 @@ export class TemplateApp {
     public confData: ConferenceData,
     public splashScreen: SplashScreen,
     public toastCtrl: ToastController,
-    public authService: AuthServiceProvider
+    public authService: AuthServiceProvider,
+    public quickcodeService: QuickcodeProvider
   ) {
 
     confData.load();
@@ -97,7 +104,7 @@ export class TemplateApp {
         });
         let profile = localStorage.getItem('profile');
           if (profile){
-              this._profile = JSON.parse(profile);
+              this._profile = JSON.parse(profile);            
           }
           this.events.publish('user:login');
       }else{
@@ -118,6 +125,27 @@ export class TemplateApp {
     this.backButton();
 
     this.status.hide();
+
+    this.quickcodeService.getPod().subscribe((resPod)=>{
+        this._quickcode_pod = resPod;
+        //console.log("POD Data:"+JSON.stringify(this._quickcode_pod));
+    });
+    this.quickcodeService.getPackage().subscribe((resPackage)=>{
+        this._quickcode_package = resPackage;
+        //console.log("Package Data:"+JSON.stringify(this._quickcode_package));
+    });
+    this.quickcodeService.getGwunit().subscribe((resGwunit)=>{
+        this._quickcode_gwunit = resGwunit;
+        //console.log("Gwunit Data:"+JSON.stringify(this._quickcode_gwunit));
+    });
+    this.quickcodeService.getCountrycode().subscribe((resCountry)=>{
+        this._quickcode_countrycode = resCountry;
+        //console.log("CountryCode Data:"+JSON.stringify(this._quickcode_countrycode));
+    });
+    this.quickcodeService.getCommodities().subscribe((resCommodity)=>{
+        this._quickcode_commodities = resCommodity;
+        //console.log("Commodities Data:"+JSON.stringify(this._quickcode_commodities));
+    });
 
   }
 
@@ -162,6 +190,7 @@ export class TemplateApp {
   platformReady() {
     this.platform.ready().then(() => {
       this.splashScreen.hide();
+      
     });
   }
 

@@ -56,6 +56,7 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
 import { OrderByPipe } from '../pipes/OrderByPipe';
 
 import {StatusBar} from "@ionic-native/status-bar";
+import { QuickcodeProvider } from '../providers/quickcode/quickcode';
 
 
 
@@ -158,6 +159,7 @@ import {StatusBar} from "@ionic-native/status-bar";
     ScheduleServiceProvider,
     StatusBar,
     AuthServiceProvider,
+    QuickcodeProvider,
   ]
 })
 export class AppModule { }
