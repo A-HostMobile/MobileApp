@@ -16,11 +16,11 @@ export interface value{
 })
 export class LclBookingPage {
   @ViewChild(Navbar) navbar : Navbar;
-  pods:value[]=[{va:'TH',name:'Thailand'},
-    {va:'HK',name:'Hongkong'},
-    {va:'JP',name:'Japan'}];
+  pods:value[]=[{va:'TH',name:'Thailand'},{va:'HK',name:'Hongkong'},{va:'JP',name:'Japan'}];
+  commo:value[]=[{va:'ct',name:'Cartons'},{va:'se',name:'Ceramic'},{va:'gl',name:'Glasses'}];
   gtypes:value[]=[{va:'ton',name:'TON'},{va:'kg',name:'KG'}];
-  lcl:{pod?:string,myDate?:string,volume?:string,gw?:string,gtype?:string,commodity?:string,adetail?:string,quantity?:string,qtype?:string} = {pod:'TH',gtype:'ton',commodity:'ct',qtype:'ea'};
+  qtypes:value[]=[{va:'ea',name:'EA'},{va:'pi',name:'Pieces'},{va:'bx',name:'Boxes'}];
+  lcl:{pod?:string,myDate?:string,volume?:string,gw?:string,gtype?:string,commodity?:string,adetail?:string,quantity?:string,qtype?:string};
   submitted = false;
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -29,7 +29,7 @@ export class LclBookingPage {
               public userData: UserData,
               public authService: AuthServiceProvider
             ) {
-
+      this.lcl = {pod:'TH',gtype:'ton',commodity:'ct',qtype:'ea'};
   }
 
   ionViewCanEnter(){
@@ -73,8 +73,8 @@ export class LclBookingPage {
   toSummary(form: NgForm){
     this.submitted = true;
     if(form.valid){
-      console.log(this.lcl);
-      this.navCtrl.push(LclSummaryPage,this.lcl);
+      console.log(form.value);
+      this.navCtrl.push(LclSummaryPage,form.value);
     } else {
       console.log('NOOO!!');
     }

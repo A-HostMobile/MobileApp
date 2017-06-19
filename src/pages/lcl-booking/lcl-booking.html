@@ -19,28 +19,28 @@
         <ion-label no-padding col-6>Date</ion-label>
         <ion-datetime  displayFormat="DDD DD/MMM/YYYY" min="2016" max="2020-10-31" [(ngModel)]="lcl.myDate" name="myDate" #myDate="ngModel" placeholder="select date" required></ion-datetime>
       </ion-item>
-      <p ion-text [hidden]="myDate.valid || submitted == false" color="danger" padding-left>
-        Date is required
-      </p>
+      <ion-badge ion-text *ngIf="!myDate.valid" float-end>
+        Please Select Date
+      </ion-badge>
 
       <ion-item no-padding>
         <ion-label no-padding col-6 >Volume (CBM)</ion-label>
         <ion-input [(ngModel)]="lcl.volume" name="volume" type="number" placeholder="volume" #volume="ngModel" required></ion-input>
       </ion-item>
-      <p ion-text [hidden]="volume.valid || submitted == false" color="danger" padding-left>
+      <ion-badge ion-text [hidden]="!volume.touched" *ngIf="volume.invalid" float-end>
         Volume is required
-      </p>
+      </ion-badge>
 
-      <ion-item no-padding>
+      <ion-item no-border no-padding>
         <ion-label no-padding col-6>Gross Weight</ion-label>
         <ion-input [(ngModel)]="lcl.gw" name="gw" type="number" placeholder="g.w." #gw="ngModel" required></ion-input>
         <ion-select [(ngModel)]="lcl.gtype" name="gtype">
           <ion-option *ngFor="let gtype of gtypes" value="{{gtype.va}}">{{gtype.name}}</ion-option>
         </ion-select>
       </ion-item>
-      <p ion-text [hidden]="gw.valid || submitted == false" color="danger" padding-left>
+      <ion-badge ion-text *ngIf="gw.invalid" [hidden]="!gw.touched" float-end>
         Groos Weight is required
-      </p>
+      </ion-badge>
 
     </ion-list>
 
@@ -61,9 +61,7 @@
       <ion-item no-padding>
         <ion-label no-padding col-6>Commodity</ion-label>
         <ion-select [(ngModel)]="lcl.commodity" name="commodity">
-          <ion-option value="ct">Cartons</ion-option>
-          <ion-option value="se">Ceramic</ion-option>
-          <ion-option value="gl">Glasses</ion-option>
+          <ion-option *ngFor="let commod of commo" value="{{commod.va}}">{{commod.name}}</ion-option>
         </ion-select>
       </ion-item>
 
@@ -71,9 +69,7 @@
         <ion-label no-padding col-6>Quantity</ion-label>
         <ion-input type="text" [(ngModel)]="lcl.quantity" name="quantity" placeholder="quantity"></ion-input>
         <ion-select [(ngModel)]="lcl.qtype" name="qtype">
-          <ion-option value="ea">EA</ion-option>
-          <ion-option value="pi">Pieces</ion-option>
-          <ion-option value="bx">Boxs</ion-option>
+          <ion-option *ngFor="let qtype of qtypes" value="{{qtype.va}}">{{qtype.name}}</ion-option>
         </ion-select>
       </ion-item>
 
@@ -95,7 +91,7 @@
       <ion-item no-padding col-5>ETA :</ion-item>
 
     </ion-list>
-    <button (click)="CheckSts(lclbooking)" ion-button icon-right block type="submit">
+    <button (click)="CheckSts(lclbooking)" ion-button icon-right block type="submit" [disabled]="!lclbooking.form.valid">
       Next
       <ion-icon ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>
     </button>
