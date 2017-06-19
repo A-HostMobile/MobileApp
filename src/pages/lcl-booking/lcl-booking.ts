@@ -4,6 +4,7 @@ import {LclSummaryPage} from "../lcl-summary/lcl-summary";
 import {LoginPage} from "../login-modal/login-modal";
 import {UserData} from "../../providers/user-data";
 import {AuthServiceProvider} from '../../providers/auth-service/auth-service';
+import {QuickcodeProvider} from '../../providers/quickcode/quickcode';
 
 import {NgForm} from "@angular/forms";
 
@@ -16,20 +17,33 @@ export interface value{
 })
 export class LclBookingPage {
   @ViewChild(Navbar) navbar : Navbar;
-  pods:value[]=[{va:'TH',name:'Thailand'},
-    {va:'HK',name:'Hongkong'},
-    {va:'JP',name:'Japan'}];
-  gtypes:value[]=[{va:'ton',name:'TON'},{va:'kg',name:'KG'}];
-  lcl:{pod?:string,myDate?:string,volume?:string,gw?:string,gtype?:string,commodity?:string,adetail?:string,quantity?:string,qtype?:string} = {pod:'TH',gtype:'ton',commodity:'ct',qtype:'ea'};
+  
+  pods: Array<any>;
+  errorMessage: string;
+  // pods:value[]=[
+  //               {va:'TH',name:'Thailand'},
+  //               {va:'HK',name:'Hongkong'},
+  //               {va:'JP',name:'Japan'}
+  //              ];
+
+  gtypes:value[]= [
+                    {va:'ton',name:'TON'},
+                    {va:'kg',name:'KG'}
+                  ];
+
+  lcl:{pod?:string,myDate?:string,volume?:string,gw?:string,gtype?:string,commodity?:string,adetail?:string,quantity?:string,qtype?:string} = {pod:null,gtype:'ton',commodity:'ct',qtype:'ea'};
   submitted = false;
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public viewCtrl: ViewController,
               public mdlCtrl: ModalController,
               public userData: UserData,
-              public authService: AuthServiceProvider
+              public authService: AuthServiceProvider,
+              public quickcodeService :QuickcodeProvider
             ) {
-
+      this.quickcodeService.getPod().subscribe(
+        (res) => this.pods = res.responseData,
+        (error) => {  this.errorMessage = <any> error});
   }
 
   ionViewCanEnter(){
@@ -37,21 +51,23 @@ export class LclBookingPage {
   }
 
   CheckSts(form: NgForm){
-    this.authService.getProfile().subscribe((res)=>{
-      let profile = res;
-      if(profile.responseCode == 3){
-        this.userData.logout();
-        console.log('logout from lcl booking: Get profile error');
-        this.CheckPage();
-      }else if(profile.responseCode == 1 || profile.responseCode == 2){
-        this.userData.logout();
-        console.log('logout from lcl booking: Have a problem from DB');
-        this.CheckPage();
-      }else{
-        this.toSummary(form);
-        console.log('loggedIn from lcl booking');
-      }
-    });
+      console.log("Form Data :"+JSON.stringify(form.value));
+    
+    // this.authService.getProfile().subscribe((res)=>{
+    //   let profile = res;
+    //   if(profile.responseCode == 3){
+    //     this.userData.logout();
+    //     console.log('logout from lcl booking: Get profile error');
+    //     this.CheckPage();
+    //   }else if(profile.responseCode == 1 || profile.responseCode == 2){
+    //     this.userData.logout();
+    //     console.log('logout from lcl booking: Have a problem from DB');
+    //     this.CheckPage();
+    //   }else{
+    //     this.toSummary(form);
+    //     console.log('loggedIn from lcl booking');
+    //   }
+    // });
   }
 
   CheckPage(){
