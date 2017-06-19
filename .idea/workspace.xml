@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f44e5d9-4dc2-467a-85f4-e79ac08cf5ea" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/add-pickup-modal/add-pickup-modal.html" afterPath="$PROJECT_DIR$/src/pages/add-pickup-modal/add-pickup-modal.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/add-pickup-modal/add-pickup-modal.ts" afterPath="$PROJECT_DIR$/src/pages/add-pickup-modal/add-pickup-modal.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/lcl-booking/lcl-booking.html" afterPath="$PROJECT_DIR$/src/pages/lcl-booking/lcl-booking.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/lcl-booking/lcl-booking.ts" afterPath="$PROJECT_DIR$/src/pages/lcl-booking/lcl-booking.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,35 +21,20 @@
       <file leaf-file-name="lcl-booking.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/lcl-booking/lcl-booking.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1275">
-              <caret line="75" column="57" lean-forward="false" selection-start-line="75" selection-start-column="57" selection-end-line="75" selection-end-column="57" />
+            <state relative-caret-position="527">
+              <caret line="31" column="10" lean-forward="true" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="courier-booking.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/courier-booking/courier-booking.html">
+      <file leaf-file-name="lcl-booking.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pages/lcl-booking/lcl-booking.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="586">
-              <caret line="52" column="159" lean-forward="true" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="159" />
+            <state relative-caret-position="687">
+              <caret line="62" column="28" lean-forward="false" selection-start-line="62" selection-start-column="28" selection-end-line="62" selection-end-column="28" />
               <folding>
-                <element signature="n#style#0;n#p#0;n#ion-list#0;n#ion-content#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#ion-list#0;n#form#0;n#ion-content#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="courier-item-modal.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/courier-item-modal/courier-item-modal.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="25" column="22" lean-forward="false" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
-              <folding>
-                <element signature="n#style#0;n#p#0;n#ion-list#1;n#form#0;n#ion-content#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#ion-list#1;n#form#0;n#ion-content#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#2;n#ion-list#1;n#form#0;n#ion-content#0;n#!!top" expanded="true" />
+                <element signature="e#0#51#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -58,8 +43,8 @@
       <file leaf-file-name="courier-item-modal.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/courier-item-modal/courier-item-modal.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="37" lean-forward="false" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
+            <state relative-caret-position="102">
+              <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
@@ -87,11 +72,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add-pickup-modal.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="add-pickup-modal.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/add-pickup-modal/add-pickup-modal.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="32" column="30" lean-forward="false" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
+            <state relative-caret-position="34">
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="6" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -196,9 +181,7 @@
         <option value="$PROJECT_DIR$/src/pages/pickup-address/pickup-address.html" />
         <option value="$PROJECT_DIR$/src/pages/home/home.ts" />
         <option value="$PROJECT_DIR$/src/pages/courier-booking/courier-booking.scss" />
-        <option value="$PROJECT_DIR$/src/pages/lcl-booking/lcl-booking.ts" />
         <option value="$PROJECT_DIR$/src/providers/AppSettings.ts" />
-        <option value="$PROJECT_DIR$/src/pages/lcl-booking/lcl-booking.html" />
         <option value="$PROJECT_DIR$/src/app/app.component.ts" />
         <option value="$PROJECT_DIR$/src/pages/courier-booking/courier-booking.ts" />
         <option value="$PROJECT_DIR$/src/pages/courier-booking/courier-booking.html" />
@@ -206,6 +189,8 @@
         <option value="$PROJECT_DIR$/src/pages/courier-item-modal/courier-item-modal.html" />
         <option value="$PROJECT_DIR$/src/pages/add-pickup-modal/add-pickup-modal.html" />
         <option value="$PROJECT_DIR$/src/pages/add-pickup-modal/add-pickup-modal.ts" />
+        <option value="$PROJECT_DIR$/src/pages/lcl-booking/lcl-booking.html" />
+        <option value="$PROJECT_DIR$/src/pages/lcl-booking/lcl-booking.ts" />
       </list>
     </option>
   </component>
@@ -342,6 +327,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TemplateApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MobileApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lcl-booking" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -583,12 +590,12 @@
       <workItem from="1497498509306" duration="19557000" />
       <workItem from="1497526546099" duration="722000" />
       <workItem from="1497581724953" duration="16004000" />
-      <workItem from="1497839787533" duration="6545000" />
+      <workItem from="1497839787533" duration="7062000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="219183000" />
+    <option name="totallyTimeSpent" value="219700000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -920,29 +927,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/lcl-booking/lcl-booking.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="75" column="57" lean-forward="false" selection-start-line="75" selection-start-column="57" selection-end-line="75" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/providers/AppSettings.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="1" lean-forward="false" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/lcl-booking/lcl-booking.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="47" column="29" lean-forward="false" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -971,19 +960,9 @@
         <state relative-caret-position="170">
           <caret line="25" column="22" lean-forward="false" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
           <folding>
-            <element signature="n#style#0;n#p#0;n#ion-list#1;n#form#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#ion-list#1;n#form#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#2;n#ion-list#1;n#form#0;n#ion-content#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/courier-item-modal/courier-item-modal.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="37" lean-forward="false" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#ion-list#1;n#form#0;n#ion-content#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#1;n#ion-list#1;n#form#0;n#ion-content#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#2;n#ion-list#1;n#form#0;n#ion-content#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -993,8 +972,8 @@
         <state relative-caret-position="586">
           <caret line="52" column="159" lean-forward="true" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="159" />
           <folding>
-            <element signature="n#style#0;n#p#0;n#ion-list#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#ion-list#0;n#form#0;n#ion-content#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#ion-list#0;n#ion-content#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#1;n#ion-list#0;n#form#0;n#ion-content#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1009,9 +988,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/add-pickup-modal/add-pickup-modal.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="32" column="30" lean-forward="false" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
+        <state relative-caret-position="34">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="6" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/courier-item-modal/courier-item-modal.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/lcl-booking/lcl-booking.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="10" lean-forward="true" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/lcl-booking/lcl-booking.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="687">
+          <caret line="62" column="28" lean-forward="false" selection-start-line="62" selection-start-column="28" selection-end-line="62" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

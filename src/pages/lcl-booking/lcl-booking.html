@@ -11,9 +11,7 @@
       <ion-item no-padding>
         <ion-label no-padding col-6 >POD</ion-label>
         <ion-select [(ngModel)]="lcl.pod" name="pod" required>
-          <ion-option value="TH">Thailand</ion-option>
-          <ion-option value="HK">Hongkong</ion-option>
-          <ion-option value="JP">Japan</ion-option>
+          <ion-option *ngFor="let pod of pods" value="{{pod.va}}">{{pod.name}}</ion-option>
         </ion-select>
       </ion-item>
 
@@ -37,8 +35,7 @@
         <ion-label no-padding col-6>Gross Weight</ion-label>
         <ion-input [(ngModel)]="lcl.gw" name="gw" type="number" placeholder="g.w." #gw="ngModel" required></ion-input>
         <ion-select [(ngModel)]="lcl.gtype" name="gtype">
-          <ion-option value="ton">TON</ion-option>
-          <ion-option value="kg">KG</ion-option>
+          <ion-option *ngFor="let gtype of gtypes" value="{{gtype.va}}">{{gtype.name}}</ion-option>
         </ion-select>
       </ion-item>
       <p ion-text [hidden]="gw.valid || submitted == false" color="danger" padding-left>
