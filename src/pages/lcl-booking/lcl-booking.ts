@@ -15,17 +15,16 @@ import {NgForm} from "@angular/forms";
 
 export class LclBookingPage {
   @ViewChild(Navbar) navbar : Navbar;
-  
-  
+
   pods: Array<any>;
   gwunits: Array<any>;
   packages: Array<any>;
   commodities: Array<any>;
   scheduleData:any;
   errorMessage: string;
-  
+
   lcl:{pod?:string,loadDate?:string,volume?:string,gw?:string,gwunit?:string,commodities?:string,detail?:string,quantity?:string,package?:string} = {pod:null,gwunit:null,commodities:null,package:null};
-  //lcl:{pod:string,myDate:string,volume:string,gw:string,gwunit:string,commodity:string,adetail:string,quantity:string,qtype:string};
+
   submitted = false;
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -58,23 +57,22 @@ export class LclBookingPage {
   }
 
   CheckSts(form: NgForm){
-      console.log("Form Data :"+JSON.stringify(form.value));
-    
-    // this.authService.getProfile().subscribe((res)=>{
-    //   let profile = res;
-    //   if(profile.responseCode == 3){
-    //     this.userData.logout();
-    //     console.log('logout from lcl booking: Get profile error');
-    //     this.CheckPage();
-    //   }else if(profile.responseCode == 1 || profile.responseCode == 2){
-    //     this.userData.logout();
-    //     console.log('logout from lcl booking: Have a problem from DB');
-    //     this.CheckPage();
-    //   }else{
-    //     this.toSummary(form);
-    //     console.log('loggedIn from lcl booking');
-    //   }
-    // });
+
+    this.authService.getProfile().subscribe((res)=>{
+      let profile = res;
+      if(profile.responseCode == 3){
+        this.userData.logout();
+        console.log('logout from lcl booking: Get profile error');
+        this.CheckPage();
+      }else if(profile.responseCode == 1 || profile.responseCode == 2){
+        this.userData.logout();
+        console.log('logout from lcl booking: Have a problem from DB');
+        this.CheckPage();
+      }else{
+        this.toSummary(form);
+        console.log('loggedIn from lcl booking');
+      }
+    });
   }
 
   CheckPage(){
@@ -96,8 +94,8 @@ export class LclBookingPage {
   toSummary(form: NgForm){
     this.submitted = true;
     if(form.valid){
-      console.log(this.lcl);
-      this.navCtrl.push(LclSummaryPage,this.lcl);
+      console.log(form.value);
+      this.navCtrl.push(LclSummaryPage,form.value);
     } else {
       console.log('NOOO!!');
     }
