@@ -11,37 +11,39 @@
       <ion-item no-padding>
         <ion-label no-padding col-6 >POD</ion-label>
 
-        <ion-select [(ngModel)]="lcl.pod" name="pod" placeholder="Please Select" required>
+        <ion-select [(ngModel)]="lcl.pod" name="pod" #pod="ngModel" placeholder="Please Select" required>
           <ion-option *ngFor="let pod of pods" [value]="pod">{{pod.qc_lookup_value2}}</ion-option>
         </ion-select>
+
       </ion-item>
+      <ion-badge *ngIf="loadDate.valid && pod.invalid" [hidden]="pod.valid" float-end>Please select POD</ion-badge>
 
       <ion-item no-padding>
         <ion-label no-padding col-6>Loading Date</ion-label>
         <ion-datetime  displayFormat="DDD DD/MMM/YYYY" min="2016" max="2020-10-31" [(ngModel)]="lcl.loadDate" name="loadDate" #loadDate="ngModel" placeholder="Please Select" required></ion-datetime>
       </ion-item>
-      <p ion-text [hidden]="loadDate.valid || submitted == false" color="danger" padding-left>
-        Date is required
-      </p>
+      <ion-badge ion-text *ngIf="loadDate.invalid" float-end>
+        Please Select Date
+      </ion-badge>
 
       <ion-item no-padding>
         <ion-label no-padding col-6 >Volume (CBM)</ion-label>
         <ion-input [(ngModel)]="lcl.volume" name="volume" type="number" placeholder="volume" #volume="ngModel" required></ion-input>
       </ion-item>
-      <p ion-text [hidden]="volume.valid || submitted == false" color="danger" padding-left>
+      <ion-badge ion-text [hidden]="!volume.touched" *ngIf="volume.invalid" float-end>
         Volume is required
-      </p>
+      </ion-badge>
 
-      <ion-item no-padding>
+      <ion-item no-border no-padding>
         <ion-label no-padding col-6>Gross Weight</ion-label>
         <ion-input [(ngModel)]="lcl.gw" name="gw" type="number" placeholder="g.w." #gw="ngModel" required></ion-input>
         <ion-select [(ngModel)]="lcl.gwunit" name="gwunit" >
           <ion-option *ngFor="let gwunit of gwunits" [value]="gwunit" [selected]="gwunit.qc_lookup_value1 == 'kg.'">{{gwunit.qc_lookup_value1}}</ion-option>
         </ion-select>
       </ion-item>
-      <p ion-text [hidden]="gw.valid || submitted == false" color="danger" padding-left>
+      <ion-badge ion-text *ngIf="gw.invalid" [hidden]="!gw.touched" float-end>
         Groos Weight is required
-      </p>
+      </ion-badge>
 
     </ion-list>
 
@@ -94,7 +96,7 @@
       </div>
 
     </ion-list>
-    <button (click)="CheckSts(lclbooking)" ion-button icon-right block type="submit">
+    <button (click)="CheckSts(lclbooking)" ion-button icon-right block type="submit" [disabled]="!lclbooking.form.valid">
       Next
       <ion-icon ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>
     </button>
