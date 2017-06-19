@@ -15,7 +15,7 @@ import {NgForm} from "@angular/forms";
 
 export class LclBookingPage {
   @ViewChild(Navbar) navbar : Navbar;
-
+  
   pods: Array<any>;
   gwunits: Array<any>;
   packages: Array<any>;
