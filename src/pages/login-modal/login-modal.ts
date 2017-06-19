@@ -52,12 +52,16 @@ export class LoginPage {
             this.authService.getProfile().subscribe((res) => {
                let profile = res;
                if(profile.responseCode == 3){
-                 console.log('logout')
+                 console.log('logout from login-modal: Get profile error');
                  this.userData.logout();
+               }else if(profile.responseCode == 1 || profile.responseCode == 2){
+                 this.userData.logout();
+                 alert('Please try to logIn again');
+                 console.log('logout from login-modal: Have a problem from DB');
                }else{
                  console.log('login')
                  this.userData.login(profile);
-                 
+
                  if(this.page == LclBookingPage||this.page == CourierBookingPage) {
                    this.viewCtrl.dismiss();
                    this.app.getRootNav().push(this.page);
