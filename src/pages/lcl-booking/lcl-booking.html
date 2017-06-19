@@ -57,7 +57,7 @@
 
     </button>
 
-    <ion-list *ngIf="showMore" no-lines>
+    <ion-list [class.hide]="!showMore" no-lines>
 
       <ion-item no-padding>
         <ion-label no-padding col-6>Commodity</ion-label>
@@ -70,7 +70,7 @@
         <ion-label no-padding col-6>Quantity</ion-label>
         <ion-input type="text" [(ngModel)]="lcl.quantity" name="quantity" placeholder="quantity"></ion-input>
         <ion-select [(ngModel)]="lcl.package" name="package">
-          <ion-option *ngFor="let package of packages" [value]="package">{{package.qc_lookup_value1}}</ion-option>
+          <ion-option *ngFor="let package of packages" [value]="package" [selected]="package.qc_lookup_value1 == 'carton(s)'">{{package.qc_lookup_value1}}</ion-option>
         </ion-select>
       </ion-item>
 
