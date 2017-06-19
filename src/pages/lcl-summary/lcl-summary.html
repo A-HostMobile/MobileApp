@@ -18,36 +18,44 @@
 
         <ion-row>
           <ion-item ion-col no-padding col-6>POD : </ion-item>
-          <ion-item ion-col no-padding col-6>HONGKONG</ion-item>
+          <ion-item ion-col no-padding col-6>{{lclFormData.pod}}</ion-item>
         </ion-row>
 
         <ion-row>
           <ion-item ion-col no-padding col-6>Loading Date : </ion-item>
-          <ion-item ion-col no-padding col-6>30 May 2017</ion-item>
+          <ion-item ion-col no-padding col-6>{{lclFormData.loadDate}}</ion-item>
         </ion-row>
         <ion-row>
           <ion-item ion-col no-padding col-6>Commodity : </ion-item>
-          <ion-item ion-col no-padding col-6>N/A</ion-item>
+          <ion-item *ngIf="lclFormData.commodities != null" ion-col no-padding col-6>{{lclFormData.commodities.qc_lookup_value1}}</ion-item>
+          <ion-item *ngIf="lclFormData.commodities == null" ion-col no-padding col-6>N/A</ion-item>
         </ion-row>
         <ion-row>
           <ion-item ion-col no-padding col-6>Quantity : </ion-item>
-          <ion-item ion-col no-padding col-6>5</ion-item>
+          <ion-item *ngIf="lclFormData.quantity != null" ion-col no-padding col-6>{{lclFormData.quantity}} {{lclFormData.package.qc_lookup_value1}}</ion-item>
+          <ion-item *ngIf="lclFormData.quantity == null" ion-col no-padding col-6>N/A</ion-item>
         </ion-row>
         <ion-row>
           <ion-item ion-col no-padding col-6>Volume : </ion-item>
-          <ion-item ion-col no-padding col-6>2 CBM</ion-item>
+          <ion-item ion-col no-padding col-6>{{lclFormData.volume}} CBM</ion-item>
         </ion-row>
         <ion-row>
           <ion-item ion-col no-padding col-6>Gross Weight : </ion-item>
-          <ion-item ion-col no-padding col-6>1 Ton</ion-item>
+          <ion-item ion-col no-padding col-6>{{lclFormData.gw}} {{lclFormData.gwunit.qc_lookup_value1}}</ion-item>
         </ion-row>
-        <ion-row>
-          <ion-item ion-col text-wrap no-padding col-12>Remarks<br/><br/>
-          N/A</ion-item>
+        <ion-row *ngIf="(scheduleData | json) != ({} | json)" >
+          <ion-item ion-col text-wrap no-padding col-12>Remarks</ion-item>
+          <ion-item *ngIf="scheduleData.s_carrier!=null" no-padding >Carrier : &nbsp;&nbsp;{{scheduleData.s_carrier}}</ion-item>
+          <ion-item *ngIf="scheduleData.s_vessel!=null" no-padding >Vessel : &nbsp;&nbsp;{{scheduleData.s_vessel}}&nbsp;&nbsp;{{scheduleData.s_voy}}</ion-item>
+          <ion-item *ngIf="scheduleData.s_feeder!=null" no-padding >Feeder : &nbsp;&nbsp;{{scheduleData.s_feeder}}&nbsp;&nbsp;{{scheduleData.s_fvoy}}</ion-item>
+          <ion-item *ngIf="scheduleData.s_closing_date!=null" no-padding>Closing Date : &nbsp;&nbsp;{{scheduleData.s_closing_date}}</ion-item>
+          <ion-item *ngIf="scheduleData.s_etd!=null" no-padding >ETD : &nbsp;&nbsp;{{scheduleData.s_etd}}</ion-item>
+          <ion-item *ngIf="scheduleData.s_eta!=null" no-padding >ETA : &nbsp;&nbsp;{{scheduleData.s_eta}}</ion-item>
         </ion-row>
         <ion-row>
           <ion-item ion-col no-padding col-6>Additional Details : </ion-item>
-          <ion-item ion-col no-padding col-6>N/A</ion-item>
+          <ion-item *ngIf="lclFormData.detail != null" ion-col no-padding col-6>{{lclFormData.detail}}</ion-item>
+          <ion-item *ngIf="lclFormData.detail == null" ion-col no-padding col-6>N/A</ion-item>
         </ion-row>
 
   </ion-grid>

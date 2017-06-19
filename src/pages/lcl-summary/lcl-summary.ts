@@ -12,13 +12,18 @@ import {UserData} from '../../providers/user-data';
 })
 export class LclSummaryPage {
   @ViewChild(Navbar) navbar:Navbar;
+  lclFormData:any;
+  scheduleData:any;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public authService: AuthServiceProvider,
     public userData: UserData,
     public mdlCtrl: ModalController
-  ) {}
+  ) {
+      this.lclFormData = this.navParams.get("firstPassed");
+      this.scheduleData = this.navParams.get("secondPassed");
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LclSummaryPage');

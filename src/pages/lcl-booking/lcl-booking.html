@@ -41,8 +41,8 @@
       <ion-item no-border no-padding>
         <ion-label no-padding col-6>Gross Weight</ion-label>
         <ion-input [(ngModel)]="lcl.gw" name="gw" type="number" placeholder="g.w." #gw="ngModel" required></ion-input>
-        <ion-select [(ngModel)]="lcl.gwunit" name="gwunit" >
-          <ion-option *ngFor="let gwunit of gwunits" [value]="gwunit" [selected]="gwunit.qc_lookup_value1 == 'kg.'">{{gwunit.qc_lookup_value1}}</ion-option>
+        <ion-select [(ngModel)]="lcl.gwunit" name="gwunit" placeholder="Select" required>
+          <ion-option *ngFor="let gwunit of gwunits" [value]="gwunit">{{gwunit.qc_lookup_value1}}</ion-option>
         </ion-select>
       </ion-item>
       <ion-badge ion-text *ngIf="gw.invalid" [hidden]="!gw.touched" float-end>

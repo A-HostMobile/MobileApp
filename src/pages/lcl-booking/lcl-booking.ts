@@ -94,7 +94,11 @@ export class LclBookingPage {
     this.submitted = true;
     if(form.valid){
       console.log(JSON.stringify(form.value));
-      this.navCtrl.push(LclSummaryPage,form.value);
+      this.navCtrl.push(LclSummaryPage,
+      {
+        firstPassed: form.value,
+        secondPassed: this.scheduleData
+      });
     } else {
       console.log('NOOO!!');
     }
