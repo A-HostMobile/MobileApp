@@ -15,7 +15,6 @@ import {NgForm} from "@angular/forms";
 
 export class LclBookingPage {
   @ViewChild(Navbar) navbar : Navbar;
-  
   pods: Array<any>;
   gwunits: Array<any>;
   packages: Array<any>;
@@ -36,18 +35,18 @@ export class LclBookingPage {
             ) {
 
       this.scheduleData = this.navParams.data;
-      console.log("schedule Data:"+JSON.stringify(this.scheduleData));
+      //console.log("schedule Data:"+JSON.stringify(this.scheduleData));
       this.quickcodeService.getPod().subscribe(
-        (res) => this.pods = res.responseData,
+        (resPod) => this.pods = resPod.responseData,
         (error) => {  this.errorMessage = <any> error});
       this.quickcodeService.getGwunit().subscribe(
-        (res) => this.gwunits = res.responseData,
+        (resGwunit) => this.gwunits = resGwunit.responseData,
         (error) => {  this.errorMessage = <any> error});
       this.quickcodeService.getPackage().subscribe(
-        (res) => this.packages = res.responseData,
+        (resPackage) => this.packages = resPackage.responseData,
         (error) => {  this.errorMessage = <any> error});
       this.quickcodeService.getCommodities().subscribe(
-        (res) => this.commodities = res.responseData,
+        (resCommodity) => this.commodities = resCommodity.responseData,
         (error) => {  this.errorMessage = <any> error});
 
   }
@@ -94,7 +93,7 @@ export class LclBookingPage {
   toSummary(form: NgForm){
     this.submitted = true;
     if(form.valid){
-      console.log(form.value);
+      console.log(JSON.stringify(form.value));
       this.navCtrl.push(LclSummaryPage,form.value);
     } else {
       console.log('NOOO!!');
