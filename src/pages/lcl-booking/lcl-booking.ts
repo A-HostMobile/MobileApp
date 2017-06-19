@@ -39,7 +39,11 @@ export class LclBookingPage {
       let profile = res;
       if(profile.responseCode == 3){
         this.userData.logout();
-        console.log('logOut from lcl booking');
+        console.log('logout from lcl booking: Get profile error');
+      }else if(profile.responseCode == 1 || profile.responseCode == 2){
+        this.userData.logout();
+        console.log('logout from lcl booking: Have a problem from DB');
+        alert('Please try to logIn again');
       }else{
         this.toSummary(form);
         console.log('loggedIn from lcl booking');

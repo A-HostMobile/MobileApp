@@ -85,12 +85,15 @@ export class TemplateApp {
         this.authService.getProfile().subscribe((res)=>{
           let profile = res;
           if(profile.responseCode == 3){
-                console.log('get profile error')
+                console.log('logout from component: get profile error');
                 this.userData.logout();
-              }else{
+          }else if(profile.responseCode == 1 || profile.responseCode == 2){
+                console.log('logout from component: error from DB');
+                this.userData.logout();
+          }else{
                 console.log('loggedIn from component')
                 this.userData.login(profile);
-              }
+          }
         });
         let profile = localStorage.getItem('profile');
           if (profile){
@@ -209,6 +212,12 @@ export class TemplateApp {
         let profile = res;
         if(profile.responseCode == 3){
           this.userData.logout();
+          console.log('logout from openPage Fn. : Get profile error');
+          this.nav.popToRoot({animate:false});
+          this.nav.push(page.component);
+        }else if(profile.responseCode == 1 || profile.responseCode == 2){
+          this.userData.logout();
+          console.log('logout from openPage Fn. : Error from DB ');
           this.nav.popToRoot({animate:false});
           this.nav.push(page.component);
         }else{

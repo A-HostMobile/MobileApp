@@ -52,7 +52,11 @@ export class CourierBookingPage {
       if(profile.responseCode == 3){
         this.userData.logout();
         alert('Please try to logIn again');
-        console.log('logOut from courier page 1');
+        console.log('logout from courier page 1: Get profile error');
+      }else if(profile.responseCode == 1 || profile.responseCode == 2){
+        this.userData.logout();
+        alert('Please try to logIn again');
+        console.log('logout from courier page 1: Have a problem from DB');
       }else{
         console.log('login from courier page 1');
         this.userData.login(profile);

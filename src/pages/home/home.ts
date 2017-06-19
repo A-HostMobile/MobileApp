@@ -53,7 +53,11 @@ export class HomePage {
       let profile = res;
       console.log(profile);
       if(profile.responseCode == 3){
-        console.log('logout from home')
+        console.log('logout from home: Get profile error');
+        this.userData.logout();
+        this.openPage(page);
+      }else if(profile.responseCode == 1 || profile.responseCode == 2){
+        console.log('logout from home: Error from DB');
         this.userData.logout();
         this.openPage(page);
       }else{

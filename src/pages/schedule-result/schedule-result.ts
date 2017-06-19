@@ -52,7 +52,11 @@ export class ScheduleResultPage {
       if(profile.responseCode == 3){
         this.userData.logout();
         alert('Please try to logIn again');
-        console.log('logout from schedule result');
+        console.log('logout from schedule result : Get profile error');
+      }else if(profile.responseCode == 1 || profile.responseCode == 2){
+        this.userData.logout();
+        console.log('logout from schedule result: Have a problem from DB');
+        alert('Please try to logIn again');
       }else{
         console.log('login from schedule result');
         this.userData.login(profile);
