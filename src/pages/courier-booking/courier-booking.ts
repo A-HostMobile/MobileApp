@@ -7,6 +7,9 @@ import {PickupAddressPage} from "../pickup-address/pickup-address";
 import {AuthServiceProvider} from '../../providers/auth-service/auth-service';
 import {NgForm} from "@angular/forms";
 
+export interface cvalue{
+  co:string;cname:string;
+}
 @Component({
   selector: 'page-courier-booking',
   templateUrl: 'courier-booking.html',
@@ -16,6 +19,9 @@ export class CourierBookingPage {
   @ViewChild(Navbar) navbar: Navbar;
   pickadd:string = '';
   submitted: boolean = false;
+  countries:cvalue[]=[{co:'US',cname:'United State'},
+             {co:'HK',cname:'Hongkong'},
+             {co:'JP',cname:'Japan'}];
   courier:{pick?:string,
     conname?:string,
     address?:string,
@@ -47,22 +53,24 @@ export class CourierBookingPage {
 
   toCourier2(form: NgForm){
     this.submitted = true;
-    this.authService.getProfile().subscribe((res)=>{
-      let profile = res;
-      if(profile.responseCode == 3){
-        this.userData.logout();
-        alert('Please try to logIn again');
-        console.log('logout from courier page 1: Get profile error');
-      }else if(profile.responseCode == 1 || profile.responseCode == 2){
-        this.userData.logout();
-        alert('Please try to logIn again');
-        console.log('logout from courier page 1: Have a problem from DB');
-      }else{
-        console.log('login from courier page 1');
-        this.userData.login(profile);
-        this.navCtrl.push(CourierBooking2Page,this.courier);
-      }
-    });
+    if(form.valid) {
+      this.authService.getProfile().subscribe((res) => {
+        let profile = res;
+        if (profile.responseCode == 3) {
+          this.userData.logout();
+          alert('Please try to logIn again');
+          console.log('logout from courier page 1: Get profile error');
+        } else if (profile.responseCode == 1 || profile.responseCode == 2) {
+          this.userData.logout();
+          alert('Please try to logIn again');
+          console.log('logout from courier page 1: Have a problem from DB');
+        } else {
+          console.log(this.courier);
+          this.userData.login(profile);
+          this.navCtrl.push(CourierBooking2Page, this.courier);
+        }
+      });
+    }
   }
 
   openPickupModal(){

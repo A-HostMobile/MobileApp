@@ -21,11 +21,11 @@
       <ion-list-header>
         Destination
       </ion-list-header>
-      <ion-item no-padding style="margin-top: -5%">
+      <ion-item no-padding>
         <ion-label no-padding col-6>Consignee Name </ion-label>
         <ion-input [(ngModel)]="courier.conname" name="conname" #conname="ngModel" type="text" placeholder="name" required></ion-input>
       </ion-item>
-      <p ion-text [hidden]="conname.valid || submitted == false" color="danger"  align="right" style="margin-top: -0.25%; margin-bottom: 0.5%">Con is required</p>
+      <p ion-text [hidden]="conname.valid || submitted == false" color="danger"  align="right" style="margin-top: -0.25%; margin-bottom: 0.5%">Consignee Name is required</p>
       <ion-item no-padding>
         <ion-label no-padding col-6>Address </ion-label>
         <ion-input [(ngModel)]="courier.address" name="address" #address="ngModel" type="text" placeholder="address" required></ion-input>
@@ -34,9 +34,7 @@
       <ion-item no-padding>
         <ion-label no-padding col-6>Country</ion-label>
         <ion-select [(ngModel)]="courier.country" name="country">
-          <ion-option value="US">United States</ion-option>
-          <ion-option value="HK">Hongkong</ion-option>
-          <ion-option value="JP">Japan</ion-option>
+          <ion-option *ngFor="let countriess of countries" value="{{countriess.co}}">{{countriess.cname}}</ion-option>
         </ion-select>
       </ion-item>
       <ion-item no-padding>
