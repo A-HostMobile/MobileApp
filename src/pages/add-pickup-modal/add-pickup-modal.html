@@ -1,9 +1,3 @@
-<!--
-  Generated template for the AddPickupModalPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
   <ion-navbar>
     <ion-buttons start>
@@ -17,45 +11,45 @@
 
 
 <ion-content padding>
+  <form #addpick="ngForm">
+    <ion-list no-lines>
 
-   <ion-list no-lines>
+      <ion-item no-padding>
+        <ion-label no-padding col-6>Contact Name </ion-label>
+        <ion-input [(ngModel)]="add.contname" name="contname" #contname="ngModel" type="text" placeholder="contact name" required=""></ion-input>
+      </ion-item>
+      <p ion-text [hidden]="contname.valid || submitted == false" color="danger"  align="right" style="margin-top: -0.25%; margin-bottom: 0.5%">Contact Name is required</p>
+      <ion-item no-padding>
+        <ion-label no-padding col-6>Tel. </ion-label>
+        <ion-input [(ngModel)]="add.tel" name="tel" #tel="ngModel" type="text" placeholder="tel." required=""></ion-input>
+      </ion-item>
+      <p ion-text [hidden]="tel.valid || submitted == false" color="danger"  align="right" style="margin-top: -0.25%; margin-bottom: 0.5%">Tel. is required</p>
+      <ion-item no-padding>
+        <ion-label no-padding col-6>E-mail </ion-label>
+        <ion-input [(ngModel)]="add.email" name="email" #email="ngModel" type="text" placeholder="e-mail" required=""></ion-input>
+      </ion-item>
+      <p ion-text [hidden]="email.valid || submitted == false" color="danger"  align="right" style="margin-top: -0.25%; margin-bottom: 0.5%">E-mail is required</p>
+      <ion-item no-padding>
+        <ion-label no-padding col-6>Address </ion-label>
+        <ion-input [(ngModel)]="add.address" name="address" #address="ngModel" type="text" placeholder="address" required=""></ion-input>
+      </ion-item>
+      <p ion-text [hidden]="address.valid || submitted == false" color="danger"  align="right" style="margin-top: -0.25%; margin-bottom: 0.5%">Address is required</p>
+      <ion-item no-padding>
+        <ion-label no-padding col-6>Zip Code </ion-label>
+        <ion-input [(ngModel)]="add.zip" name="zip" type="text" placeholder="zip code"></ion-input>
+      </ion-item>
 
-    <ion-item no-padding>
-      <ion-label no-padding col-6>Contact Name </ion-label>
-      <ion-input type="text" placeholder="contact name"></ion-input>
-    </ion-item>
+      <ion-item no-padding>
+        <ion-label no-padding col-6>Country</ion-label>
+        <ion-select [(ngModel)]="add.country" name="country">
+          <ion-option *ngFor="let countriess of countries" value="{{countriess.co}}">{{countriess.cname}}</ion-option>
+        </ion-select>
+      </ion-item>
 
-    <ion-item no-padding>
-      <ion-label no-padding col-6>Tel. </ion-label>
-      <ion-input type="text" placeholder="tel."></ion-input>
-    </ion-item>
+    </ion-list>
+  </form>
 
-    <ion-item no-padding>
-      <ion-label no-padding col-6>E-mail </ion-label>
-      <ion-input type="text" placeholder="e-mail"></ion-input>
-    </ion-item>
-
-    <ion-item no-padding>
-      <ion-label no-padding col-6>Address </ion-label>
-      <ion-input type="text" placeholder="address"></ion-input>
-    </ion-item>
-
-    <ion-item no-padding>
-      <ion-label no-padding col-6>Zip Code </ion-label>
-      <ion-input type="text" placeholder="zip code"></ion-input>
-    </ion-item>
-
-    <ion-item no-padding>
-      <ion-label no-padding col-6>Country</ion-label>
-      <ion-select [(ngModel)]="country">
-        <ion-option selected value="th">THAILAND</ion-option>
-        <ion-option value="HK">Hongkong</ion-option>
-        <ion-option value="JP">Japan</ion-option>
-      </ion-select>
-    </ion-item>
-  </ion-list>
-
-  <button (click)="closemodal();" ion-button icon-right block >
+  <button (click)="addAddress(addpick)" ion-button icon-right block >
     Done
   </button>
 
