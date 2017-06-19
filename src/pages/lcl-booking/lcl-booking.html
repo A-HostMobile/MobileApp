@@ -10,7 +10,7 @@
 
       <ion-item no-padding>
         <ion-label no-padding col-6 >POD</ion-label>
-        <ion-select [(ngModel)]="lcl.pod" name="pod" required>
+        <ion-select [(ngModel)]="lcl.pod" name="pod" placeholder="-- Select --" required>
           <ion-option *ngFor="let pod of pods" [value]="pod">{{pod.qc_lookup_value2}}</ion-option>
         </ion-select>
       </ion-item>
