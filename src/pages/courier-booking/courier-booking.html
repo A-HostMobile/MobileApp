@@ -10,8 +10,8 @@
   <ion-list no-lines>
     <ion-item no-padding>
       Pickup Address
-      <button *ngIf="pickadd == ''" (click)="openPickupModal();" color="calm" ion-button outline item-right>Select</button>
-      <button *ngIf="pickadd != ''" (click)="openPickupModal();" color="calm" ion-button outline item-right>{{pickadd}}</button>
+      <button *ngIf="pickadd == null" (click)="openPickupModal();" color="calm" ion-button outline item-right class="butadd">Select</button>
+      <button *ngIf="pickadd != null" (click)="openPickupModal();" color="calm" ion-button outline item-right class="butadd"><div>{{pickadd}}</div></button>
     </ion-item>
     <ion-badge [hidden]="pickadd != '' || submitted == false" float-end>Address is required</ion-badge>
   </ion-list>
@@ -22,12 +22,12 @@
         Destination
       </ion-list-header>
       <ion-item no-padding>
-        <ion-label no-padding col-6>Consignee Name </ion-label>
+        <ion-label no-padding col-6>Consignee Name</ion-label>
         <ion-input [(ngModel)]="courier.conname" name="conname" #conname="ngModel" type="text" placeholder="name" required></ion-input>
       </ion-item>
       <ion-badge ion-text [hidden]="conname.untouched && submitted == false" *ngIf="conname.invalid" float-end>Consignee Name is required</ion-badge>
       <ion-item no-padding>
-        <ion-label no-padding col-6>Address </ion-label>
+        <ion-label no-padding col-6>Address</ion-label>
         <ion-input [(ngModel)]="courier.address" name="address" #address="ngModel" type="text" placeholder="address" required></ion-input>
       </ion-item>
       <ion-badge ion-text [hidden]="address.untouched && submitted == false" *ngIf="address.invalid" float-end>Address is required</ion-badge>
@@ -38,21 +38,21 @@
         </ion-select>
       </ion-item>
       <ion-item no-padding>
-        <ion-label no-padding col-6>Zipcode </ion-label>
+        <ion-label no-padding col-6>Zipcode</ion-label>
         <ion-input [(ngModel)]="courier.zip" name="zip" type="text" placeholder="zipcode"></ion-input>
       </ion-item>
       <ion-item no-padding>
-        <ion-label no-padding col-6>Contact Name </ion-label>
+        <ion-label no-padding col-6>Contact Name</ion-label>
         <ion-input [(ngModel)]="courier.contname" name="contname" #contname="ngModel" type="text" placeholder="contact name" required></ion-input>
       </ion-item>
       <ion-badge ion-text [hidden]="contname.untouched && submitted == false" *ngIf="contname.invalid" float-end>Contact name is required</ion-badge>
       <ion-item no-padding>
-        <ion-label no-padding col-6>Tel. </ion-label>
+        <ion-label no-padding col-6>Tel.</ion-label>
         <ion-input [(ngModel)]="courier.tel" name="tel" #tel="ngModel" type="tel" placeholder="tel." required></ion-input>
       </ion-item>
       <ion-badge ion-text [hidden]="tel.untouched && submitted == false" *ngIf="tel.invalid" float-end>Tel. is required</ion-badge>
       <ion-item no-padding>
-        <ion-label no-padding col-6>Remark </ion-label>
+        <ion-label no-padding col-6>Remark</ion-label>
         <ion-input [(ngModel)]="courier.rmk" name="rmk" type="text" placeholder="remark"></ion-input>
       </ion-item>
     </ion-list>

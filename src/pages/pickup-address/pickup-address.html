@@ -1,13 +1,7 @@
-<!--
-  Generated template for the PickupAddressPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
   <ion-navbar>
     <ion-buttons start>
-      <button ion-button (click)="closemodal()">
+      <button ion-button (click)="closeModal()">
         <span ion-text>Close</span>
       </button>
     </ion-buttons>
@@ -31,7 +25,7 @@
 
       </ion-card-header>
 
-      <ion-grid (click)="closemodal();">
+      <ion-grid (click)="selected()">
         <ion-row>
           <ion-col  col-12>{{address}}</ion-col>
         </ion-row>

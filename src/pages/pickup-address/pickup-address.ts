@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams ,ViewController ,ModalController} from 'ionic-angular';
 import {AddPickupModalPage} from "../add-pickup-modal/add-pickup-modal";
-/**
- * Generated class for the PickupAddressPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+
 @IonicPage()
 @Component({
   selector: 'page-pickup-address',
@@ -28,8 +23,14 @@ export class PickupAddressPage {
     managePickup.present();
   }
 
-  closemodal() {
-  this.viewCtrl.dismiss(this.address);
-}
+  selected() {
+    this.viewCtrl.dismiss(this.address);
+  }
+
+  closeModal(){
+    this.address=null;
+    this.viewCtrl.dismiss(this.address);
+  }
+
 
 }

@@ -214,6 +214,9 @@ export class TemplateApp {
         if(pages!=HomePage){
           this.app.getRootNav().push(pages,params);
         }
+        else{
+          this.app.getRootNav().popToRoot();
+        }
       }else{
         this.userData.logout();
         console.log('Logout Code: '+profile.responseCode);
@@ -247,7 +250,7 @@ export class TemplateApp {
       this.events.publish('checkStsLogin',page.component);
     }
     else if(page.component == LoginPage){
-      this.authService.OpenModal(page.component,null);
+      this.authService.OpenModal(HomePage,null);
     }
     else{
       this.nav.push(page.component).then(()=>{
