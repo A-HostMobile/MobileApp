@@ -98,7 +98,7 @@ export class LclBookingPage {
   toSummary(form: NgForm){
     this.submitted = true;
     if(form.valid){
-      console.log(JSON.stringify(form.value));
+      //console.log(JSON.stringify(form.value));
       this.navCtrl.push(LclSummaryPage,
         {
           firstPassed: form.value,
