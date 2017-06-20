@@ -33,8 +33,8 @@ export class LoginPage {
             ) {
     this.page = this.navParam.get('page');
     this.param = this.navParam.get('param');
-    console.log(this.param);
     console.log(this.page);
+    console.log(this.param);
     this.authForm = formBuilder.group({
       'username':['',Validators.compose([Validators.required])],
       'password':['',Validators.compose([Validators.minLength(6),Validators.required])]
@@ -54,24 +54,8 @@ export class LoginPage {
         res => {
           let signin:boolean = res;
           if(signin == true){
-
-            let check:any;
-            check = this.events.publish('checkStsLogin');
-
-            if(check){
-              console.log('login success');
-              if(this.page == LclBookingPage||this.page == CourierBookingPage) {
-                this.viewCtrl.dismiss();
-                this.app.getRootNav().push(this.page,this.param);
-              }
-              else {
-                this.closemodal();
-              }
-            }else{
-              this.userData.logout();
-              console.log('logout from login-modal');
-            }
-
+            this.viewCtrl.dismiss();
+            this.events.publish('checkStsLogin',this.page,this.param);
           }else {
             console.log('login response data fail from login-modal');
           }
@@ -85,7 +69,6 @@ export class LoginPage {
           loading.dismiss();
         },() => loading.dismiss()
       )
-      // console.log(username,password);
     }
   }
 

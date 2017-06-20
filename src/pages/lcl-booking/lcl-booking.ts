@@ -40,7 +40,6 @@ export class LclBookingPage {
             ) {
 
       this.scheduleData = this.navParams.data;
-      //console.log("schedule Data:"+JSON.stringify(this.scheduleData));
       this.quickcodeService.getPod().subscribe(
         (resPod) => this.pods = resPod.responseData,
         (error) => {  this.errorMessage = <any> error});
@@ -56,30 +55,16 @@ export class LclBookingPage {
 
   }
 
-  ionViewCanEnter(){
-    this.check = this.events.publish('checkStsLogin');
-  }
-
-  CheckPage(form: NgForm){
-    if(this.check){
-      console.log('loggedIn on lcl page');
-      this.toSummary(form);
-    }else{
-      this.navCtrl.pop();
-    }
-  }
-
   toSummary(form: NgForm){
     this.submitted = true;
     if(form.valid){
-      //console.log(JSON.stringify(form.value));
-      this.navCtrl.push(LclSummaryPage,
-      {
-        firstPassed: form.value,
-        secondPassed: this.scheduleData
-      });
+      this.events.publish('checkStsLogin',LclSummaryPage,
+        {
+          firstPassed: form.value,
+          secondPassed: this.scheduleData
+        });
     } else {
-      console.log('NOOO!!');
+      console.log('You shall not PASS!!!');
     }
   }
 }

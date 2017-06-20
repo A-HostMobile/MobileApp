@@ -50,21 +50,13 @@ export class HomePage {
   clickImg(index:string){
       console.log("Index :"+index);
   }
-  openPage(pageNb: number) {
 
-    let  view: any;
+  openPage(pageNb: number) {
     let  page: any;
 
     if(pageNb == 1){ page = LclBookingPage; }
     else { page = CourierBookingPage; }
 
-    let modal = this.mdlCtrl.create(LoginPage, {page:page});
-    this.userData.hasLoggedIn().then((hasLoggedIn) => {
-
-        if (hasLoggedIn === true) {
-          this.navCtrl.push(page);
-        }
-        else { modal.present(); }
-    });
+    this.events.publish('checkStsLogin',page);
   }
 }
