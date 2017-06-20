@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { NgModule, ErrorHandler } from '@angular/core';
+import { DatePipe } from '@angular/common';
 
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { Network } from "@ionic-native/network";
