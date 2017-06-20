@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {  NavController, NavParams,ModalController } from 'ionic-angular';
+import {  NavController, NavParams,ModalController, Events } from 'ionic-angular';
 import {CompletedPage} from "../completed/completed";
 import {DgPopupModalPage} from "../dg-popup-modal/dg-popup-modal";
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
@@ -16,7 +16,8 @@ export class CourierSummaryPage {
       public navParams: NavParams,
       public mdlCtrl: ModalController,
       public authService: AuthServiceProvider,
-      public userData: UserData
+      public userData: UserData,
+      public events: Events
     ) {
   }
 
@@ -25,7 +26,8 @@ export class CourierSummaryPage {
   }
 
   toComplete(){
-        this.navCtrl.push(CompletedPage);
+        // this.navCtrl.push(CompletedPage);
+        this.events.publish('checkStsLogin',CompletedPage);
   }
 
   dgModalShow() {

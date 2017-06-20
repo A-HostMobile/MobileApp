@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams ,ModalController } from 'ionic-angular';
+import { NavController, NavParams ,ModalController, Events } from 'ionic-angular';
 import {CourierItemModalPage} from "../courier-item-modal/courier-item-modal";
 import {CourierSummaryPage} from "../courier-summary/courier-summary";
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
@@ -16,7 +16,8 @@ export class CourierBooking2Page {
     public navParams: NavParams,
     public mdlCtrl: ModalController,
     public authService: AuthServiceProvider,
-    public userData: UserData
+    public userData: UserData,
+    public events: Events
   ) {
   }
 
@@ -35,7 +36,9 @@ export class CourierBooking2Page {
 
   toSummary(){
         console.log('login from courier page 2');
-        this.navCtrl.push(CourierSummaryPage);
+        // this.navCtrl.push(CourierSummaryPage);
+        this.events.publish('checkStsLogin',CourierSummaryPage);
+
   }
 
 }

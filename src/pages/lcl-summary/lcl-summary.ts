@@ -54,7 +54,8 @@ export class LclSummaryPage {
   }
 
   toCompleted(){
-    this.navCtrl.push(CompletedPage);
+    // this.navCtrl.push(CompletedPage);
+    this.events.publish('checkStsLogin',CompletedPage);
     console.log('login from lcl summary');
   }
 
