@@ -30,7 +30,6 @@ export class AuthServiceProvider {
       let _token = res.json();
       let sts:boolean;
       if(_token.responseData.token){
-        // console.log(_token);
         localStorage.setItem('token',_token.responseData.token);
         return true;
       }else{
@@ -41,13 +40,10 @@ export class AuthServiceProvider {
   //profile
   public getProfile():Observable<any>{
     let token = localStorage.getItem('token');
-    // console.log(token);
 
     let myHeader = new Headers({ 'Authorization': `Bearer ${token}` });
     let _options = new RequestOptions({headers: myHeader});
     let _body = {};
-
-    // console.log(myHeader);
 
     return this.http.post(AppSettings.API_ENDPOINT+'details',_body,_options)
     .map((res:Response) => {

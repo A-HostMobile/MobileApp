@@ -1,7 +1,8 @@
-import { Component, ViewChild } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
+import {ModalController, Navbar, NavController, NavParams, ViewController, Events} from 'ionic-angular';
 import { NgForm } from '@angular/forms';
-import { ModalController, Navbar, NavController, NavParams, ViewController } from 'ionic-angular';
 import { first } from 'rxjs/operator/first';
+
 import {LclSummaryPage} from "../lcl-summary/lcl-summary";
 import {LoginPage} from "../login-modal/login-modal";
 import {UserData} from "../../providers/user-data";
@@ -38,8 +39,9 @@ export class LclBookingPage {
               public mdlCtrl: ModalController,
               public userData: UserData,
               public authService: AuthServiceProvider,
+              public quickcodeService :QuickcodeProvider,
+              public events: Events,
               public scheduleService:ScheduleServiceProvider,
-              public quickcodeService :QuickcodeProvider
             ) {
 
       this.scheduleData = this.navParams.data;
@@ -62,66 +64,16 @@ export class LclBookingPage {
 
   }
 
-  ionViewCanEnter(){
-      this.CheckPage();
-  }
-
-  CheckSts(form: NgForm){
-
-    this.authService.getProfile().subscribe((res)=>{
-      let profile = res;
-      if(profile.responseCode == 3){
-        this.userData.logout();
-        console.log('logout from lcl booking: Get profile error');
-        this.CheckPage();
-      }else if(profile.responseCode == 1 || profile.responseCode == 2){
-        this.userData.logout();
-        console.log('logout from lcl booking: Have a problem from DB');
-        this.CheckPage();
-      }else{
-        this.toSummary(form);
-        console.log('loggedIn from lcl booking');
-      }
-    });
-  }
-
-  CheckPage(){
-    let modal = this.mdlCtrl.create(LoginPage, LclBookingPage);
-    this.userData.hasLoggedIn().then((hasLoggedIn) => {
-      if (hasLoggedIn === true) {
-        console.log('login from lcl before open lcl page');
-        return true;
-      }
-      else {
-        console.log('fail before open lcl');
-        this.navCtrl.pop();
-        modal.present();
-        return false;
-      }
-    });
-  }
-
   toSummary(form: NgForm){
     this.submitted = true;
     if(form.valid){
-      //console.log(JSON.stringify(form.value));
-      this.navCtrl.push(LclSummaryPage,
+      this.events.publish('checkStsLogin',LclSummaryPage,
         {
           firstPassed: form.value,
           secondPassed: this.scheduleData
         });
-
     } else {
-      console.log('NOOO!!');
+      console.log('You shall not PASS!!!');
     }
   }
-
-  touch(num: number){
-    if(num == 1){
-      this.selectcancel = true;
-    } else {
-      this.datecancel = true;
-    }
-  }
-
 }

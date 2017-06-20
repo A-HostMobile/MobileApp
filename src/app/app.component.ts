@@ -48,7 +48,7 @@ export class TemplateApp {
   _quickcode_package:any;
   _quickcode_gwunit:any;
   _quickcode_countrycode:any;
-   _quickcode_commodities:any;
+  _quickcode_commodities:any;
 
   appPages: PageInterface[] = [
     { title: 'Home', name: 'HomePage', component: HomePage, icon: 'ios-home' },
@@ -87,34 +87,22 @@ export class TemplateApp {
     confData.load();
 
     this.userData.hasLoggedIn().then((hasLoggedIn) => {
-
-      let token = localStorage.getItem('token');
-      if(token){
-        this.authService.getProfile().subscribe((res)=>{
-          let profile = res;
-          if(profile.responseCode == 3){
-                console.log('logout from component: get profile error');
-                this.userData.logout();
-          }else if(profile.responseCode == 1 || profile.responseCode == 2){
-                console.log('logout from component: error from DB');
-                this.userData.logout();
-          }else{
-                console.log('loggedIn from component')
-                this.userData.login(profile);
-          }
-        });
-        let profile = localStorage.getItem('profile');
-          if (profile){
+        if(hasLoggedIn == true){
+          let token = localStorage.getItem('token');
+          if(token){
+            this.events.publish('checkStsLogin',HomePage);
+            let profile = localStorage.getItem('profile');
+            if(profile){
               this._profile = JSON.parse(profile);
+            }
           }
-          this.events.publish('user:login');
-      }else{
-        this.userData.hasLoggedIn().then((hasLoggedIn)=>{
-          console.log('Have not login')
-          this.events.publish('user:logout');
-        });
-      }
-
+          console.log('loggedIn')
+        }else{
+          this.userData.hasLoggedIn().then((hasLoggedIn)=>{
+            console.log('Have not login')
+            this.events.publish('user:logout');
+          });
+        }
     });
 
     this.enableMenu(true);
@@ -129,23 +117,18 @@ export class TemplateApp {
 
     this.quickcodeService.getPod().subscribe((resPod)=>{
         this._quickcode_pod = resPod;
-        //console.log("POD Data:"+JSON.stringify(this._quickcode_pod));
     });
     this.quickcodeService.getPackage().subscribe((resPackage)=>{
         this._quickcode_package = resPackage;
-        //console.log("Package Data:"+JSON.stringify(this._quickcode_package));
     });
     this.quickcodeService.getGwunit().subscribe((resGwunit)=>{
         this._quickcode_gwunit = resGwunit;
-        //console.log("Gwunit Data:"+JSON.stringify(this._quickcode_gwunit));
     });
     this.quickcodeService.getCountrycode().subscribe((resCountry)=>{
         this._quickcode_countrycode = resCountry;
-        //console.log("CountryCode Data:"+JSON.stringify(this._quickcode_countrycode));
     });
     this.quickcodeService.getCommodities().subscribe((resCommodity)=>{
         this._quickcode_commodities = resCommodity;
-        //console.log("Commodities Data:"+JSON.stringify(this._quickcode_commodities));
     });
 
   }
@@ -198,7 +181,7 @@ export class TemplateApp {
   listenToEvents() {
     this.events.subscribe('user:login', (profile:any) => {
       this._profile = profile;
-      // console.log(this._profile);
+      console.log(this._profile);
       this.enableMenu(true);
     });
 
@@ -216,6 +199,28 @@ export class TemplateApp {
       this.exit();
     });
 
+    this.events.subscribe('checkStsLogin',(pages:any,params:any)=>{
+      if(pages!=null){
+        this.checkStatusLogin(pages,params);
+      }
+    });
+  }
+
+  checkStatusLogin(pages:any,params:any){
+    this.authService.getProfile().subscribe((res)=>{
+      let profile = res;
+      if(profile.responseCode == 0){
+        this.userData.login(profile);
+        console.log('Login and Get profile');
+        if(pages!=HomePage){
+          this.app.getRootNav().push(pages,params);
+        }
+      }else{
+        this.userData.logout();
+        console.log('Logout Code: '+profile.responseCode);
+        this.authService.OpenModal(pages,params);
+      }
+    });
   }
 
   checkConnection() {
@@ -234,31 +239,16 @@ export class TemplateApp {
   }
 
   openPage(page: PageInterface) {
-    let modal =  this.mdlCtrl.create(LoginPage,page.component);
+
     if(page.component == HomePage){
       this.nav.popToRoot();
     }
     else if (page.component == LclBookingPage||page.component == CourierBookingPage){
-      this.authService.getProfile().subscribe((res)=>{
-        let profile = res;
-        if(profile.responseCode == 3){
-          this.userData.logout();
-          console.log('logout from openPage Fn. : Get profile error');
-          this.nav.popToRoot({animate:false});
-          this.nav.push(page.component);
-        }else if(profile.responseCode == 1 || profile.responseCode == 2){
-          this.userData.logout();
-          console.log('logout from openPage Fn. : Error from DB ');
-          this.nav.popToRoot({animate:false});
-          this.nav.push(page.component);
-        }else{
-          this.nav.popToRoot({animate:false});
-          this.nav.push(page.component);
-        }
-      });
+      this.nav.popToRoot({animate:false});
+      this.events.publish('checkStsLogin',page.component);
     }
     else if(page.component == LoginPage){
-      modal.present();
+      this.authService.OpenModal(page.component,null);
     }
     else{
       this.nav.push(page.component).then(()=>{

@@ -1,5 +1,5 @@
 import {Component, ViewChild} from '@angular/core';
-import {App, Navbar, NavParams, ViewController, AlertController, LoadingController} from 'ionic-angular';
+import {App, Navbar, NavParams, ViewController, AlertController, LoadingController, Events} from 'ionic-angular';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {LclBookingPage} from "../lcl-booking/lcl-booking";
 import {CourierBookingPage} from "../courier-booking/courier-booking";
@@ -29,11 +29,12 @@ export class LoginPage {
               public authService:AuthServiceProvider,
               public loadingCtrl: LoadingController,
               public alertCtrl: AlertController,
+              public events: Events
             ) {
     this.page = this.navParam.get('page');
     this.param = this.navParam.get('param');
-    console.log(this.param);
     console.log(this.page);
+    console.log(this.param);
     this.authForm = formBuilder.group({
       'username':['',Validators.compose([Validators.required])],
       'password':['',Validators.compose([Validators.minLength(6),Validators.required])]
@@ -53,32 +54,10 @@ export class LoginPage {
         res => {
           let signin:boolean = res;
           if(signin == true){
-            this.authService.getProfile().subscribe((res) => {
-               let profile = res;
-               if(profile.responseCode == 3){
-                 console.log('logout from login-modal: Get profile error');
-                 this.userData.logout();
-               }else if(profile.responseCode == 1 || profile.responseCode == 2){
-                 this.userData.logout();
-                 alert('Please try to logIn again');
-                 console.log('logout from login-modal: Have a problem from DB');
-               }else{
-                 console.log('login')
-                 this.userData.login(profile);
-
-                 if(this.page == LclBookingPage||this.page == CourierBookingPage) {
-                   this.viewCtrl.dismiss();
-                   this.app.getRootNav().push(this.page);
-                 }
-                 else {
-                   this.closemodal();
-                 }
-               }
-             });
-            // console.log('login ok');
-
+            this.viewCtrl.dismiss();
+            this.events.publish('checkStsLogin',this.page,this.param);
           }else {
-            console.log('login response data fail')
+            console.log('login response data fail from login-modal');
           }
         },error => {
           let errorMessage = <any> error
@@ -90,7 +69,6 @@ export class LoginPage {
           loading.dismiss();
         },() => loading.dismiss()
       )
-      // console.log(username,password);
     }
   }
 

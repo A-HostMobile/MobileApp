@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController, LoadingController } from 'ionic-angular';
+import {IonicPage, NavController, NavParams, ViewController, LoadingController, Events} from 'ionic-angular';
 import { LclBookingPage } from "../lcl-booking/lcl-booking";
 
 import { ScheduleServiceProvider } from '../../providers/schedule-service/schedule-service';
 import { ScheduleModel } from '../../models/schedule';
 import { Subscription } from 'rxjs/Subscription';
 import { UserData } from '../../providers/user-data';
-import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 
 @IonicPage()
 @Component({
@@ -28,7 +27,7 @@ export class ScheduleResultPage {
     public scheduleService:ScheduleServiceProvider,
     public loadCtrl:LoadingController,
     public userData: UserData,
-    public authService: AuthServiceProvider
+    public events: Events
   ) {
     this.cname = this.navParams.data;
 }
@@ -37,31 +36,9 @@ export class ScheduleResultPage {
     this.getSchedule();
   }
 
-  // ionViewDidEnter(){
-  //   console.log('test '+this.schedule);
-  //   console.log(JSON.stringify(this.schedule));
-  // }
-  //
-  // ionViewDidLoad() {
-  //   console.log('ionViewDidLoad ScheduleResultPage');
-  // }
 
   toLCLBooking(schData:Array<ScheduleModel>){
-    this.authService.getProfile().subscribe((res)=>{
-      let profile = res;
-      if(profile.responseCode == 3){
-        this.userData.logout();
-        this.authService.OpenModal(LclBookingPage,schData);
-      }else if(profile.responseCode == 1 || profile.responseCode == 2){
-        this.userData.logout();
-        console.log('logout from schedule result: Have a problem from DB');
-        alert('Please try to logIn again');
-      }else{
-        console.log('login from schedule result');
-        this.userData.login(profile);
-        this.navCtrl.push(LclBookingPage,schData);
-      }
-    });
+    this.events.publish('checkStsLogin',LclBookingPage,schData);
   }
 
   private getSchedule(){

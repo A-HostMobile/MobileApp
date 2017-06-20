@@ -54,22 +54,8 @@ export class CourierBookingPage {
   toCourier2(form: NgForm){
     this.submitted = true;
     if(form.valid) {
-      this.authService.getProfile().subscribe((res) => {
-        let profile = res;
-        if (profile.responseCode == 3) {
-          this.userData.logout();
-          alert('Please try to logIn again');
-          console.log('logout from courier page 1: Get profile error');
-        } else if (profile.responseCode == 1 || profile.responseCode == 2) {
-          this.userData.logout();
-          alert('Please try to logIn again');
-          console.log('logout from courier page 1: Have a problem from DB');
-        } else {
           console.log(this.courier);
-          this.userData.login(profile);
           this.navCtrl.push(CourierBooking2Page, this.courier);
-        }
-      });
     }
   }
 
