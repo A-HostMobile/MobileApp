@@ -33,8 +33,8 @@ export class LoginPage {
             ) {
     this.page = this.navParam.get('page');
     this.param = this.navParam.get('param');
-    console.log(this.page);
-    console.log(this.param);
+    /*console.log(this.page);
+    console.log(this.param);*/
     this.authForm = formBuilder.group({
       'username':['',Validators.compose([Validators.required])],
       'password':['',Validators.compose([Validators.minLength(6),Validators.required])]
@@ -55,6 +55,7 @@ export class LoginPage {
           let signin:boolean = res;
           if(signin == true){
             this.viewCtrl.dismiss();
+            console.log('Page :'+this.page);
             this.events.publish('checkStsLogin',this.page,this.param);
           }else {
             console.log('login response data fail from login-modal');

@@ -247,7 +247,7 @@ export class TemplateApp {
       this.events.publish('checkStsLogin',page.component);
     }
     else if(page.component == LoginPage){
-      this.authService.OpenModal(page.component,null);
+      this.authService.OpenModal(HomePage,null);
     }
     else{
       this.nav.push(page.component).then(()=>{
