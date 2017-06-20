@@ -16,6 +16,7 @@ export class LoginPage {
   @ViewChild(Navbar) navbar : Navbar;
   submitted = false;
   page : any;
+  param: any;
   authForm: FormGroup;
   username: AbstractControl;
   password: AbstractControl;
@@ -29,7 +30,10 @@ export class LoginPage {
               public loadingCtrl: LoadingController,
               public alertCtrl: AlertController,
             ) {
-    this.page = this.navParam.data;
+    this.page = this.navParam.get('page');
+    this.param = this.navParam.get('param');
+    console.log(this.param);
+    console.log(this.page);
     this.authForm = formBuilder.group({
       'username':['',Validators.compose([Validators.required])],
       'password':['',Validators.compose([Validators.minLength(6),Validators.required])]

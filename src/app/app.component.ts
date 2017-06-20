@@ -104,7 +104,7 @@ export class TemplateApp {
         });
         let profile = localStorage.getItem('profile');
           if (profile){
-              this._profile = JSON.parse(profile);            
+              this._profile = JSON.parse(profile);
           }
           this.events.publish('user:login');
       }else{
@@ -190,7 +190,7 @@ export class TemplateApp {
   platformReady() {
     this.platform.ready().then(() => {
       this.splashScreen.hide();
-      
+
     });
   }
 
@@ -214,6 +214,7 @@ export class TemplateApp {
     this.events.subscribe('exit',()=>{
       this.exit();
     });
+
   }
 
   checkConnection() {
