@@ -31,19 +31,19 @@
       <ion-label no-padding col-6>Width : </ion-label>
       <ion-input [(ngModel)]="item.dwidth" name="dwidth" #dwidth="ngModel" type="number" placeholder="Width" required></ion-input>
     </ion-item>
-    <ion-badge ion-text [hidden]="dwidth.untouched && submitted == false" *ngIf="dwidth.invalid" float-end>Width is required</ion-badge>
+    <ion-badge [hidden]="dwidth.untouched && submitted == false" *ngIf="dwidth.invalid" float-end>Width is required</ion-badge>
 
     <ion-item no-padding>
       <ion-label no-padding col-6>Length : </ion-label>
       <ion-input [(ngModel)]="item.dlength" name="dlength" #dlength="ngModel" type="number" placeholder="Length" required></ion-input>
     </ion-item>
-    <ion-badge ion-text [hidden]="dlength.untouched && submitted == false"  *ngIf="dlength.invalid" float-end>Length is required</ion-badge>
+    <ion-badge [hidden]="dlength.untouched && submitted == false"  *ngIf="dlength.invalid" float-end>Length is required</ion-badge>
 
     <ion-item no-padding>
       <ion-label no-padding col-6>Height : </ion-label>
       <ion-input [(ngModel)]="item.dheight" name="dheight" #dheight="ngModel" type="number" placeholder="Height" required></ion-input>
     </ion-item>
-    <ion-badge ion-text [hidden]="dheight.untouched && submitted == false" *ngIf="dheight.invalid" float-end>Height is required</ion-badge>
+    <ion-badge [hidden]="dheight.untouched && submitted == false" *ngIf="dheight.invalid" float-end>Height is required</ion-badge>
   </ion-list>
 
   <ion-list no-lines>
@@ -54,13 +54,13 @@
         Kgs.
       </ion-note>
     </ion-item>
-    <ion-badge ion-text [hidden]="weight.untouched && submitted == false" *ngIf="weight.invalid" float-end="">Wright is required</ion-badge>
+    <ion-badge [hidden]="weight.untouched && submitted == false" *ngIf="weight.invalid" float-end="">Wright is required</ion-badge>
 
     <ion-item no-padding>
       <ion-label no-padding col-6>Quantity : </ion-label>
       <ion-input [(ngModel)]="item.quantity" name="quantity" #quantity="ngModel" type="number" placeholder="Quantity" required></ion-input>
     </ion-item>
-    <ion-badge ion-text [hidden]="quantity.untouched && submitted == false" *ngIf="quantity.invalid" float-end>Quantity is required</ion-badge>
+    <ion-badge [hidden]="quantity.untouched && submitted == false" *ngIf="quantity.invalid" float-end>Quantity is required</ion-badge>
 
   </ion-list>
 

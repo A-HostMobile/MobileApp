@@ -18,7 +18,7 @@
         <ion-label no-padding col-6>Contact Name </ion-label>
         <ion-input [(ngModel)]="add.contname" name="contname" #contname="ngModel" type="text" placeholder="contact name" required=""></ion-input>
       </ion-item>
-      <p ion-text [hidden]="contname.untouched && submitted == false" *ngIf="contname.invalid" float-end>Contact Name is required</p>
+      <ion-badge [hidden]="contname.untouched && submitted == false" *ngIf="contname.invalid" float-end>Contact Name is required</ion-badge>
       <ion-item no-padding>
         <ion-label no-padding col-6>Tel. </ion-label>
         <ion-input [(ngModel)]="add.tel" name="tel" #tel="ngModel" type="text" placeholder="tel." required=""></ion-input>
