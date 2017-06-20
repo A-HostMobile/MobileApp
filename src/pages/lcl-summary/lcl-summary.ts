@@ -22,6 +22,8 @@ export class LclSummaryPage {
     public mdlCtrl: ModalController
   ) {
       this.lclFormData = this.navParams.get("firstPassed");
+      this.lclFormData.loadDate = {'unix':Date.parse(this.lclFormData.loadDate)/1000,'str':this.lclFormData.loadDate};
+      console.log("data :"+JSON.stringify(this.lclFormData));
       this.scheduleData = this.navParams.get("secondPassed");
   }
 
