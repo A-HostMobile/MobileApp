@@ -76,4 +76,13 @@ export class LclBookingPage {
       console.log('You shall not PASS!!!');
     }
   }
+
+  touch(num: number){
+    if(num == 1){
+      this.selectcancel = true;
+     } else {
+      this.datecancel = true;
+      console.log('You shall not PASS!!!');
+     }
+   }
 }
