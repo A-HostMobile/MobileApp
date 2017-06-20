@@ -17,7 +17,7 @@ export interface cvalue{
 export class CourierBookingPage {
 
   @ViewChild(Navbar) navbar: Navbar;
-  pickadd:string = '';
+  pickadd:string = null;
   submitted: boolean = false;
   countries:cvalue[]=[{co:'US',cname:'United State'},
              {co:'HK',cname:'Hongkong'},
@@ -63,7 +63,9 @@ export class CourierBookingPage {
     let openPickup = this.mdlCtrl.create(PickupAddressPage);
     openPickup.present();
     openPickup.onDidDismiss(data=>{
-      this.courier.pick = this.pickadd = data;
+      if(data!=null){
+        this.courier.pick = this.pickadd = data;
+      }
     });
   }
 
