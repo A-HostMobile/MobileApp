@@ -51,8 +51,7 @@ export class ScheduleResultPage {
       let profile = res;
       if(profile.responseCode == 3){
         this.userData.logout();
-        alert('Please try to logIn again');
-        console.log('logout from schedule result : Get profile error');
+        this.authService.OpenModal(LclBookingPage,schData);
       }else if(profile.responseCode == 1 || profile.responseCode == 2){
         this.userData.logout();
         console.log('logout from schedule result: Have a problem from DB');

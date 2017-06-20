@@ -7,11 +7,13 @@ import 'rxjs/add/observable/throw';
 
 import { AppSettings } from '../AppSettings';
 import { UserData } from '../user-data';
+import {ModalController} from "ionic-angular";
+import {LoginPage} from "../../pages/login-modal/login-modal";
 
 @Injectable()
 export class AuthServiceProvider {
 
-  constructor(public http: Http, public userData: UserData) {}
+  constructor(public http: Http, public userData: UserData,public mdlCtrl: ModalController) {}
   //login
   public doLogin(username:string, password:string):Observable<any>{
 
@@ -59,6 +61,11 @@ export class AuthServiceProvider {
 
   private handleError(error:any){
       return Observable.throw(error.json().error_description || "the username or password is incorrect!");
+  }
+
+  public OpenModal(page:any,param:any){
+    let mdl = this.mdlCtrl.create(LoginPage,{page: page,param: param});
+    mdl.present();
   }
 
 }
