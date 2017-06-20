@@ -1,5 +1,5 @@
 import {Component, ViewChild} from '@angular/core';
-import {ModalController, Navbar, NavController, NavParams, ViewController} from 'ionic-angular';
+import {ModalController, Navbar, NavController, NavParams, ViewController, Events} from 'ionic-angular';
 import {LclSummaryPage} from "../lcl-summary/lcl-summary";
 import {LoginPage} from "../login-modal/login-modal";
 import {UserData} from "../../providers/user-data";
@@ -21,6 +21,7 @@ export class LclBookingPage {
   commodities: Array<any>;
   scheduleData:any;
   errorMessage: string;
+  check: any;
 
   lcl:{pod?:string,loadDate?:string,volume?:string,gw?:string,gwunit?:string,commodities?:string,detail?:string,quantity?:string,package?:string} = {pod:null,gwunit:null,commodities:null,package:null};
 
@@ -31,7 +32,8 @@ export class LclBookingPage {
               public mdlCtrl: ModalController,
               public userData: UserData,
               public authService: AuthServiceProvider,
-              public quickcodeService :QuickcodeProvider
+              public quickcodeService :QuickcodeProvider,
+              public events: Events
             ) {
 
       this.scheduleData = this.navParams.data;
@@ -52,42 +54,16 @@ export class LclBookingPage {
   }
 
   ionViewCanEnter(){
-      this.CheckPage();
+    this.check = this.events.publish('checkStsLogin');
   }
 
-  CheckSts(form: NgForm){
-
-    this.authService.getProfile().subscribe((res)=>{
-      let profile = res;
-      if(profile.responseCode == 3){
-        this.userData.logout();
-        console.log('logout from lcl booking: Get profile error');
-        this.CheckPage();
-      }else if(profile.responseCode == 1 || profile.responseCode == 2){
-        this.userData.logout();
-        console.log('logout from lcl booking: Have a problem from DB');
-        this.CheckPage();
-      }else{
-        this.toSummary(form);
-        console.log('loggedIn from lcl booking');
-      }
-    });
-  }
-
-  CheckPage(){
-    let modal = this.mdlCtrl.create(LoginPage, LclBookingPage);
-    this.userData.hasLoggedIn().then((hasLoggedIn) => {
-      if (hasLoggedIn === true) {
-        console.log('login from lcl before open lcl page');
-        return true;
-      }
-      else {
-        console.log('fail before open lcl');
-        this.navCtrl.pop();
-        modal.present();
-        return false;
-      }
-    });
+  CheckPage(form: NgForm){
+    if(this.check){
+      console.log('loggedIn on lcl page');
+      this.toSummary(form);
+    }else{
+      this.navCtrl.pop();
+    }
   }
 
   toSummary(form: NgForm){

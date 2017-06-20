@@ -25,22 +25,7 @@ export class CourierSummaryPage {
   }
 
   toComplete(){
-    this.authService.getProfile().subscribe((res)=>{
-      let profile = res;
-      if(profile.responseCode == 3){
-        this.userData.logout();
-        alert('Please try to logIn again');
-        console.log('logout from courier summary: Get profile error');
-      }else if(profile.responseCode == 1 || profile.responseCode == 2){
-        this.userData.logout();
-        alert('Please try to logIn again');
-        console.log('logout from courier summary: Have a problem from DB');
-      }else{
-        console.log('login from courier summary');
-        this.userData.login(profile);
         this.navCtrl.push(CompletedPage);
-      }
-    });
   }
 
   dgModalShow() {

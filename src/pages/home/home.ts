@@ -1,6 +1,6 @@
 
 import {Component, ViewChild} from '@angular/core';
-import {NavController, NavParams, ModalController, ViewController, Platform, Nav, MenuController, LoadingController} from 'ionic-angular';
+import {NavController, NavParams, ModalController, ViewController, Platform, Nav, MenuController, LoadingController, Events} from 'ionic-angular';
 
 import {UserData} from "../../providers/user-data";
 import {LclBookingPage} from "../lcl-booking/lcl-booking";
@@ -17,6 +17,7 @@ export class HomePage {
   bpress: number = 0;
   advertisementHome:any;
   errorMessage:string;
+  check:any;
 
   @ViewChild(Nav) nav:Nav;
   constructor(public platform: Platform,
@@ -28,7 +29,9 @@ export class HomePage {
               public menuCtrl: MenuController,
               public authService: AuthServiceProvider,
               public loadingCtrl: LoadingController,
-              public advertisementProvider:AdvertisementProvider) {
+              public advertisementProvider:AdvertisementProvider,
+              public events: Events
+            ) {
   }
 
   ionViewDidLoad() {
@@ -47,29 +50,8 @@ export class HomePage {
   clickImg(index:string){
       console.log("Index :"+index);
   }
-
-  CheckSts(page: number){
-    this.authService.getProfile().subscribe((res)=>{
-      let profile = res;
-      console.log(profile);
-      if(profile.responseCode == 3){
-        console.log('logout from home: Get profile error');
-        this.userData.logout();
-        this.openPage(page);
-      }else if(profile.responseCode == 1 || profile.responseCode == 2){
-        console.log('logout from home: Error from DB');
-        this.userData.logout();
-        this.openPage(page);
-      }else{
-        console.log('login from home')
-        this.userData.login(profile);
-        this.openPage(page);
-      }
-    });
-  }
-
   openPage(pageNb: number) {
-
+    
     let  view: any;
 
     if(pageNb == 1){ view = LclBookingPage; }

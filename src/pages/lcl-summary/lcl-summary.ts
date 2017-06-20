@@ -30,21 +30,9 @@ export class LclSummaryPage {
   }
 
   toCompleted(){
-    this.authService.getProfile().subscribe((res)=>{
-      let profile = res;
-      if(profile.responseCode == 3){
-        this.userData.logout();
-        console.log('logout from lcl summary: Get profile error');
         this.CheckPage();
-      }else if(profile.responseCode == 1 || profile.responseCode == 2){
-        this.userData.logout();
-        console.log('logout from lcl summary: Have a problem from DB');
-        this.CheckPage();
-      }else{
         this.navCtrl.push(CompletedPage);
         console.log('login from lcl summary');
-      }
-    });
   }
 
   CheckPage(){

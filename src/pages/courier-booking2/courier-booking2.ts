@@ -34,22 +34,8 @@ export class CourierBooking2Page {
   }
 
   toSummary(){
-    this.authService.getProfile().subscribe((res)=>{
-      let profile = res;
-      if(profile.responseCode == 3){
-        this.userData.logout();
-        console.log('logout from courier-booking2: Get profile error');
-        alert('Please try to logIn again');
-      }else if(profile.responseCode == 1 || profile.responseCode == 2){
-        this.userData.logout();
-        console.log('logout from courier-booking2: Have a problem from DB');
-        alert('Please try to logIn again');
-      }else{
-        console.log('login from courier page 2')
-        this.userData.login(profile);
+        console.log('login from courier page 2');
         this.navCtrl.push(CourierSummaryPage);
-      }
-    });
   }
 
 }
