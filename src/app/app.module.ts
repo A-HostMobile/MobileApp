@@ -58,6 +58,7 @@ import { OrderByPipe } from '../pipes/OrderByPipe';
 
 import {StatusBar} from "@ionic-native/status-bar";
 import { QuickcodeProvider } from '../providers/quickcode/quickcode';
+import { BookingServiceProvider } from '../providers/booking-service/booking-service';
 
 
 
@@ -161,6 +162,7 @@ import { QuickcodeProvider } from '../providers/quickcode/quickcode';
     StatusBar,
     AuthServiceProvider,
     QuickcodeProvider,
+    BookingServiceProvider,
   ]
 })
 export class AppModule { }
