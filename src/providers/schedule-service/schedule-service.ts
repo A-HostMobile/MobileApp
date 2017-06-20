@@ -18,6 +18,12 @@ export class ScheduleServiceProvider {
     .catch(this.handleError);
   }
 
+  getSchedulesAuto(countries_name:string,loading_date:string):Observable<ScheduleModel[]>{
+     return this.http.get(AppSettings.API_ENDPOINT+'schedule/'+countries_name+'/'+loading_date)
+    .map((res:Response)=><ScheduleModel[]>res.json().responseData)
+    .catch(this.handleError);
+  }
+
   private handleError(error:any){
     return Observable.throw(error.json().errorMessage||'Error from server!');
   }

@@ -1,12 +1,14 @@
 import {Component, ViewChild} from '@angular/core';
 import {ModalController, Navbar, NavController, NavParams, ViewController, Events} from 'ionic-angular';
+import { NgForm } from '@angular/forms';
+import { first } from 'rxjs/operator/first';
+
 import {LclSummaryPage} from "../lcl-summary/lcl-summary";
 import {LoginPage} from "../login-modal/login-modal";
 import {UserData} from "../../providers/user-data";
 import {AuthServiceProvider} from '../../providers/auth-service/auth-service';
 import {QuickcodeProvider} from '../../providers/quickcode/quickcode';
-
-import {NgForm} from "@angular/forms";
+import {ScheduleServiceProvider} from '../../providers/schedule-service/schedule-service';
 
 @Component({
   selector: 'page-lcl-booking',
@@ -33,7 +35,8 @@ export class LclBookingPage {
               public userData: UserData,
               public authService: AuthServiceProvider,
               public quickcodeService :QuickcodeProvider,
-              public events: Events
+              public events: Events,
+              public scheduleService:ScheduleServiceProvider,
             ) {
 
       this.scheduleData = this.navParams.data;

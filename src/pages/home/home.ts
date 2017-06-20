@@ -51,17 +51,18 @@ export class HomePage {
       console.log("Index :"+index);
   }
   openPage(pageNb: number) {
-    
+
     let  view: any;
+    let  page: any;
 
-    if(pageNb == 1){ view = LclBookingPage; }
-    else { view = CourierBookingPage; }
+    if(pageNb == 1){ page = LclBookingPage; }
+    else { page = CourierBookingPage; }
 
-    let modal = this.mdlCtrl.create(LoginPage, view);
+    let modal = this.mdlCtrl.create(LoginPage, {page:page});
     this.userData.hasLoggedIn().then((hasLoggedIn) => {
 
         if (hasLoggedIn === true) {
-          this.navCtrl.push(view);
+          this.navCtrl.push(page);
         }
         else { modal.present(); }
     });

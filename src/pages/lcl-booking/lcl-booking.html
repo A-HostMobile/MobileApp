@@ -12,7 +12,7 @@
         <ion-label no-padding col-6 >POD</ion-label>
 
 
-        <ion-select [(ngModel)]="lcl.pod"  name="pod" *ngIf="(scheduleData | json) == ({} | json)" placeholder="Please Select" required>
+        <ion-select [(ngModel)]="lcl.pod"  name="pod" #pod="ngModel" *ngIf="(scheduleData | json) == ({} | json)" (ionCancel)="touch(1)" placeholder="Please Select" required>
           <ion-option  *ngFor="let pod of pods" [value]="pod.qc_lookup_value2">{{pod.qc_lookup_value2}}</ion-option>
         </ion-select>
         <ion-select [(ngModel)]="scheduleData.s_to"  name="pod" *ngIf="(scheduleData | json) != ({} | json)" required>
@@ -20,15 +20,15 @@
         </ion-select>
 
       </ion-item>
-      <!--<ion-badge *ngIf="loadDate.valid && pod.invalid" [hidden]="pod.valid" float-end>Please select POD</ion-badge>-->
+      <ion-badge *ngIf="selectcancel" [hidden]="lclbooking.value.pod!=null" float-end>Please select POD</ion-badge>
 
       <ion-item no-padding>
         <ion-label no-padding col-6>Loading Date</ion-label>
-        <ion-datetime  displayFormat="DDD DD/MMM/YYYY" min="2016" max="2020-10-31" [(ngModel)]="lcl.loadDate" name="loadDate" #loadDate="ngModel" placeholder="Please Select" required></ion-datetime>
+        <ion-datetime  displayFormat="DDD DD MMM YY" min="2016" max="2020-10-31" (ionCancel)="touch(2)" [(ngModel)]="lcl.loadDate" name="loadDate" #loadDate="ngModel" placeholder="Please Select" required></ion-datetime>
       </ion-item>
-      <!--<ion-badge ion-text *ngIf="loadDate.invalid" float-end>
+      <ion-badge ion-text *ngIf="datecancel" [hidden]="loadDate.valid"  float-end>
         Please Select Date
-      </ion-badge>-->
+      </ion-badge>
 
       <ion-item no-padding>
         <ion-label no-padding col-6 >Volume (CBM)</ion-label>

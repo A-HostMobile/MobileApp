@@ -241,7 +241,6 @@ export class TemplateApp {
   }
 
   loadingPage(){
-
   }
 
   checkConnection() {
