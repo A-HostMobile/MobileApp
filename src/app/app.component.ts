@@ -214,6 +214,9 @@ export class TemplateApp {
         if(pages!=HomePage){
           this.app.getRootNav().push(pages,params);
         }
+        else{
+          this.app.getRootNav().popToRoot();
+        }
       }else{
         this.userData.logout();
         console.log('Logout Code: '+profile.responseCode);
