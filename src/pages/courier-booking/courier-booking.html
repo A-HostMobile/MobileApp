@@ -13,7 +13,7 @@
       <button *ngIf="pickadd == ''" (click)="openPickupModal();" color="calm" ion-button outline item-right>Select</button>
       <button *ngIf="pickadd != ''" (click)="openPickupModal();" color="calm" ion-button outline item-right>{{pickadd}}</button>
     </ion-item>
-    <p ion-text [hidden]="pickadd != '' || submitted == false" color="danger"  align="right" style="margin-top: -0.25%">Address is required</p>
+    <ion-badge [hidden]="pickadd != '' || submitted == false" float-end>Address is required</ion-badge>
   </ion-list>
 
   <form #courierbooking="ngForm" novalidate>
@@ -25,12 +25,12 @@
         <ion-label no-padding col-6>Consignee Name </ion-label>
         <ion-input [(ngModel)]="courier.conname" name="conname" #conname="ngModel" type="text" placeholder="name" required></ion-input>
       </ion-item>
-      <p ion-text [hidden]="conname.valid || submitted == false" color="danger"  align="right" style="margin-top: -0.25%; margin-bottom: 0.5%">Consignee Name is required</p>
+      <ion-badge ion-text [hidden]="conname.untouched && submitted == false" *ngIf="conname.invalid" float-end>Consignee Name is required</ion-badge>
       <ion-item no-padding>
         <ion-label no-padding col-6>Address </ion-label>
         <ion-input [(ngModel)]="courier.address" name="address" #address="ngModel" type="text" placeholder="address" required></ion-input>
       </ion-item>
-      <p ion-text [hidden]="address.valid || submitted == false" color="danger" align="right" style="margin-top: -0.25%; margin-bottom: 0.5%">Address is required</p>
+      <ion-badge ion-text [hidden]="address.untouched && submitted == false" *ngIf="address.invalid" float-end>Address is required</ion-badge>
       <ion-item no-padding>
         <ion-label no-padding col-6>Country</ion-label>
         <ion-select [(ngModel)]="courier.country" name="country">
@@ -45,12 +45,12 @@
         <ion-label no-padding col-6>Contact Name </ion-label>
         <ion-input [(ngModel)]="courier.contname" name="contname" #contname="ngModel" type="text" placeholder="contact name" required></ion-input>
       </ion-item>
-      <p ion-text [hidden]="contname.valid || submitted == false" color="danger"  align="right" style="margin-top: -0.25%; margin-bottom: 0.5%">Contact name is required</p>
+      <ion-badge ion-text [hidden]="contname.untouched && submitted == false" *ngIf="contname.invalid" float-end>Contact name is required</ion-badge>
       <ion-item no-padding>
         <ion-label no-padding col-6>Tel. </ion-label>
         <ion-input [(ngModel)]="courier.tel" name="tel" #tel="ngModel" type="tel" placeholder="tel." required></ion-input>
       </ion-item>
-      <p ion-text [hidden]="tel.valid || submitted == false" color="danger"  align="right" style="margin-top: -0.25%; margin-bottom: 0.5%">Tel. is required</p>
+      <ion-badge ion-text [hidden]="tel.untouched && submitted == false" *ngIf="tel.invalid" float-end>Tel. is required</ion-badge>
       <ion-item no-padding>
         <ion-label no-padding col-6>Remark </ion-label>
         <ion-input [(ngModel)]="courier.rmk" name="rmk" type="text" placeholder="remark"></ion-input>

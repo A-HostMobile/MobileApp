@@ -23,6 +23,8 @@ export class LclBookingPage {
   commodities: Array<any>;
   scheduleData:any;
   errorMessage: string;
+  datecancel:boolean = false;
+  selectcancel:boolean = false;
 
   lcl:{pod?:string,loadDate?:string,volume?:string,gw?:string,gwunit?:string,commodities?:string,detail?:string,quantity?:string,package?:string} = {pod:null,gwunit:null,commodities:null,package:null};
 
@@ -105,6 +107,14 @@ export class LclBookingPage {
 
     } else {
       console.log('NOOO!!');
+    }
+  }
+
+  touch(num: number){
+    if(num == 1){
+      this.selectcancel = true;
+    } else {
+      this.datecancel = true;
     }
   }
 
