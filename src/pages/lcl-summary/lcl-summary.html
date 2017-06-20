@@ -48,9 +48,9 @@
           <ion-item *ngIf="scheduleData.s_carrier!=null" no-padding >Carrier : &nbsp;&nbsp;{{scheduleData.s_carrier}}</ion-item>
           <ion-item *ngIf="scheduleData.s_vessel!=null" no-padding >Vessel : &nbsp;&nbsp;{{scheduleData.s_vessel}}&nbsp;&nbsp;{{scheduleData.s_voy}}</ion-item>
           <ion-item *ngIf="scheduleData.s_feeder!=null" no-padding >Feeder : &nbsp;&nbsp;{{scheduleData.s_feeder}}&nbsp;&nbsp;{{scheduleData.s_fvoy}}</ion-item>
-          <ion-item *ngIf="scheduleData.s_closing_date!=null" no-padding>Closing Date : &nbsp;&nbsp;{{scheduleData.s_closing_date  | date: 'EEE dd MMM yy'}}</ion-item>
-          <ion-item *ngIf="scheduleData.s_etd!=null" no-padding >ETD : &nbsp;&nbsp;{{scheduleData.s_etd  | date: 'EEE dd MMM yy'}}</ion-item>
-          <ion-item *ngIf="scheduleData.s_eta!=null" no-padding >ETA : &nbsp;&nbsp;{{scheduleData.s_eta  | date: 'EEE dd MMM yy'}}</ion-item>
+          <ion-item *ngIf="scheduleData.s_closing_date!=null" no-padding>Closing Date : &nbsp;&nbsp;{{scheduleData.s_closing_date }}</ion-item>
+          <ion-item *ngIf="scheduleData.s_etd!=null" no-padding >ETD : &nbsp;&nbsp;{{scheduleData.s_etd }}</ion-item>
+          <ion-item *ngIf="scheduleData.s_eta!=null" no-padding >ETA : &nbsp;&nbsp;{{scheduleData.s_eta }}</ion-item>
         </ion-row>
         <ion-row>
           <ion-item ion-col no-padding col-6>Additional Details : </ion-item>

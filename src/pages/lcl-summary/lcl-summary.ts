@@ -1,8 +1,8 @@
 import {Component, ViewChild} from '@angular/core';
-import {Navbar, NavController, NavParams, ModalController} from 'ionic-angular';
+import {Navbar, NavController, NavParams, ModalController,LoadingController } from 'ionic-angular';
 import {CompletedPage} from "../completed/completed";
 import {LoginPage} from '../../pages/login-modal/login-modal';
-
+import {ScheduleServiceProvider} from '../../providers/schedule-service/schedule-service';
 import {AuthServiceProvider} from '../../providers/auth-service/auth-service';
 import {UserData} from '../../providers/user-data';
 
@@ -14,17 +14,45 @@ export class LclSummaryPage {
   @ViewChild(Navbar) navbar:Navbar;
   lclFormData:any;
   scheduleData:any;
+  errorMessage:string;
+  
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public authService: AuthServiceProvider,
+    public scheduleService:ScheduleServiceProvider,
     public userData: UserData,
+    public loadingCtrl: LoadingController,
     public mdlCtrl: ModalController
   ) {
+      let loadingPopup = this.loadingCtrl.create({
+        content: 'Loading data...'
+      });
       this.lclFormData = this.navParams.get("firstPassed");
       this.lclFormData.loadDate = {'unix':Date.parse(this.lclFormData.loadDate)/1000,'str':this.lclFormData.loadDate};
-      console.log("data :"+JSON.stringify(this.lclFormData));
+      console.log("data 1 :"+JSON.stringify(this.lclFormData));
       this.scheduleData = this.navParams.get("secondPassed");
+      console.log("data 2 :"+JSON.stringify(this.scheduleData));
+      if(Object.keys(this.scheduleData).length == 0){
+          loadingPopup.present();
+          let resp:any;
+          this.scheduleService.getSchedulesAuto(this.lclFormData.pod,this.lclFormData.loadDate.unix).subscribe(
+            (resData) => { resp = resData,
+                           this.setSchedule(resp),
+                           loadingPopup.dismiss()
+                         },
+            (error) => {  this.errorMessage = <any> error}
+          );
+          console.log("Found Schedule Data :"+JSON.stringify(this.scheduleData));
+      }
+  }
+
+  setSchedule(_resp:any){
+      console.log("ress Data :"+JSON.stringify(_resp)),
+      console.log("ress Data size :"+_resp.length);
+      if(_resp.length != 0){
+          this.scheduleData = _resp[0];
+      }
   }
 
   ionViewDidLoad() {

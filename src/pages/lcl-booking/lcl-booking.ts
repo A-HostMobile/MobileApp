@@ -1,12 +1,14 @@
-import {Component, ViewChild} from '@angular/core';
-import {ModalController, Navbar, NavController, NavParams, ViewController} from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { ModalController, Navbar, NavController, NavParams, ViewController } from 'ionic-angular';
+import { first } from 'rxjs/operator/first';
 import {LclSummaryPage} from "../lcl-summary/lcl-summary";
 import {LoginPage} from "../login-modal/login-modal";
 import {UserData} from "../../providers/user-data";
 import {AuthServiceProvider} from '../../providers/auth-service/auth-service';
 import {QuickcodeProvider} from '../../providers/quickcode/quickcode';
+import {ScheduleServiceProvider} from '../../providers/schedule-service/schedule-service';
 
-import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'page-lcl-booking',
@@ -31,6 +33,7 @@ export class LclBookingPage {
               public mdlCtrl: ModalController,
               public userData: UserData,
               public authService: AuthServiceProvider,
+              public scheduleService:ScheduleServiceProvider,
               public quickcodeService :QuickcodeProvider
             ) {
 
@@ -95,12 +98,14 @@ export class LclBookingPage {
     if(form.valid){
       console.log(JSON.stringify(form.value));
       this.navCtrl.push(LclSummaryPage,
-      {
-        firstPassed: form.value,
-        secondPassed: this.scheduleData
-      });
+        {
+          firstPassed: form.value,
+          secondPassed: this.scheduleData
+        });
+
     } else {
       console.log('NOOO!!');
     }
   }
+
 }
