@@ -8,6 +8,8 @@ import {UserData} from "../../providers/user-data";
 import {QuickcodeProvider} from '../../providers/quickcode/quickcode';
 import {ScheduleServiceProvider} from '../../providers/schedule-service/schedule-service';
 
+
+
 @Component({
   selector: 'page-lcl-booking',
   templateUrl: 'lcl-booking.html',
@@ -21,7 +23,10 @@ export class LclBookingPage {
   commodities: Array<any>;
   scheduleData:any;
   errorMessage: string;
-  check: any;
+  datecancel:boolean = false;
+  selectcancel:boolean = false;
+  minDate:string;
+  maxDate:any;
 
   lcl:{pod?:string,loadDate?:string,volume?:string,gw?:string,gwunit?:string,commodities?:string,detail?:string,quantity?:string,package?:string} = {pod:null,gwunit:null,commodities:null,package:null};
 
@@ -37,6 +42,10 @@ export class LclBookingPage {
             ) {
 
       this.scheduleData = this.navParams.data;
+      if(Object.keys(this.scheduleData).length != 0){
+          this.maxDate = new Date(this.scheduleData.s_closing_date);
+      }
+      
       this.quickcodeService.getPod().subscribe(
         (resPod) => this.pods = resPod.responseData,
         (error) => {  this.errorMessage = <any> error});
@@ -64,4 +73,13 @@ export class LclBookingPage {
       console.log('You shall not PASS!!!');
     }
   }
+
+  touch(num: number){
+    if(num == 1){
+      this.selectcancel = true;
+     } else {
+      this.datecancel = true;
+      console.log('You shall not PASS!!!');
+     }
+   }
 }

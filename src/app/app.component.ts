@@ -23,6 +23,7 @@ import {AuthServiceProvider} from '../providers/auth-service/auth-service';
 import { QuickcodeProvider } from '../providers/quickcode/quickcode';
 
 
+
 export interface PageInterface {
   title: string;
   name: string;
