@@ -4,9 +4,7 @@ import { NgForm } from '@angular/forms';
 import { first } from 'rxjs/operator/first';
 
 import {LclSummaryPage} from "../lcl-summary/lcl-summary";
-import {LoginPage} from "../login-modal/login-modal";
 import {UserData} from "../../providers/user-data";
-import {AuthServiceProvider} from '../../providers/auth-service/auth-service';
 import {QuickcodeProvider} from '../../providers/quickcode/quickcode';
 import {ScheduleServiceProvider} from '../../providers/schedule-service/schedule-service';
 
@@ -33,7 +31,6 @@ export class LclBookingPage {
               public viewCtrl: ViewController,
               public mdlCtrl: ModalController,
               public userData: UserData,
-              public authService: AuthServiceProvider,
               public quickcodeService :QuickcodeProvider,
               public events: Events,
               public scheduleService:ScheduleServiceProvider,
@@ -57,12 +54,12 @@ export class LclBookingPage {
 
   toSummary(form: NgForm){
     this.submitted = true;
-    if(form.valid){
+    if(form.valid) {
       this.events.publish('checkStsLogin',LclSummaryPage,
-        {
-          firstPassed: form.value,
-          secondPassed: this.scheduleData
-        });
+       {
+       firstPassed: form.value,
+       secondPassed: this.scheduleData
+       });
     } else {
       console.log('You shall not PASS!!!');
     }

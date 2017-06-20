@@ -1,5 +1,5 @@
 import {Component, ViewChild} from '@angular/core';
-import {Navbar, NavController, NavParams, ViewController, ModalController} from 'ionic-angular';
+import {Navbar, NavController, NavParams, ViewController, ModalController, Events} from 'ionic-angular';
 import {UserData} from "../../providers/user-data";
 import {LoginPage} from "../login-modal/login-modal";
 import {CourierBooking2Page} from "../courier-booking2/courier-booking2";
@@ -35,7 +35,7 @@ export class CourierBookingPage {
               public viewCtrl: ViewController,
               public mdlCtrl: ModalController,
               public userData: UserData,
-              public authService: AuthServiceProvider
+              public events: Events
             ) {
   }
 
