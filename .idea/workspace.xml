@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3f44e5d9-4dc2-467a-85f4-e79ac08cf5ea" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.component.ts" afterPath="$PROJECT_DIR$/src/app/app.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/courier-item-modal/courier-item-modal.html" afterPath="$PROJECT_DIR$/src/pages/courier-item-modal/courier-item-modal.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/home/home.ts" afterPath="$PROJECT_DIR$/src/pages/home/home.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/login-modal/login-modal.ts" afterPath="$PROJECT_DIR$/src/pages/login-modal/login-modal.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/schedule-result/schedule-result.ts" afterPath="$PROJECT_DIR$/src/pages/schedule-result/schedule-result.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/providers/auth-service/auth-service.ts" afterPath="$PROJECT_DIR$/src/providers/auth-service/auth-service.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,7 +23,10 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
               <caret line="20" column="41" lean-forward="false" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="41" />
-              <folding />
+              <folding>
+                <marker date="1497943297211" expanded="true" signature="1243:1275" ph="..." />
+                <marker date="1497943297211" expanded="true" signature="1361:1541" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -46,12 +44,24 @@
       <file leaf-file-name="app.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1299">
-              <caret line="282" column="3" lean-forward="false" selection-start-line="282" selection-start-column="3" selection-end-line="282" selection-end-column="3" />
+            <state relative-caret-position="721">
+              <caret line="254" column="40" lean-forward="true" selection-start-line="254" selection-start-column="40" selection-end-line="254" selection-end-column="40" />
               <folding>
                 <element signature="n#!!block;n#enableMenu#0;n#TemplateApp#0" expanded="false" />
                 <element signature="n#!!block;n#isActive#0;n#TemplateApp#0" expanded="false" />
                 <marker date="1497942259260" expanded="true" signature="6796:6802" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lcl-booking.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/lcl-booking/lcl-booking.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="629">
+              <caret line="37" column="60" lean-forward="false" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="60" />
+              <folding>
+                <element signature="e#0#53#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -69,11 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login-modal.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="login-modal.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/login-modal/login-modal.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="46" column="10" lean-forward="true" selection-start-line="46" selection-start-column="10" selection-end-line="46" selection-end-column="10" />
+            <state relative-caret-position="527">
+              <caret line="75" column="16" lean-forward="true" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -82,18 +92,42 @@
       <file leaf-file-name="lcl-summary.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/lcl-summary/lcl-summary.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
+            <state relative-caret-position="850">
               <caret line="50" column="67" lean-forward="false" selection-start-line="50" selection-start-column="67" selection-end-line="50" selection-end-column="67" />
-              <folding />
+              <folding>
+                <marker date="1497943297205" expanded="true" signature="716:1045" ph="..." />
+                <marker date="1497943297205" expanded="true" signature="1063:1406" ph="..." />
+                <marker date="1497943297205" expanded="true" signature="1424:1592" ph="..." />
+                <marker date="1497943297205" expanded="true" signature="1610:1816" ph="..." />
+                <marker date="1497943297205" expanded="true" signature="1879:2804" ph="..." />
+                <marker date="1497943297205" expanded="false" signature="2036:2042" ph=" " />
+                <marker date="1497943297205" expanded="false" signature="2042:2048" ph=" " />
+                <marker date="1497943297205" expanded="false" signature="2163:2169" ph=" " />
+                <marker date="1497943297205" expanded="false" signature="2169:2175" ph=" " />
+                <marker date="1497943297205" expanded="false" signature="2200:2206" ph=" " />
+                <marker date="1497943297205" expanded="false" signature="2206:2212" ph=" " />
+                <marker date="1497943297205" expanded="false" signature="2323:2329" ph=" " />
+                <marker date="1497943297205" expanded="false" signature="2329:2335" ph=" " />
+                <marker date="1497943297205" expanded="false" signature="2360:2366" ph=" " />
+                <marker date="1497943297205" expanded="false" signature="2366:2372" ph=" " />
+                <marker date="1497943297205" expanded="false" signature="2495:2501" ph=" " />
+                <marker date="1497943297205" expanded="false" signature="2501:2507" ph=" " />
+                <marker date="1497943297205" expanded="false" signature="2622:2628" ph=" " />
+                <marker date="1497943297205" expanded="false" signature="2628:2634" ph=" " />
+                <marker date="1497943297205" expanded="false" signature="2740:2746" ph=" " />
+                <marker date="1497943297205" expanded="false" signature="2746:2752" ph=" " />
+                <marker date="1497943297205" expanded="true" signature="2822:3128" ph="..." />
+                <marker date="1497943297205" expanded="true" signature="3224:3293" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/home/home.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="636">
-              <caret line="78" column="55" lean-forward="true" selection-start-line="78" selection-start-column="55" selection-end-line="78" selection-end-column="55" />
+            <state relative-caret-position="92">
+              <caret line="46" column="25" lean-forward="true" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -192,9 +226,9 @@
         <option value="$PROJECT_DIR$/src/pages/courier-item-modal/courier-item-modal.html" />
         <option value="$PROJECT_DIR$/src/app/app.component.ts" />
         <option value="$PROJECT_DIR$/src/providers/auth-service/auth-service.ts" />
-        <option value="$PROJECT_DIR$/src/pages/login-modal/login-modal.ts" />
         <option value="$PROJECT_DIR$/src/pages/schedule-result/schedule-result.ts" />
         <option value="$PROJECT_DIR$/src/pages/home/home.ts" />
+        <option value="$PROJECT_DIR$/src/pages/login-modal/login-modal.ts" />
       </list>
     </option>
   </component>
@@ -683,12 +717,12 @@
       <workItem from="1497526546099" duration="722000" />
       <workItem from="1497581724953" duration="16004000" />
       <workItem from="1497839787533" duration="22375000" />
-      <workItem from="1497923678518" duration="12488000" />
+      <workItem from="1497923678518" duration="13424000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="247501000" />
+    <option name="totallyTimeSpent" value="248437000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -722,7 +756,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="27" />
+      <option name="time" value="28" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1009,14 +1043,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/lcl-booking/lcl-booking.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="653">
-          <caret line="109" column="17" lean-forward="false" selection-start-line="109" selection-start-column="17" selection-end-line="109" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/lcl-booking/lcl-booking.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -1066,39 +1092,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/lcl-summary/lcl-summary.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="50" column="67" lean-forward="false" selection-start-line="50" selection-start-column="67" selection-end-line="50" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/schedule-result/schedule-result.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="41" lean-forward="false" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/schedule-result/schedule-result.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
           <caret line="53" column="59" lean-forward="false" selection-start-line="53" selection-start-column="59" selection-end-line="53" selection-end-column="59" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1299">
-          <caret line="282" column="3" lean-forward="false" selection-start-line="282" selection-start-column="3" selection-end-line="282" selection-end-column="3" />
-          <folding>
-            <element signature="n#!!block;n#enableMenu#0;n#TemplateApp#0" expanded="false" />
-            <element signature="n#!!block;n#isActive#0;n#TemplateApp#0" expanded="false" />
-            <marker date="1497942259260" expanded="true" signature="6796:6802" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1112,18 +1110,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/login-modal/login-modal.ts">
+    <entry file="file://$PROJECT_DIR$/src/pages/home/home.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="46" column="10" lean-forward="true" selection-start-line="46" selection-start-column="10" selection-end-line="46" selection-end-column="10" />
+        <state relative-caret-position="92">
+          <caret line="46" column="25" lean-forward="true" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/home/home.ts">
+    <entry file="file://$PROJECT_DIR$/src/pages/lcl-summary/lcl-summary.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="636">
-          <caret line="78" column="55" lean-forward="true" selection-start-line="78" selection-start-column="55" selection-end-line="78" selection-end-column="55" />
+        <state relative-caret-position="850">
+          <caret line="50" column="67" lean-forward="false" selection-start-line="50" selection-start-column="67" selection-end-line="50" selection-end-column="67" />
+          <folding>
+            <marker date="1497943297205" expanded="true" signature="716:1045" ph="..." />
+            <marker date="1497943297205" expanded="true" signature="1063:1406" ph="..." />
+            <marker date="1497943297205" expanded="true" signature="1424:1592" ph="..." />
+            <marker date="1497943297205" expanded="true" signature="1610:1816" ph="..." />
+            <marker date="1497943297205" expanded="true" signature="1879:2804" ph="..." />
+            <marker date="1497943297205" expanded="false" signature="2036:2042" ph=" " />
+            <marker date="1497943297205" expanded="false" signature="2042:2048" ph=" " />
+            <marker date="1497943297205" expanded="false" signature="2163:2169" ph=" " />
+            <marker date="1497943297205" expanded="false" signature="2169:2175" ph=" " />
+            <marker date="1497943297205" expanded="false" signature="2200:2206" ph=" " />
+            <marker date="1497943297205" expanded="false" signature="2206:2212" ph=" " />
+            <marker date="1497943297205" expanded="false" signature="2323:2329" ph=" " />
+            <marker date="1497943297205" expanded="false" signature="2329:2335" ph=" " />
+            <marker date="1497943297205" expanded="false" signature="2360:2366" ph=" " />
+            <marker date="1497943297205" expanded="false" signature="2366:2372" ph=" " />
+            <marker date="1497943297205" expanded="false" signature="2495:2501" ph=" " />
+            <marker date="1497943297205" expanded="false" signature="2501:2507" ph=" " />
+            <marker date="1497943297205" expanded="false" signature="2622:2628" ph=" " />
+            <marker date="1497943297205" expanded="false" signature="2628:2634" ph=" " />
+            <marker date="1497943297205" expanded="false" signature="2740:2746" ph=" " />
+            <marker date="1497943297205" expanded="false" signature="2746:2752" ph=" " />
+            <marker date="1497943297205" expanded="true" signature="2822:3128" ph="..." />
+            <marker date="1497943297205" expanded="true" signature="3224:3293" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/schedule-result/schedule-result.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="41" lean-forward="false" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="41" />
+          <folding>
+            <marker date="1497943297211" expanded="true" signature="1243:1275" ph="..." />
+            <marker date="1497943297211" expanded="true" signature="1361:1541" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/lcl-booking/lcl-booking.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" column="60" lean-forward="false" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="721">
+          <caret line="254" column="40" lean-forward="true" selection-start-line="254" selection-start-column="40" selection-end-line="254" selection-end-column="40" />
+          <folding>
+            <element signature="n#!!block;n#enableMenu#0;n#TemplateApp#0" expanded="false" />
+            <element signature="n#!!block;n#isActive#0;n#TemplateApp#0" expanded="false" />
+            <marker date="1497942259260" expanded="true" signature="6796:6802" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/login-modal/login-modal.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="75" column="16" lean-forward="true" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="16" />
           <folding />
         </state>
       </provider>

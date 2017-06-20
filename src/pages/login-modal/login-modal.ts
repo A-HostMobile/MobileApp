@@ -68,7 +68,7 @@ export class LoginPage {
 
                  if(this.page == LclBookingPage||this.page == CourierBookingPage) {
                    this.viewCtrl.dismiss();
-                   this.app.getRootNav().push(this.page);
+                   this.app.getRootNav().push(this.page,this.param);
                  }
                  else {
                    this.closemodal();
