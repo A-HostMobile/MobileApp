@@ -54,19 +54,19 @@ export class LoginPage {
         res => {
           let signin:boolean = res;
           if(signin == true){
-            
+
             let check:any;
             check = this.events.publish('checkStsLogin');
 
             if(check){
               console.log('login success');
-               if(this.page == LclBookingPage||this.page == CourierBookingPage) {
-                 this.viewCtrl.dismiss();
-                 this.app.getRootNav().push(this.page);
-               }
-               else {
-                 this.closemodal();
-               }
+              if(this.page == LclBookingPage||this.page == CourierBookingPage) {
+                this.viewCtrl.dismiss();
+                this.app.getRootNav().push(this.page,this.param);
+              }
+              else {
+                this.closemodal();
+              }
             }else{
               this.userData.logout();
               console.log('logout from login-modal');
