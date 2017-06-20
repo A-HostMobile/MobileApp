@@ -13,7 +13,7 @@ export class CourierItemModalPage {
   StatusText: String;
   submitted:boolean = false;
   commodities:commovalue[]=[{va:'cer',name:'Ceramic'},{va:'ex1',name:'Example1'},{va:'ex2',name:'Example2'}];
-  item:{commodity?:string,dw?:number,dl?:number,dh?:number,weight?:number,quantity?:number}={commodity:'cer'};
+  item:{commodity?:string,dwidth?:number,dlength?:number,dheight?:number,weight?:number,quantity?:number}={commodity:'cer'};
   constructor(public viewCtrl: ViewController,
               public navParams: NavParams) {
   }

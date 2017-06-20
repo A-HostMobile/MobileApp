@@ -18,22 +18,22 @@
         <ion-label no-padding col-6>Contact Name </ion-label>
         <ion-input [(ngModel)]="add.contname" name="contname" #contname="ngModel" type="text" placeholder="contact name" required=""></ion-input>
       </ion-item>
-      <p ion-text [hidden]="contname.valid || submitted == false" color="danger"  align="right" style="margin-top: -0.25%; margin-bottom: 0.5%">Contact Name is required</p>
+      <p ion-text [hidden]="contname.untouched && submitted == false" *ngIf="contname.invalid" float-end>Contact Name is required</p>
       <ion-item no-padding>
         <ion-label no-padding col-6>Tel. </ion-label>
         <ion-input [(ngModel)]="add.tel" name="tel" #tel="ngModel" type="text" placeholder="tel." required=""></ion-input>
       </ion-item>
-      <p ion-text [hidden]="tel.valid || submitted == false" color="danger"  align="right" style="margin-top: -0.25%; margin-bottom: 0.5%">Tel. is required</p>
+      <ion-badge ion-text [hidden]="tel.untouched && submitted == false" *ngIf="tel.invalid" float-end>Tel. is required</ion-badge>
       <ion-item no-padding>
         <ion-label no-padding col-6>E-mail </ion-label>
         <ion-input [(ngModel)]="add.email" name="email" #email="ngModel" type="text" placeholder="e-mail" required=""></ion-input>
       </ion-item>
-      <p ion-text [hidden]="email.valid || submitted == false" color="danger"  align="right" style="margin-top: -0.25%; margin-bottom: 0.5%">E-mail is required</p>
+      <ion-badge [hidden]="email.untouched && submitted == false" *ngIf="email.invalid" float-end>E-mail is required</ion-badge>
       <ion-item no-padding>
         <ion-label no-padding col-6>Address </ion-label>
         <ion-input [(ngModel)]="add.address" name="address" #address="ngModel" type="text" placeholder="address" required=""></ion-input>
       </ion-item>
-      <p ion-text [hidden]="address.valid || submitted == false" color="danger"  align="right" style="margin-top: -0.25%; margin-bottom: 0.5%">Address is required</p>
+      <ion-badge [hidden]="address.untouched && submitted == false" *ngIf="address.invalid" color="danger" float-end>Address is required</ion-badge>
       <ion-item no-padding>
         <ion-label no-padding col-6>Zip Code </ion-label>
         <ion-input [(ngModel)]="add.zip" name="zip" type="text" placeholder="zip code"></ion-input>
