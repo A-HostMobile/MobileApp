@@ -8,8 +8,11 @@ import {HistoryPage} from "../history/history";
   templateUrl: 'completed.html',
 })
 export class CompletedPage {
-
+  bookingId:any;
+  type:any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+      this.bookingId = this.navParams.get("booking_id");
+      this.type = this.navParams.get("type");
   }
 
   ionViewDidLoad() {
