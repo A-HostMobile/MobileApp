@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, LoadingController } from 'ionic-angular';
+import { NavController, NavParams, Events } from 'ionic-angular';
 import { NewsPage } from '../../pages/news/news';
 import { AdvertisementProvider } from '../../providers/advertisement/advertisement';
 import { Subscription } from 'rxjs/Subscription';
@@ -20,7 +20,7 @@ export class NewsDetailPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public advertiseService:AdvertisementProvider,
-    public loadCtrl:LoadingController
+    public events:Events
   ) {
       this.itemId = this.navParams.data;
   }
@@ -30,22 +30,17 @@ export class NewsDetailPage {
     // console.log(this.NewsDetail);
   }
 
-  // ionViewDidLoad() {
-  //   console.log('ionViewDidLoad NewsDetailPage');
-  // }
+  ionViewDidLoad() {
+    this.events.publish('showLoading');
+  }
 
   private getDetails(){
-    let loading = this.loadCtrl.create({
-      content: "Please wait...",
-      spinner: 'hide'
-    });
-    loading.present();
-
     this.sub = this.advertiseService.getNewsDetails(this.itemId).subscribe(
       (res) => this.NewsDetail = res,
       (error) => {  this.errorMessage = <any> error,
-                    loading.dismiss() },
-              () => loading.dismiss()
+                    this.events.publish('dismissLoading')
+                 },
+              () => this.events.publish('dismissLoading')
     );
   }
 

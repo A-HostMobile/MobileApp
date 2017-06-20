@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import {Network} from "@ionic-native/network";
 import { SplashScreen } from '@ionic-native/splash-screen';
-import {App, Events, MenuController, ModalController, Nav, Platform, ToastController} from 'ionic-angular';
+import {App, Events, MenuController, ModalController, Nav, Platform, ToastController, LoadingController} from 'ionic-angular';
 
 import { UserData } from '../providers/user-data';
 import { ConferenceData } from '../providers/conference-data';
@@ -37,7 +37,8 @@ export interface PageInterface {
 })
 export class TemplateApp {
 
-  @ViewChild(Nav) nav: Nav;
+  @ViewChild(Nav)
+  nav: Nav;
 
   count: number = 0;
   bpress: number = 0;
@@ -48,6 +49,7 @@ export class TemplateApp {
   _quickcode_gwunit:any;
   _quickcode_countrycode:any;
   _quickcode_commodities:any;
+  _loading: any;
 
   appPages: PageInterface[] = [
     { title: 'Home', name: 'HomePage', component: HomePage, icon: 'ios-home' },
@@ -80,11 +82,12 @@ export class TemplateApp {
     public splashScreen: SplashScreen,
     public toastCtrl: ToastController,
     public authService: AuthServiceProvider,
-    public quickcodeService: QuickcodeProvider
+    public quickcodeService: QuickcodeProvider,
+    public loadCtrl: LoadingController
   ) {
 
     confData.load();
-
+    //first open app have to check login if loggedIn get token and profile else clear localStorage
     this.userData.hasLoggedIn().then((hasLoggedIn) => {
         if(hasLoggedIn == true){
           let token = localStorage.getItem('token');
@@ -130,6 +133,18 @@ export class TemplateApp {
         this._quickcode_commodities = resCommodity;
     });
 
+  }
+
+  showLoading(): Promise<any>{
+    this._loading = this.loadCtrl.create({
+      content: "Please wait...",
+      spinner: 'hide'
+    })
+    return this._loading.present();
+  }
+
+  dismissLoading(): Promise<any>{
+    return this._loading.dismiss();
   }
 
   exit() {
@@ -198,12 +213,22 @@ export class TemplateApp {
       this.exit();
     });
 
+    this.events.subscribe('showLoading',()=>{
+      this.showLoading();
+    });
+
+    this.events.subscribe('dismissLoading',()=>{
+      this.dismissLoading();
+    });
+
     this.events.subscribe('checkStsLogin',(pages:any,params:any)=>{
       if(pages!=null){
         this.checkStatusLogin(pages,params);
       }
     });
   }
+
+
 
   checkStatusLogin(pages:any,params:any){
     this.authService.getProfile().subscribe((res)=>{

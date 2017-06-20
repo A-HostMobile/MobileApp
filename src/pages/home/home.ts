@@ -1,6 +1,6 @@
 
 import {Component, ViewChild} from '@angular/core';
-import {NavController, NavParams, ModalController, ViewController, Platform, Nav, MenuController, LoadingController, Events} from 'ionic-angular';
+import {NavController, NavParams, ModalController, ViewController, Platform, Nav, MenuController, Events} from 'ionic-angular';
 
 import {UserData} from "../../providers/user-data";
 import {LclBookingPage} from "../lcl-booking/lcl-booking";
@@ -28,7 +28,6 @@ export class HomePage {
               public viewCtrl: ViewController,
               public menuCtrl: MenuController,
               public authService: AuthServiceProvider,
-              public loadingCtrl: LoadingController,
               public advertisementProvider:AdvertisementProvider,
               public events: Events
             ) {

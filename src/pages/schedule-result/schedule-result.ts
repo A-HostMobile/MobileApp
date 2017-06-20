@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {IonicPage, NavController, NavParams, ViewController, LoadingController, Events} from 'ionic-angular';
+import {IonicPage, NavController, NavParams, ViewController, Events} from 'ionic-angular';
 import { LclBookingPage } from "../lcl-booking/lcl-booking";
 
 import { ScheduleServiceProvider } from '../../providers/schedule-service/schedule-service';
@@ -25,7 +25,6 @@ export class ScheduleResultPage {
     public navParams: NavParams,
     public viewCtrl: ViewController,
     public scheduleService:ScheduleServiceProvider,
-    public loadCtrl:LoadingController,
     public userData: UserData,
     public events: Events
   ) {
@@ -36,23 +35,22 @@ export class ScheduleResultPage {
     this.getSchedule();
   }
 
+  ionViewDidLoad(){
+    this.events.publish('showLoading');
+  }
+
 
   toLCLBooking(schData:Array<ScheduleModel>){
     this.events.publish('checkStsLogin',LclBookingPage,schData);
   }
 
   private getSchedule(){
-      let loading = this.loadCtrl.create({
-        content: "Please wait...",
-        spinner: 'hide'
-      });
-      loading.present();
-
       this.sub = this.scheduleService.getSchedules(this.cname).subscribe(
         (res) => this.schedule = res,
         (error) => {  this.errorMessage = <any> error,
-                      loading.dismiss() },
-                () => loading.dismiss()
+                      this.events.publish('dismissLoading')
+                   },
+                () => this.events.publish('dismissLoading')
       );
   }
 

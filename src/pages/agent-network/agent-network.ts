@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, LoadingController } from 'ionic-angular';
+import { NavController, NavParams, Events } from 'ionic-angular';
 
 import { AgentModel } from '../../models/agent';
 import { AgentNetworkServiceProvider } from '../../providers/agent-network-service/agent-network-service';
@@ -22,7 +22,7 @@ export class AgentNetworkPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public agentService: AgentNetworkServiceProvider,
-    private loadCtrl:LoadingController
+    public events: Events
   ) {
   }
 
@@ -32,16 +32,13 @@ export class AgentNetworkPage {
   }
 
   private getAgent(){
-    let loading = this.loadCtrl.create({
-      content: "Please wait...",
-      spinner: 'hide'
-    });
-    loading.present();
+    this.events.publish('showLoading');
     this.sub = this.agentService.getAgent().subscribe(
       (res) => this.agent = res,
-      (error) => {  this.errorMessage = <any> error,
-                    loading.dismiss() },
-              () => loading.dismiss()
+      (error) => {  this.errorMessage = <any> error
+                  this.events.publish('dismissLoading');
+                  },
+      () => this.events.publish('dismissLoading')
     );
   }
 

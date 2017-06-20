@@ -1,5 +1,5 @@
 import {Component, ViewChild} from '@angular/core';
-import {App, Navbar, NavParams, ViewController, AlertController, LoadingController, Events} from 'ionic-angular';
+import {App, Navbar, NavParams, ViewController, AlertController, Events} from 'ionic-angular';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {LclBookingPage} from "../lcl-booking/lcl-booking";
 import {CourierBookingPage} from "../courier-booking/courier-booking";
@@ -27,7 +27,6 @@ export class LoginPage {
               public viewCtrl: ViewController,
               public formBuilder: FormBuilder,
               public authService:AuthServiceProvider,
-              public loadingCtrl: LoadingController,
               public alertCtrl: AlertController,
               public events: Events
             ) {
@@ -45,11 +44,7 @@ export class LoginPage {
 
   onLogin(username:string,password:string) {
     if(this.authForm.valid){
-      let loading = this.loadingCtrl.create({
-        content: "loggingIn...",
-        spinner: 'hide'
-      });
-      loading.present();
+      this.events.publish('showLoading');
       this.authService.doLogin(username,password).subscribe(
         res => {
           let signin:boolean = res;
@@ -67,8 +62,8 @@ export class LoginPage {
               buttons: ['OK']
           });
           alert.present();
-          loading.dismiss();
-        },() => loading.dismiss()
+          this.events.publish('dismissLoading')
+        },() => this.events.publish('dismissLoading')
       )
     }
   }
