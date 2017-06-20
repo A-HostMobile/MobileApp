@@ -15,6 +15,7 @@ export class LclSummaryPage {
   lclFormData:any;
   scheduleData:any;
   errorMessage:string;
+  dateUnix:any;
   
   constructor(
     public navCtrl: NavController,
@@ -29,27 +30,22 @@ export class LclSummaryPage {
         content: 'Loading data...'
       });
       this.lclFormData = this.navParams.get("firstPassed");
-      this.lclFormData.loadDate = {'unix':Date.parse(this.lclFormData.loadDate)/1000,'str':this.lclFormData.loadDate};
-      console.log("data 1 :"+JSON.stringify(this.lclFormData));
+      this.dateUnix = Date.parse(this.lclFormData.loadDate)/1000;
       this.scheduleData = this.navParams.get("secondPassed");
-      console.log("data 2 :"+JSON.stringify(this.scheduleData));
       if(Object.keys(this.scheduleData).length == 0){
           loadingPopup.present();
           let resp:any;
-          this.scheduleService.getSchedulesAuto(this.lclFormData.pod,this.lclFormData.loadDate.unix).subscribe(
+          this.scheduleService.getSchedulesAuto(this.lclFormData.pod,this.dateUnix).subscribe(
             (resData) => { resp = resData,
                            this.setSchedule(resp),
                            loadingPopup.dismiss()
                          },
             (error) => {  this.errorMessage = <any> error}
           );
-          console.log("Found Schedule Data :"+JSON.stringify(this.scheduleData));
       }
   }
 
   setSchedule(_resp:any){
-      console.log("ress Data :"+JSON.stringify(_resp)),
-      console.log("ress Data size :"+_resp.length);
       if(_resp.length != 0){
           this.scheduleData = _resp[0];
       }
