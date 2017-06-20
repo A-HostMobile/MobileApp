@@ -1,9 +1,7 @@
 import {Component, ViewChild} from '@angular/core';
-import {Navbar, NavController, NavParams, ModalController,LoadingController } from 'ionic-angular';
+import {Navbar, NavController, NavParams, ModalController, LoadingController, Events} from 'ionic-angular';
 import {CompletedPage} from "../completed/completed";
-import {LoginPage} from '../../pages/login-modal/login-modal';
 import {ScheduleServiceProvider} from '../../providers/schedule-service/schedule-service';
-import {AuthServiceProvider} from '../../providers/auth-service/auth-service';
 import {UserData} from '../../providers/user-data';
 
 @Component({
@@ -16,11 +14,11 @@ export class LclSummaryPage {
   scheduleData:any;
   errorMessage:string;
   dateUnix:any;
-  
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public authService: AuthServiceProvider,
+    public events: Events,
     public scheduleService:ScheduleServiceProvider,
     public userData: UserData,
     public loadingCtrl: LoadingController,
@@ -56,25 +54,8 @@ export class LclSummaryPage {
   }
 
   toCompleted(){
-        this.CheckPage();
-        this.navCtrl.push(CompletedPage);
-        console.log('login from lcl summary');
-  }
-
-  CheckPage(){
-    let modal = this.mdlCtrl.create(LoginPage, LclSummaryPage);
-    this.userData.hasLoggedIn().then((hasLoggedIn) => {
-      if (hasLoggedIn === true) {
-        console.log('login from lcl summary before open lcl summary page');
-        return true;
-      }
-      else {
-        console.log('fail before open lcl summary');
-        this.navCtrl.pop();
-        modal.present();
-        return false;
-      }
-    });
+    this.navCtrl.push(CompletedPage);
+    console.log('login from lcl summary');
   }
 
 }

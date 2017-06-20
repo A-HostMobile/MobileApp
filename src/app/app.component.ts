@@ -17,7 +17,6 @@ import {AgentNetworkPage} from "../pages/agent-network/agent-network";
 import {CourierBookingPage} from "../pages/courier-booking/courier-booking";
 import {ScheduleSearchPage} from "../pages/schedule-search/schedule-search";
 import {NoInternetModalPage} from "../pages/no-internet-modal/no-internet-modal";
-import {HistoryPage} from "../pages/history/history";
 import {CompletedPage} from "../pages/completed/completed";
 import {StatusBar} from "@ionic-native/status-bar";
 import {AuthServiceProvider} from '../providers/auth-service/auth-service';
