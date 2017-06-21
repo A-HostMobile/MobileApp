@@ -40,6 +40,7 @@ export class LclSummaryPage {
             (resData) => { resp = resData,
                            this.setSchedule(resp),
                            loadingPopup.dismiss()
+                           console.log('test git');
                          },
             (error) => {  this.errorMessage = <any> error}
           );
@@ -62,7 +63,7 @@ export class LclSummaryPage {
     if(checkRemark){
         let numCommodity,numPackage,numGwunit:any = null;
         if(this.lclFormData.commodities!=null){
-              numCommodity = this.lclFormData.commodities.qc_lookup_code;   
+              numCommodity = this.lclFormData.commodities.qc_lookup_code;
         }
         if(this.lclFormData.package!=null){
               numPackage = this.lclFormData.package.qc_lookup_no;
@@ -72,7 +73,7 @@ export class LclSummaryPage {
         }
         this.bookingService.insertBookingLCL(this.lclFormData,this.dateUnix,this.remarkData,numCommodity,numGwunit,numGwunit).subscribe(
             (resData) => {  responseData = resData,
-                            this.navCtrl.push(CompletedPage,
+                            this.events.publish('checkStsLogin',CompletedPage,
                                {
                                booking_id: responseData,
                                type:"LCL"
@@ -83,13 +84,13 @@ export class LclSummaryPage {
     }else{
         console.log('Prepare Schedule Data Error');
     }
-    
+
     //
     console.log('login from lcl summary');
   }
 
   prepareData(schedule:any){
-    
+
       if(schedule.s_carrier!=null){
           this.remarkData = this.remarkData+"CARRIER: "+schedule.s_carrier+",";
       }
@@ -114,9 +115,9 @@ export class LclSummaryPage {
       if(schedule.s_eta!=null){
           this.remarkData = this.remarkData+"ETA: "+schedule.s_eta;
       }
-      
-         
-    return true;     
+
+
+    return true;
   }
 
 }

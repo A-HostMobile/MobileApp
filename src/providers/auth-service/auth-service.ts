@@ -23,7 +23,7 @@ export class AuthServiceProvider {
     let urlSearchParams = new URLSearchParams();
     urlSearchParams.append('username', username);
     urlSearchParams.append('password', password);
-    let body = urlSearchParams.toString()
+    let body = urlSearchParams.toString();
 
     return this.http.post(AppSettings.API_ENDPOINT+'login',body,{headers:myHeader})
     .map((res:Response) => {

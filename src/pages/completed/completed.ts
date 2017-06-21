@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {HistoryPage} from "../history/history";
+import {UserData} from "../../providers/user-data";
 
 
 @Component({
@@ -10,9 +11,15 @@ import {HistoryPage} from "../history/history";
 export class CompletedPage {
   bookingId:any;
   type:any;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  success:boolean;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public userdata: UserData) {
       this.bookingId = this.navParams.get("booking_id");
       this.type = this.navParams.get("type");
+      if(this.bookingId=='Unauthorized: Access is denied due to invalid credentials.'){
+        this.success = false;
+      } else {
+        this.success = true;
+      }
   }
 
   ionViewDidLoad() {

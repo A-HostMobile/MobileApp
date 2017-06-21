@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { ViewController} from 'ionic-angular';
+import {Events, ViewController} from 'ionic-angular';
 import {NgForm} from "@angular/forms";
+import {HomePage} from "../home/home";
+import {ProfilePage} from "../profile/profile";
 
 export interface cvalue{
   co:string;cname:string;
@@ -15,7 +17,7 @@ export class AddPickupModalPage {
     {co:'HK',cname:'Hongkong'},
     {co:'JP',cname:'Japan'}];
   add:{contname?:string,tel?:string,email?:string,address?:string,zip?:string,country?:string}={country:'TH'};
-  constructor(public viewCtrl: ViewController) {
+  constructor(public viewCtrl: ViewController,public events: Events) {
   }
 
   ionViewDidLoad() {
@@ -26,12 +28,14 @@ export class AddPickupModalPage {
   closemodal() {
     this.viewCtrl.dismiss();
   }
-  addAddress(form: NgForm){
-    this.submitted=true;
+  addAddress(){
+    console.log('add')
+    this.events.publish('checkStsLogin',ProfilePage);
+    /*this.submitted=true;
     if(form.valid){
       console.log(this.add);
-      this.viewCtrl.dismiss();
-    }
+      this.events.publish('checkStsLogin');
+    }*/
   }
 
 }

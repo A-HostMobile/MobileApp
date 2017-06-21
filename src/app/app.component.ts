@@ -1,7 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
 import {Network} from "@ionic-native/network";
 import { SplashScreen } from '@ionic-native/splash-screen';
-import {App, Events, MenuController, ModalController, Nav, Platform, ToastController, LoadingController} from 'ionic-angular';
+import {
+  App, Events, MenuController, ModalController, Nav, Platform, ToastController, LoadingController,
+  AlertController
+} from 'ionic-angular';
 
 import { UserData } from '../providers/user-data';
 import { ConferenceData } from '../providers/conference-data';
@@ -21,6 +24,9 @@ import {CompletedPage} from "../pages/completed/completed";
 import {StatusBar} from "@ionic-native/status-bar";
 import {AuthServiceProvider} from '../providers/auth-service/auth-service';
 import { QuickcodeProvider } from '../providers/quickcode/quickcode';
+import {AddPickupModalPage} from "../pages/add-pickup-modal/add-pickup-modal";
+import {PickupAddressPage} from "../pages/pickup-address/pickup-address";
+import {CourierItemModalPage} from "../pages/courier-item-modal/courier-item-modal";
 
 
 
@@ -71,6 +77,7 @@ export class TemplateApp {
 
   constructor(
     public app: App,
+    public alert: AlertController,
     public events: Events,
     public network: Network,
     public status: StatusBar,
@@ -169,7 +176,7 @@ export class TemplateApp {
         if (activeView != null){
           if(nav.canGoBack()) {
             if(cp==NewsPage||cp==AgentNetworkPage||cp==HelpPage||cp==ProfilePage||cp==ContactPage||cp==ScheduleSearchPage){
-              nav.popToRoot();
+        nav.popToRoot();
             }else if (cp==CompletedPage) {
 
             }else {
@@ -231,6 +238,7 @@ export class TemplateApp {
 
 
   checkStatusLogin(pages:any,params:any){
+    console.log('hello');
     this.authService.getProfile().subscribe((res)=>{
       let profile = res;
       if(profile.responseCode == 0){
@@ -245,7 +253,25 @@ export class TemplateApp {
       }else{
         this.userData.logout();
         console.log('Logout Code: '+profile.responseCode);
-        this.authService.OpenModal(pages,params);
+        let nav = this.app.getActiveNav();
+        let activeView = nav.getActive();
+        if (pages == LclBookingPage || pages == CourierBookingPage) {
+          this.authService.OpenModal(pages, params);
+        }
+        else if(nav.canGoBack()) {
+          console.log('cangoback');
+          if(activeView.instance instanceof AddPickupModalPage){
+            console.log('addpick');
+            this.alertToHomeAddPick();
+          }
+          else{
+            this.alertToHome();
+          }
+        }
+        else {
+          console.log('Fuck Yeah');
+          this.alertToHomeModal();
+        }
       }
     });
   }
@@ -298,6 +324,55 @@ export class TemplateApp {
       return 'primary';
     }
     return;
+  }
+
+  alertToHome(){
+    let alt = this.alert.create({
+      title: 'Error',
+      message: 'You are logged out from system because someone had logged in other device or password had been changed',
+      buttons: [
+        {
+          text: 'OK',
+          handler: () => {
+            this.nav.popToRoot();
+          }
+        }
+      ]
+    });
+    alt.present();
+  }
+  alertToHomeAddPick(){
+    let alt = this.alert.create({
+      title: 'Error',
+      message: 'You are logged out from system because someone had logged in other device or password had been changed',
+      buttons: [
+        {
+          text: 'OK',
+          handler: () => {
+            this.app.getActiveNav().pop();
+            this.app.getActiveNav().pop();
+            this.app.getRootNav().popToRoot();
+          }
+        }
+      ]
+    });
+    alt.present();
+  }
+  alertToHomeModal(){
+    let alt = this.alert.create({
+      title: 'Error',
+      message: 'You are logged out from system because someone had logged in other device or password had been changed',
+      buttons: [
+        {
+          text: 'OK',
+          handler: () => {
+            this.app.getActiveNav().pop();
+            this.app.getRootNav().popToRoot();
+          }
+        }
+      ]
+    });
+    alt.present();
   }
 
 }
