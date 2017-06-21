@@ -28,22 +28,44 @@
     </ion-list-header>
 
     <ion-item no-padding>
+      <ion-label no-padding col-3>Width </ion-label>
+      <ion-label no-padding col-1>x</ion-label>
+      <ion-label no-padding col-3>Length</ion-label>
+      <ion-label no-padding col-1>x</ion-label>
+      <ion-label no-padding col-3>Height</ion-label>
+    </ion-item>
+
+ <!--<ion-item no-padding>-->
+      <!--<ion-label no-padding col-6>Width : </ion-label>-->
+      <ion-row>
+      <ion-input col [(ngModel)]="item.dwidth" name="dwidth" #dwidth="ngModel" type="number" placeholder="Width" required></ion-input>
+      <p col-1>x</p>
+      <ion-input col [(ngModel)]="item.dlength" name="dlength" #dlength="ngModel" type="number" placeholder="Length" required></ion-input>
+      <p col-1>x</p>
+     <ion-input col [(ngModel)]="item.dheight" name="dheight" #dheight="ngModel" type="number" placeholder="Height" required></ion-input>
+  <!--</ion-item>--></ion-row>
+
+    
+
+    <!--<ion-item no-padding>
       <ion-label no-padding col-6>Width : </ion-label>
       <ion-input [(ngModel)]="item.dwidth" name="dwidth" #dwidth="ngModel" type="number" placeholder="Width" required></ion-input>
-    </ion-item>
-    <ion-badge ion-text [hidden]="dwidth.untouched && submitted == false" *ngIf="dwidth.invalid" float-end>Width is required</ion-badge>
+    </ion-item>-->
+   
 
-    <ion-item no-padding>
+    <!--<ion-item no-padding>
       <ion-label no-padding col-6>Length : </ion-label>
       <ion-input [(ngModel)]="item.dlength" name="dlength" #dlength="ngModel" type="number" placeholder="Length" required></ion-input>
-    </ion-item>
-    <ion-badge ion-text [hidden]="dlength.untouched && submitted == false"  *ngIf="dlength.invalid" float-end>Length is required</ion-badge>
-
+    </ion-item>-->
+   
+<!--
     <ion-item no-padding>
       <ion-label no-padding col-6>Height : </ion-label>
       <ion-input [(ngModel)]="item.dheight" name="dheight" #dheight="ngModel" type="number" placeholder="Height" required></ion-input>
-    </ion-item>
+    </ion-item>-->
     <ion-badge ion-text [hidden]="dheight.untouched && submitted == false" *ngIf="dheight.invalid" float-end>Height is required</ion-badge>
+    <ion-badge ion-text [hidden]="dlength.untouched && submitted == false"  *ngIf="dlength.invalid" float-end>Length is required</ion-badge>
+    <ion-badge ion-text [hidden]="dwidth.untouched && submitted == false" *ngIf="dwidth.invalid" float-end>Width is required</ion-badge>
   </ion-list>
 
   <ion-list no-lines>
