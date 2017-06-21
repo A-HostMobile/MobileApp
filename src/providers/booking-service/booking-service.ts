@@ -22,6 +22,7 @@ export class BookingServiceProvider {
 
   insertBookingLCL(formData:any,unixDate:any,scheduleData:any,numCommodity:string,numPackage:string,numGwunit:any){//:Observable<any>{
     let token = localStorage.getItem('token');
+    let profile = JSON.parse(localStorage.getItem('profile'));
     let myHeader = new Headers({ 'Authorization': `Bearer ${token}`});
     myHeader.append('Content-Type', 'application/x-www-form-urlencoded');
     let _options = new RequestOptions({headers: myHeader});
@@ -37,7 +38,7 @@ export class BookingServiceProvider {
     body.append("addition",formData.detail)
     body.append("remark",scheduleData)
     body.append("gw_unit",numGwunit)
-    body.append("create",'100010')
+    body.append("create",profile.p_party_id)
     
     return this.http.post(AppSettings.API_ENDPOINT+'insertLCL',body,_options)
       .map((res:Response) => res.json().responseData)
