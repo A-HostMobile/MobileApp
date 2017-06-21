@@ -46,19 +46,6 @@ export class BookingServiceProvider {
         .map((res:Response) => res.json().responseData)
         .catch(this.handleError);
     }
-    
-    getPickupAddress(){
-        let token = localStorage.getItem('token');
-        let profile = JSON.parse(localStorage.getItem('profile'));
-        
-        let myHeader = new Headers();
-        myHeader.append( 'Authorization', `Bearer ${token}`);
-        myHeader.append('Content-Type', 'application/x-www-form-urlencoded');
-        let _options = new RequestOptions({headers: myHeader});
-        return this.http.get(AppSettings.API_ENDPOINT+'pickupAddress/'+profile.p_party_id,_options)
-          .map((res:Response) => res.json().responseData)
-          .catch(this.handleError);
-    }
   
     private handleError(error:any){
       return Observable.throw(error.json().errorMessage||'Error from server!');

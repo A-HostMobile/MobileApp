@@ -44,14 +44,18 @@
 
       <ion-item no-padding>
         <ion-label no-padding col-6>Country</ion-label>
-        <ion-select [(ngModel)]="add.country" name="country">
-          <ion-option *ngFor="let countriess of countries" value="{{countriess.co}}">{{countriess.cname}}</ion-option>
+        <ion-select [(ngModel)]="countries.country_name" #country="ngModel" name="country" required>
+          <ion-option  [value]="countries.country_name" [selected]="true">{{countries.country_name}}</ion-option>
         </ion-select>
       </ion-item>
+      <ion-badge [hidden]="country.untouched && addpick.value.country !=null" *ngIf="country.invalid" color="danger" float-end>Country is required</ion-badge>
 
     </ion-list>
-    <button [disabled]="!addpick.form.valid" (click)="addAddress(addpick)" ion-button icon-right block >
-      Done
+    <button *ngIf="pickupType == 'edit'"  [disabled]="!addpick.form.valid" (click)="editAddress(addpick)" ion-button icon-right block >
+      Edit
+    </button>
+    <button *ngIf="pickupType == 'add'" [disabled]="!addpick.form.valid" (click)="addAddress(addpick)" ion-button icon-right block >
+      Add
     </button>
   </form>
 
