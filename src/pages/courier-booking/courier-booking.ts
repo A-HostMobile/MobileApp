@@ -64,7 +64,7 @@ export class CourierBookingPage {
     openPickup.present();
     openPickup.onDidDismiss(data=>{
       if(data!=null){
-        this.courier.pick = this.pickadd = data;
+        this.courier.pick = this.pickadd = data.pa_address_display;
       }
     });
   }

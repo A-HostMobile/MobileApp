@@ -13,7 +13,7 @@
 <ion-content padding>
   <form #addpick="ngForm">
     <ion-list no-lines>
-
+      <ion-input [hidden]="true" [(ngModel)]="pickupAddress.pa_address_id" name="pickup_id"></ion-input>
       <ion-item no-padding>
         <ion-label no-padding col-6>Contact Name </ion-label>
         <ion-input [(ngModel)]="pickupAddress.pa_contact_name" name="contactname" #contactname="ngModel" type="text" placeholder="contact name" required=""></ion-input>

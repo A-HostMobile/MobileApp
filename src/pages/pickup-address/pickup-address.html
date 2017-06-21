@@ -16,16 +16,16 @@
 
       <ion-card-header no-padding text-wrap color="primary">
 
-        <button (click)="openManagePickup(pickupItem);" no-padding  ion-button icon-only class="align-left" small clear>
+        <button (click)="editPickup(pickupItem);" no-padding  ion-button icon-only class="align-left" small clear>
           <ion-icon color="calm" name="construct"></ion-icon>
         </button>
-        <button (click)="delete(pickupItem.pa_address_id)" no-padding  ion-button icon-only class="align-right" small clear>
+        <button (click)="deletePickup(pickupItem.pa_address_id)" no-padding  ion-button icon-only class="align-right" small clear>
           <ion-icon name="trash"></ion-icon>
         </button>
 
       </ion-card-header>
 
-      <ion-grid (click)="selected(pickupItem)">
+      <ion-grid (click)="selectPickup(pickupItem)">
         <ion-row>
           <ion-col  col-12>{{pickupItem.pa_address_display}}</ion-col>
         </ion-row>

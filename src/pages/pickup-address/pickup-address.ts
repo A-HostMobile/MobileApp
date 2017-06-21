@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams ,ViewController ,ModalController, Events} from 'ionic-angular';
 import {AddPickupModalPage} from "../add-pickup-modal/add-pickup-modal";
-import {PickupAddressServiceProvider} from '../../providers/pickup-address-service/pickup-address-service';{}
+import {PickupAddressServiceProvider} from '../../providers/pickup-address-service/pickup-address-service';
 
 @IonicPage()
 @Component({
@@ -25,35 +25,46 @@ export class PickupAddressPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PickupAddressPage');
+    this.getPickupAddress();
+  }
+
+  getPickupAddress(){
     this.events.publish('showLoading');
     this.pickupAddressService.getPickupAddress().subscribe(
         (resData) => { this.pickupAddress = resData,
-                       console.log("PickupAddress Data:"+JSON.stringify(this.pickupAddress)),
+                       console.log("PickupAddress Data:"+JSON.stringify(this.pickupAddress))
                        this.events.publish('dismissLoading');
                      },
         (error) => { this.errorMessage = <any> error,
                      this.events.publish('dismissLoading');
                    });
-
   }
 
-  openManagePickup(pickupData:any){
+  editPickup(pickupData:any){
     this.events.publish('checkStsLogin',AddPickupModalPage,{'pickupData':pickupData,'type':'edit'});
   }
 
   addPickup(){
-      console.log("Add Pickup Address");
+    console.log("Add Pickup Address");
     this.events.publish('checkStsLogin',AddPickupModalPage,{'pickupData':null,'type':'add'});
   }
 
-  selected(pickupData:any) {
+  selectPickup(pickupData:any) {
     this.viewCtrl.dismiss(pickupData);
     this.events.publish('checkStsLogin','modal');
     console.log("Select Data:"+JSON.stringify(pickupData));
   }
 
-  delete(pickupId:any){
+  deletePickup(pickupId:any){
     console.log("Delete Data:"+JSON.stringify(pickupId));
+    this.pickupAddressService.deletePickupAddress(pickupId).subscribe(
+        (resData) => { 
+                      console.log("Delete Pickup Address Success :"+JSON.stringify(resData)),
+                      this.getPickupAddress();
+                     },
+        (error) => { this.errorMessage = <any> error,
+                     this.events.publish('dismissLoading');
+                   });
   }
 
   closeModal(){
