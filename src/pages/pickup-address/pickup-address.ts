@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams ,ViewController ,ModalController, Events} from 'ionic-angular';
 import {AddPickupModalPage} from "../add-pickup-modal/add-pickup-modal";
-import {BookingServiceProvider} from '../../providers/booking-service/booking-service';
-import {ProfilePage} from "../profile/profile";
+import {PickupAddressServiceProvider} from '../../providers/pickup-address-service/pickup-address-service';{}
 
 @IonicPage()
 @Component({
@@ -19,7 +18,7 @@ export class PickupAddressPage {
               public navParams: NavParams,
               public viewCtrl:ViewController,
               public mdlCtrl: ModalController,
-              public bookingService:BookingServiceProvider,
+              public pickupAddressService:PickupAddressServiceProvider,
               public events: Events) {
     this.param = this.navParams.get('param');
   }
@@ -27,7 +26,7 @@ export class PickupAddressPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad PickupAddressPage');
     this.events.publish('showLoading');
-    this.bookingService.getPickupAddress().subscribe(
+    this.pickupAddressService.getPickupAddress().subscribe(
         (resData) => { this.pickupAddress = resData,
                        console.log("PickupAddress Data:"+JSON.stringify(this.pickupAddress)),
                        this.events.publish('dismissLoading');
@@ -39,11 +38,12 @@ export class PickupAddressPage {
   }
 
   openManagePickup(pickupData:any){
-    this.events.publish('checkStsLogin',AddPickupModalPage,pickupData);
+    this.events.publish('checkStsLogin',AddPickupModalPage,{'pickupData':pickupData,'type':'edit'});
   }
 
-  openAddPickup(){
-    this.events.publish('checkStsLogin',AddPickupModalPage);
+  addPickup(){
+      console.log("Add Pickup Address");
+    this.events.publish('checkStsLogin',AddPickupModalPage,{'pickupData':null,'type':'add'});
   }
 
   selected(pickupData:any) {

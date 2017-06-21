@@ -248,6 +248,9 @@ export class TemplateApp {
           let mdl = this.mdlCtrl.create(pages,params);
           mdl.present();
         }
+        else if(pages=='modal'){
+
+        }
         else if(pages!=HomePage){
           this.app.getRootNav().push(pages,params);
         }
