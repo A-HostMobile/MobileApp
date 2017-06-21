@@ -62,8 +62,7 @@ import { QuickcodeProvider } from '../providers/quickcode/quickcode';
 import { BookingServiceProvider } from '../providers/booking-service/booking-service';
 import { HistoryServiceProvider } from '../providers/history-service/history-service';
 
-
-
+import { PickupAddressServiceProvider } from '../providers/pickup-address-service/pickup-address-service';
 
 
 @NgModule({
@@ -167,6 +166,7 @@ import { HistoryServiceProvider } from '../providers/history-service/history-ser
     QuickcodeProvider,
     BookingServiceProvider,
     HistoryServiceProvider,
+    PickupAddressServiceProvider,
   ]
 })
 export class AppModule { }
