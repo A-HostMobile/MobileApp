@@ -33,10 +33,20 @@ export class AddPickupModalPage {
   }
 
 
-  addAddress(form: NgForm){
-    console.log("Manage Address Form:"+JSON.stringify(form.value));
+  addAddress(form: NgForm) {
+    console.log("Manage Address Form:" + JSON.stringify(form.value));
     this.viewCtrl.dismiss(form.value);
-    this.events.publish('checkStsLogin','modal');
+    this.events.publish('checkStsLogin', 'modal');
+  }
+
+  editAddress(form: NgForm){
+    console.log("Edit Address Form:"+JSON.stringify(form.value));
+    // this.submitted=true;
+    // if(form.valid){
+    //   console.log(this.add);
+    //   this.viewCtrl.dismiss();
+    // }
+  }
 
   }
 

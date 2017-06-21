@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f44e5d9-4dc2-467a-85f4-e79ac08cf5ea" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/providers/pickup-address-service/pickup-address-service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.component.ts" afterPath="$PROJECT_DIR$/src/app/app.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.module.ts" afterPath="$PROJECT_DIR$/src/app/app.module.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/img/noschedule.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/add-pickup-modal/add-pickup-modal.html" afterPath="$PROJECT_DIR$/src/pages/add-pickup-modal/add-pickup-modal.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/add-pickup-modal/add-pickup-modal.ts" afterPath="$PROJECT_DIR$/src/pages/add-pickup-modal/add-pickup-modal.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/pickup-address/pickup-address.html" afterPath="$PROJECT_DIR$/src/pages/pickup-address/pickup-address.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/pickup-address/pickup-address.ts" afterPath="$PROJECT_DIR$/src/pages/pickup-address/pickup-address.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/providers/booking-service/booking-service.ts" afterPath="$PROJECT_DIR$/src/providers/booking-service/booking-service.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/schedule-result/schedule-result.html" afterPath="$PROJECT_DIR$/src/pages/schedule-result/schedule-result.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,11 +21,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="add-pickup-modal.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="add-pickup-modal.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/add-pickup-modal/add-pickup-modal.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="36" column="67" lean-forward="false" selection-start-line="36" selection-start-column="67" selection-end-line="36" selection-end-column="67" />
+            <state relative-caret-position="449">
+              <caret line="32" column="3" lean-forward="false" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="3" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
@@ -68,7 +65,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add-pickup-modal.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="add-pickup-modal.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/add-pickup-modal/add-pickup-modal.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="518">
@@ -212,11 +209,11 @@
         <option value="$PROJECT_DIR$/src/pages/login-modal/login-modal.ts" />
         <option value="$PROJECT_DIR$/src/pages/courier-booking2/courier-booking2.ts" />
         <option value="$PROJECT_DIR$/src/pages/profile/profile.ts" />
-        <option value="$PROJECT_DIR$/src/pages/add-pickup-modal/add-pickup-modal.ts" />
         <option value="$PROJECT_DIR$/src/app/app.component.ts" />
         <option value="$PROJECT_DIR$/src/pages/pickup-address/pickup-address.ts" />
         <option value="$PROJECT_DIR$/src/pages/pickup-address/pickup-address.html" />
         <option value="$PROJECT_DIR$/src/pages/add-pickup-modal/add-pickup-modal.html" />
+        <option value="$PROJECT_DIR$/src/pages/add-pickup-modal/add-pickup-modal.ts" />
       </list>
     </option>
   </component>
@@ -905,12 +902,12 @@
       <workItem from="1497839787533" duration="22375000" />
       <workItem from="1497923678518" duration="23684000" />
       <workItem from="1498013037160" duration="3743000" />
-      <workItem from="1498025306616" duration="13658000" />
+      <workItem from="1498025306616" duration="13822000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="276098000" />
+    <option name="totallyTimeSpent" value="276262000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1322,21 +1319,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/add-pickup-modal/add-pickup-modal.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="67" lean-forward="false" selection-start-line="36" selection-start-column="67" selection-end-line="36" selection-end-column="67" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/add-pickup-modal/add-pickup-modal.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="518">
           <caret line="46" column="100" lean-forward="true" selection-start-line="46" selection-start-column="100" selection-end-line="46" selection-end-column="100" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/add-pickup-modal/add-pickup-modal.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="449">
+          <caret line="32" column="3" lean-forward="false" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

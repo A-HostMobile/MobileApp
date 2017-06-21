@@ -51,7 +51,7 @@
       <ion-badge [hidden]="country.untouched && addpick.value.country !=null" *ngIf="country.invalid" float-end>Country is required</ion-badge>
 
     </ion-list>
-    <button *ngIf="pickupType == 'edit'"  [disabled]="!addpick.form.valid" (click)="addAddress(addpick)" ion-button icon-right block >
+    <button *ngIf="pickupType == 'edit'"  [disabled]="!addpick.form.valid" (click)="editAddress(addpick)" ion-button icon-right block >
       Edit
     </button>
     <button *ngIf="pickupType == 'add'" [disabled]="!addpick.form.valid" (click)="addAddress(addpick)" ion-button icon-right block >
