@@ -22,22 +22,22 @@
   <!--LCL Tab-->
   <div *ngIf="historyTab =='lcl'">
 
-    <ion-list no-lines>
+    <ion-list no-lines *ngFor="let _history of history">
 
       <ion-list-header color="primary">
-        BOOKING ID # BL-2017-05-0592
+        BOOKING ID # {{_history.bl_booking_id}}
       </ion-list-header>
 
       <ion-grid>
 
         <ion-row>
           <ion-col  col-6>Destination :</ion-col>
-          <ion-col  col-6>BANGKOK - CHITTAGONG</ion-col>
+          <ion-col  col-6>BANGKOK - {{_history.pod}}</ion-col>
         </ion-row>
 
         <ion-row>
           <ion-col  col-6>Booking Time :</ion-col>
-          <ion-col  col-6>30-MAY-17</ion-col>
+          <ion-col  col-6>{{_history.creation_date | date:'dd-MMM-yyyy' | upper}}</ion-col>
         </ion-row>
 
         <ion-row>
@@ -47,55 +47,17 @@
 
         <ion-row>
           <ion-col  col-6>Status :</ion-col>
-          <ion-col  col-6>Wainting Confirmation</ion-col>
+          <ion-col  col-6>{{_history.qc_lookup_value1}}</ion-col>
         </ion-row>
 
       </ion-grid>
 
-      <button (click)="toLCL();" ion-button icon-right small clear class="align-right">
+      <button (click)="toLCL(_history.bl_booking_id);" ion-button icon-right small clear class="align-right">
 			<span>See detail</span>
 			  <ion-icon name="arrow-forward"></ion-icon>
       </button>
 
     </ion-list>
-
-    <ion-list no-lines>
-
-      <ion-list-header color="primary">
-        BOOKING ID # BL-2017-05-0591
-      </ion-list-header>
-
-      <ion-grid>
-
-        <ion-row>
-          <ion-col  col-6>Destination :</ion-col>
-          <ion-col  col-6>BANGKOK - CHITTAGONG</ion-col>
-        </ion-row>
-
-        <ion-row>
-          <ion-col  col-6>Booking Time :</ion-col>
-          <ion-col  col-6>29-MAY-17</ion-col>
-        </ion-row>
-
-        <ion-row>
-          <ion-col  col-6>Booking History Type :</ion-col>
-          <ion-col  col-6>LCL</ion-col>
-        </ion-row>
-
-        <ion-row>
-          <ion-col  col-6>Status :</ion-col>
-          <ion-col  col-6>Wainting Confirmation</ion-col>
-        </ion-row>
-
-      </ion-grid>
-
-      <button (click)="toLCL();" ion-button icon-right small clear class="align-right">
-			<span>See detail</span>
-			  <ion-icon name="arrow-forward"></ion-icon>
-      </button>
-
-    </ion-list>
-
 
   </div>
 

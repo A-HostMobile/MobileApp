@@ -55,10 +55,12 @@ import { UserData } from '../providers/user-data';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 
 import { OrderByPipe } from '../pipes/OrderByPipe';
+import { UppercaseByPipe } from '../pipes/UppercaseByPipe';
 
 import {StatusBar} from "@ionic-native/status-bar";
 import { QuickcodeProvider } from '../providers/quickcode/quickcode';
 import { BookingServiceProvider } from '../providers/booking-service/booking-service';
+import { HistoryServiceProvider } from '../providers/history-service/history-service';
 
 
 
@@ -98,7 +100,8 @@ import { BookingServiceProvider } from '../providers/booking-service/booking-ser
     HowtoCourierPage,
     HowtoHistoryPage,
     HowtoLclPage,
-    OrderByPipe
+    OrderByPipe,
+    UppercaseByPipe,
   ],
   imports: [
     BrowserModule,
@@ -163,6 +166,7 @@ import { BookingServiceProvider } from '../providers/booking-service/booking-ser
     AuthServiceProvider,
     QuickcodeProvider,
     BookingServiceProvider,
+    HistoryServiceProvider,
   ]
 })
 export class AppModule { }
