@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams ,ViewController ,ModalController, Events} from 'ionic-angular';
 import {AddPickupModalPage} from "../add-pickup-modal/add-pickup-modal";
-import {BookingServiceProvider} from '../../providers/booking-service/booking-service';{}
+import {PickupAddressServiceProvider} from '../../providers/pickup-address-service/pickup-address-service';{}
 
 @IonicPage()
 @Component({
@@ -16,7 +16,7 @@ export class PickupAddressPage {
               public navParams: NavParams,
               public viewCtrl:ViewController,
               public mdlCtrl: ModalController,
-              public bookingService:BookingServiceProvider,
+              public pickupAddressService:PickupAddressServiceProvider,
               public events: Events) {
 
   }
@@ -24,7 +24,7 @@ export class PickupAddressPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad PickupAddressPage');
     this.events.publish('showLoading');
-    this.bookingService.getPickupAddress().subscribe(
+    this.pickupAddressService.getPickupAddress().subscribe(
         (resData) => { this.pickupAddress = resData,
                        console.log("PickupAddress Data:"+JSON.stringify(this.pickupAddress)),
                        this.events.publish('dismissLoading');
@@ -37,8 +37,14 @@ export class PickupAddressPage {
 
   openManagePickup(pickupData:any){
     //console.log("Edit Data:"+JSON.stringify(pickupData));
-    let managePickup = this.mdlCtrl.create(AddPickupModalPage,pickupData);
+    let managePickup = this.mdlCtrl.create(AddPickupModalPage,{'pickupData':pickupData,'type':'edit'});
     managePickup.present();
+  }
+
+  addPickup(){
+      console.log("Add Pickup Address");
+      let managePickup = this.mdlCtrl.create(AddPickupModalPage,{'pickupData':null,'type':'add'});
+      managePickup.present();
   }
 
   selected(pickupData:any) {
