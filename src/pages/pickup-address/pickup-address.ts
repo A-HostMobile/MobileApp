@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams ,ViewController ,ModalController} from 'ionic-angular';
+import { IonicPage, NavController, NavParams ,ViewController ,ModalController, Events} from 'ionic-angular';
 import {AddPickupModalPage} from "../add-pickup-modal/add-pickup-modal";
+import {BookingServiceProvider} from '../../providers/booking-service/booking-service';{}
 
 @IonicPage()
 @Component({
@@ -9,27 +10,51 @@ import {AddPickupModalPage} from "../add-pickup-modal/add-pickup-modal";
 })
 export class PickupAddressPage {
 
-  address: string;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public viewCtrl:ViewController,public mdlCtrl: ModalController) {
-    this.address = 'Somewhere 987/645-1 example address state province 99999';
+  pickupAddress: any;
+  errorMessage:string;
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public viewCtrl:ViewController,
+              public mdlCtrl: ModalController,
+              public bookingService:BookingServiceProvider,
+              public events: Events) {
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PickupAddressPage');
+    this.events.publish('showLoading');
+    this.bookingService.getPickupAddress().subscribe(
+        (resData) => { this.pickupAddress = resData,
+                       console.log("PickupAddress Data:"+JSON.stringify(this.pickupAddress)),
+                       this.events.publish('dismissLoading');
+                     },
+        (error) => { this.errorMessage = <any> error,
+                     this.events.publish('dismissLoading'); 
+                   });
+    
   }
 
-  openManagePickup(){
-    let managePickup = this.mdlCtrl.create(AddPickupModalPage);
+  openManagePickup(pickupData:any){
+    //console.log("Edit Data:"+JSON.stringify(pickupData));
+    let managePickup = this.mdlCtrl.create(AddPickupModalPage,pickupData);
     managePickup.present();
   }
 
-  selected() {
-    this.viewCtrl.dismiss(this.address);
+  selected(pickupData:any) {
+    //this.viewCtrl.dismiss(this.address);
+    console.log("Select Data:"+JSON.stringify(pickupData));
+    //this.viewCtrl.dismiss();
+  }
+
+  delete(pickupId:any){
+      console.log("Delete Data:"+JSON.stringify(pickupId));
   }
 
   closeModal(){
-    this.address=null;
-    this.viewCtrl.dismiss(this.address);
+    //this.address=null;
+    //this.viewCtrl.dismiss(this.address);
+    this.viewCtrl.dismiss();
   }
 
 
