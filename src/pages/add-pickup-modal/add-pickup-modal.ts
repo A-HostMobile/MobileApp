@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import {Events, ViewController} from 'ionic-angular';
+import {Events, ViewController,NavParams} from 'ionic-angular';
 import {NgForm} from "@angular/forms";
-import {HomePage} from "../home/home";
 import {ProfilePage} from "../profile/profile";
 
 export interface cvalue{
@@ -13,29 +12,32 @@ export interface cvalue{
 })
 export class AddPickupModalPage {
   submitted:boolean = false;
+  pickupAddress:any;
   countries:cvalue[]=[{co:'TH',cname:'Thailand'},
     {co:'HK',cname:'Hongkong'},
     {co:'JP',cname:'Japan'}];
-  add:{contname?:string,tel?:string,email?:string,address?:string,zip?:string,country?:string}={country:'TH'};
-  constructor(public viewCtrl: ViewController,public events: Events) {
+  add:{contactname?:string,tel?:string,email?:string,address?:string,zipcode?:string,country?:string}={country:'TH'};
+  constructor(public viewCtrl: ViewController,public navParams: NavParams,public events:Events) {
+      this.pickupAddress = this.navParams.data;
+      console.log("Edit PickupAdress Data:"+JSON.stringify(this.pickupAddress));
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddPickupModalPage');
+
   }
 
 
   closemodal() {
     this.viewCtrl.dismiss();
   }
-  addAddress(){
-    console.log('add')
-    this.events.publish('checkStsLogin',ProfilePage);
-    /*this.submitted=true;
-    if(form.valid){
-      console.log(this.add);
-      this.events.publish('checkStsLogin');
-    }*/
+
+
+  addAddress(form: NgForm){
+    console.log("Manage Address Form:"+JSON.stringify(form.value));
+    this.viewCtrl.dismiss(form.value);
+    this.events.publish('checkStsLogin','modal');
+
   }
 
 }

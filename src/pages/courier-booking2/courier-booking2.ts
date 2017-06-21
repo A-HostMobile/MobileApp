@@ -36,7 +36,6 @@ export class CourierBooking2Page {
 
   toSummary(){
         console.log('login from courier page 2');
-        // this.navCtrl.push(CourierSummaryPage);
         this.events.publish('checkStsLogin',CourierSummaryPage);
 
   }

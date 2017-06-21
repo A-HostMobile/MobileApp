@@ -32,8 +32,6 @@ export class LoginPage {
             ) {
     this.page = this.navParam.get('page');
     this.param = this.navParam.get('param');
-    /*console.log(this.page);
-    console.log(this.param);*/
     this.authForm = formBuilder.group({
       'username':['',Validators.compose([Validators.required])],
       'password':['',Validators.compose([Validators.minLength(6),Validators.required])]

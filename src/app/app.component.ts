@@ -244,7 +244,11 @@ export class TemplateApp {
       if(profile.responseCode == 0){
         this.userData.login(profile);
         console.log('Login and Get profile');
-        if(pages!=HomePage){
+        if(pages== CourierItemModalPage || pages == PickupAddressPage || pages == AddPickupModalPage){
+          let mdl = this.mdlCtrl.create(pages,params);
+          mdl.present();
+        }
+        else if(pages!=HomePage){
           this.app.getRootNav().push(pages,params);
         }
         else{
