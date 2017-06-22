@@ -3,7 +3,6 @@ import {Events, Navbar, NavController, NavParams, Platform} from 'ionic-angular'
 import {HistoryDetailPage} from "../history-detail/history-detail";
 import {HistoryDetailCourierPage} from "../history-detail-courier/history-detail-courier";
 import {CompletedPage} from "../completed/completed";
-import {HistoryModel} from '../../models/history';
 import { Subscription } from 'rxjs/Subscription';
 import { HistoryServiceProvider } from '../../providers/history-service/history-service';
 
@@ -18,7 +17,8 @@ export class HistoryPage {
   isAndroid: boolean = false;
   before: any;
 
-  history: Array<HistoryModel>;
+  LCLhistory: any;
+  COURIERhistory: any;
   sub: Subscription;
   errorMessage: string;
 
@@ -49,6 +49,7 @@ export class HistoryPage {
 
   ionViewWillEnter(){
     this.getLcl();
+    this.getCourier();
   }
 
   ionViewDidLeave(){
@@ -59,17 +60,30 @@ export class HistoryPage {
 
   private getLcl(){
     this.sub = this.historyService.getLclHistory().subscribe(
-      (res) => {this.history = res; console.log(res);},
+      (res) => {
+        this.LCLhistory = res;
+        console.log(this.LCLhistory);
+      },
       (error) => {this.errorMessage = <any> error}
     );
   }
 
-  toLCL(lcl_id:number){
+  private getCourier(){
+    this.sub = this.historyService.getCourierHistory().subscribe(
+      (res) => {
+        this.COURIERhistory = res;
+        console.log(this.COURIERhistory);
+      },
+      (error) => {this.errorMessage = <any> error}
+    );
+  }
+
+  toLCL(lcl_id:any){
     this.navCtrl.push(HistoryDetailPage,lcl_id);
   }
 
-  toCourier(){
-    this.navCtrl.push(HistoryDetailCourierPage);
+  toCourier(courier_id:any){
+    this.navCtrl.push(HistoryDetailCourierPage,courier_id);
   }
 
 }
