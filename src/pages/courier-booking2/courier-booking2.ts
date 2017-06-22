@@ -11,6 +11,7 @@ import { UserData } from '../../providers/user-data';
 })
 export class CourierBooking2Page {
   item:{commodity?:string,dwidth?:number,dlength?:number,dheight?:number,weight?:number,quantity?:number};
+  data:any;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,

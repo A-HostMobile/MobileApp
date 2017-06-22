@@ -17,7 +17,7 @@ export interface cvalue{
 export class CourierBookingPage {
 
   @ViewChild(Navbar) navbar: Navbar;
-  pickadd: string = null;
+  pick: boolean = true;
   submitted: boolean = false;
   countries: any;
   errorMessage: any;
@@ -30,7 +30,7 @@ export class CourierBookingPage {
     contname?: string,
     tel?: string,
     rmk?: string
-  } = {};
+  } = {pickup:null};
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -71,7 +71,7 @@ export class CourierBookingPage {
   toCourier2(form: NgForm) {
     if (form.valid) {
       console.log(this.courier);
-      this.navCtrl.push(CourierBooking2Page, {this.courier);
+      this.navCtrl.push(CourierBooking2Page, this.courier);
     }
   }
 
@@ -80,7 +80,13 @@ export class CourierBookingPage {
     openPickup.present();
     openPickup.onDidDismiss(data => {
       if (data != null) {
-        this.courier.pickup = this.pickadd = data.pa_address_display;
+        if(data=='no'){
+          this.pick = false;
+          this.courier.pickup = null;
+        }else {
+          this.courier.pickup = data.pa_address_display;
+        }
+
       }
     });
   }

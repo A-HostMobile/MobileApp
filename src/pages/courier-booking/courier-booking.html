@@ -10,11 +10,11 @@
   <ion-list no-lines>
     <ion-item no-padding>
       Pickup Address
-      <button *ngIf="pickadd == null" (click)="openPickupModal();" color="calm" ion-button outline item-right class="select-button">Select<ion-icon name="md-create"></ion-icon></button>
-      <button *ngIf="pickadd != null" (click)="openPickupModal();" color="calm" ion-button outline item-right class="select-button"><div>{{pickadd}}</div></button>
+      <button *ngIf="courier.pickup==null" (click)="openPickupModal();" color="calm" ion-button outline item-right class="select-button">Select<ion-icon name="md-create"></ion-icon></button>
+      <button *ngIf="courier.pickup!=null" (click)="openPickupModal();" color="calm" ion-button outline item-right class="select-button"><div>{{courier.pickup}}</div></button>
     </ion-item>
     <ion-input [hidden]="true"  [(ngModel)]="courier.pickup" name="pickup" required></ion-input>
-    <ion-badge [hidden]="pickadd != ''" float-end>Address is required</ion-badge>
+    <ion-badge [hidden]="courier.pickup!=null" *ngIf="!pick" float-end>Address is required</ion-badge>
   </ion-list>
 
 

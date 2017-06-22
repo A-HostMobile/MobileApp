@@ -81,7 +81,7 @@ export class PickupAddressPage {
   }
 
   closeModal(){
-    this.viewCtrl.dismiss(this.pickupAddress);
+    this.viewCtrl.dismiss('no');
   }
 
 }
