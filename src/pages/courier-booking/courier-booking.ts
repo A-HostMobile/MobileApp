@@ -24,11 +24,11 @@ export class CourierBookingPage {
   // countries:cvalue[]=[{co:'US',cname:'United State'},
   //            {co:'HK',cname:'Hongkong'},
   //            {co:'JP',cname:'Japan'}];
-  courier:{pick?:string,
+  courier:{pickup?:string,
     conname?:string,
     address?:string,
     country?:string,
-    zip?:string,
+    zipcode?:string,
     contname?:string,
     tel?:string,
     rmk?:string} = {country:'US'};
@@ -70,7 +70,7 @@ export class CourierBookingPage {
     openPickup.present();
     openPickup.onDidDismiss(data=>{
       if(data!=null){
-        this.courier.pick = this.pickadd = data.pa_address_display;
+        this.courier.pickup = this.pickadd = data.pa_address_display;
       }
     });
   }
