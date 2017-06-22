@@ -33,8 +33,8 @@
       <ion-badge ion-text [hidden]="address.untouched" *ngIf="address.invalid" float-end>Address is required</ion-badge>
       <ion-item no-padding>
         <ion-label no-padding col-6>Country</ion-label>
-        <ion-select [(ngModel)]="courier.country" name="country">
-          <ion-option *ngFor="let countriess of countries" value="{{countriess.co}}">{{countriess.cname}}</ion-option>
+        <ion-select [(ngModel)]="courier.country" name="country" placeholder="Please Select" required>
+          <ion-option *ngFor="let country of countries" [value]="country.cz_destination">{{country.cz_destination}}</ion-option>
         </ion-select>
       </ion-item>
       <ion-item no-padding>

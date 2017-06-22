@@ -4,7 +4,7 @@ import {UserData} from "../../providers/user-data";
 import {LoginPage} from "../login-modal/login-modal";
 import {CourierBooking2Page} from "../courier-booking2/courier-booking2";
 import {PickupAddressPage} from "../pickup-address/pickup-address";
-import {AuthServiceProvider} from '../../providers/auth-service/auth-service';
+import {CountryZoneProvider} from '../../providers/country-zone/country-zone';
 import {NgForm} from "@angular/forms";
 
 export interface cvalue{
@@ -19,9 +19,11 @@ export class CourierBookingPage {
   @ViewChild(Navbar) navbar: Navbar;
   pickadd:string = null;
   submitted: boolean = false;
-  countries:cvalue[]=[{co:'US',cname:'United State'},
-             {co:'HK',cname:'Hongkong'},
-             {co:'JP',cname:'Japan'}];
+  countries:any; 
+  errorMessage:any;
+  // countries:cvalue[]=[{co:'US',cname:'United State'},
+  //            {co:'HK',cname:'Hongkong'},
+  //            {co:'JP',cname:'Japan'}];
   courier:{pick?:string,
     conname?:string,
     address?:string,
@@ -33,10 +35,14 @@ export class CourierBookingPage {
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public viewCtrl: ViewController,
+              public countryZoneProvider: CountryZoneProvider,
               public mdlCtrl: ModalController,
               public userData: UserData,
               public events: Events
             ) {
+      this.countryZoneProvider.getCountryZone().subscribe(
+        (resPod) => this.countries = resPod,
+        (error) => {  this.errorMessage = <any> error});
   }
 
   ionViewDidLoad() {
