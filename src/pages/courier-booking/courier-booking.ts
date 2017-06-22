@@ -17,59 +17,69 @@ export interface cvalue{
 export class CourierBookingPage {
 
   @ViewChild(Navbar) navbar: Navbar;
-  pickadd:string = null;
+  pickadd: string = null;
   submitted: boolean = false;
-  countries:any;
-  errorMessage:any;
-  courier:{pickup?:string,
-    conname?:string,
-    address?:string,
-    country?:string,
-    zipcode?:string,
-    contname?:string,
-    tel?:string,
-    rmk?:string}={};
+  countries: any;
+  errorMessage: any;
+  courier: {
+    pickup?: string,
+    conname?: string,
+    address?: string,
+    country?: string,
+    zipcode?: string,
+    contname?: string,
+    tel?: string,
+    rmk?: string
+  } = {};
+
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public viewCtrl: ViewController,
               public countryZoneProvider: CountryZoneProvider,
               public mdlCtrl: ModalController,
               public userData: UserData,
-              public events: Events
-            ) {
-      this.countryZoneProvider.getCountryZone().subscribe(
-        (resPod) => this.countries = resPod,
-        (error) => {  this.errorMessage = <any> error});
+              public events: Events) {
+    this.countryZoneProvider.getCountryZone().subscribe(
+      (resPod) => this.countries = resPod,
+      (error) => {
+        this.errorMessage = <any> error
+      });
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CourierBookingPage');
   }
 
-  ionViewCanEnter(){
+  ionViewCanEnter() {
     let modal = this.mdlCtrl.create(LoginPage, CourierBookingPage);
     this.userData.hasLoggedIn().then((hasLoggedIn) => {
-      if (hasLoggedIn === true) { return true; }
-      else { this.navCtrl.pop(); modal.present(); return false; }
+      if (hasLoggedIn === true) {
+        return true;
+      }
+      else {
+        this.navCtrl.pop();
+        modal.present();
+        return false;
+      }
     });
   }
 
-  touch(){
+  touch() {
     this.submitted = true;
   }
 
-  toCourier2(form: NgForm){
-    if(form.valid) {
-          console.log(this.courier);
-          this.navCtrl.push(CourierBooking2Page, this.courier);
+  toCourier2(form: NgForm) {
+    if (form.valid) {
+      console.log(this.courier);
+      this.navCtrl.push(CourierBooking2Page, {this.courier);
     }
   }
 
-  openPickupModal(){
+  openPickupModal() {
     let openPickup = this.mdlCtrl.create(PickupAddressPage);
     openPickup.present();
-    openPickup.onDidDismiss(data=>{
-      if(data!=null){
+    openPickup.onDidDismiss(data => {
+      if (data != null) {
         this.courier.pickup = this.pickadd = data.pa_address_display;
       }
     });

@@ -32,7 +32,7 @@
         Please Select Date
       </ion-badge>
 
- 
+
       <ion-item no-padding>
         <ion-label no-padding col-7 >Volume</ion-label>
         <ion-input [(ngModel)]="lcl.volume" name="volume" type="number" placeholder="volume" #volume="ngModel" required></ion-input>
@@ -46,12 +46,15 @@
       <ion-item no-border no-padding>
         <ion-label no-padding col-6>Gross Weight</ion-label>
         <ion-input [(ngModel)]="lcl.gw" name="gw" type="number" placeholder="g.w." #gw="ngModel" required></ion-input>
-        <ion-select [(ngModel)]="lcl.gwunit" name="gwunit" placeholder="Select" required>
+        <ion-select [(ngModel)]="lcl.gwunit" name="gwunit" placeholder="Select" (ionCancel)="touch(3)" required>
           <ion-option *ngFor="let gwunit of gwunits" [value]="gwunit">{{gwunit.qc_lookup_value1}}</ion-option>
         </ion-select>
       </ion-item>
       <ion-badge ion-text *ngIf="gw.invalid" [hidden]="!gw.touched" float-end>
         Groos Weight is required
+      </ion-badge>
+      <ion-badge ion-text *ngIf="unitcancel" [hidden]="lclbooking.value.gwunit!=null || gw.invalid" float-end>
+        Please select unit
       </ion-badge>
 
     </ion-list>

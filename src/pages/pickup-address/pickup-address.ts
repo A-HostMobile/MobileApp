@@ -21,6 +21,7 @@ export class PickupAddressPage {
               public pickupAddressService:PickupAddressServiceProvider,
               public events: Events) {
     this.param = this.navParams.get('param');
+
   }
 
   ionViewDidLoad() {
@@ -80,7 +81,7 @@ export class PickupAddressPage {
   }
 
   closeModal(){
-    this.viewCtrl.dismiss();
+    this.viewCtrl.dismiss(this.pickupAddress);
   }
 
 }
