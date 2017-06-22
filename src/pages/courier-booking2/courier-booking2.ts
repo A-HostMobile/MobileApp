@@ -10,15 +10,15 @@ import { UserData } from '../../providers/user-data';
   templateUrl: 'courier-booking2.html',
 })
 export class CourierBooking2Page {
-
+  item:{commodity?:string,dwidth?:number,dlength?:number,dheight?:number,weight?:number,quantity?:number};
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public mdlCtrl: ModalController,
-    public authService: AuthServiceProvider,
     public userData: UserData,
     public events: Events
   ) {
+
   }
 
   ionViewDidLoad() {
@@ -32,6 +32,11 @@ export class CourierBooking2Page {
   toManageItem(status: String) {
     let manageItem = this.mdlCtrl.create(CourierItemModalPage,{status});
     manageItem.present();
+    manageItem.onDidDismiss(data=>{
+      if(data!=null){
+          this.item = { commodity: data.commodity,dwidth: data.dwidth,dlength:data.dlength,dheight:data.dheight,weight:data.weight,quantity:data.quantity};
+      }
+    })
   }
 
   toSummary(){
