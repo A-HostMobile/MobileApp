@@ -7,10 +7,10 @@
 
 <ion-content padding>
 
-  <ion-list>
+  <ion-list *ngFor="let master of courierMaster">
 
-      <ion-list-header>
-        <h4>BOOKING ID # BL-2017-05-0592</h4>
+      <ion-list-header class="head">
+        BOOKING ID # {{master.bc_booking_id}}
       </ion-list-header>
 
       <ion-grid>
@@ -22,37 +22,37 @@
 
         <ion-row>
           <ion-col  col-6>Pickup Address :</ion-col>
-          <ion-col  col-6>Something address example 987/645-3 ex. Road</ion-col>
+          <ion-col  col-6>{{master.bc_pickup_display}}</ion-col>
         </ion-row>
 
         <ion-row>
           <ion-col  col-6>Consignee Name :</ion-col>
-          <ion-col  col-6>Mr.Exam</ion-col>
+          <ion-col  col-6>{{master.bc_consignee_name}}</ion-col>
         </ion-row>
 
         <ion-row>
           <ion-col  col-6>Destination :</ion-col>
-          <ion-col  col-6>Something address destination</ion-col>
+          <ion-col  col-6>{{master.bc_destination}}</ion-col>
         </ion-row>
 
         <ion-row>
           <ion-col  col-6>Zipcode :</ion-col>
-          <ion-col  col-6>99999</ion-col>
+          <ion-col  col-6>{{master.bc_zipcode}}</ion-col>
         </ion-row>
 
         <ion-row>
           <ion-col  col-6>Country :</ion-col>
-          <ion-col  col-6>Thailand</ion-col>
+          <ion-col  col-6>{{master.bc_country}}</ion-col>
         </ion-row>
 
         <ion-row>
           <ion-col  col-6>Contact Info :</ion-col>
-          <ion-col  col-6>Lorem Ipsum </ion-col>
+          <ion-col  col-6>{{master.bc_contact_info}}</ion-col>
         </ion-row>
 
         <ion-row>
           <ion-col  col-6>Total Weight :</ion-col>
-          <ion-col  col-6>2 kg.</ion-col>
+          <ion-col  col-6>{{master.bc_total_weight}} kg.</ion-col>
         </ion-row>
 
         <ion-row>
@@ -63,83 +63,66 @@
         <br/>
 
           <ion-list>
-            <ion-list-header>
+            <ion-list-header class="head">
               Packing List Detail
             </ion-list-header>
           </ion-list>
 
-          <ion-list no-lines>
+          <ion-list no-lines *ngFor="let detail of courierDetail; let i = index">
             <ion-list-header color="primary">
-              Packing List 1
+              Packing List {{i+1}}
             </ion-list-header>
 
             <ion-grid>
 
               <ion-row>
                 <ion-col  col-6>Commodity :</ion-col>
-                <ion-col  col-6>MATERIALS & HARDWARE</ion-col>
+                <ion-col  col-6>{{detail.commodity}}</ion-col>
               </ion-row>
 
               <ion-row>
                 <ion-col  col-6>Dimension :</ion-col>
-                <ion-col  col-6>1 x 1 x 1 cm.</ion-col>
+                <ion-col  col-6>{{detail.bcd_width}} x {{detail.bcd_long}} x {{detail.bcd_heigth}} cm.</ion-col>
               </ion-row>
 
               <ion-row>
                 <ion-col  col-6>Total Weight :</ion-col>
-                <ion-col  col-6>2 kg.</ion-col>
+                <ion-col  col-6>{{detail.bcd_unit_weight}} {{detail.unit}}</ion-col>
               </ion-row>
 
               <ion-row>
                 <ion-col  col-6>Quantity :</ion-col>
-                <ion-col  col-6>1</ion-col>
+                <ion-col  col-6>{{detail.bcd_quantity}}</ion-col>
               </ion-row>
 
             </ion-grid>
 
           </ion-list>
 
-          <ion-list no-lines>
-            <ion-list-header color="primary">
-              Packing List 2
-            </ion-list-header>
-
-            <ion-grid>
-
-              <ion-row>
-                <ion-col  col-6>Commodity :</ion-col>
-                <ion-col  col-6>MATERIALS & HARDWARE</ion-col>
-              </ion-row>
-
-              <ion-row>
-                <ion-col  col-6>Dimension :</ion-col>
-                <ion-col  col-6>1 x 1 x 1 cm.</ion-col>
-              </ion-row>
-
-              <ion-row>
-                <ion-col  col-6>Total Weight :</ion-col>
-                <ion-col  col-6>2 kg.</ion-col>
-              </ion-row>
-
-              <ion-row>
-                <ion-col  col-6>Quantity :</ion-col>
-                <ion-col  col-6>1</ion-col>
-              </ion-row>
-
-            </ion-grid>
-
-          </ion-list>
-
-          <ion-list no-lines>
-            <ion-list-header>
+          <ion-list no-lines *ngFor="let comment of courierComment">
+            <ion-list-header class="head">
               Comment
             </ion-list-header>
-            <ion-col>
-              Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
-              Lorem Ipsum Lorem Ipsum
-              Lorem Ipsum Lorem Ipsum
-              Lorem Ipsum Lorem Ipsum
-            </ion-col>
+
+              <ion-row style="font-weight: bold">
+                  <ion-col col-6>
+                    No: {{comment.no}} By: {{comment.created_by}}
+                  </ion-col>
+                  <ion-col col-6 style="text-align:right">
+                    {{comment.creation_date | date: 'dd-MMM-yy'| upper}}
+                  </ion-col>
+              </ion-row>
+
+              <ion-row>
+                  <ion-col col-6> Comment:</ion-col>
+                  <ion-col col-6>{{comment.bc_comment}}</ion-col>
+              </ion-row>
+              
+              <ion-row>
+                  <ion-col col-6> Status:</ion-col>
+                  <ion-col col-6>{{comment.status}}</ion-col>
+              </ion-row>
+
           </ion-list>
 
       </ion-grid>

@@ -25,6 +25,7 @@ export class LclBookingPage {
   errorMessage: string;
   datecancel:boolean = false;
   selectcancel:boolean = false;
+  unitcancel:boolean = false;
   minDate:string;
   maxDate:any;
 
@@ -45,7 +46,7 @@ export class LclBookingPage {
       if(Object.keys(this.scheduleData).length != 0){
           this.maxDate = new Date(this.scheduleData.s_closing_date);
       }
-      
+
       this.quickcodeService.getPod().subscribe(
         (resPod) => this.pods = resPod.responseData,
         (error) => {  this.errorMessage = <any> error});
@@ -77,9 +78,10 @@ export class LclBookingPage {
   touch(num: number){
     if(num == 1){
       this.selectcancel = true;
-     } else {
+     } else if(num==2) {
       this.datecancel = true;
-      console.log('You shall not PASS!!!');
-     }
+     } else {
+      this.unitcancel = true;
+    }
    }
 }
