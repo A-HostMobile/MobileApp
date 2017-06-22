@@ -20,7 +20,6 @@ export class CourierBookingPage {
   @ViewChild(Navbar) navbar: Navbar;
   pick: boolean = true;
   submitted: boolean = false;
-<<<<<<< HEAD
   countries:any;
   errorMessage:any;
   courier:{booking?:string,
@@ -32,21 +31,6 @@ export class CourierBookingPage {
     contname?:string,
     tel?:string,
     rmk?:string}={booking:null};
-=======
-  countries: any;
-  errorMessage: any;
-  courier: {
-    pickup?: string,
-    conname?: string,
-    address?: string,
-    country?: string,
-    zipcode?: string,
-    contname?: string,
-    tel?: string,
-    rmk?: string
-  } = {pickup:null};
-
->>>>>>> 31448ba350b6b0c1fa6746bd623fef85d8e4d618
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public viewCtrl: ViewController,
@@ -54,7 +38,6 @@ export class CourierBookingPage {
               public bookingServiceProvider: BookingServiceProvider,
               public mdlCtrl: ModalController,
               public userData: UserData,
-<<<<<<< HEAD
               public events: Events
             ) {
       this.courier.booking = this.navParams.get('booking_id');
@@ -66,14 +49,6 @@ export class CourierBookingPage {
       this.countryZoneProvider.getCountryZone().subscribe(
         (resPod) => this.countries = resPod,
         (error) => {  this.errorMessage = <any> error});
-=======
-              public events: Events) {
-    this.countryZoneProvider.getCountryZone().subscribe(
-      (resPod) => this.countries = resPod,
-      (error) => {
-        this.errorMessage = <any> error
-      });
->>>>>>> 31448ba350b6b0c1fa6746bd623fef85d8e4d618
   }
 
   ionViewDidLoad() {
@@ -98,7 +73,6 @@ export class CourierBookingPage {
     this.submitted = true;
   }
 
-<<<<<<< HEAD
   toCourier2(form: NgForm){
     if(form.valid) {
       console.log("Booking Courier Data:"+JSON.stringify(form.value));
@@ -119,12 +93,6 @@ export class CourierBookingPage {
               (error) => {  this.errorMessage = <any> error});
         }
           
-=======
-  toCourier2(form: NgForm) {
-    if (form.valid) {
-      console.log(this.courier);
-      this.navCtrl.push(CourierBooking2Page, this.courier);
->>>>>>> 31448ba350b6b0c1fa6746bd623fef85d8e4d618
     }
           // new Promise((resolve:any, reject:any) => {
           //   this.navCtrl.push(CourierBooking2Page, {data:form.value,resolve: resolve});
