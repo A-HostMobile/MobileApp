@@ -32,7 +32,7 @@ export class PickupAddressPage {
     this.events.publish('showLoading');
     this.pickupAddressService.getPickupAddress().subscribe(
         (resData) => { this.pickupAddress = resData,
-                       console.log("PickupAddress Data:"+JSON.stringify(this.pickupAddress))
+                       //console.log("PickupAddress Data:"+JSON.stringify(this.pickupAddress))
                        this.events.publish('dismissLoading');
                      },
         (error) => { this.errorMessage = <any> error,
@@ -50,7 +50,7 @@ export class PickupAddressPage {
   }
 
   addPickup(){
-    console.log("Add Pickup Address");
+    //console.log("Add Pickup Address");
     this.events.publish('checkStsLogin',AddPickupModalPage,{'pickupData':null,'type':'add'});
     let manageItem = this.mdlCtrl.create(AddPickupModalPage,{'pickupData':null,'type':'add'});
     manageItem.present();
@@ -64,14 +64,14 @@ export class PickupAddressPage {
   selectPickup(pickupData:any) {
     this.viewCtrl.dismiss(pickupData);
     this.events.publish('checkStsLogin','modal');
-    console.log("Select Data:"+JSON.stringify(pickupData));
+    //console.log("Select Data:"+JSON.stringify(pickupData));
   }
 
   deletePickup(pickupId:any){
-    console.log("Delete Data:"+JSON.stringify(pickupId));
+    //console.log("Delete Data:"+JSON.stringify(pickupId));
     this.pickupAddressService.deletePickupAddress(pickupId).subscribe(
         (resData) => {
-                      console.log("Delete Pickup Address Success :"+JSON.stringify(resData)),
+                      //console.log("Delete Pickup Address Success :"+JSON.stringify(resData)),
                       this.getPickupAddress();
                      },
         (error) => { this.errorMessage = <any> error,

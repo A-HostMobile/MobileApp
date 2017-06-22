@@ -38,11 +38,11 @@ export class AddPickupModalPage {
 
 
   addAddress(form: NgForm) {
-    console.log("Manage Address Form:" + JSON.stringify(form.value));
+    //console.log("Manage Address Form:" + JSON.stringify(form.value));
     this.events.publish('showLoading');
     this.pickupAddressService.insertPickupAddress(form.value).subscribe(
        (resData) => {
-                      console.log("Insert Pickup Address Success :"+JSON.stringify(resData)),
+                      //console.log("Insert Pickup Address Success :"+JSON.stringify(resData)),
                       this.viewCtrl.dismiss(form.value),
                       this.events.publish('dismissLoading');
                      },
@@ -52,11 +52,11 @@ export class AddPickupModalPage {
   }
 
   editAddress(form: NgForm){
-    console.log("Edit Address Form:"+JSON.stringify(form.value));
+    //console.log("Edit Address Form:"+JSON.stringify(form.value));
     this.events.publish('showLoading');
     this.pickupAddressService.updatePickupAddress(form.value).subscribe(
        (resData) => {
-                      console.log("Update Pickup Address Success :"+JSON.stringify(resData)),
+                      //console.log("Update Pickup Address Success :"+JSON.stringify(resData)),
                       this.viewCtrl.dismiss(form.value),
                       this.events.publish('dismissLoading');
                      },

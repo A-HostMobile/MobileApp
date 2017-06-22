@@ -7,6 +7,7 @@
 
 <ion-content padding>
 <form #courierbooking="ngForm" novalidate>
+  <ion-input [hidden]="true"  [(ngModel)]="courier.booking" name="bookingId"></ion-input>
   <ion-list no-lines>
     <ion-item no-padding>
       Pickup Address
