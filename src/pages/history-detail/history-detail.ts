@@ -9,9 +9,10 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class HistoryDetailPage {
 
-  lclId: number;
+  lclId: any;
 
-  lclDetails: any;
+  _lclDetails: any;
+
   lclMaster: any;
   lclDetail: any;
   lclComment: any;
@@ -37,14 +38,15 @@ export class HistoryDetailPage {
 
   private getLclDetails(){
     this.sub = this.historyService.getLclDetail(this.lclId).subscribe((res) => {
-      this.lclDetails = res;
+      this._lclDetails = res;
 
-      this.lclMaster = this.lclDetails.master;
-      this.lclDetail = this.lclDetails.detail;
-      this.lclComment = this.lclDetails.comment;
-      console.log(this.lclMaster)
-      console.log(this.lclDetail)
-      console.log(this.lclComment)
+      this.lclMaster = this._lclDetails.master;
+      this.lclDetail = this._lclDetails.detail;
+      this.lclComment = this._lclDetails.comment;
+
+      console.log(this.lclMaster);
+      console.log(this.lclDetail);
+      console.log(this.lclComment);
     },
       (error) => { this.errorMessage = <any> error }
     );

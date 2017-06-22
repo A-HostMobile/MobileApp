@@ -40,7 +40,6 @@ export class LclSummaryPage {
             (resData) => { resp = resData,
                            this.setSchedule(resp),
                            loadingPopup.dismiss()
-                           console.log('test git');
                          },
             (error) => {  this.errorMessage = <any> error}
           );
