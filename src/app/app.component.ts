@@ -238,15 +238,13 @@ export class TemplateApp {
 
 
   checkStatusLogin(pages:any,params:any){
-    console.log('hello');
     this.authService.getProfile().subscribe((res)=>{
       let profile = res;
       if(profile.responseCode == 0){
         this.userData.login(profile);
         console.log('Login and Get profile');
         if(pages== CourierItemModalPage || pages == PickupAddressPage || pages == AddPickupModalPage){
-          let mdl = this.mdlCtrl.create(pages,params);
-          mdl.present();
+          let manageItem = this.mdlCtrl.create(pages,params);
         }
         else if(pages=='modal'){
 
@@ -266,9 +264,7 @@ export class TemplateApp {
           this.authService.OpenModal(pages, params);
         }
         else if(nav.canGoBack()) {
-          console.log('cangoback');
           if(activeView.instance instanceof AddPickupModalPage){
-            console.log('addpick');
             this.alertToHomeAddPick();
           }
           else{
@@ -276,7 +272,6 @@ export class TemplateApp {
           }
         }
         else {
-          console.log('Fuck Yeah');
           this.alertToHomeModal();
         }
       }
@@ -348,6 +343,7 @@ export class TemplateApp {
     });
     alt.present();
   }
+
   alertToHomeAddPick(){
     let alt = this.alert.create({
       title: 'Error',
@@ -364,6 +360,7 @@ export class TemplateApp {
     });
     alt.present();
   }
+
   alertToHomeModal(){
     let alt = this.alert.create({
       title: 'Error',

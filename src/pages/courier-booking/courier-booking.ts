@@ -19,11 +19,8 @@ export class CourierBookingPage {
   @ViewChild(Navbar) navbar: Navbar;
   pickadd:string = null;
   submitted: boolean = false;
-  countries:any; 
+  countries:any;
   errorMessage:any;
-  // countries:cvalue[]=[{co:'US',cname:'United State'},
-  //            {co:'HK',cname:'Hongkong'},
-  //            {co:'JP',cname:'Japan'}];
   courier:{pickup?:string,
     conname?:string,
     address?:string,
@@ -31,7 +28,7 @@ export class CourierBookingPage {
     zipcode?:string,
     contname?:string,
     tel?:string,
-    rmk?:string} = {country:'US'};
+    rmk?:string}={};
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public viewCtrl: ViewController,
@@ -57,8 +54,11 @@ export class CourierBookingPage {
     });
   }
 
-  toCourier2(form: NgForm){
+  touch(){
     this.submitted = true;
+  }
+
+  toCourier2(form: NgForm){
     if(form.valid) {
           console.log(this.courier);
           this.navCtrl.push(CourierBooking2Page, this.courier);

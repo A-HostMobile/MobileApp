@@ -25,7 +25,8 @@ export class ProfilePage {
 
   openPickupModal(){
     console.log('sus');
-    this.events.publish('checkStsLogin',PickupAddressPage,ProfilePage);
+    let manageItem = this.mdlCtrl.create(PickupAddressPage);
+    manageItem.present();
   }
 
 }
