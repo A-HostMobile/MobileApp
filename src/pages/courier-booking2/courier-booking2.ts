@@ -30,13 +30,14 @@ export class CourierBooking2Page {
   }
 
   toManageItem(status: String) {
+    this.events.publish('checkStsLogin',CourierItemModalPage);
     let manageItem = this.mdlCtrl.create(CourierItemModalPage,{status});
-    manageItem.present();
     manageItem.onDidDismiss(data=>{
       if(data!=null){
-          this.item = { commodity: data.commodity,dwidth: data.dwidth,dlength:data.dlength,dheight:data.dheight,weight:data.weight,quantity:data.quantity};
+          /*this.item = { commodity: data.commodity,dwidth: data.dwidth,dlength:data.dlength,dheight:data.dheight,weight:data.weight,quantity:data.quantity};*/
+          console.log(data);
       }
-    })
+    });
   }
 
   toSummary(){

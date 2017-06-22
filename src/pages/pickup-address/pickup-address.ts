@@ -42,11 +42,23 @@ export class PickupAddressPage {
 
   editPickup(pickupData:any){
     this.events.publish('checkStsLogin',AddPickupModalPage,{'pickupData':pickupData,'type':'edit'});
+    let manageItem = this.mdlCtrl.create(AddPickupModalPage,{'pickupData':pickupData,'type':'edit'});
+    manageItem.present();
+    manageItem.onDidDismiss(data=>{
+        this.getPickupAddress();
+    });
   }
 
   addPickup(){
     console.log("Add Pickup Address");
     this.events.publish('checkStsLogin',AddPickupModalPage,{'pickupData':null,'type':'add'});
+    let manageItem = this.mdlCtrl.create(AddPickupModalPage,{'pickupData':null,'type':'add'});
+    manageItem.present();
+    manageItem.onDidDismiss(data=>{
+      if(data!=null){
+        this.getPickupAddress();
+      }
+    });
   }
 
   selectPickup(pickupData:any) {
@@ -58,7 +70,7 @@ export class PickupAddressPage {
   deletePickup(pickupId:any){
     console.log("Delete Data:"+JSON.stringify(pickupId));
     this.pickupAddressService.deletePickupAddress(pickupId).subscribe(
-        (resData) => { 
+        (resData) => {
                       console.log("Delete Pickup Address Success :"+JSON.stringify(resData)),
                       this.getPickupAddress();
                      },

@@ -26,8 +26,6 @@ export class AddPickupModalPage {
           this.pickupAddress = {pa_contact_name:null,pa_tel:null,pa_email:null,pa_address:null,pa_postal_code:null}
       }
       this.pickupType = this.navParams.get('type');
-
-      //console.log("Edit PickupAdress Data:"+JSON.stringify(this.pickupAddress));
   }
 
   ionViewDidLoad() {
@@ -43,7 +41,7 @@ export class AddPickupModalPage {
     console.log("Manage Address Form:" + JSON.stringify(form.value));
     this.events.publish('showLoading');
     this.pickupAddressService.insertPickupAddress(form.value).subscribe(
-       (resData) => { 
+       (resData) => {
                       console.log("Insert Pickup Address Success :"+JSON.stringify(resData)),
                       this.viewCtrl.dismiss(form.value),
                       this.events.publish('dismissLoading');
@@ -51,15 +49,13 @@ export class AddPickupModalPage {
         (error) => { this.errorMessage = <any> error,
                      this.events.publish('dismissLoading');
                    });
-    
-    //this.events.publish('checkStsLogin', 'modal');
   }
 
   editAddress(form: NgForm){
     console.log("Edit Address Form:"+JSON.stringify(form.value));
     this.events.publish('showLoading');
     this.pickupAddressService.updatePickupAddress(form.value).subscribe(
-       (resData) => { 
+       (resData) => {
                       console.log("Update Pickup Address Success :"+JSON.stringify(resData)),
                       this.viewCtrl.dismiss(form.value),
                       this.events.publish('dismissLoading');
