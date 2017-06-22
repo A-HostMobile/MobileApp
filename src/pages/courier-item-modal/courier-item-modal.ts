@@ -30,11 +30,15 @@ export class CourierItemModalPage {
   addItem(form:NgForm){
     this.submitted = true;
     if(form.valid){
-      console.log(this.item);
-      this.viewCtrl.dismiss();
+      console.log(form.value);
+      this.viewCtrl.dismiss(form.value);
     }
   }
-  editItem(){
-    this.viewCtrl.dismiss();
+  editItem(form:NgForm){
+    this.submitted = true;
+    if(form.valid){
+      console.log(form.value);
+      this.viewCtrl.dismiss(form.value);
+    }
   }
 }

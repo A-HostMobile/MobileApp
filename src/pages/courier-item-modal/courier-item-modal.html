@@ -35,7 +35,7 @@
       <ion-label no-padding col-3>Height</ion-label>
     </ion-item>
 
- 
+
     <ion-row>
       <ion-input col [(ngModel)]="item.dwidth" name="dwidth" #dwidth="ngModel" type="number" placeholder="Width" required></ion-input>
       <p col-1>x</p>
@@ -69,7 +69,7 @@
 
 </form>
 
-  <button (click)="addItem(citem)" ion-button block >
+  <button (click)="addItem(citem)" [disabled]="!citem.form.valid" ion-button block >
     {{StatusText}}
   </button>
 

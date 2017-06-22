@@ -357,7 +357,6 @@ export class TemplateApp {
           text: 'OK',
           handler: () => {
             this.app.getActiveNav().pop();
-            this.app.getActiveNav().pop();
             this.app.getRootNav().popToRoot();
           }
         }
@@ -373,7 +372,6 @@ export class TemplateApp {
         {
           text: 'OK',
           handler: () => {
-            this.app.getActiveNav().pop();
             this.app.getRootNav().popToRoot();
           }
         }
