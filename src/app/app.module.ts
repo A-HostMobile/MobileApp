@@ -63,6 +63,7 @@ import { BookingServiceProvider } from '../providers/booking-service/booking-ser
 import { HistoryServiceProvider } from '../providers/history-service/history-service';
 
 import { PickupAddressServiceProvider } from '../providers/pickup-address-service/pickup-address-service';
+import { CountryZoneProvider } from '../providers/country-zone/country-zone';
 
 
 @NgModule({
@@ -167,6 +168,7 @@ import { PickupAddressServiceProvider } from '../providers/pickup-address-servic
     BookingServiceProvider,
     HistoryServiceProvider,
     PickupAddressServiceProvider,
+    CountryZoneProvider,
   ]
 })
 export class AppModule { }
