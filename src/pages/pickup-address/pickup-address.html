@@ -25,13 +25,13 @@
 
       </ion-card-header>
 
-      <ion-grid (click)="selectPickup(pickupItem)">
+      <ion-grid>
         <ion-row>
           <ion-col  col-12>{{pickupItem.pa_address_display}}</ion-col>
         </ion-row>
 
         <ion-item>
-          <button *ngIf="checkFromPage == ProfilePage" color="calm" small ion-button outline item-right>Select</button>
+          <button *ngIf="checkFromPage == ProfilePage" (click)="selectPickup(pickupItem)" color="calm" small ion-button outline item-right>Select</button>
         </ion-item>
 
       </ion-grid>
