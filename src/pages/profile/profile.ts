@@ -25,7 +25,7 @@ export class ProfilePage {
 
   openPickupModal(){
     console.log('sus');
-    let manageItem = this.mdlCtrl.create(PickupAddressPage);
+    let manageItem = this.mdlCtrl.create(PickupAddressPage,ProfilePage);
     manageItem.present();
   }
 
