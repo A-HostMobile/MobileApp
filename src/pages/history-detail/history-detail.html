@@ -66,12 +66,14 @@
 
       </ion-grid>
 
-      <ion-grid *ngFor="let comment of lclComment">
+      <ion-grid>
         <ion-list>
+
           <ion-list-header>
             Comment
           </ion-list-header>
 
+          <ion-item *ngFor="let comment of lclComment">
             <ion-row style="font-weight: bold">
                 <ion-col col-6>
                   No: {{comment.no}} By: {{comment.created_by}}
@@ -90,6 +92,14 @@
                 <ion-col col-6> Status:</ion-col>
                 <ion-col col-6>{{comment.status}}</ion-col>
             </ion-row>
+
+          </ion-item>
+          <!-- if No comment show message -->
+          <ion-item>
+            <ion-row *ngIf="!lclComment">
+                <ion-col col-6>No Comment</ion-col>
+            </ion-row>
+          </ion-item>
 
         </ion-list>
       </ion-grid>
