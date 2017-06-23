@@ -65,6 +65,7 @@ export class LclBookingPage {
   toSummary(form: NgForm){
     this.submitted = true;
     if(form.valid) {
+      this.events.publish('loadpage');
       this.events.publish('checkStsLogin',LclSummaryPage,
        {
        firstPassed: form.value,

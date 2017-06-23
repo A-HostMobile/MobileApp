@@ -79,6 +79,7 @@ export class CourierBookingPage {
 
   toCourier2(form: NgForm){
     if(form.valid) {
+      this.events.publish('loadpage');
       console.log("Booking Courier Data:"+JSON.stringify(form.value));
         if(form.value.bookingId==null){
             this.bookingServiceProvider.insertBookingCourier(form.value).subscribe(

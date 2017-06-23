@@ -150,6 +150,15 @@ export class TemplateApp {
     return this._loading.present();
   }
 
+  LoadingPage(){
+    let load = this.loadCtrl.create({
+      content: "Please wait...",
+      spinner: 'hide',
+      dismissOnPageChange : true
+    })
+    load.present();
+  }
+
   dismissLoading(): Promise<any>{
     return this._loading.dismiss();
   }
@@ -233,6 +242,10 @@ export class TemplateApp {
         this.checkStatusLogin(pages,params);
       }
     });
+
+    this.events.subscribe('loadpage',()=>{
+      this.LoadingPage();
+    })
   }
 
 
@@ -300,6 +313,7 @@ export class TemplateApp {
     }
     else if (page.component == LclBookingPage||page.component == CourierBookingPage){
       this.nav.popToRoot({animate:false});
+      this.events.publish('loadpage');
       this.events.publish('checkStsLogin',page.component);
     }
     else if(page.component == LoginPage){
