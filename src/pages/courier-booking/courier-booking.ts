@@ -44,7 +44,7 @@ export class CourierBookingPage {
       if(this.courier.booking == undefined){
           this.courier.booking = null;
       }
-      
+
       console.log("Courier Booking ID:"+this.courier.booking);
       this.countryZoneProvider.getCountryZone().subscribe(
         (resPod) => this.countries = resPod,
@@ -53,6 +53,10 @@ export class CourierBookingPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CourierBookingPage');
+    this.navbar.backButtonClick=(e:UIEvent)=>{
+      alert('pop');
+      this.navCtrl.pop();
+    }
   }
 
   ionViewCanEnter() {
@@ -81,26 +85,26 @@ export class CourierBookingPage {
               (res) => {//this.countries = resPod,
                            form.value.bookingId = res.booking_id;
                            console.log("Insert MasterData Success:"+JSON.stringify(form.value)),
-                           this.navCtrl.push(CourierBooking2Page,{data:form.value});  
+                           this.navCtrl.push(CourierBooking2Page,{data:form.value});
                         },
               (error) => {  this.errorMessage = <any> error});
         }else{
             this.bookingServiceProvider.updateBookingCourier(form.value).subscribe(
               (res) => {//this.countries = resPod,
                            console.log("Update MasterData Success:"+JSON.stringify(res)),
-                           this.navCtrl.push(CourierBooking2Page,{data:form.value});  
+                           this.navCtrl.push(CourierBooking2Page,{data:form.value});
                         },
               (error) => {  this.errorMessage = <any> error});
         }
-          
+
     }
           // new Promise((resolve:any, reject:any) => {
           //   this.navCtrl.push(CourierBooking2Page, {data:form.value,resolve: resolve});
           // }).then(data => {
-          //   this.courier.booking = data.toString(); 
+          //   this.courier.booking = data.toString();
           // });
-          
-    
+
+
   }
 
   openPickupModal() {
