@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams ,ViewController ,ModalController, Events} from 'ionic-angular';
 import {AddPickupModalPage} from "../add-pickup-modal/add-pickup-modal";
 import {PickupAddressServiceProvider} from '../../providers/pickup-address-service/pickup-address-service';
+import {ProfilePage} from '../profile/profile';
 
 @IonicPage()
 @Component({
@@ -14,13 +15,22 @@ export class PickupAddressPage {
   errorMessage:string;
   page:any;
   param:any;
+
+  checkFromPage: string;
+
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public viewCtrl:ViewController,
               public mdlCtrl: ModalController,
               public pickupAddressService:PickupAddressServiceProvider,
               public events: Events) {
-    this.param = this.navParams.get('param');
+
+        this.param = this.navParams.data;
+
+        if(this.param == ProfilePage){
+          this.checkFromPage = "ProfilePage";
+            console.log(this.checkFromPage)
+        }
 
   }
 
