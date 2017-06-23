@@ -89,8 +89,9 @@ export class CourierBooking2Page {
   }
 
   toSummary(){
-        console.log('login from courier page 2');
-        this.events.publish('checkStsLogin',CourierSummaryPage);
+    this.events.publish('loadpage');
+    console.log('login from courier page 2');
+    this.events.publish('checkStsLogin',CourierSummaryPage);
 
   }
 

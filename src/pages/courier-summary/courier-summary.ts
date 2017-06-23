@@ -26,8 +26,8 @@ export class CourierSummaryPage {
   }
 
   toComplete(){
-        // this.navCtrl.push(CompletedPage);
-        this.events.publish('checkStsLogin',CompletedPage);
+    this.events.publish('loadpage');
+    this.events.publish('checkStsLogin',CompletedPage);
   }
 
   dgModalShow() {

@@ -51,11 +51,10 @@ export class HomePage {
   }
 
   openPage(pageNb: number) {
+    this.events.publish('loadpage');
     let  page: any;
-
     if(pageNb == 1){ page = LclBookingPage; }
     else { page = CourierBookingPage; }
-
     this.events.publish('checkStsLogin',page);
   }
 }

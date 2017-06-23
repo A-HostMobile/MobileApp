@@ -40,7 +40,6 @@ export class CourierBookingPage {
               public userData: UserData,
               public events: Events
             ) {
-
       this.countryZoneProvider.getCountryZone().subscribe(
         (res) => this.countries = res,
         (error) => {  this.errorMessage = <any> error});
@@ -48,6 +47,10 @@ export class CourierBookingPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CourierBookingPage');
+    this.navbar.backButtonClick=(e:UIEvent)=>{
+      alert('pop');
+      this.navCtrl.pop();
+    }
   }
 
   ionViewCanEnter() {
@@ -70,7 +73,6 @@ export class CourierBookingPage {
 
   toCourier2(form: NgForm){
     if(form.valid) {
-
         if(form.value.bookingId==null){
             //console.log("After Booking Courier Insert:"+form.value.bookingId);
   
@@ -99,7 +101,7 @@ export class CourierBookingPage {
                         },
               (error) => {  this.errorMessage = <any> error});
         }
-          
+
     }
 
   }

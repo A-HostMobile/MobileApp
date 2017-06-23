@@ -57,6 +57,7 @@ export class LclSummaryPage {
   }
 
   toCompleted(){
+    this.events.publish('loadpage');
     let responseData:any;
     let checkRemark = this.prepareData(this.scheduleData);
     if(checkRemark){
