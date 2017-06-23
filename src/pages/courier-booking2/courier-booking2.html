@@ -14,8 +14,8 @@
 
 
 <ion-content padding>
-
-    <ion-list class="margin-bottom-10">
+  <div *ngFor="let courier of bookingData">
+    <ion-list class="margin-bottom-10" *ngFor="let masterData of courier.master">
       <ion-list-header>
         <h4>Booking Detail</h4>
         <button color="calm" (click)="toEditMasterDetail();" ion-button outline item-right icon-left >
@@ -29,51 +29,46 @@
           <ion-icon color="calm" name="arrow-down"></ion-icon>
         </button>
       </ion-list-header>
-
-      <ion-grid *ngIf="!showDetail">
+    
+      <ion-grid *ngIf="!showDetail" >
         <ion-row>
           <ion-col  col-6>Total Weight :</ion-col>
-          <ion-col  col-6>3 Kgs.</ion-col>
+          <ion-col  col-6>{{masterData.bc_total_weight}}</ion-col>
         </ion-row>
 
         <ion-row>
           <ion-col  col-6>Pickup Address :</ion-col>
-          <ion-col  col-6 >{{masterData.pickup}}</ion-col>
+          <ion-col  col-6 >{{masterData.bc_pickup_display}}</ion-col>
         </ion-row>
 
         <ion-row>
           <ion-col  col-6>Consignee Name :</ion-col>
-          <ion-col  col-6>{{masterData.conname}}</ion-col>
+          <ion-col  col-6>{{masterData.bc_consignee_name}}</ion-col>
         </ion-row>
 
         <ion-row>
           <ion-col  col-6>Destination Address :</ion-col>
-          <ion-col  col-6>{{masterData.address}}</ion-col>
+          <ion-col  col-6>{{masterData.bc_destination}}</ion-col>
         </ion-row>
 
         <ion-row>
           <ion-col  col-6>Zipcode :</ion-col>
-          <ion-col  col-6>{{masterData.zipcode}}</ion-col>
+          <ion-col  col-6>{{masterData.bc_zipcode}}</ion-col>
         </ion-row>
 
         <ion-row>
           <ion-col  col-6>Contact Name :</ion-col>
-          <ion-col  col-6>{{masterData.contname}}</ion-col>
-        </ion-row>
-
-        <ion-row>
-          <ion-col  col-6>Telephone :</ion-col>
-          <ion-col  col-6>{{masterData.tel}}</ion-col>
+          <ion-col  col-6>{{masterData.bc_contact_info}}</ion-col>
         </ion-row>
 
         <ion-row>
           <ion-col  col-6>Country :</ion-col>
-          <ion-col  col-6>{{masterData.country}}</ion-col>
+          <ion-col  col-6>{{masterData.bc_country}}</ion-col>
         </ion-row>
 
         <ion-row>
           <ion-col  col-6>Shipper Reference :</ion-col>
-          <ion-col  col-6>{{masterData.rmk}}</ion-col>
+          <ion-col  col-6>{{masterData.bc_remark}}</ion-col>
         </ion-row>
       </ion-grid>
     </ion-list>
@@ -81,68 +76,84 @@
     <ion-list>
       <ion-list-header>
         <h4>Packing List</h4>
-        <button (click)="toManageItem('Add');" color="calm" ion-button outline item-right icon-left >
+        <button (click)="addCourierItem('Add');" color="calm" ion-button outline item-right icon-left >
           <ion-icon name="add"></ion-icon>
               Add
         </button>
       </ion-list-header>
     </ion-list>
 
-    <ion-card *ngIf="!showItem">
-      <ion-card-header text-wrap color="primary">
-        Packing List 1
-        <button (click)="showItem = !showItem" ion-button icon-only class="align-right" small clear>
-          <ion-icon name="remove"></ion-icon>
-        </button>
-        <button (click)="toManageItem('Edit');" ion-button icon-only class="align-right" small clear>
-          <ion-icon color="calm" name="md-create"></ion-icon>
-        </button>
-      </ion-card-header>
-
+    <div *ngIf="courier.detail != null">
+      <ion-card *ngFor="let detailData of courier.detail">
+        <ion-card-header text-wrap color="primary">
+          Packing List {{detailData.bcd_seq}}
+        
+          <button (click)="deleteCourierItem(detailData.bcd_seq);" ion-button icon-only class="align-right" small clear>
+            <ion-icon name="remove"></ion-icon>
+          </button>
+          <button (click)="editCourierItem('Edit',detailData);" ion-button icon-only class="align-right" small clear>
+            <ion-icon color="calm" name="md-create"></ion-icon>
+          </button>
+        </ion-card-header>
+        
+        
           <ion-grid>
             <ion-row>
               <ion-col  col-6>Commodity :</ion-col>
-              <ion-col  col-6>BRASSWARE & BRONZEWARE</ion-col>
+              <ion-col  col-6>{{detailData.commodity}}</ion-col>
             </ion-row>
 
             <ion-row>
               <ion-col  col-6>Dimension :</ion-col>
-              <ion-col  col-6>1 x 2 x 5 cm.</ion-col>
+              <ion-col  col-6>{{detailData.bcd_width}} x {{detailData.bcd_long}} x {{detailData.bcd_heigth}} cm.</ion-col>
             </ion-row>
 
             <ion-row>
               <ion-col  col-6>Weight :</ion-col>
-              <ion-col  col-6>4 Kgs.</ion-col>
+              <ion-col  col-6>{{detailData.bcd_unit_weight}} Kgs.</ion-col>
             </ion-row>
 
             <ion-row>
               <ion-col  col-6>Quantity :</ion-col>
-              <ion-col  col-6>4</ion-col>
+              <ion-col  col-6>{{detailData.bcd_quantity}}</ion-col>
             </ion-row>
-
           </ion-grid>
-    </ion-card>
 
-<ion-list>
+      </ion-card>
+    </div>
+
+    <div *ngIf="courier.detail == null">
+      <ion-grid>
+        <ion-row>
+              No Item Data!!!!!
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <ion-list *ngFor="let masterData of courier.master">
       <ion-grid>
 
         <ion-row>
           <ion-col  col-6>Total Calculate Weight :</ion-col>
-          <ion-col  col-6>4 Kgs.</ion-col>
+          <ion-col  col-6>{{masterData.bc_cal_weight}} Kgs.</ion-col>
         </ion-row>
 
         <ion-row>
           <ion-col  col-6>Total Cost :</ion-col>
-          <ion-col  col-6>฿1,000.00</ion-col>
+          <ion-col  col-6>{{masterData.bc_courier_cost}}</ion-col>
         </ion-row>
-
+  
         <ion-row>
           <ion-col class="text-right hilight"  col-12>*Include VAT and Fuel</ion-col>
         </ion-row>
 
-      </ion-grid>
-</ion-list>
+        <ion-row *ngIf="masterData.bc_courier_cost_note != null">
+          <ion-col class="text-right hilight"  col-12>{{masterData.bc_courier_cost_note}}</ion-col>
+        </ion-row>
 
+      </ion-grid>
+    </ion-list>
+  </div> 
 
 
         <button (click)="toSummary();" ion-button icon-right block >

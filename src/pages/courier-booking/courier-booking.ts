@@ -40,14 +40,9 @@ export class CourierBookingPage {
               public userData: UserData,
               public events: Events
             ) {
-      this.courier.booking = this.navParams.get('booking_id');
-      if(this.courier.booking == undefined){
-          this.courier.booking = null;
-      }
-      
-      console.log("Courier Booking ID:"+this.courier.booking);
+
       this.countryZoneProvider.getCountryZone().subscribe(
-        (resPod) => this.countries = resPod,
+        (res) => this.countries = res,
         (error) => {  this.errorMessage = <any> error});
   }
 
@@ -75,32 +70,38 @@ export class CourierBookingPage {
 
   toCourier2(form: NgForm){
     if(form.valid) {
-      console.log("Booking Courier Data:"+JSON.stringify(form.value));
+
         if(form.value.bookingId==null){
+            //console.log("After Booking Courier Insert:"+form.value.bookingId);
+  
             this.bookingServiceProvider.insertBookingCourier(form.value).subscribe(
-              (res) => {//this.countries = resPod,
+              (res) => {
                            form.value.bookingId = res.booking_id;
-                           console.log("Insert MasterData Success:"+JSON.stringify(form.value)),
-                           this.navCtrl.push(CourierBooking2Page,{data:form.value});  
+                           //console.log("Insert MasterData Success:"+JSON.stringify(form.value)),
+                           new Promise((resolve, reject) => {
+                                this.navCtrl.push(CourierBooking2Page, {data:form.value,resolve: resolve});
+                            }).then(data => {
+                                this.courier.booking = data.toString()
+                            });
                         },
               (error) => {  this.errorMessage = <any> error});
         }else{
+            //console.log("After Booking Courier Update:"+form.value.bookingId);
+            
             this.bookingServiceProvider.updateBookingCourier(form.value).subscribe(
-              (res) => {//this.countries = resPod,
-                           console.log("Update MasterData Success:"+JSON.stringify(res)),
-                           this.navCtrl.push(CourierBooking2Page,{data:form.value});  
+              (res) => {
+                           //console.log("Update MasterData Success:"+JSON.stringify(res)),
+                           new Promise((resolve, reject) => {
+                                this.navCtrl.push(CourierBooking2Page, {data:form.value,resolve: resolve});
+                            }).then(data => {
+                                this.courier.booking = data.toString() 
+                            });
                         },
               (error) => {  this.errorMessage = <any> error});
         }
           
     }
-          // new Promise((resolve:any, reject:any) => {
-          //   this.navCtrl.push(CourierBooking2Page, {data:form.value,resolve: resolve});
-          // }).then(data => {
-          //   this.courier.booking = data.toString(); 
-          // });
-          
-    
+
   }
 
   openPickupModal() {

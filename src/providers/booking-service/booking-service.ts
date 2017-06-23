@@ -95,6 +95,17 @@ export class BookingServiceProvider {
         .catch(this.handleError);
 
     }
+
+    getCourierDetail(bookingId:any):Observable<any>{
+      let token = localStorage.getItem('token');
+
+      let myHeader = new Headers({ 'Authorization': `Bearer ${token}` });
+      let _options = new RequestOptions({headers: myHeader});
+  
+      return this.http.get(AppSettings.API_ENDPOINT+'courierDetail/'+bookingId,_options)
+      .map((res:Response) => <any>res.json().responseData)
+      .catch(this.handleError);
+    }
   
     private handleError(error:any){
       return Observable.throw(error.json().errorMessage||'Error from server!');

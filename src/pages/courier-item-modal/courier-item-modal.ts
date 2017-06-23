@@ -12,10 +12,16 @@ export interface commovalue{
 export class CourierItemModalPage {
   StatusText: String;
   submitted:boolean = false;
+  type:string;
+  data:any;
   commodities:commovalue[]=[{va:'cer',name:'Ceramic'},{va:'ex1',name:'Example1'},{va:'ex2',name:'Example2'}];
   item:{commodity?:string,dwidth?:number,dlength?:number,dheight?:number,weight?:number,quantity?:number}={commodity:'cer'};
   constructor(public viewCtrl: ViewController,
               public navParams: NavParams) {
+       this.type = this.navParams.get('type'); 
+       this.data = this.navParams.get('data'); 
+       console.log("Type :"+this.type);
+       console.log("Item Data :"+JSON.stringify(this.data)); 
   }
 
   ionViewDidLoad() {
