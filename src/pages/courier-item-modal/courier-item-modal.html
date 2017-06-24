@@ -11,15 +11,16 @@
 
 
 <ion-content padding>
-<form #citem="ngForm">
-  <ion-list no-lines>
+<form #citem="ngForm" novalidate>
 
+  <ion-list no-lines >
     <ion-item no-padding>
-      <ion-label no-padding col-6>Commodity </ion-label>
-      <ion-select [(ngModel)]="item.commodity" name="commodity" #commodity="ngModel">
-        <ion-option *ngFor="let commo of commodities" value="{{commo.va}}">{{commo.name}}</ion-option>
-      </ion-select>
+        <ion-label no-padding col-6>Commodity</ion-label>
+        <ion-select [(ngModel)]="item.commodity" name="commodity" #commodity="ngModel" placeholder="Please Select" (ionCancel)="touch()" (ionChange)="checkDimension(item.commodity)" required>
+           <ion-option *ngFor="let commodity of commodities" [value]="commodity.qc_lookup_code" [selected]="commodity.qc_lookup_code == item.commodity">{{commodity.qc_lookup_value1}}</ion-option>
+        </ion-select>
     </ion-item>
+    <ion-badge ion-text *ngIf="selectcancel" [hidden]="citem.value.commodity!=null" float-end>Commodity is required</ion-badge>
   </ion-list>
 
   <ion-list no-lines>
@@ -35,42 +36,47 @@
       <ion-label no-padding col-3>Height</ion-label>
     </ion-item>
 
-
     <ion-row>
-      <ion-input col [(ngModel)]="item.dwidth" name="dwidth" #dwidth="ngModel" type="number" placeholder="Width" required></ion-input>
+      <ion-input col [(ngModel)]="item.dwidth" name="dwidth" #dwidth="ngModel" type="number" [value]="item.dwidth" placeholder="Width" [readonly]="fixDimension" required></ion-input>
       <p col-1>x</p>
-      <ion-input col [(ngModel)]="item.dlength" name="dlength" #dlength="ngModel" type="number" placeholder="Length" required></ion-input>
+      <ion-input col [(ngModel)]="item.dlength" name="dlength" #dlength="ngModel" type="number" [value]="item.dlength" placeholder="Length" [readonly]="fixDimension" required></ion-input>
       <p col-1>x</p>
-     <ion-input col [(ngModel)]="item.dheight" name="dheight" #dheight="ngModel" type="number" placeholder="Height" required></ion-input>
+     <ion-input col [(ngModel)]="item.dheight" name="dheight" #dheight="ngModel" type="number" [value]="item.dheight" placeholder="Height" [readonly]="fixDimension" required></ion-input>
     </ion-row>
+    
 
-    <ion-badge ion-text [hidden]="dheight.untouched && submitted == false" *ngIf="dheight.invalid" float-end>Height is required</ion-badge>
-    <ion-badge ion-text [hidden]="dlength.untouched && submitted == false"  *ngIf="dlength.invalid" float-end>Length is required</ion-badge>
-    <ion-badge ion-text [hidden]="dwidth.untouched && submitted == false" *ngIf="dwidth.invalid" float-end>Width is required</ion-badge>
+    <ion-badge ion-text *ngIf="dwidth.invalid" [hidden]="!dwidth.touched || fixDimension" float-end>Height is required</ion-badge>
+    <ion-badge ion-text *ngIf="dlength.invalid" [hidden]="!dlength.touched || fixDimension" float-end>Length is required</ion-badge>
+    <ion-badge ion-text *ngIf="dheight.invalid" [hidden]="!dheight.touched || fixDimension" float-end>Width is required</ion-badge>
   </ion-list>
 
   <ion-list no-lines>
     <ion-item no-padding>
       <ion-label no-padding col-6>Weight : </ion-label>
-      <ion-input [(ngModel)]="item.weight" name="weight" #weight="ngModel" type="number" placeholder="Weight" required></ion-input>
+      <ion-input [(ngModel)]="item.weight" name="weight" #weight="ngModel" type="number" [value]="item.weight" placeholder="Weight" required></ion-input>
       <ion-note item-end>
         Kgs.
       </ion-note>
     </ion-item>
-    <ion-badge ion-text [hidden]="weight.untouched && submitted == false" *ngIf="weight.invalid" float-end="">Weight is required</ion-badge>
+    <ion-badge ion-text *ngIf="weight.invalid" [hidden]="!weight.touched" float-end="">Weight is required</ion-badge>
 
     <ion-item no-padding>
       <ion-label no-padding col-6>Quantity : </ion-label>
-      <ion-input [(ngModel)]="item.quantity" name="quantity" #quantity="ngModel" type="number" placeholder="Quantity" required></ion-input>
+      <ion-input [(ngModel)]="item.quantity" name="quantity" #quantity="ngModel" type="number" [value]="item.quantity" placeholder="Quantity" required></ion-input>
     </ion-item>
-    <ion-badge ion-text [hidden]="quantity.untouched && submitted == false" *ngIf="quantity.invalid" float-end>Quantity is required</ion-badge>
+    <ion-badge ion-text *ngIf="quantity.invalid" [hidden]="!quantity.touched" float-end>Quantity is required</ion-badge>
 
   </ion-list>
 
-</form>
 
-  <button (click)="addItem(citem)" [disabled]="!citem.form.valid" ion-button block >
-    {{StatusText}}
+
+  <button *ngIf="type == 'Add'" (click)="addItem(citem)" [disabled]="!citem.form.valid" ion-button block >
+    {{type}} 
   </button>
+  <button *ngIf="type == 'Edit'" (click)="editItem(citem)" [disabled]="!citem.form.valid" ion-button block >
+    {{type}} 
+  </button>
+
+  </form>
 
 </ion-content>

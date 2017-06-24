@@ -74,7 +74,6 @@ export class BookingServiceProvider {
 
     updateBookingCourier(courierData:any){
       let token = localStorage.getItem('token');
-      let profile = JSON.parse(localStorage.getItem('profile'));
 
       let myHeader = new Headers();
       myHeader.append( 'Authorization', `Bearer ${token}`);
@@ -105,6 +104,92 @@ export class BookingServiceProvider {
       return this.http.get(AppSettings.API_ENDPOINT+'courierDetail/'+bookingId,_options)
       .map((res:Response) => <any>res.json().responseData)
       .catch(this.handleError);
+    }
+
+    updateBookingStatus(bookingId:any,statusCode:any,bookingType:any){
+      console.log("Booking ID:"+bookingId+"/"+statusCode+"/"+bookingType);
+      let token = localStorage.getItem('token');
+      let profile = JSON.parse(localStorage.getItem('profile'));
+
+      let myHeader = new Headers();
+      myHeader.append('Authorization', `Bearer ${token}`);
+      myHeader.append('Content-Type', 'application/x-www-form-urlencoded');
+      let _options = new RequestOptions({headers: myHeader});
+  
+      let body = new URLSearchParams();
+      body.append("bookingId",bookingId)
+      body.append("statusCode",statusCode)
+      body.append("bookingType",bookingType)
+      body.append("updateBy",profile.p_party_id)
+      
+      return this.http.post(AppSettings.API_ENDPOINT+'updateStatus',body,_options)
+        .map((res:Response) => res.json().responseData)
+        .catch(this.handleError);
+    }
+
+    insertCourierItem(itemData:any,bookingID:any){
+      let token = localStorage.getItem('token');
+
+      let myHeader = new Headers();
+      myHeader.append( 'Authorization', `Bearer ${token}`);
+      myHeader.append('Content-Type', 'application/x-www-form-urlencoded');
+      let _options = new RequestOptions({headers: myHeader});
+  
+      let body = new URLSearchParams();
+      body.append("bookingId",bookingID)
+      body.append("commodityCode",itemData.commodity)
+      body.append("weight",itemData.weight)
+      body.append("width",itemData.dwidth)
+      body.append("long",itemData.dlength)
+      body.append("height",itemData.dheight)
+      body.append("qty",itemData.quantity)
+      
+      return this.http.post(AppSettings.API_ENDPOINT+'courierItem',body,_options)
+        .map((res:Response) => res.json().responseData)
+        .catch(this.handleError);
+    }
+
+    updateCourierItem(itemData:any,bookingID:any,bookingSeq:any){
+      let token = localStorage.getItem('token');
+
+      let myHeader = new Headers();
+      myHeader.append( 'Authorization', `Bearer ${token}`);
+      myHeader.append('Content-Type', 'application/x-www-form-urlencoded');
+      let _options = new RequestOptions({headers: myHeader});
+  
+      let body = new URLSearchParams();
+      body.append("index",bookingSeq)
+      body.append("commodityCode",itemData.commodity)
+      body.append("weight",itemData.weight)
+      body.append("width",itemData.dwidth)
+      body.append("long",itemData.dlength)
+      body.append("height",itemData.dheight)
+      body.append("qty",itemData.quantity)
+      
+      return this.http.put(AppSettings.API_ENDPOINT+'courierItem/'+bookingID,body,_options)
+        .map((res:Response) => res.json().responseData)
+        .catch(this.handleError);
+
+    }
+
+    deleteCourierItem(bookingID:any,bookingSeq:any){
+      let token = localStorage.getItem('token');
+
+      let myHeader = new Headers();
+      myHeader.append( 'Authorization', `Bearer ${token}`);
+      myHeader.append('Content-Type', 'application/x-www-form-urlencoded');
+
+      let body = new URLSearchParams();
+      body.append("index",bookingSeq);
+
+      let _options = new RequestOptions({headers: myHeader,body: body});
+  
+      
+      
+      return this.http.delete(AppSettings.API_ENDPOINT+'courierItem/'+bookingID,_options)
+        .map((res:Response) => res.json().responseData)
+        .catch(this.handleError);
+
     }
   
     private handleError(error:any){

@@ -14,49 +14,55 @@
 
 
 <ion-content padding>
-
-   <ion-list class="margin-bottom-10">
+  <div *ngFor="let courier of bookingData">
+   <ion-list class="margin-bottom-10" *ngFor="let masterData of courier.master">
       <ion-grid>
 
          <ion-row>
           <ion-col  col-6>Pickup Address :</ion-col>
-          <ion-col  col-6>Somewhere 987/645-1 example address state province 99999</ion-col>
+          <ion-col  col-6>{{masterData.bc_pickup_display}}</ion-col>
         </ion-row>
 
         <ion-row>
           <ion-col  col-6>Consignee Name :</ion-col>
-          <ion-col  col-6>Mr.Example</ion-col>
+          <ion-col  col-6>{{masterData.bc_consignee_name}}</ion-col>
         </ion-row>
 
         <ion-row>
           <ion-col  col-6>Zipcode :</ion-col>
-          <ion-col  col-6>111111</ion-col>
+          <ion-col  col-6>{{masterData.bc_zipcode}}</ion-col>
         </ion-row>
 
         <ion-row>
           <ion-col  col-6>Total Weight :</ion-col>
-          <ion-col  col-6>3 Kgs.</ion-col>
+          <ion-col  col-6>{{masterData.bc_total_weight}} Kgs.</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col  col-6>Total Calculate Weight :</ion-col>
+          <ion-col  col-6>{{masterData.bc_cal_weight}} Kgs.</ion-col>
         </ion-row>
 
         <ion-row>
           <ion-col  col-6>Destination Address :</ion-col>
-          <ion-col  col-6>Somewhere 123/456-7 example address state </ion-col>
+          <ion-col  col-6>{{masterData.bc_destination}}</ion-col>
         </ion-row>
 
         <ion-row>
           <ion-col  col-6>Contact Name :</ion-col>
-          <ion-col  col-6>Mr.Instant</ion-col>
-        </ion-row>
-
-        <ion-row>
-          <ion-col  col-6>Telephone :</ion-col>
-          <ion-col  col-6>+9912345678</ion-col>
+          <ion-col  col-6>{{masterData.bc_contact_info}}</ion-col>
         </ion-row>
 
         <ion-row>
           <ion-col  col-6>Shipper Reference :</ion-col>
-          <ion-col  col-6>N/A</ion-col>
+          <ion-col  col-6>{{masterData.bc_remark}}</ion-col>
         </ion-row>
+
+        <ion-row>
+          <ion-col  col-6>Total Cost :</ion-col>
+          <ion-col  col-6>{{masterData.bc_courier_cost}}</ion-col>
+        </ion-row>
+        <ion-col class="text-right hilight"  col-12>*Include VAT and Fuel</ion-col>
 
        </ion-grid>
 
@@ -68,40 +74,43 @@
           </ion-list-header>
         
 
-        <ion-card >
-          <ion-card-header text-wrap color="primary">
-            Packing List 1
-          </ion-card-header>
-                <ion-row>
-                  <ion-col  col-6>Commodity :</ion-col>
-                  <ion-col  col-6>BRASSWARE & BRONZEWARE</ion-col>
-                </ion-row>
+          <ion-card *ngFor="let detailData of courier.detail">
+            <ion-card-header text-wrap color="primary">
+              Packing List {{detailData.bcd_seq}}
+            </ion-card-header>
+                  <ion-row>
+                    <ion-col  col-6>Commodity :</ion-col>
+                    <ion-col  col-6>{{detailData.commodity}}</ion-col>
+                  </ion-row>
 
-                <ion-row>
-                  <ion-col  col-6>Dimension :</ion-col>
-                  <ion-col  col-6>1 x 2 x 5 cm.</ion-col>
-                </ion-row>
+                  <ion-row>
+                    <ion-col  col-6>Dimension :</ion-col>
+                    <ion-col  col-6>{{detailData.bcd_width}} x {{detailData.bcd_long}} x {{detailData.bcd_heigth}} cm.</ion-col>
+                  </ion-row>
 
-                <ion-row>
-                  <ion-col  col-6>Weight :</ion-col>
-                  <ion-col  col-6>4 Kgs.</ion-col>
-                </ion-row>
+                  <ion-row>
+                    <ion-col  col-6>Weight :</ion-col>
+                    <ion-col  col-6>{{detailData.bcd_unit_weight}} Kgs.</ion-col>
+                  </ion-row>
 
-                <ion-row>
-                  <ion-col  col-6>Quantity :</ion-col>
-                  <ion-col  col-6>4</ion-col>
-                </ion-row>
-
+                  <ion-row>
+                    <ion-col  col-6>Quantity :</ion-col>
+                    <ion-col  col-6>{{detailData.bcd_quantity}}</ion-col>
+                  </ion-row>
+                
           </ion-card>
+
         </ion-list>
         <ion-list no-lines>
             <ion-col>
              By clicking "confirm" you are agreeing that your packing list(s) are excluded <span (click)="dgModalShow();" class="hyperlink">Prohibited Items</span>.
             </ion-col>
         </ion-list>
-
-     <button (click)="toComplete();" ion-button icon-right block >
-          Confirm
-          <ion-icon name="checkmark"></ion-icon>
-    </button>
+    <div *ngFor="let masterData of courier.master">
+      <button (click)="toComplete(masterData.bc_booking_id);" ion-button icon-right block >
+            Confirm
+            <ion-icon name="checkmark"></ion-icon>
+      </button>
+    </div>
+  </div>
 </ion-content>

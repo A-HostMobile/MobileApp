@@ -30,7 +30,9 @@ export class CourierBookingPage {
     zipcode?:string,
     contname?:string,
     tel?:string,
-    rmk?:string}={booking:null};
+    rmk?:string,
+    work?:any}={booking:null};
+
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public viewCtrl: ViewController,
@@ -48,8 +50,15 @@ export class CourierBookingPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad CourierBookingPage');
     this.navbar.backButtonClick=(e:UIEvent)=>{
-      alert('pop');
-      this.navCtrl.pop();
+      if(this.courier.booking != null){
+          this.bookingServiceProvider.updateBookingStatus(this.courier.booking,40,2).subscribe(
+              (res) => this.navCtrl.pop(),
+              (error) => {  this.errorMessage = <any> error});
+      }
+      else{
+          this.navCtrl.pop()
+      }
+      
     }
   }
 
@@ -76,30 +85,35 @@ export class CourierBookingPage {
         if(form.value.bookingId==null){
             //console.log("After Booking Courier Insert:"+form.value.bookingId);
   
-            this.bookingServiceProvider.insertBookingCourier(form.value).subscribe(
-              (res) => {
+           this.bookingServiceProvider.insertBookingCourier(form.value).subscribe(
+           (res) => {
+                               //form.value.bookingId = "BC-2017-06-1798";//debug
+                               //this.courier.work = '1';//debug
                            form.value.bookingId = res.booking_id;
+                           this.courier.work = res.work_time;
                            //console.log("Insert MasterData Success:"+JSON.stringify(form.value)),
                            new Promise((resolve, reject) => {
-                                this.navCtrl.push(CourierBooking2Page, {data:form.value,resolve: resolve});
+                                this.navCtrl.push(CourierBooking2Page, {data:form.value,work:this.courier.work,resolve: resolve});
                             }).then(data => {
                                 this.courier.booking = data.toString()
                             });
-                        },
-              (error) => {  this.errorMessage = <any> error});
+                      },
+            (error) => {  this.errorMessage = <any> error});
         }else{
             //console.log("After Booking Courier Update:"+form.value.bookingId);
             
-            this.bookingServiceProvider.updateBookingCourier(form.value).subscribe(
+             this.bookingServiceProvider.updateBookingCourier(form.value).subscribe(
               (res) => {
                            //console.log("Update MasterData Success:"+JSON.stringify(res)),
+                           this.courier.work = res.work_time;
+                           //this.courier.work = '1'; //debug
                            new Promise((resolve, reject) => {
-                                this.navCtrl.push(CourierBooking2Page, {data:form.value,resolve: resolve});
+                                this.navCtrl.push(CourierBooking2Page, {data:form.value,work:this.courier.work,resolve: resolve});
                             }).then(data => {
                                 this.courier.booking = data.toString() 
                             });
                         },
-              (error) => {  this.errorMessage = <any> error});
+                (error) => {  this.errorMessage = <any> error});
         }
 
     }
@@ -121,5 +135,7 @@ export class CourierBookingPage {
       }
     });
   }
+
+  
 
 }
