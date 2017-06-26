@@ -8,9 +8,6 @@ import {CountryZoneProvider} from '../../providers/country-zone/country-zone';
 import {BookingServiceProvider} from '../../providers/booking-service/booking-service';
 import {NgForm} from "@angular/forms";
 
-export interface cvalue{
-  co:string;cname:string;
-}
 @Component({
   selector: 'page-courier-booking',
   templateUrl: 'courier-booking.html',
@@ -75,7 +72,7 @@ export class CourierBookingPage {
     if(form.valid) {
         if(form.value.bookingId==null){
             //console.log("After Booking Courier Insert:"+form.value.bookingId);
-  
+
             this.bookingServiceProvider.insertBookingCourier(form.value).subscribe(
               (res) => {
                            form.value.bookingId = res.booking_id;
@@ -89,14 +86,14 @@ export class CourierBookingPage {
               (error) => {  this.errorMessage = <any> error});
         }else{
             //console.log("After Booking Courier Update:"+form.value.bookingId);
-            
+
             this.bookingServiceProvider.updateBookingCourier(form.value).subscribe(
               (res) => {
                            //console.log("Update MasterData Success:"+JSON.stringify(res)),
                            new Promise((resolve, reject) => {
                                 this.navCtrl.push(CourierBooking2Page, {data:form.value,resolve: resolve});
                             }).then(data => {
-                                this.courier.booking = data.toString() 
+                                this.courier.booking = data.toString()
                             });
                         },
               (error) => {  this.errorMessage = <any> error});
@@ -107,6 +104,7 @@ export class CourierBookingPage {
   }
 
   openPickupModal() {
+    this.events.publish('checkStsLogin',PickupAddressPage);
     let openPickup = this.mdlCtrl.create(PickupAddressPage);
     openPickup.present();
     openPickup.onDidDismiss(data => {
@@ -117,9 +115,12 @@ export class CourierBookingPage {
         }else {
           this.courier.pickup = data.pa_address_display;
         }
-
       }
     });
+  }
+
+  setnewAddress(address:any){
+    this.courier.pickup = address;
   }
 
 }

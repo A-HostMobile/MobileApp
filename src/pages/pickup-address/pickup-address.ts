@@ -73,8 +73,8 @@ export class PickupAddressPage {
   }
 
   selectPickup(pickupData:any) {
+    this.events.publish('checkStsLogin',PickupAddressPage);
     this.viewCtrl.dismiss(pickupData);
-    this.events.publish('checkStsLogin','modal');
     //console.log("Select Data:"+JSON.stringify(pickupData));
   }
 

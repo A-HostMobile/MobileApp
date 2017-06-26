@@ -154,7 +154,8 @@ export class TemplateApp {
     let load = this.loadCtrl.create({
       content: "Please wait...",
       spinner: 'hide',
-      dismissOnPageChange : true
+      dismissOnPageChange : true,
+      duration: 500
     })
     load.present();
   }
@@ -257,9 +258,6 @@ export class TemplateApp {
         this.userData.login(profile);
         console.log('Login and Get profile');
         if(pages== CourierItemModalPage || pages == PickupAddressPage || pages == AddPickupModalPage){
-          let manageItem = this.mdlCtrl.create(pages,params);
-        }
-        else if(pages=='modal'){
 
         }
         else if(pages!=HomePage){
@@ -367,6 +365,7 @@ export class TemplateApp {
           text: 'OK',
           handler: () => {
             this.app.getActiveNav().pop();
+            this.app.getActiveNav().pop();
             this.app.getRootNav().popToRoot();
           }
         }
@@ -383,6 +382,7 @@ export class TemplateApp {
         {
           text: 'OK',
           handler: () => {
+            this.app.getActiveNav().pop();
             this.app.getRootNav().popToRoot();
           }
         }

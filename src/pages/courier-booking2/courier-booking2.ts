@@ -2,7 +2,6 @@ import { Component, ViewChild } from '@angular/core';
 import { Navbar,NavController, NavParams ,ModalController, Events } from 'ionic-angular';
 import {CourierItemModalPage} from "../courier-item-modal/courier-item-modal";
 import {CourierSummaryPage} from "../courier-summary/courier-summary";
-import {CourierBookingPage} from "../courier-booking/courier-booking";
 import {BookingServiceProvider} from '../../providers/booking-service/booking-service';
 import { UserData } from '../../providers/user-data';
 
@@ -19,7 +18,6 @@ export class CourierBooking2Page {
   courierNote:any = null;
   bookingID:any;
   errorMessage:string;
-  item:{commodity?:string,dwidth?:number,dlength?:number,dheight?:number,weight?:number,quantity?:number};
   data:any;
   constructor(
     public navCtrl: NavController,
@@ -31,17 +29,16 @@ export class CourierBooking2Page {
   ) {
       this.masterData = this.navParams.get('data');
       this.getCourierData();
-      //console.log("Master data Courier Page 2:"+JSON.stringify(this.masterData));
   }
-  
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad CourierBooking2Page');
-    this.navbar.backButtonClick=(e:UIEvent)=>{ 
+    this.navbar.backButtonClick=(e:UIEvent)=>{
       this.toEditMasterDetail();
     }
 
   }
-  
+
   getCourierData(){
     this.events.publish('showLoading');
       this.bookingServiceProvider.getCourierDetail(this.masterData.bookingId).subscribe(
@@ -63,10 +60,6 @@ export class CourierBooking2Page {
     let addItem = this.mdlCtrl.create(CourierItemModalPage,{type:action,data:null});
     addItem.onDidDismiss(data=>{
       this.getCourierData();
-      // if(data!=null){
-      //     /*this.item = { commodity: data.commodity,dwidth: data.dwidth,dlength:data.dlength,dheight:data.dheight,weight:data.weight,quantity:data.quantity};*/
-      //     console.log(data);
-      // }
     });
   }
 
@@ -77,10 +70,6 @@ export class CourierBooking2Page {
     let editItem = this.mdlCtrl.create(CourierItemModalPage,{type:action,data:itemData});
     editItem.onDidDismiss(data=>{
       this.getCourierData();
-      // if(data!=null){
-      //     /*this.item = { commodity: data.commodity,dwidth: data.dwidth,dlength:data.dlength,dheight:data.dheight,weight:data.weight,quantity:data.quantity};*/
-      //     console.log(data);
-      // }
     });
   }
 
