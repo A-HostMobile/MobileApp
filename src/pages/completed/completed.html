@@ -14,34 +14,46 @@
 
 
 <ion-content padding class="no-scroll">
-
-  <ion-row class="text-center">
-    <ion-icon color="secondary" col class="complete-icon" name="checkmark-circle"></ion-icon>
-  </ion-row>
-
-  <ion-row class="text-center">
-    <h3 col>Successful</h3>
-  </ion-row>
-
-  <ion-list>
-
-    <ion-row>
-      <ion-item no-padding>
-        <ion-col col-6>Booking ID : </ion-col>
-        <ion-col col-6>{{bookingId}}</ion-col>
-      </ion-item>
+  <div *ngIf="success">
+    <ion-row class="text-center">
+      <ion-icon color="secondary" col class="complete-icon" name="checkmark-circle"></ion-icon>
     </ion-row>
 
-    <ion-row>
-      <ion-item no-padding>
-        <ion-col col-6>Booking Type : </ion-col>
-        <ion-col col-6>{{type}}</ion-col>
-      </ion-item>
+    <ion-row class="text-center">
+      <h3 col>Successful</h3>
     </ion-row>
 
-    <ion-col *ngIf="work == 1" class="text-right hilight" col-12>Thank you for your booking with us <br/> we will contact you soonest.</ion-col>
+    <ion-list>
 
-  </ion-list>
+      <ion-row>
+        <ion-item no-padding>
+          <ion-col col-6>Booking ID : </ion-col>
+          <ion-col col-6>{{bookingId}}</ion-col>
+        </ion-item>
+      </ion-row>
+
+      <ion-row>
+        <ion-item no-padding>
+          <ion-col col-6>Booking Type : </ion-col>
+          <ion-col col-6>{{type}}</ion-col>
+        </ion-item>
+      </ion-row>
+
+      <ion-col *ngIf="work == 1" class="text-right hilight" col-12>Thank you for your booking with us <br/> we will contact you soonest.</ion-col>
+
+    </ion-list>
+  </div>
+
+  <div *ngIf="!success">
+      <ion-row class="text-center">
+        <ion-icon color="danger" col class="complete-icon" name="close-circle"></ion-icon>
+      </ion-row>
+
+      <ion-row class="text-center">
+        <ion-col col-12>{{message}}</ion-col>
+      </ion-row>
+      
+  </div>
 
   <button (click)="toHome();" ion-button icon-left block >
     <ion-icon  name="home"></ion-icon>

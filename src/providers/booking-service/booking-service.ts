@@ -123,7 +123,7 @@ export class BookingServiceProvider {
       body.append("updateBy",profile.p_party_id)
       
       return this.http.post(AppSettings.API_ENDPOINT+'updateStatus',body,_options)
-        .map((res:Response) => res.json().responseData)
+        .map((res:Response) => res.json())
         .catch(this.handleError);
     }
 
@@ -193,6 +193,7 @@ export class BookingServiceProvider {
     }
   
     private handleError(error:any){
+      console.log("error message"+JSON.stringify(error));
       return Observable.throw(error.json().errorMessage||'Error from server!');
     }
 

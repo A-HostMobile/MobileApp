@@ -13,14 +13,18 @@ export class CompletedPage {
   type:any;
   success:boolean;
   work:any;
+  status:any;
+  message:any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public userdata: UserData,public events: Events) {
       this.bookingId = this.navParams.get("booking_id");
       this.type = this.navParams.get("type");
       this.work = this.navParams.get("work");
-      if(this.bookingId=='Unauthorized: Access is denied due to invalid credentials.'){
-        this.success = false;
-      } else {
+      this.message = this.navParams.get("message");
+      this.status = this.navParams.get("status");
+      if(this.status == 'success'){
         this.success = true;
+      } else {
+        this.success = false;
       }
   }
 

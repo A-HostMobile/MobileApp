@@ -38,14 +38,44 @@ export class CourierSummaryPage {
   toComplete(bookingId:any){
     console.log("BookinID :"+bookingId);
     this.bookingServiceProvider.updateBookingStatus(this.bookingData[0].master[0].bc_booking_id,30,2).subscribe(
-              (res) => {this.events.publish('checkStsLogin',CompletedPage,
+              (res) => {
+                        if(res.responseCode == 0){
+                          this.events.publish('checkStsLogin',CompletedPage,
                             {
                                booking_id: this.bookingData[0].master[0].bc_booking_id,
                                type:"Courier",
-                               work:this.work
+                               work:this.work,
+                               status:'success'
                             })
-                        },
-              (error) => {  this.errorMessage = <any> error});
+                        }else if(res=='Unauthorized: Access is denied due to invalid credentials.'){
+                          this.events.publish('checkStsLogin',CompletedPage,
+                            {
+                               message:'Unauthorized: Access is denied due to invalid credentials.',
+                               type:"Courier",
+                               work:this.work,
+                               status:'error'
+                            })
+                        }
+                        else{
+                          this.events.publish('checkStsLogin',CompletedPage,
+                            {
+                               message:res.responseMessage,
+                               type:"Courier",
+                               work:this.work,
+                               status:'error'
+                            })  
+                        }
+                        
+                      },
+              (error) => {  this.errorMessage = <any> error,
+                            this.events.publish('checkStsLogin',CompletedPage,
+                            {
+                               message:this.errorMessage,
+                               type:"Courier",
+                               work:this.work,
+                               status:'error'
+                            })
+                          });
     
     //this.events.publish('loadpage');
     //this.events.publish('checkStsLogin',CompletedPage);
