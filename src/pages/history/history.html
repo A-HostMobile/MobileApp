@@ -56,8 +56,13 @@
 			<span>See detail</span>
 			  <ion-icon name="arrow-forward"></ion-icon>
       </button>
-
+      
     </ion-list>
+    <ion-infinite-scroll (ionInfinite)="test()">
+      <ion-infinite-scroll-content
+        loadingSpinner="bubbles">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
 
   </div>
 
