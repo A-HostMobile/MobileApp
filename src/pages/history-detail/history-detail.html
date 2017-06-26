@@ -73,8 +73,9 @@
             Comment
           </ion-list-header>
 
-          <ion-item *ngFor="let comment of lclComment">
-            <ion-row style="font-weight: bold">
+          <ion-card *ngFor="let comment of lclComment">
+            <ion-card-header color="primary">
+            <ion-row >
                 <ion-col col-6>
                   No: {{comment.no}} By: {{comment.created_by}}
                 </ion-col>
@@ -82,7 +83,9 @@
                   {{comment.creation_date | date: 'dd-MMM-yy'| upper}}
                 </ion-col>
             </ion-row>
+            </ion-card-header>
 
+            <ion-grid>
             <ion-row>
                 <ion-col col-6> Comment:</ion-col>
                 <ion-col col-6>{{comment.bc_comment}}</ion-col>
@@ -92,8 +95,8 @@
                 <ion-col col-6> Status:</ion-col>
                 <ion-col col-6>{{comment.status}}</ion-col>
             </ion-row>
-
-          </ion-item>
+            </ion-grid>
+          </ion-card>
           <!-- if No comment show message -->
           <ion-item>
             <ion-row *ngIf="!lclComment">
