@@ -31,7 +31,7 @@
         </ion-row>
 
         <ion-item>
-          <button *ngIf="checkFromPage == ProfilePage" (click)="selectPickup(pickupItem)" color="calm" small ion-button outline item-right>Select</button>
+          <button [hidden]="checkFromPage == 'ProfilePage'||param==pickupItem" (click)="selectPickup(pickupItem)" color="calm" small ion-button outline item-right>Select</button>
         </ion-item>
 
       </ion-grid>

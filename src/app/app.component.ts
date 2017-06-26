@@ -154,8 +154,7 @@ export class TemplateApp {
     let load = this.loadCtrl.create({
       content: "Please wait...",
       spinner: 'hide',
-      dismissOnPageChange : true,
-      duration: 500
+      duration: 350
     })
     load.present();
   }
