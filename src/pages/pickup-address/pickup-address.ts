@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams ,ViewController ,ModalController, Events} from 'ionic-angular';
+import { IonicPage, NavController, NavParams ,ViewController ,ModalController, Events } from 'ionic-angular';
 import {AddPickupModalPage} from "../add-pickup-modal/add-pickup-modal";
 import {PickupAddressServiceProvider} from '../../providers/pickup-address-service/pickup-address-service';
 import {ProfilePage} from '../profile/profile';
@@ -18,12 +18,15 @@ export class PickupAddressPage {
 
   checkFromPage: string;
 
+  _pickupId: any;
+
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public viewCtrl:ViewController,
               public mdlCtrl: ModalController,
               public pickupAddressService:PickupAddressServiceProvider,
-              public events: Events) {
+              public events: Events
+            ) {
 
         this.param = this.navParams.data;
 
@@ -31,6 +34,11 @@ export class PickupAddressPage {
           this.checkFromPage = "ProfilePage";
             console.log(this.checkFromPage)
         }
+
+        this.events.subscribe('deletePickup',(_pickupId:any)=>{
+          this.deletePickup(_pickupId);
+          // console.log(_pickupId+'subscr delete');
+        });
 
   }
 
@@ -42,12 +50,13 @@ export class PickupAddressPage {
   getPickupAddress(){
     this.events.publish('showLoading');
     this.pickupAddressService.getPickupAddress().subscribe(
-        (resData) => { this.pickupAddress = resData,
+        (resData) => { this.pickupAddress = resData
                        //console.log("PickupAddress Data:"+JSON.stringify(this.pickupAddress))
                        this.events.publish('dismissLoading');
+                      //  console.log('res data');
                      },
         (error) => { this.errorMessage = <any> error,
-                     this.events.publish('dismissLoading');
+                      this.events.publish('dismissLoading');
                    });
   }
 
@@ -78,12 +87,18 @@ export class PickupAddressPage {
     //console.log("Select Data:"+JSON.stringify(pickupData));
   }
 
+  confirmDelete(_pickupId:any){
+    this.events.publish('confirmBox',_pickupId);
+    // console.log('con publish');
+  }
+
   deletePickup(pickupId:any){
     //console.log("Delete Data:"+JSON.stringify(pickupId));
     this.pickupAddressService.deletePickupAddress(pickupId).subscribe(
         (resData) => {
                       //console.log("Delete Pickup Address Success :"+JSON.stringify(resData)),
                       this.getPickupAddress();
+                      // console.log('delete');
                      },
         (error) => { this.errorMessage = <any> error,
                      this.events.publish('dismissLoading');
