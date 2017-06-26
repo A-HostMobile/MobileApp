@@ -19,11 +19,8 @@ export class CourierBooking2Page {
   bookingID:any;
   nextToSummary:any=false;
   errorMessage:string;
-<<<<<<< HEAD
-=======
   work:any;
   item:{commodity?:string,dwidth?:number,dlength?:number,dheight?:number,weight?:number,quantity?:number};
->>>>>>> fdb863f8d51c08130da76926728fe7a03d98bee0
   data:any;
   constructor(
     public navCtrl: NavController,

@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f44e5d9-4dc2-467a-85f4-e79ac08cf5ea" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/completed/completed.html" afterPath="$PROJECT_DIR$/src/pages/completed/completed.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/completed/completed.ts" afterPath="$PROJECT_DIR$/src/pages/completed/completed.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/courier-booking/courier-booking.ts" afterPath="$PROJECT_DIR$/src/pages/courier-booking/courier-booking.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/courier-booking2/courier-booking2.html" afterPath="$PROJECT_DIR$/src/pages/courier-booking2/courier-booking2.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/courier-booking2/courier-booking2.ts" afterPath="$PROJECT_DIR$/src/pages/courier-booking2/courier-booking2.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/courier-item-modal/courier-item-modal.html" afterPath="$PROJECT_DIR$/src/pages/courier-item-modal/courier-item-modal.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/courier-item-modal/courier-item-modal.ts" afterPath="$PROJECT_DIR$/src/pages/courier-item-modal/courier-item-modal.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/courier-summary/courier-summary.html" afterPath="$PROJECT_DIR$/src/pages/courier-summary/courier-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/courier-summary/courier-summary.ts" afterPath="$PROJECT_DIR$/src/pages/courier-summary/courier-summary.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/history-detail/history-detail.html" afterPath="$PROJECT_DIR$/src/pages/history-detail/history-detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/history-detail/history-detail.ts" afterPath="$PROJECT_DIR$/src/pages/history-detail/history-detail.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/history/history.html" afterPath="$PROJECT_DIR$/src/pages/history/history.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/home/home.ts" afterPath="$PROJECT_DIR$/src/pages/home/home.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/providers/booking-service/booking-service.ts" afterPath="$PROJECT_DIR$/src/providers/booking-service/booking-service.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -40,7 +27,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="courier-booking.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="courier-booking.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/courier-booking/courier-booking.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1496">
@@ -52,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="courier-booking2.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="courier-booking2.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/courier-booking2/courier-booking2.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="81" column="28" lean-forward="false" selection-start-line="81" selection-start-column="28" selection-end-line="81" selection-end-column="28" />
+            <state relative-caret-position="-758">
+              <caret line="22" column="106" lean-forward="false" selection-start-line="22" selection-start-column="106" selection-end-line="22" selection-end-column="106" />
               <folding>
                 <element signature="e#0#53#0" expanded="true" />
               </folding>
@@ -211,8 +198,8 @@
         <option value="$PROJECT_DIR$/src/pages/add-pickup-modal/add-pickup-modal.ts" />
         <option value="$PROJECT_DIR$/src/app/app.component.ts" />
         <option value="$PROJECT_DIR$/src/pages/pickup-address/pickup-address.ts" />
-        <option value="$PROJECT_DIR$/src/pages/courier-booking2/courier-booking2.ts" />
         <option value="$PROJECT_DIR$/src/pages/courier-booking/courier-booking.ts" />
+        <option value="$PROJECT_DIR$/src/pages/courier-booking2/courier-booking2.ts" />
       </list>
     </option>
   </component>
@@ -948,12 +935,12 @@
       <workItem from="1498025306616" duration="14419000" />
       <workItem from="1498098777645" duration="19405000" />
       <workItem from="1498187808590" duration="14388000" />
-      <workItem from="1498444264719" duration="3302000" />
+      <workItem from="1498444264719" duration="3372000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="313954000" />
+    <option name="totallyTimeSpent" value="314024000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1380,22 +1367,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/courier-booking2/courier-booking2.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="81" column="28" lean-forward="false" selection-start-line="81" selection-start-column="28" selection-end-line="81" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#53#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/courier-booking/courier-booking.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1496">
           <caret line="88" column="98" lean-forward="true" selection-start-line="88" selection-start-column="98" selection-end-line="88" selection-end-column="98" />
           <folding>
             <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/courier-booking2/courier-booking2.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-758">
+          <caret line="22" column="106" lean-forward="false" selection-start-line="22" selection-start-column="106" selection-end-line="22" selection-end-column="106" />
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
           </folding>
         </state>
       </provider>
