@@ -12,9 +12,11 @@ export class CompletedPage {
   bookingId:any;
   type:any;
   success:boolean;
+  work:any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public userdata: UserData,public events: Events) {
       this.bookingId = this.navParams.get("booking_id");
       this.type = this.navParams.get("type");
+      this.work = this.navParams.get("work");
       if(this.bookingId=='Unauthorized: Access is denied due to invalid credentials.'){
         this.success = false;
       } else {

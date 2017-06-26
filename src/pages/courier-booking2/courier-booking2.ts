@@ -17,7 +17,13 @@ export class CourierBooking2Page {
   totalCost:any;
   courierNote:any = null;
   bookingID:any;
+  nextToSummary:any=false;
   errorMessage:string;
+<<<<<<< HEAD
+=======
+  work:any;
+  item:{commodity?:string,dwidth?:number,dlength?:number,dheight?:number,weight?:number,quantity?:number};
+>>>>>>> fdb863f8d51c08130da76926728fe7a03d98bee0
   data:any;
   constructor(
     public navCtrl: NavController,
@@ -28,6 +34,7 @@ export class CourierBooking2Page {
     public events: Events
   ) {
       this.masterData = this.navParams.get('data');
+      this.work = this.navParams.get('work');
       this.getCourierData();
   }
 
@@ -44,8 +51,9 @@ export class CourierBooking2Page {
       this.bookingServiceProvider.getCourierDetail(this.masterData.bookingId).subscribe(
         (res) => {
                   this.bookingData = res,
-                  this.events.publish('dismissLoading'),
-                  console.log("Detail Data :"+JSON.stringify(this.bookingData));
+                  this.checkCourierDetail(res[0].detail),
+                  this.events.publish('dismissLoading')
+                  //console.log("Detail Data :"+JSON.stringify(this.bookingData));
                 },
         (error) => {  this.errorMessage = <any> error});
   }
@@ -55,33 +63,54 @@ export class CourierBooking2Page {
   }
 
   addCourierItem(action: String) {
-    console.log("Action:"+action);
+    //console.log("Action:"+action);
     this.events.publish('checkStsLogin',CourierItemModalPage);
-    let addItem = this.mdlCtrl.create(CourierItemModalPage,{type:action,data:null});
+    let addItem = this.mdlCtrl.create(CourierItemModalPage,{type:action,id:this.masterData.bookingId,data:null});
+    addItem.present();
     addItem.onDidDismiss(data=>{
       this.getCourierData();
     });
   }
 
   editCourierItem(action: String,itemData:any) {
-    console.log("Action:"+action);
-    console.log("Item Data:"+JSON.stringify(itemData));
+    //console.log("Action:"+action);
+    //console.log("Item Data:"+JSON.stringify(itemData));
     this.events.publish('checkStsLogin',CourierItemModalPage);
     let editItem = this.mdlCtrl.create(CourierItemModalPage,{type:action,data:itemData});
+    editItem.present();
     editItem.onDidDismiss(data=>{
       this.getCourierData();
     });
   }
 
-  deleteCourierItem(index:any){
-      console.log("Courier Item SEQ:"+index);
+  deleteCourierItem(bookingId:any,index:any){
+      //console.log("Courier Item SEQ:"+index);
+      this.bookingServiceProvider.deleteCourierItem(bookingId,index).subscribe(
+          (res)=> { this.getCourierData()
+                    //console.log("Delete Courier Item "+index+" :"+JSON.stringify(res))
+                  },
+          (error)=> this.errorMessage = <any>error
+      );
   }
 
   toSummary(){
     this.events.publish('loadpage');
-    console.log('login from courier page 2');
-    this.events.publish('checkStsLogin',CourierSummaryPage);
+    //console.log('login from courier page 2');
+    this.events.publish('checkStsLogin',CourierSummaryPage,{bookingData:this.bookingData,work:this.work});
 
+  }
+
+  checkCourierDetail(data:any){
+    console.log("Check Courier Data:"+JSON.stringify(data));
+    console.log("Check Courier Data2:"+data);
+
+    if(data != null){
+        console.log("Check Null");
+        this.nextToSummary = true;
+    }else{
+        console.log("Check Null");
+        this.nextToSummary = false;
+    }
   }
 
 }

@@ -6,6 +6,7 @@ import {UserData} from "../../providers/user-data";
 import {LclBookingPage} from "../lcl-booking/lcl-booking";
 import {CourierBookingPage} from "../courier-booking/courier-booking";
 import {LoginPage} from "../login-modal/login-modal";
+import {NewsDetailPage} from "../news-detail/news-detail";
 import {AdvertisementProvider} from "../../providers/advertisement/advertisement"
 import {AuthServiceProvider} from '../../providers/auth-service/auth-service';
 
@@ -48,6 +49,7 @@ export class HomePage {
 
   clickImg(index:string){
       console.log("Index :"+index);
+      this.navCtrl.push(NewsDetailPage,index);
   }
 
   openPage(pageNb: number) {
