@@ -72,12 +72,30 @@ export class LclSummaryPage {
               numGwunit = this.lclFormData.gwunit.qc_lookup_no;
         }
         this.bookingService.insertBookingLCL(this.lclFormData,this.dateUnix,this.remarkData,numCommodity,numGwunit,numGwunit).subscribe(
-            (resData) => {  responseData = resData,
-                            this.events.publish('checkStsLogin',CompletedPage,
-                               {
-                               booking_id: responseData,
-                               type:"LCL"
-                            });
+            (resData) => {  
+                            if(resData.responseCode == 0){
+                                this.events.publish('checkStsLogin',CompletedPage,
+                                   {
+                                   booking_id: resData.responseData,
+                                   type:"LCL",
+                                   status:"success"
+                                });
+                            }else if(resData=='Unauthorized: Access is denied due to invalid credentials.'){
+                                this.events.publish('checkStsLogin',CompletedPage,
+                                {
+                                   message:'Unauthorized: Access is denied due to invalid credentials.',
+                                   type:"LCL",
+                                   status:'error'
+                                })
+                            }
+                            else{
+                                this.events.publish('checkStsLogin',CompletedPage,
+                                   {
+                                   message: resData.responseMessage,
+                                   type:"LCL",
+                                   status:"error"
+                                });
+                            }
                         },
             (error) => {  this.errorMessage = <any> error}
           );

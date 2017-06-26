@@ -43,7 +43,7 @@ export class BookingServiceProvider {
       body.append("create",profile.p_party_id)
       
       return this.http.post(AppSettings.API_ENDPOINT+'insertLCL',body,_options)
-        .map((res:Response) => res.json().responseData)
+        .map((res:Response) => res.json())
         .catch(this.handleError);
     }
 
