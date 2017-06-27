@@ -89,9 +89,11 @@
         Gross Weight is required
       </ion-badge>
       <ion-row *ngIf="gw.invalid" [hidden]="!gw.touched" >&nbsp;</ion-row>
+
       <ion-badge ion-text *ngIf="unitcancel" [hidden]="lclbooking.value.gwunit!=null || gw.invalid" float-end>
         Please select unit
       </ion-badge>
+      <ion-row *ngIf="unitcancel" [hidden]="lclbooking.value.gwunit!=null || gw.invalid" >&nbsp;</ion-row>
       
     <button color="primary" (click)="showMore=!showMore" ion-button icon-right small outline class="align-right more-button margin-bottom-2">
 
