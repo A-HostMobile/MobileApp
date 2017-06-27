@@ -155,7 +155,7 @@ export class TemplateApp {
       content: "Please wait...",
       spinner: 'hide',
       duration: 350
-    })
+    });
     load.present();
   }
 
@@ -185,7 +185,7 @@ export class TemplateApp {
         if (activeView != null){
           if(nav.canGoBack()) {
             if(cp==NewsPage||cp==AgentNetworkPage||cp==HelpPage||cp==ProfilePage||cp==ContactPage||cp==ScheduleSearchPage){
-        nav.popToRoot();
+              nav.popToRoot();
             }else if (cp==CompletedPage) {
 
             }else {
@@ -211,7 +211,6 @@ export class TemplateApp {
   listenToEvents() {
     this.events.subscribe('user:login', (profile:any) => {
       this._profile = profile;
-      console.log(this._profile);
       this.enableMenu(true);
     });
 

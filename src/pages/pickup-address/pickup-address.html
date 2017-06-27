@@ -16,7 +16,10 @@
 
       <ion-card-header no-padding text-wrap color="primary">
 
-        <button (click)="editPickup(pickupItem);" no-padding  ion-button icon-only class="align-left" small clear>
+        <button *ngIf="!selected(pickupItem.pa_address_display)" (click)="editPickup(pickupItem);" no-padding  ion-button icon-only class="align-left" small clear>
+          <ion-icon color="calm" name="construct"></ion-icon>
+        </button>
+        <button *ngIf="selected(pickupItem.pa_address_display)" (click)="editPickupSelect(pickupItem);" no-padding  ion-button icon-only class="align-left" small clear>
           <ion-icon color="calm" name="construct"></ion-icon>
         </button>
         <button (click)="deletePickup(pickupItem.pa_address_id)" no-padding  ion-button icon-only class="align-right" small clear>
@@ -31,7 +34,8 @@
         </ion-row>
 
         <ion-item>
-          <button [hidden]="checkFromPage == 'ProfilePage'||param==pickupItem" (click)="selectPickup(pickupItem)" color="calm" small ion-button outline item-right>Select</button>
+          <button [hidden]="checkFromPage == 'ProfilePage' || selected(pickupItem.pa_address_display)" (click)="selectPickup(pickupItem)" color="calm" small ion-button outline item-right>Select</button>
+          <button *ngIf="selected(pickupItem.pa_address_display)" [disabled]="true" outline ion-button small item-right>Selected</button>
         </ion-item>
 
       </ion-grid>

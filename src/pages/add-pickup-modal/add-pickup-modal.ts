@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import {Component, ViewChild, forwardRef} from '@angular/core';
 import {Events, ViewController,NavParams} from 'ionic-angular';
 import {NgForm} from "@angular/forms";
 import {PickupAddressServiceProvider} from '../../providers/pickup-address-service/pickup-address-service';
+import {CourierBookingPage} from "../courier-booking/courier-booking";
 
 
 @Component({
@@ -14,7 +15,7 @@ export class AddPickupModalPage {
   pickupType:any;
   countries:{country_code?:string,country_name?:string} = {country_code:'TH',country_name:'THAILAND'};
   errorMessage:string;
-
+  @ViewChild(forwardRef(()=>CourierBookingPage)) cb:CourierBookingPage;
 
   constructor(public viewCtrl: ViewController,
               public navParams: NavParams,
@@ -64,5 +65,20 @@ export class AddPickupModalPage {
                      this.events.publish('dismissLoading');
                    });
   }
-
+  editSelect(form: NgForm){
+    this.events.publish('showLoading');
+    this.pickupAddressService.updatePickupAddress(form.value).subscribe(
+      (resData) => {
+        //console.log("Update Pickup Address Success :"+JSON.stringify(resData)),
+        /*this.cb.setAddress(resData.pa_address_display);*/
+        console.log(resData);
+        this.events.publish('setaddress',form.value);
+        this.viewCtrl.dismiss();
+        this.events.publish('dismissLoading');
+      },
+      (error) => { this.errorMessage = <any> error,
+        this.events.publish('dismissLoading');
+      });
   }
+
+}
