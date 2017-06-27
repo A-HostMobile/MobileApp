@@ -9,58 +9,58 @@
 
     <ion-list *ngFor="let master of lclMaster">
       <ion-list-header>
-        <h4>BOOKING ID # {{master.bl_booking_id}}</h4>
+        <span class="label-title">BOOKING ID # {{master.bl_booking_id}}</span>
       </ion-list-header>
 
       <ion-grid>
 
         <ion-row>
-          <ion-col  col-6>Booking Type :</ion-col>
+          <ion-col class="label-title" col-6>Booking Type :</ion-col>
           <ion-col  col-6>LCL</ion-col>
         </ion-row>
 
         <ion-row>
-          <ion-col  col-6>POD :</ion-col>
+          <ion-col class="label-title" col-6>POD :</ion-col>
           <ion-col  col-6>{{master.pod}}</ion-col>
         </ion-row>
 
         <ion-row>
-          <ion-col  col-6>Loading Date :</ion-col>
+          <ion-col class="label-title" col-6>Loading Date :</ion-col>
           <ion-col  col-6>{{master.bl_loading_date | date:'dd-MMM-yy' | upper}}</ion-col>
         </ion-row>
 
         <ion-row>
-          <ion-col  col-6>Commodity :</ion-col>
+          <ion-col class="label-title" col-6>Commodity :</ion-col>
           <ion-col  col-6>{{master.commodity}} <span *ngIf="!master.commodity">N/A</span></ion-col>
         </ion-row>
 
         <ion-row>
-          <ion-col  col-6>Unit :</ion-col>
+          <ion-col class="label-title" col-6>Unit :</ion-col>
           <ion-col  col-6>{{master.bl_quantity}} {{master.unit}}<span *ngIf="!master.bl_quantity">N/A</span></ion-col>
         </ion-row>
 
         <ion-row>
-          <ion-col  col-6>Volume :</ion-col>
+          <ion-col class="label-title" col-6>Volume :</ion-col>
           <ion-col  col-6>{{master.bl_cbm}} CBM</ion-col>
         </ion-row>
 
         <ion-row>
-          <ion-col  col-6>Gross Weight :</ion-col>
+          <ion-col class="label-title" col-6>Gross Weight :</ion-col>
           <ion-col  col-6>{{master.bl_gw}} {{master.gw_unit}}</ion-col>
         </ion-row>
 
         <ion-row>
-          <ion-col  col-6>Booking Time :</ion-col>
+          <ion-col class="label-title" col-6>Booking Time :</ion-col>
           <ion-col  col-6>{{master.creation_date | date:'dd-MMM-yy' | upper}}</ion-col>
         </ion-row>
 
         <ion-row >
-            <ion-col col-6>Addition Detail :</ion-col>
+            <ion-col class="label-title" col-6>Addition Detail :</ion-col>
             <ion-col col-6>{{master.bl_note}}<span *ngIf="!master.bl_note">N/A</span></ion-col>
         </ion-row>
 
         <ion-row>
-          <ion-col  col-6>Status :</ion-col>
+          <ion-col class="label-title" col-6>Status :</ion-col>
           <ion-col  col-6>{{master.status}}</ion-col>
         </ion-row>
 
@@ -70,7 +70,7 @@
         <ion-list>
 
           <ion-list-header>
-            Comment
+            <span class="label-title">Comment</span>
           </ion-list-header>
 
           <ion-card *ngFor="let comment of lclComment">
@@ -87,12 +87,12 @@
 
             <ion-grid>
             <ion-row>
-                <ion-col col-6> Comment:</ion-col>
+                <ion-col class="label-title" col-6> Comment:</ion-col>
                 <ion-col col-6>{{comment.bc_comment}}</ion-col>
             </ion-row>
 
             <ion-row>
-                <ion-col col-6> Status:</ion-col>
+                <ion-col class="label-title" col-6> Status:</ion-col>
                 <ion-col col-6>{{comment.status}}</ion-col>
             </ion-row>
             </ion-grid>
