@@ -16,14 +16,14 @@
 
       <ion-card-header no-padding text-wrap color="primary">
 
-        <button *ngIf="!selected(pickupItem.pa_address_id)" (click)="editPickup(pickupItem);" no-padding  ion-button icon-only class="align-left" small clear>
-          <ion-icon color="calm" name="construct"></ion-icon>
+        <button padding *ngIf="!selected(pickupItem.pa_address_id)" (click)="editPickup(pickupItem);" no-padding color="calm" ion-button icon-left class="align-left" small clear>
+          <ion-icon color="calm" name="md-create"></ion-icon><span >Edit</span>
         </button>
-        <button *ngIf="selected(pickupItem.pa_address_id)" (click)="editSelect(pickupItem);" no-padding  ion-button icon-only class="align-left" small clear>
-          <ion-icon color="calm" name="construct"></ion-icon>
+        <button padding *ngIf="selected(pickupItem.pa_address_id)" (click)="editSelect(pickupItem);" no-padding color="calm" ion-button icon-left class="align-left" small clear>
+          <ion-icon color="calm" name="md-create"></ion-icon><span >Edit</span>
         </button>
-        <button (click)="confirmDelete(pickupItem.pa_address_id)" no-padding  ion-button icon-only class="align-right" small clear>
-          <ion-icon name="trash"></ion-icon>
+        <button padding (click)="confirmDelete(pickupItem.pa_address_id)" no-padding  ion-button icon-left class="align-right" small clear>
+          <ion-icon name="remove"></ion-icon><span>Delete</span>
         </button>
 
       </ion-card-header>
