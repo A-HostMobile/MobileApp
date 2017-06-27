@@ -30,7 +30,7 @@ export class PickupAddressPage {
 
     this.param = this.navParams.get('address');
     if(this.param!=null){
-      this.display = this.param.pa_address_display;
+      this.display = this.param.pa_address_id;
     }
     this.checkFromPage = this.navParams.get('page');
     console.log(this.display);
@@ -60,17 +60,16 @@ export class PickupAddressPage {
   }
 
   editPickup(pickupData:any){
+    console.log('edit')
     this.events.publish('checkStsLogin',AddPickupModalPage);
-    let manageItem = this.mdlCtrl.create(AddPickupModalPage,{'pickupData':pickupData,'type':'edit'});
-    manageItem.present();
-    manageItem.onDidDismiss(data=>{
-      this.getPickupAddress();
-    });
-  }
-  editPickupSelect(pickupData:any){
-    this.events.publish('checkStsLogin',AddPickupModalPage);
-    let manageItem = this.mdlCtrl.create(AddPickupModalPage,{'pickupData':pickupData,'type':'select'});
-    this.viewCtrl.dismiss();
+    let sore:any;
+    if(this.selectedIF(pickupData)){
+      sore = 'select';
+    }
+    else{
+      sore = 'edit'
+    }
+    let manageItem = this.mdlCtrl.create(AddPickupModalPage,{'pickupData':pickupData,'type':sore});
     manageItem.present();
     manageItem.onDidDismiss(data=>{
       this.getPickupAddress();
@@ -120,7 +119,17 @@ export class PickupAddressPage {
     }
   }
 
-  selected(address:any):Boolean{
+  selectedhid(address:any):Boolean{
+    console.log('selecthidden');
+    if(address==this.display){
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  selectedIF(address:any):Boolean{
+    console.log('selectif');
     if(address==this.display){
       return true;
     } else {

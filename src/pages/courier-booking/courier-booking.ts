@@ -129,6 +129,7 @@ export class CourierBookingPage {
             this.pick = false;
             this.courier.pickup = null;
           } else {
+            console.log(data);
             this.dataogj = data;
             this.courier.pickup = data.pa_address_display;
           }
