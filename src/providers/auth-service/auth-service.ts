@@ -18,6 +18,7 @@ export class AuthServiceProvider {
   public doLogin(username:string, password:string):Observable<any>{
 
     let myHeader = new Headers;
+    myHeader.append('Access-Control-Allow-Origin', '*');
     myHeader.append('Content-Type','application/x-www-form-urlencoded');
 
     let urlSearchParams = new URLSearchParams();
@@ -40,8 +41,9 @@ export class AuthServiceProvider {
   //profile
   public getProfile():Observable<any>{
     let token = localStorage.getItem('token');
-
+    
     let myHeader = new Headers({ 'Authorization': `Bearer ${token}` });
+    myHeader.append('Access-Control-Allow-Origin', '*');
     let _options = new RequestOptions({headers: myHeader});
     let _body = {};
 

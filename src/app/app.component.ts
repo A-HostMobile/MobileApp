@@ -95,7 +95,9 @@ export class TemplateApp {
     public loadCtrl: LoadingController,
     public fcm:FCM
   ) {
-
+    this.fcm.getToken().then(token=>{
+        console.log("FCM TOKEN:"+token);
+    })
     confData.load();
     //first open app have to check login if loggedIn get token and profile else clear localStorage
     this.userData.hasLoggedIn().then((hasLoggedIn) => {
@@ -143,9 +145,23 @@ export class TemplateApp {
         this._quickcode_commodities = resCommodity;
     });
 
+    this.fcm.onNotification().subscribe(data=>{
+      console.log("On Notification Data:"+JSON.stringify(data));
+      if(data.wasTapped){
+        console.log("Received in background");
+      } else {
+        console.log("Received in foreground");
+      };
+    })
+
+
   }
+  
 
   ConfirmBox(_Id:any,_Index:any,_pages:any){
+    console.log('alert')
+    let i:number = 0;
+    let j:number = 0;
       this._alert = this.alert.create({
       title: 'Confirm Delete',
       message: 'Do you want to delete this address?',
@@ -161,13 +177,16 @@ export class TemplateApp {
           text: 'Confirm',
           handler: () => {
               console.log('firm')
-              console.log(_pages);
               if(_pages == 'PickupAddressPage'){
+                i++;
                   this.events.publish('deletePickup',_Id,null);
                   console.log('pickup page con')
+                console.log(i);
               }else{
+                j++;
                   this.events.publish('deleteCourierItem',_Id,_Index);
                   console.log('courier page con')
+                console.log(j);
               }
           }
         }
@@ -238,8 +257,8 @@ export class TemplateApp {
 
   platformReady() {
     this.platform.ready().then(() => {
-      this.splashScreen.hide();
-
+      this.splashScreen.hide()
+      
     });
   }
 
@@ -285,8 +304,6 @@ export class TemplateApp {
       this.ConfirmBox(_Id,_Index,_pages);
     });
   }
-
-
 
   checkStatusLogin(pages:any,params:any){
     this.authService.getProfile().subscribe((res)=>{

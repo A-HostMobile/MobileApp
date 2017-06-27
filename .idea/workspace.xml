@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f44e5d9-4dc2-467a-85f4-e79ac08cf5ea" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/pickup-address/pickup-address.html" afterPath="$PROJECT_DIR$/src/pages/pickup-address/pickup-address.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/pickup-address/pickup-address.ts" afterPath="$PROJECT_DIR$/src/pages/pickup-address/pickup-address.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/profile/profile.ts" afterPath="$PROJECT_DIR$/src/pages/profile/profile.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -67,16 +66,25 @@
       <file leaf-file-name="app.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-724">
-              <caret line="247" column="30" lean-forward="false" selection-start-line="247" selection-start-column="30" selection-end-line="247" selection-end-column="30" />
+            <state relative-caret-position="432">
+              <caret line="168" column="63" lean-forward="false" selection-start-line="168" selection-start-column="62" selection-end-line="168" selection-end-column="63" />
               <folding>
-                <marker date="1498547872082" expanded="false" signature="9898:10292" ph="{...}" />
-                <marker date="1498547872082" expanded="false" signature="10326:10896" ph="{...}" />
-                <marker date="1498547872082" expanded="false" signature="10930:11033" ph="{...}" />
-                <marker date="1498547872082" expanded="false" signature="11067:11190" ph="{...}" />
-                <marker date="1498547872082" expanded="false" signature="11207:11556" ph="{...}" />
-                <marker date="1498547872082" expanded="false" signature="11580:12028" ph="{...}" />
-                <marker date="1498547872082" expanded="false" signature="12050:12455" ph="{...}" />
+                <element signature="e#4039#4596#0" expanded="false" />
+                <element signature="n#!!block;n#showLoading#0;n#TemplateApp#0" expanded="false" />
+                <element signature="n#!!block;n#LoadingPage#0;n#TemplateApp#0" expanded="false" />
+                <element signature="n#!!block;n#dismissLoading#0;n#TemplateApp#0" expanded="false" />
+                <element signature="n#!!block;n#exit#0;n#TemplateApp#0" expanded="false" />
+                <element signature="n#!!block;n#backButton#0;n#TemplateApp#0" expanded="false" />
+                <element signature="n#!!block;n#platformReady#0;n#TemplateApp#0" expanded="false" />
+                <element signature="n#!!block;n#listenToEvents#0;n#TemplateApp#0" expanded="false" />
+                <element signature="n#!!block;n#checkStatusLogin#0;n#TemplateApp#0" expanded="false" />
+                <marker date="1498549764506" expanded="false" signature="10036:10430" ph="{...}" />
+                <marker date="1498549764506" expanded="false" signature="10464:11034" ph="{...}" />
+                <marker date="1498549764506" expanded="false" signature="11068:11171" ph="{...}" />
+                <marker date="1498549764506" expanded="false" signature="11205:11328" ph="{...}" />
+                <marker date="1498549764506" expanded="false" signature="11345:11694" ph="{...}" />
+                <marker date="1498549764506" expanded="false" signature="11718:12166" ph="{...}" />
+                <marker date="1498549764506" expanded="false" signature="12188:12593" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -85,18 +93,38 @@
       <file leaf-file-name="pickup-address.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/pickup-address/pickup-address.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="63" lean-forward="true" selection-start-line="22" selection-start-column="63" selection-end-line="22" selection-end-column="63" />
+            <state relative-caret-position="8">
+              <caret line="3" column="52" lean-forward="false" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pickup-address.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="profile-edit.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/profile-edit/profile-edit.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="20" column="50" lean-forward="true" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="profile.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pages/profile/profile.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pickup-address.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/pickup-address/pickup-address.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-68">
-              <caret line="34" column="46" lean-forward="true" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
+            <state relative-caret-position="1904">
+              <caret line="117" column="23" lean-forward="true" selection-start-line="117" selection-start-column="23" selection-end-line="117" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -113,7 +141,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>pagein</find>
       <find>segment</find>
       <find>tutor</find>
       <find>tuto</find>
@@ -141,6 +168,9 @@
       <find>valid</find>
       <find>page</find>
       <find>param</find>
+      <find>deletePic</find>
+      <find>confirm</find>
+      <find>deletePickUP</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -191,15 +221,15 @@
         <option value="$PROJECT_DIR$/src/pages/courier-summary/courier-summary.ts" />
         <option value="$PROJECT_DIR$/src/pages/completed/completed.ts" />
         <option value="$PROJECT_DIR$/src/pages/lcl-summary/lcl-summary.ts" />
-        <option value="$PROJECT_DIR$/src/pages/profile/profile.ts" />
         <option value="$PROJECT_DIR$/src/pages/courier-booking2/courier-booking2.ts" />
-        <option value="$PROJECT_DIR$/src/app/app.component.ts" />
         <option value="$PROJECT_DIR$/src/pages/add-pickup-modal/add-pickup-modal.ts" />
         <option value="$PROJECT_DIR$/src/pages/add-pickup-modal/add-pickup-modal.html" />
         <option value="$PROJECT_DIR$/src/pages/courier-booking/courier-booking.html" />
         <option value="$PROJECT_DIR$/src/pages/courier-booking/courier-booking.ts" />
+        <option value="$PROJECT_DIR$/src/app/app.component.ts" />
         <option value="$PROJECT_DIR$/src/pages/pickup-address/pickup-address.html" />
         <option value="$PROJECT_DIR$/src/pages/pickup-address/pickup-address.ts" />
+        <option value="$PROJECT_DIR$/src/pages/profile/profile.ts" />
       </list>
     </option>
   </component>
@@ -958,12 +988,12 @@
       <workItem from="1498098777645" duration="19405000" />
       <workItem from="1498187808590" duration="14388000" />
       <workItem from="1498444264719" duration="18913000" />
-      <workItem from="1498529732800" duration="10657000" />
+      <workItem from="1498529732800" duration="13216000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="340222000" />
+    <option name="totallyTimeSpent" value="342781000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
@@ -997,7 +1027,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="34" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/app/app.component.ts</url>
+          <line>203</line>
+          <properties />
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="35" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1269,13 +1307,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/profile-edit/profile-edit.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="50" lean-forward="true" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/home/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -1288,14 +1319,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="23" column="36" lean-forward="false" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/profile/profile.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="29" column="3" lean-forward="false" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1366,32 +1389,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-724">
-          <caret line="247" column="30" lean-forward="false" selection-start-line="247" selection-start-column="30" selection-end-line="247" selection-end-column="30" />
+        <state relative-caret-position="432">
+          <caret line="168" column="63" lean-forward="false" selection-start-line="168" selection-start-column="62" selection-end-line="168" selection-end-column="63" />
           <folding>
-            <marker date="1498547872082" expanded="false" signature="9898:10292" ph="{...}" />
-            <marker date="1498547872082" expanded="false" signature="10326:10896" ph="{...}" />
-            <marker date="1498547872082" expanded="false" signature="10930:11033" ph="{...}" />
-            <marker date="1498547872082" expanded="false" signature="11067:11190" ph="{...}" />
-            <marker date="1498547872082" expanded="false" signature="11207:11556" ph="{...}" />
-            <marker date="1498547872082" expanded="false" signature="11580:12028" ph="{...}" />
-            <marker date="1498547872082" expanded="false" signature="12050:12455" ph="{...}" />
+            <element signature="e#4039#4596#0" expanded="false" />
+            <element signature="n#!!block;n#showLoading#0;n#TemplateApp#0" expanded="false" />
+            <element signature="n#!!block;n#LoadingPage#0;n#TemplateApp#0" expanded="false" />
+            <element signature="n#!!block;n#dismissLoading#0;n#TemplateApp#0" expanded="false" />
+            <element signature="n#!!block;n#exit#0;n#TemplateApp#0" expanded="false" />
+            <element signature="n#!!block;n#backButton#0;n#TemplateApp#0" expanded="false" />
+            <element signature="n#!!block;n#platformReady#0;n#TemplateApp#0" expanded="false" />
+            <element signature="n#!!block;n#listenToEvents#0;n#TemplateApp#0" expanded="false" />
+            <element signature="n#!!block;n#checkStatusLogin#0;n#TemplateApp#0" expanded="false" />
+            <marker date="1498549764506" expanded="false" signature="10036:10430" ph="{...}" />
+            <marker date="1498549764506" expanded="false" signature="10464:11034" ph="{...}" />
+            <marker date="1498549764506" expanded="false" signature="11068:11171" ph="{...}" />
+            <marker date="1498549764506" expanded="false" signature="11205:11328" ph="{...}" />
+            <marker date="1498549764506" expanded="false" signature="11345:11694" ph="{...}" />
+            <marker date="1498549764506" expanded="false" signature="11718:12166" ph="{...}" />
+            <marker date="1498549764506" expanded="false" signature="12188:12593" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/pickup-address/pickup-address.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="63" lean-forward="true" selection-start-line="22" selection-start-column="63" selection-end-line="22" selection-end-column="63" />
+        <state relative-caret-position="8">
+          <caret line="3" column="52" lean-forward="false" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/profile-edit/profile-edit.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="20" column="50" lean-forward="true" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/pickup-address/pickup-address.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-68">
-          <caret line="34" column="46" lean-forward="true" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
+        <state relative-caret-position="1904">
+          <caret line="117" column="23" lean-forward="true" selection-start-line="117" selection-start-column="23" selection-end-line="117" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/profile/profile.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding />
         </state>
       </provider>

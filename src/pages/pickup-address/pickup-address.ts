@@ -39,6 +39,7 @@ export class PickupAddressPage {
 
     this.events.subscribe('deletePickup',(_pickupId:any)=>{
       this.deletePickup(_pickupId);
+      console.log('event delete')
       // console.log(_pickupId+'subscr delete');
     });
 
@@ -96,7 +97,8 @@ export class PickupAddressPage {
 
   selectPickup(pickupData:any) {
     this.events.publish('checkStsLogin',PickupAddressPage);
-    this.viewCtrl.dismiss(pickupData);
+    this.param = 1;
+    this.closeModal(pickupData);
     //console.log("Select Data:"+JSON.stringify(pickupData));
   }
 
@@ -111,6 +113,9 @@ export class PickupAddressPage {
     this.sub = this.pickupAddressService.deletePickupAddress(pickupId).subscribe(
         (resData) => {
                       //console.log("Delete Pickup Address Success :"+JSON.stringify(resData)),
+                      if(this.selected(pickupId)){
+                        this.param = null;
+                      }
                       this.getPickupAddress();
                       this.sub.unsubscribe();
                       console.log('unsub');
@@ -120,9 +125,10 @@ export class PickupAddressPage {
                    });
   }
 
-  closeModal(){
+  closeModal(data:any){
+    this.events.unsubscribe('deletePickup');
     if(this.param!=null){
-      this.viewCtrl.dismiss();
+      this.viewCtrl.dismiss(data);
     } else {
       this.viewCtrl.dismiss('nodata');
     }
