@@ -31,29 +31,29 @@
       <ion-grid>
 
         <ion-row>
-          <ion-col  col-6>Destination :</ion-col>
+          <ion-col class="label-title" col-6>Destination :</ion-col>
           <ion-col  col-6>BANGKOK - {{lcl_history.pod}}</ion-col>
         </ion-row>
 
         <ion-row>
-          <ion-col  col-6>Booking Time :</ion-col>
+          <ion-col class="label-title"  col-6>Booking Time :</ion-col>
           <ion-col  col-6>{{lcl_history.creation_date | date:'dd-MMM-yy' | upper}}</ion-col>
         </ion-row>
 
         <ion-row>
-          <ion-col  col-6>Booking History Type :</ion-col>
+          <ion-col class="label-title"  col-6>Booking History Type :</ion-col>
           <ion-col  col-6>LCL</ion-col>
         </ion-row>
 
         <ion-row>
-          <ion-col  col-6>Status :</ion-col>
+          <ion-col class="label-title"  col-6>Status :</ion-col>
           <ion-col  col-6>{{lcl_history.qc_lookup_value1}}</ion-col>
         </ion-row>
 
       </ion-grid>
 
-      <button (click)="toLCL(lcl_history.bl_booking_id);" ion-button icon-right small clear class="align-right">
-			<span>See detail</span>
+      <button (click)="toLCL(lcl_history.bl_booking_id);" ion-button icon-right small class="margin-left-25 width-50">
+			<span>Tap to see detail</span>
 			  <ion-icon name="arrow-forward"></ion-icon>
       </button>
       
@@ -78,29 +78,29 @@
       <ion-grid>
 
         <ion-row>
-          <ion-col  col-6>Destination :</ion-col>
+          <ion-col class="label-title"  col-6>Destination :</ion-col>
           <ion-col  col-6>BANGKOK - {{courier_history.bc_country}}</ion-col>
         </ion-row>
 
         <ion-row>
-          <ion-col  col-6>Booking Time :</ion-col>
+          <ion-col class="label-title"  col-6>Booking Time :</ion-col>
           <ion-col  col-6>{{courier_history.creation_date | date: 'dd-MMM-yy' | upper}}</ion-col>
         </ion-row>
 
         <ion-row>
-          <ion-col  col-6>Booking History Type :</ion-col>
+          <ion-col class="label-title"  col-6>Booking History Type :</ion-col>
           <ion-col  col-6>Courier</ion-col>
         </ion-row>
 
         <ion-row>
-          <ion-col  col-6>Status :</ion-col>
+          <ion-col class="label-title"  col-6>Status :</ion-col>
           <ion-col  col-6>{{courier_history.qc_lookup_value1}}</ion-col>
         </ion-row>
 
       </ion-grid>
 
-      <button (click)="toCourier(courier_history.bc_booking_id);" ion-button icon-right small clear class="align-right">
-			<span>See detail</span>
+      <button (click)="toCourier(courier_history.bc_booking_id);" ion-button icon-right small  class="margin-left-25 width-50">
+			<span>Tap to see detail</span>
 			  <ion-icon name="arrow-forward"></ion-icon>
       </button>
 
