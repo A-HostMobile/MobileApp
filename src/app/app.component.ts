@@ -8,7 +8,7 @@ import {
 
 import { UserData } from '../providers/user-data';
 import { ConferenceData } from '../providers/conference-data';
-
+import { FCM } from '@ionic-native/fcm';
 import {HomePage} from "../pages/home/home";
 import {HelpPage} from "../pages/help/help";
 import {NewsPage} from "../pages/news/news";
@@ -92,7 +92,8 @@ export class TemplateApp {
     public toastCtrl: ToastController,
     public authService: AuthServiceProvider,
     public quickcodeService: QuickcodeProvider,
-    public loadCtrl: LoadingController
+    public loadCtrl: LoadingController,
+    public fcm:FCM
   ) {
 
     confData.load();

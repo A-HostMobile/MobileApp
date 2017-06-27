@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { DatePipe } from '@angular/common';
-
+import { FCM } from '@ionic-native/fcm';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { Network } from "@ionic-native/network";
 import { InAppBrowser } from '@ionic-native/in-app-browser';
@@ -169,6 +169,7 @@ import { CountryZoneProvider } from '../providers/country-zone/country-zone';
     HistoryServiceProvider,
     PickupAddressServiceProvider,
     CountryZoneProvider,
+    FCM
   ]
 })
 export class AppModule { }
