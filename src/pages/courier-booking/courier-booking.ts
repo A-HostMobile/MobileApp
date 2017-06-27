@@ -15,6 +15,7 @@ import {NgForm} from "@angular/forms";
 export class CourierBookingPage {
 
   @ViewChild(Navbar) navbar: Navbar;
+  dataogj:any = null;
   pick: boolean = true;
   submitted: boolean = false;
   countries:any;
@@ -42,6 +43,9 @@ export class CourierBookingPage {
       this.countryZoneProvider.getCountryZone().subscribe(
         (res) => this.countries = res,
         (error) => {  this.errorMessage = <any> error});
+      this.events.subscribe('setaddress',(data:any)=>{
+        this.courier.pickup = data.contactname+"\nTel : "+data.tel+"\nE-Mail : "+data.email+"\n"+data.address+"\n"+data.zipcode+"\n"+data.country;
+      });
   }
 
   ionViewDidLoad() {
@@ -117,17 +121,19 @@ export class CourierBookingPage {
   openPickupModal()
     {
       this.events.publish('checkStsLogin', PickupAddressPage);
-      let openPickup = this.mdlCtrl.create(PickupAddressPage);
+      let openPickup = this.mdlCtrl.create(PickupAddressPage,{address:this.dataogj});
       openPickup.present();
       openPickup.onDidDismiss(data => {
         if (data != null) {
-          if (data == 'no') {
+          if (data == 'nodata') {
             this.pick = false;
             this.courier.pickup = null;
           } else {
+            this.dataogj = data;
             this.courier.pickup = data.pa_address_display;
           }
         }
       });
     }
+
 }
