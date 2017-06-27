@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams ,ViewController ,ModalController, Events} from 'ionic-angular';
+import { IonicPage, NavController, NavParams ,ViewController ,ModalController, Events } from 'ionic-angular';
 import {AddPickupModalPage} from "../add-pickup-modal/add-pickup-modal";
 import {PickupAddressServiceProvider} from '../../providers/pickup-address-service/pickup-address-service';
 import {ProfilePage} from '../profile/profile';
@@ -18,12 +18,15 @@ export class PickupAddressPage {
 
   checkFromPage: string;
 
+  _pickupId: any;
+
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public viewCtrl:ViewController,
               public mdlCtrl: ModalController,
               public pickupAddressService:PickupAddressServiceProvider,
-              public events: Events) {
+              public events: Events
+            ) {
 
     this.param = this.navParams.get('address');
     if(this.param!=null){
@@ -31,6 +34,12 @@ export class PickupAddressPage {
     }
     this.checkFromPage = this.navParams.get('page');
     console.log(this.display);
+
+    this.events.subscribe('deletePickup',(_pickupId:any)=>{
+      this.deletePickup(_pickupId);
+      // console.log(_pickupId+'subscr delete');
+    });
+
   }
 
   ionViewDidLoad() {
@@ -84,6 +93,11 @@ export class PickupAddressPage {
     this.events.publish('checkStsLogin',PickupAddressPage);
     this.viewCtrl.dismiss(pickupData);
     //console.log("Select Data:"+JSON.stringify(pickupData));
+  }
+
+  confirmDelete(_pickupId:any){
+    this.events.publish('confirmBox',_pickupId);
+    // console.log('con publish');
   }
 
   deletePickup(pickupId:any){

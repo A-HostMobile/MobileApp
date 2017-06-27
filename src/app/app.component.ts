@@ -56,6 +56,8 @@ export class TemplateApp {
   _quickcode_countrycode:any;
   _quickcode_commodities:any;
   _loading: any;
+  _alert:any;
+  _clicked:any;
 
   appPages: PageInterface[] = [
     { title: 'Home', name: 'HomePage', component: HomePage, icon: 'ios-home' },
@@ -141,6 +143,31 @@ export class TemplateApp {
     });
 
   }
+
+  ConfirmBox(pickupId:any){
+      this._alert = this.alert.create({
+      title: 'Confirm Delete',
+      message: 'Do you want to delete this address?',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+              console.log('cancel');
+          }
+        },
+        {
+          text: 'Confirm',
+          handler: () => {
+              console.log('firm')
+              this.events.publish('deletePickup',pickupId);
+          }
+        }
+      ]
+    });
+    this._alert.present();
+  }
+
 
   showLoading(): Promise<any>{
     this._loading = this.loadCtrl.create({
@@ -244,7 +271,11 @@ export class TemplateApp {
 
     this.events.subscribe('loadpage',()=>{
       this.LoadingPage();
-    })
+    });
+
+    this.events.subscribe('confirmBox',(_pickupId:any)=>{
+      this.ConfirmBox(_pickupId);
+    });
   }
 
 

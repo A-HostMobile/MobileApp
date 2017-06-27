@@ -113,7 +113,7 @@ import { CountryZoneProvider } from '../providers/country-zone/country-zone';
     }),
     IonicStorageModule.forRoot(),
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBPEEdhkhbFKC2cBu9uPIsK9DxcFqRf_WA'
+      apiKey: 'AIzaSyAUdq30n65RhcYiMrSFP6sb_DuH2z11eqM'
     }),
   ],
   bootstrap: [IonicApp],

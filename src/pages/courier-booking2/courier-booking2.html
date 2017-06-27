@@ -125,34 +125,37 @@
     <div *ngIf="courier.detail == null">
       <ion-grid>
         <ion-row>
-              No Item Data!!!!!
+              You're not have Packing List. Press &nbsp; <span class="calm"> + Add</span>
+         for add Packing List.
         </ion-row>
       </ion-grid>
     </div>
 
-    <ion-list *ngFor="let masterData of courier.master">
-      <ion-grid>
+    <div *ngIf="courier.detail != null">
+      <ion-list  *ngFor="let masterData of courier.master">
+        <ion-grid>
 
-        <ion-row>
-          <ion-col  col-6>Total Calculate Weight :</ion-col>
-          <ion-col  col-6>{{masterData.bc_cal_weight}} Kgs.</ion-col>
-        </ion-row>
+          <ion-row>
+            <ion-col  col-6>Total Calculate Weight :</ion-col>
+            <ion-col  col-6>{{masterData.bc_cal_weight}} Kgs.</ion-col>
+          </ion-row>
 
-        <ion-row>
-          <ion-col  col-6>Total Cost :</ion-col>
-          <ion-col  col-6>{{masterData.bc_courier_cost}}</ion-col>
-        </ion-row>
-  
-        <ion-row>
-          <ion-col class="text-right hilight"  col-12>*Include VAT and Fuel</ion-col>
-        </ion-row>
+          <ion-row>
+            <ion-col  col-6>Total Cost :</ion-col>
+            <ion-col  col-6>{{masterData.bc_courier_cost}}</ion-col>
+          </ion-row>
+    
+          <ion-row>
+            <ion-col class="text-right hilight"  col-12>*Include VAT and Fuel</ion-col>
+          </ion-row>
 
-        <ion-row *ngIf="masterData.bc_courier_cost_note != null">
-          <ion-col class="text-right hilight"  col-12>{{masterData.bc_courier_cost_note}}</ion-col>
-        </ion-row>
+          <ion-row *ngIf="masterData.bc_courier_cost_note != null">
+            <ion-col class="text-right hilight"  col-12>{{masterData.bc_courier_cost_note}}</ion-col>
+          </ion-row>
 
-      </ion-grid>
-    </ion-list>
+        </ion-grid>
+      </ion-list>
+    </div>
   </div> 
 
 

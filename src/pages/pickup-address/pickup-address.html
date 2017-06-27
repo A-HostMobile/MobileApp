@@ -22,7 +22,7 @@
         <button *ngIf="selected(pickupItem.pa_address_display)" (click)="editPickupSelect(pickupItem);" no-padding  ion-button icon-only class="align-left" small clear>
           <ion-icon color="calm" name="construct"></ion-icon>
         </button>
-        <button (click)="deletePickup(pickupItem.pa_address_id)" no-padding  ion-button icon-only class="align-right" small clear>
+        <button (click)="confirmDelete(pickupItem.pa_address_id)" no-padding  ion-button icon-only class="align-right" small clear>
           <ion-icon name="trash"></ion-icon>
         </button>
 

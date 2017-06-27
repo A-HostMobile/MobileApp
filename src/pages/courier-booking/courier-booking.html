@@ -11,8 +11,10 @@
   <ion-list no-lines>
     <ion-item no-padding>
       Pickup Address
-      <button *ngIf="courier.pickup==null" (click)="openPickupModal();" color="calm" ion-button outline item-right class="select-button">Select<ion-icon name="md-create"></ion-icon></button>
-      <button *ngIf="courier.pickup!=null" (click)="openPickupModal();" color="calm" ion-button outline item-right class="select-button"><div>{{courier.pickup}}</div></button>
+      <button *ngIf="courier.pickup==null" (click)="openPickupModal();" color="calm" ion-button outline item-right class="select-button">Select</button> 
+      <button *ngIf="courier.pickup!=null" (click)="openPickupModal();" color="calm" ion-button outline item-right class="select-button">
+        <div>{{courier.pickup}}</div>
+      </button>
     </ion-item>
     <ion-input [hidden]="true"  [(ngModel)]="courier.pickup" name="pickup" required></ion-input>
     <ion-badge [hidden]="courier.pickup!=null" *ngIf="!pick" float-end>Address is required</ion-badge>
@@ -20,7 +22,15 @@
 
 
     <ion-list no-padding no-lines>
-      <ion-list-header>
+      <!-- *********************************************************************** -->
+      <ion-list-header (click)="courier.conname = 'Logistic Group';
+       courier.address ='99/999';
+        courier.country='AUSTRALIA';
+        courier.zipcode='12345';
+        courier.contname='Mr.Logistic';
+        courier.tel='00-000000';
+        courier.rmk='N/A'">
+        <!-- *********************************************************************** -->
         Destination
       </ion-list-header>
       <ion-item no-padding>

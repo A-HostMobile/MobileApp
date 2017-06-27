@@ -24,7 +24,11 @@
   </ion-list>
 
   <ion-list no-lines>
-    <ion-list-header>
+    <!-- *********************************************************************** -->
+    <ion-list-header (click)="
+    item.weight=1;
+    item.quantity=1;">
+    <!-- *********************************************************************** -->
       <h4 no-padding col-6>Dimension</h4>
     </ion-list-header>
 
