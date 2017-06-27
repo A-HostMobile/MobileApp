@@ -9,54 +9,54 @@
 
   <ion-list *ngFor="let master of courierMaster">
 
-      <ion-list-header >
-        BOOKING ID # {{master.bc_booking_id}}
+      <ion-list-header  >
+        <span class="label-title">BOOKING ID # {{master.bc_booking_id}}</span>
       </ion-list-header>
 
       <ion-grid>
 
         <ion-row>
-          <ion-col  col-6>Booking Type :</ion-col>
+          <ion-col class="label-title" col-6>Booking Type :</ion-col>
           <ion-col  col-6>Courier</ion-col>
         </ion-row>
 
         <ion-row>
-          <ion-col  col-6>Pickup Address :</ion-col>
+          <ion-col class="label-title" col-6>Pickup Address :</ion-col>
           <ion-col  col-6>{{master.bc_pickup_display}}</ion-col>
         </ion-row>
 
         <ion-row>
-          <ion-col  col-6>Consignee Name :</ion-col>
+          <ion-col class="label-title" col-6>Consignee Name :</ion-col>
           <ion-col  col-6>{{master.bc_consignee_name}}</ion-col>
         </ion-row>
 
         <ion-row>
-          <ion-col  col-6>Destination :</ion-col>
+          <ion-col class="label-title" col-6>Destination :</ion-col>
           <ion-col  col-6>{{master.bc_destination}}</ion-col>
         </ion-row>
 
         <ion-row>
-          <ion-col  col-6>Zipcode :</ion-col>
+          <ion-col class="label-title" col-6>Zipcode :</ion-col>
           <ion-col  col-6>{{master.bc_zipcode}}</ion-col>
         </ion-row>
 
         <ion-row>
-          <ion-col  col-6>Country :</ion-col>
+          <ion-col class="label-title" col-6>Country :</ion-col>
           <ion-col  col-6>{{master.bc_country}}</ion-col>
         </ion-row>
 
         <ion-row>
-          <ion-col  col-6>Contact Info :</ion-col>
+          <ion-col class="label-title" col-6>Contact Info :</ion-col>
           <ion-col  col-6>{{master.bc_contact_info}}</ion-col>
         </ion-row>
 
         <ion-row>
-          <ion-col  col-6>Total Weight :</ion-col>
+          <ion-col class="label-title" col-6>Total Weight :</ion-col>
           <ion-col  col-6>{{master.bc_total_weight}} kg.</ion-col>
         </ion-row>
 
         <ion-row>
-          <ion-col  col-6>Shipper Reference :</ion-col>
+          <ion-col class="label-title" col-6>Shipper Reference :</ion-col>
           <ion-col  col-6>{{master.bc_remark}}</ion-col>
         </ion-row>
 
@@ -64,7 +64,7 @@
 
           <ion-list>
             <ion-list-header >
-              Packing List Detail
+              <span class="label-title">Packing List Detail</span>
             </ion-list-header>
 
 
@@ -76,22 +76,22 @@
             <ion-grid>
 
               <ion-row>
-                <ion-col  col-6>Commodity :</ion-col>
+                <ion-col class="label-title" col-6>Commodity :</ion-col>
                 <ion-col  col-6>{{detail.commodity}}</ion-col>
               </ion-row>
 
               <ion-row>
-                <ion-col  col-6>Dimension :</ion-col>
+                <ion-col class="label-title" col-6>Dimension :</ion-col>
                 <ion-col  col-6>{{detail.bcd_width}} x {{detail.bcd_long}} x {{detail.bcd_heigth}} cm.</ion-col>
               </ion-row>
 
               <ion-row>
-                <ion-col  col-6>Total Weight :</ion-col>
+                <ion-col class="label-title" col-6>Total Weight :</ion-col>
                 <ion-col  col-6>{{detail.bcd_unit_weight}} {{detail.unit}}</ion-col>
               </ion-row>
 
               <ion-row>
-                <ion-col  col-6>Quantity :</ion-col>
+                <ion-col class="label-title" col-6>Quantity :</ion-col>
                 <ion-col  col-6>{{detail.bcd_quantity}}</ion-col>
               </ion-row>
 
@@ -103,7 +103,7 @@
 
           <ion-list>
             <ion-list-header >
-              Comment
+              <span class="label-title">Comment</span>
             </ion-list-header>
 
             <ion-card *ngFor="let comment of courierComment">
@@ -120,12 +120,12 @@
 
                 <ion-grid>
                   <ion-row>
-                      <ion-col col-6> Comment:</ion-col>
+                      <ion-col class="label-title" col-6> Comment:</ion-col>
                       <ion-col col-6>{{comment.bc_comment}}</ion-col>
                   </ion-row>
 
                   <ion-row>
-                      <ion-col col-6> Status:</ion-col>
+                      <ion-col class="label-title" col-6> Status:</ion-col>
                       <ion-col col-6>{{comment.status}}</ion-col>
                   </ion-row>
                 </ion-grid>
