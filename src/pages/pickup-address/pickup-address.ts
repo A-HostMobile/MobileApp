@@ -97,8 +97,8 @@ export class PickupAddressPage {
 
   selectPickup(pickupData:any) {
     this.events.publish('checkStsLogin',PickupAddressPage);
-    this.events.unsubscribe('deletePickup');
-    this.viewCtrl.dismiss(pickupData);
+    this.param = 1;
+    this.closeModal(pickupData);
     //console.log("Select Data:"+JSON.stringify(pickupData));
   }
 
