@@ -95,7 +95,9 @@ export class TemplateApp {
     public loadCtrl: LoadingController,
     public fcm:FCM
   ) {
-
+    this.fcm.getToken().then(token=>{
+        console.log("FCM TOKEN:"+token);
+    })
     confData.load();
     //first open app have to check login if loggedIn get token and profile else clear localStorage
     this.userData.hasLoggedIn().then((hasLoggedIn) => {
@@ -143,7 +145,18 @@ export class TemplateApp {
         this._quickcode_commodities = resCommodity;
     });
 
+    this.fcm.onNotification().subscribe(data=>{
+      console.log("On Notification Data:"+JSON.stringify(data));
+      if(data.wasTapped){
+        console.log("Received in background");
+      } else {
+        console.log("Received in foreground");
+      };
+    })
+
+
   }
+  
 
   ConfirmBox(_Id:any,_Index:any,_pages:any){
       this._alert = this.alert.create({
@@ -238,8 +251,8 @@ export class TemplateApp {
 
   platformReady() {
     this.platform.ready().then(() => {
-      this.splashScreen.hide();
-
+      this.splashScreen.hide()
+      
     });
   }
 

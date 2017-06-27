@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "286134156281",
+    "firebase_url": "https://logisticsdemo-bbfdc.firebaseio.com",
+    "project_id": "logisticsdemo-bbfdc",
+    "storage_bucket": "logisticsdemo-bbfdc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:286134156281:android:02430f5b898a567e",
+        "android_client_info": {
+          "package_name": "th.co.ahost.logisticsdev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "286134156281-95e47aruremvuiqqdlfqn6vmgfhg6n4l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlwW0ye__gma7JAv6Ng9kNtb3xQTiHopE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
