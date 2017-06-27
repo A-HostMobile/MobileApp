@@ -2,7 +2,7 @@
   <ion-navbar>
     <ion-buttons start>
       <button ion-button (click)="closemodal()">
-        <span ion-text>Close</span>
+        <span ion-text>Cancel</span>
       </button>
     </ion-buttons>
     <ion-title>Pickup Address</ion-title>
@@ -15,35 +15,35 @@
     <ion-list no-lines>
       <ion-input [hidden]="true" [(ngModel)]="pickupAddress.pa_address_id" name="pickup_id"></ion-input>
       <ion-item no-padding>
-        <ion-label no-padding col-6>Contact Name </ion-label>
-        <ion-input [(ngModel)]="pickupAddress.pa_contact_name" name="contactname" #contactname="ngModel" type="text" placeholder="contact name" required=""></ion-input>
+        <ion-label no-padding col-5>Contact Name </ion-label>
+        <ion-input [(ngModel)]="pickupAddress.pa_contact_name" name="contactname" #contactname="ngModel" type="text" placeholder="Contact Name" required=""></ion-input>
       </ion-item>
       <ion-badge [hidden]="contactname.untouched || addpick.value.contactname !=null" *ngIf="contactname.invalid" float-end>Contact Name is required</ion-badge>
       <ion-item no-padding>
-        <ion-label no-padding col-6>Tel. </ion-label>
-        <ion-input [(ngModel)]="pickupAddress.pa_tel" name="tel" #tel="ngModel" type="tel" placeholder="tel." required=""></ion-input>
+        <ion-label no-padding col-5>Tel. </ion-label>
+        <ion-input [(ngModel)]="pickupAddress.pa_tel" name="tel" #tel="ngModel" type="tel" placeholder="Tel." required=""></ion-input>
       </ion-item>
       <ion-badge ion-text [hidden]="tel.untouched || addpick.value.tel !=null" *ngIf="tel.invalid" float-end>Tel. is required</ion-badge>
       <ion-item no-padding>
-        <ion-label no-padding col-6>E-mail </ion-label>
-        <ion-input [(ngModel)]="pickupAddress.pa_email" name="email" #email="ngModel" type="email" placeholder="e-mail" required=""></ion-input>
+        <ion-label no-padding col-5>E-mail </ion-label>
+        <ion-input [(ngModel)]="pickupAddress.pa_email" name="email" #email="ngModel" type="email" placeholder="E-mail" required=""></ion-input>
       </ion-item>
       <ion-badge [hidden]="email.untouched || addpick.value.email !=null" *ngIf="email.invalid" float-end>E-mail is required</ion-badge>
 
       <ion-item no-padding>
-        <ion-label no-padding col-6>Address </ion-label>
-        <ion-input [(ngModel)]="pickupAddress.pa_address" name="address" #address="ngModel" type="text" placeholder="address" required=""></ion-input>
+        <ion-label no-padding col-5>Address </ion-label>
+        <ion-input [(ngModel)]="pickupAddress.pa_address" name="address" #address="ngModel" type="text" placeholder="Address" required=""></ion-input>
       </ion-item>
       <ion-badge [hidden]="address.untouched || addpick.value.address !=null" *ngIf="address.invalid" float-end>Address is required</ion-badge>
 
       <ion-item no-padding>
-        <ion-label no-padding col-6>Zip Code </ion-label>
-        <ion-input [(ngModel)]="pickupAddress.pa_postal_code" name="zipcode" #zipcode="ngModel" type="text" placeholder="zip code" required=""></ion-input>
+        <ion-label no-padding col-5>Zip Code </ion-label>
+        <ion-input [(ngModel)]="pickupAddress.pa_postal_code" name="zipcode" #zipcode="ngModel" type="text" placeholder="Zip Code" required=""></ion-input>
       </ion-item>
       <ion-badge [hidden]="zipcode.untouched || addpick.value.zipcode !=null" *ngIf="zipcode.invalid" float-end>Zipcode is required</ion-badge>
 
       <ion-item no-padding>
-        <ion-label no-padding col-6>Country</ion-label>
+        <ion-label no-padding col-5>Country</ion-label>
         <ion-select [(ngModel)]="countries.country_name" #country="ngModel" name="country" required>
           <ion-option  [value]="countries.country_name" [selected]="true">{{countries.country_name}}</ion-option>
         </ion-select>
@@ -51,13 +51,16 @@
       <ion-badge [hidden]="country.untouched && addpick.value.country !=null" *ngIf="country.invalid" float-end>Country is required</ion-badge>
 
     </ion-list>
-    <button *ngIf="pickupType == 'edit'"  [disabled]="!addpick.form.valid" (click)="editAddress(addpick)" ion-button icon-right block >
+    <button *ngIf="pickupType == 'edit'"  [disabled]="!addpick.form.valid" (click)="editAddress(addpick)" ion-button icon-left block >
+      <ion-icon name="md-create"></ion-icon>
       Edit
     </button>
-    <button *ngIf="pickupType == 'select'"  [disabled]="!addpick.form.valid" (click)="editSelect(addpick)" ion-button icon-right block >
+    <button *ngIf="pickupType == 'select'"  [disabled]="!addpick.form.valid" (click)="editSelect(addpick)" ion-button icon-left block >
+      <ion-icon name="md-create"></ion-icon>
       Edit
     </button>
-    <button *ngIf="pickupType == 'add'" [disabled]="!addpick.form.valid" (click)="addAddress(addpick)" ion-button icon-right block >
+    <button *ngIf="pickupType == 'add'" [disabled]="!addpick.form.valid" (click)="addAddress(addpick)" ion-button icon-left block >
+      <ion-icon name="add"></ion-icon>
       Add
     </button>
   </form>
