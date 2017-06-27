@@ -23,7 +23,7 @@
 
 
   <div *ngIf="np =='news'">
-    <ion-card *ngFor="let n of news">
+    <ion-card (click)="toDetail(n.b_item_id);" *ngFor="let n of news" class="padding-bottom-2">
       <img [src]="n.image" />
       <ion-card-content>
         <ion-card-title>
@@ -34,9 +34,9 @@
           {{n.b_short_desc}}
         </p>
 
-        <button (click)="toDetail(n.b_item_id);" ion-button icon-right small clear class="align-right">
-            <span >More detail
-              <ion-icon name="arrow-forward"></ion-icon>
+        <button (click)="toDetail(n.b_item_id);" ion-button  small  class="align-right">
+            <span>Read More
+              <!--<ion-icon name="arrow-forward"></ion-icon>-->
              </span>
         </button>
       </ion-card-content>
@@ -44,7 +44,7 @@
   </div>
 
   <div *ngIf="np =='promotion'">
-    <ion-card *ngFor="let p of promotions">
+    <ion-card (click)="toDetail(p.b_item_id);" *ngFor="let p of promotions" class="padding-bottom-2">
       <img [src]="p.image" />
       <ion-card-content>
         <ion-card-title>
@@ -54,9 +54,9 @@
           {{p.b_short_desc}}
         </p>
 
-        <button (click)="toDetail(p.b_item_id);" ion-button icon-right small clear class="align-right">
-            <span >More detail
-              <ion-icon name="arrow-forward"></ion-icon>
+        <button (click)="toDetail(p.b_item_id);" ion-button  small  class="align-right">
+            <span>Read More
+              <!--<ion-icon name="arrow-forward"></ion-icon>-->
              </span>
         </button>
 
