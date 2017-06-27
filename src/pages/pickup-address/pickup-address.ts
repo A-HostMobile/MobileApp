@@ -32,13 +32,14 @@ export class PickupAddressPage {
 
     this.param = this.navParams.get('address');
     if(this.param!=null){
-      this.display = this.param.pa_address_display;
+      this.display = this.param.pa_address_id;
     }
     this.checkFromPage = this.navParams.get('page');
     console.log(this.display);
 
     this.events.subscribe('deletePickup',(_pickupId:any)=>{
       this.deletePickup(_pickupId);
+      console.log('event delete')
       // console.log(_pickupId+'subscr delete');
     });
 
@@ -62,6 +63,7 @@ export class PickupAddressPage {
   }
 
   editPickup(pickupData:any){
+    console.log('edit')
     this.events.publish('checkStsLogin',AddPickupModalPage);
     let manageItem = this.mdlCtrl.create(AddPickupModalPage,{'pickupData':pickupData,'type':'edit'});
     manageItem.present();
@@ -69,11 +71,13 @@ export class PickupAddressPage {
       this.getPickupAddress();
     });
   }
-  editPickupSelect(pickupData:any){
+
+  editSelect(pickupData:any){
+    console.log('edit')
     this.events.publish('checkStsLogin',AddPickupModalPage);
     let manageItem = this.mdlCtrl.create(AddPickupModalPage,{'pickupData':pickupData,'type':'select'});
-    this.viewCtrl.dismiss();
     manageItem.present();
+    this.viewCtrl.dismiss();
     manageItem.onDidDismiss(data=>{
       this.getPickupAddress();
     });
@@ -93,7 +97,8 @@ export class PickupAddressPage {
 
   selectPickup(pickupData:any) {
     this.events.publish('checkStsLogin',PickupAddressPage);
-    this.viewCtrl.dismiss(pickupData);
+    this.param = 1;
+    this.closeModal(pickupData);
     //console.log("Select Data:"+JSON.stringify(pickupData));
   }
 
@@ -108,6 +113,9 @@ export class PickupAddressPage {
     this.sub = this.pickupAddressService.deletePickupAddress(pickupId).subscribe(
         (resData) => {
                       //console.log("Delete Pickup Address Success :"+JSON.stringify(resData)),
+                      if(this.selected(pickupId)){
+                        this.param = null;
+                      }
                       this.getPickupAddress();
                       this.sub.unsubscribe();
                       console.log('unsub');
@@ -117,9 +125,10 @@ export class PickupAddressPage {
                    });
   }
 
-  closeModal(){
+  closeModal(data:any){
+    this.events.unsubscribe('deletePickup');
     if(this.param!=null){
-      this.viewCtrl.dismiss();
+      this.viewCtrl.dismiss(data);
     } else {
       this.viewCtrl.dismiss('nodata');
     }
