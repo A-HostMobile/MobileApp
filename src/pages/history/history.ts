@@ -86,4 +86,8 @@ export class HistoryPage {
     this.navCtrl.push(HistoryDetailCourierPage,courier_id);
   }
 
+  test(){
+
+  }
+
 }

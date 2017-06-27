@@ -4,6 +4,7 @@ import {CourierItemModalPage} from "../courier-item-modal/courier-item-modal";
 import {CourierSummaryPage} from "../courier-summary/courier-summary";
 import {BookingServiceProvider} from '../../providers/booking-service/booking-service';
 import { UserData } from '../../providers/user-data';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'page-courier-booking2',
@@ -22,6 +23,8 @@ export class CourierBooking2Page {
   work:any;
   item:{commodity?:string,dwidth?:number,dlength?:number,dheight?:number,weight?:number,quantity?:number};
   data:any;
+  sub: Subscription;
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -33,6 +36,11 @@ export class CourierBooking2Page {
       this.masterData = this.navParams.get('data');
       this.work = this.navParams.get('work');
       this.getCourierData();
+
+      this.events.subscribe('deleteCourierItem',(_bookingId:any,_index:any)=>{
+        this.deleteCourierItem(_bookingId,_index);
+        // console.log('subscribe');
+      });
   }
 
   ionViewDidLoad() {
@@ -80,10 +88,17 @@ export class CourierBooking2Page {
     });
   }
 
+  confirmDelete(_Id:any,_InDex:any){
+    this.events.publish('confirmBox',_Id,_InDex);
+    // console.log('con publish');
+  }
+
   deleteCourierItem(bookingId:any,index:any){
       //console.log("Courier Item SEQ:"+index);
-      this.bookingServiceProvider.deleteCourierItem(bookingId,index).subscribe(
-          (res)=> { this.getCourierData()
+      this.sub = this.bookingServiceProvider.deleteCourierItem(bookingId,index).subscribe(
+          (res)=> { this.getCourierData();
+                    this.sub.unsubscribe();
+                    console.log('unsub from courier');
                     //console.log("Delete Courier Item "+index+" :"+JSON.stringify(res))
                   },
           (error)=> this.errorMessage = <any>error

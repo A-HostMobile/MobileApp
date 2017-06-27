@@ -145,7 +145,7 @@ export class TemplateApp {
 
   }
 
-  ConfirmBox(pickupId:any){
+  ConfirmBox(_Id:any,_Index:any,_pages:any){
       this._alert = this.alert.create({
       title: 'Confirm Delete',
       message: 'Do you want to delete this address?',
@@ -161,7 +161,14 @@ export class TemplateApp {
           text: 'Confirm',
           handler: () => {
               console.log('firm')
-              this.events.publish('deletePickup',pickupId);
+              console.log(_pages);
+              if(_pages == 'PickupAddressPage'){
+                  this.events.publish('deletePickup',_Id,null);
+                  console.log('pickup page con')
+              }else{
+                  this.events.publish('deleteCourierItem',_Id,_Index);
+                  console.log('courier page con')
+              }
           }
         }
       ]
@@ -274,8 +281,8 @@ export class TemplateApp {
       this.LoadingPage();
     });
 
-    this.events.subscribe('confirmBox',(_pickupId:any)=>{
-      this.ConfirmBox(_pickupId);
+    this.events.subscribe('confirmBox',(_Id:any,_Index:any,_pages:any)=>{
+      this.ConfirmBox(_Id,_Index,_pages);
     });
   }
 
