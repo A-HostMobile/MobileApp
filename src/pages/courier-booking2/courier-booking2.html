@@ -29,7 +29,7 @@
           <ion-icon color="calm" name="arrow-down"></ion-icon>
         </button>
       </ion-list-header>
-    
+
       <ion-grid *ngIf="!showDetail" >
         <ion-row>
           <ion-col  col-6>Total Weight :</ion-col>
@@ -87,16 +87,16 @@
       <ion-card *ngFor="let detailData of courier.detail">
         <ion-card-header text-wrap color="primary">
           Packing List {{detailData.bcd_seq}}
-        
-          <button (click)="deleteCourierItem(detailData.bcd_booking_id,detailData.bcd_seq);" ion-button icon-only class="align-right" small clear>
+
+          <button (click)="confirmDelete(detailData.bcd_booking_id,detailData.bcd_seq);" ion-button icon-only class="align-right" small clear>
             <ion-icon name="remove"></ion-icon>
           </button>
           <button (click)="editCourierItem('Edit',detailData);" ion-button icon-only class="align-right" small clear>
             <ion-icon color="calm" name="md-create"></ion-icon>
           </button>
         </ion-card-header>
-        
-        
+
+
           <ion-grid>
             <ion-row>
               <ion-col  col-6>Commodity :</ion-col>
@@ -144,7 +144,7 @@
             <ion-col  col-6>Total Cost :</ion-col>
             <ion-col  col-6>{{masterData.bc_courier_cost}}</ion-col>
           </ion-row>
-    
+
           <ion-row>
             <ion-col class="text-right hilight"  col-12>*Include VAT and Fuel</ion-col>
           </ion-row>
@@ -156,7 +156,7 @@
         </ion-grid>
       </ion-list>
     </div>
-  </div> 
+  </div>
 
 
         <button (click)="toSummary();" [disabled]="!nextToSummary" ion-button icon-right block >

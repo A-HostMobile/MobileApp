@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams ,ViewController ,ModalController, E
 import {AddPickupModalPage} from "../add-pickup-modal/add-pickup-modal";
 import {PickupAddressServiceProvider} from '../../providers/pickup-address-service/pickup-address-service';
 import {ProfilePage} from '../profile/profile';
+import { Subscription } from 'rxjs/Subscription';
 
 @IonicPage()
 @Component({
@@ -19,6 +20,7 @@ export class PickupAddressPage {
   checkFromPage: string;
 
   _pickupId: any;
+  sub: Subscription;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -95,20 +97,23 @@ export class PickupAddressPage {
   }
 
   confirmDelete(_pickupId:any){
-    this.events.publish('confirmBox',_pickupId);
+    this.events.publish('confirmBox',_pickupId,null,'PickupAddressPage');
     // console.log('con publish');
   }
 
   deletePickup(pickupId:any){
     //console.log("Delete Data:"+JSON.stringify(pickupId));
-    this.pickupAddressService.deletePickupAddress(pickupId).subscribe(
-      (resData) => {
-        //console.log("Delete Pickup Address Success :"+JSON.stringify(resData)),
-        this.getPickupAddress();
-      },
-      (error) => { this.errorMessage = <any> error,
-        this.events.publish('dismissLoading');
-      });
+    console.log('before delete');
+    this.sub = this.pickupAddressService.deletePickupAddress(pickupId).subscribe(
+        (resData) => {
+                      //console.log("Delete Pickup Address Success :"+JSON.stringify(resData)),
+                      this.getPickupAddress();
+                      this.sub.unsubscribe();
+                      console.log('unsub');
+                     },
+        (error) => { this.errorMessage = <any> error,
+                     this.events.publish('dismissLoading');
+                   });
   }
 
   closeModal(){
