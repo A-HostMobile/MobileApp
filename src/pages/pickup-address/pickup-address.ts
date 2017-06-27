@@ -64,15 +64,19 @@ export class PickupAddressPage {
   editPickup(pickupData:any){
     console.log('edit')
     this.events.publish('checkStsLogin',AddPickupModalPage);
-    let sore:any;
-    if(this.selectedIF(pickupData)){
-      sore = 'select';
-    }
-    else{
-      sore = 'edit'
-    }
-    let manageItem = this.mdlCtrl.create(AddPickupModalPage,{'pickupData':pickupData,'type':sore});
+    let manageItem = this.mdlCtrl.create(AddPickupModalPage,{'pickupData':pickupData,'type':'edit'});
     manageItem.present();
+    manageItem.onDidDismiss(data=>{
+      this.getPickupAddress();
+    });
+  }
+
+  editSelect(pickupData:any){
+    console.log('edit')
+    this.events.publish('checkStsLogin',AddPickupModalPage);
+    let manageItem = this.mdlCtrl.create(AddPickupModalPage,{'pickupData':pickupData,'type':'select'});
+    manageItem.present();
+    this.viewCtrl.dismiss();
     manageItem.onDidDismiss(data=>{
       this.getPickupAddress();
     });
@@ -124,17 +128,7 @@ export class PickupAddressPage {
     }
   }
 
-  selectedhid(address:any):Boolean{
-    console.log('selecthidden');
-    if(address==this.display){
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  selectedIF(address:any):Boolean{
-    console.log('selectif');
+  selected(address:any):Boolean{
     if(address==this.display){
       return true;
     } else {
