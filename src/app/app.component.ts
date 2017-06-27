@@ -8,7 +8,7 @@ import {
 
 import { UserData } from '../providers/user-data';
 import { ConferenceData } from '../providers/conference-data';
-import { FCM } from '@ionic-native/fcm';
+//import { FCM } from '@ionic-native/fcm';
 import {HomePage} from "../pages/home/home";
 import {HelpPage} from "../pages/help/help";
 import {NewsPage} from "../pages/news/news";
@@ -92,12 +92,12 @@ export class TemplateApp {
     public toastCtrl: ToastController,
     public authService: AuthServiceProvider,
     public quickcodeService: QuickcodeProvider,
-    public loadCtrl: LoadingController,
-    public fcm:FCM
+    public loadCtrl: LoadingController//,
+    //public fcm:FCM
   ) {
-    this.fcm.getToken().then(token=>{
-        console.log("FCM TOKEN:"+token);
-    })
+    // this.fcm.getToken().then(token=>{
+    //     console.log("FCM TOKEN:"+token);
+    // })
     confData.load();
     //first open app have to check login if loggedIn get token and profile else clear localStorage
     this.userData.hasLoggedIn().then((hasLoggedIn) => {
@@ -145,14 +145,14 @@ export class TemplateApp {
         this._quickcode_commodities = resCommodity;
     });
 
-    this.fcm.onNotification().subscribe(data=>{
-      console.log("On Notification Data:"+JSON.stringify(data));
-      if(data.wasTapped){
-        console.log("Received in background");
-      } else {
-        console.log("Received in foreground");
-      };
-    })
+    // this.fcm.onNotification().subscribe(data=>{
+    //   console.log("On Notification Data:"+JSON.stringify(data));
+    //   if(data.wasTapped){
+    //     console.log("Received in background");
+    //   } else {
+    //     console.log("Received in foreground");
+    //   };
+    // })
 
 
   }
