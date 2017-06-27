@@ -62,7 +62,7 @@ export class HistoryPage {
     this.sub = this.historyService.getLclHistory().subscribe(
       (res) => {
         this.LCLhistory = res;
-        console.log(this.LCLhistory);
+        //console.log(this.LCLhistory);
       },
       (error) => {this.errorMessage = <any> error}
     );
@@ -72,7 +72,7 @@ export class HistoryPage {
     this.sub = this.historyService.getCourierHistory().subscribe(
       (res) => {
         this.COURIERhistory = res;
-        console.log(this.COURIERhistory);
+        //console.log(this.COURIERhistory);
       },
       (error) => {this.errorMessage = <any> error}
     );

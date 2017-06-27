@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.ionic.conferenceapp" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>LEO2</name>
+<widget id="th.co.ahost.logisticsdev" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>LogisticsDEMO</name>
     <description>
-        Smart Logistic Mobile Application by IONIC 2
+        Smart Logistic Mobile Application by A-Host
   </description>
-    <author email="hi@ionicframework" href="http://ionicframework.com/">
-      Ionic Framework Team
+    <author email="ahostmobile@gmail.com" href="http://a-host.co.th/">
+      A-Host Mobil Team
   </author>
     <content src="index.html" />
     <access origin="*" />
@@ -96,4 +96,5 @@
     <plugin name="cordova-plugin-whitelist" spec="^1.3.1" />
     <plugin name="cordova-plugin-wkwebview-engine" spec="git+https://github.com/driftyco/cordova-plugin-wkwebview-engine.git" />
     <plugin name="ionic-plugin-keyboard" spec="^2.2.1" />
+    <plugin name="cordova-plugin-fcm" spec="~2.1.2" />
 </widget>

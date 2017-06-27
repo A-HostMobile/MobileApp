@@ -41,6 +41,9 @@
         },
         "cordova-plugin-network-information": {
             "PACKAGE_NAME": "io.ionic.conferenceapp"
+        },
+        "cordova-plugin-fcm": {
+            "PACKAGE_NAME": "io.ionic.conferenceapp"
         }
     },
     "dependent_plugins": {}

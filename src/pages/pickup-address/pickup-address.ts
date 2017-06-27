@@ -14,7 +14,7 @@ export class PickupAddressPage {
   address: string;
   pickupAddress: any;
   errorMessage:string;
-  page:any;
+  display:any;
   param:any;
 
   checkFromPage: string;
@@ -30,18 +30,17 @@ export class PickupAddressPage {
               public events: Events
             ) {
 
-        this.param = this.navParams.data;
+    this.param = this.navParams.get('address');
+    if(this.param!=null){
+      this.display = this.param.pa_address_display;
+    }
+    this.checkFromPage = this.navParams.get('page');
+    console.log(this.display);
 
-        if(this.param == ProfilePage){
-          this.checkFromPage = "ProfilePage";
-            console.log(this.checkFromPage)
-        }
-
-        this.events.subscribe('deletePickup',(_pickupId:any)=>{
-          this.deletePickup(_pickupId);
-          // console.log('subscribe');
-          // console.log(_pickupId+'subscr delete');
-        });
+    this.events.subscribe('deletePickup',(_pickupId:any)=>{
+      this.deletePickup(_pickupId);
+      // console.log(_pickupId+'subscr delete');
+    });
 
   }
 
@@ -53,28 +52,36 @@ export class PickupAddressPage {
   getPickupAddress(){
     this.events.publish('showLoading');
     this.pickupAddressService.getPickupAddress().subscribe(
-        (resData) => { this.pickupAddress = resData
-                       //console.log("PickupAddress Data:"+JSON.stringify(this.pickupAddress))
-                       this.events.publish('dismissLoading');
-                      //  console.log('res data');
-                     },
-        (error) => { this.errorMessage = <any> error,
-                      this.events.publish('dismissLoading');
-                   });
+      (resData) => { this.pickupAddress = resData,
+        //console.log("PickupAddress Data:"+JSON.stringify(this.pickupAddress))
+        this.events.publish('dismissLoading');
+      },
+      (error) => { this.errorMessage = <any> error,
+        this.events.publish('dismissLoading');
+      });
   }
 
   editPickup(pickupData:any){
-    this.events.publish('checkStsLogin',AddPickupModalPage,{'pickupData':pickupData,'type':'edit'});
+    this.events.publish('checkStsLogin',AddPickupModalPage);
     let manageItem = this.mdlCtrl.create(AddPickupModalPage,{'pickupData':pickupData,'type':'edit'});
     manageItem.present();
     manageItem.onDidDismiss(data=>{
-        this.getPickupAddress();
+      this.getPickupAddress();
+    });
+  }
+  editPickupSelect(pickupData:any){
+    this.events.publish('checkStsLogin',AddPickupModalPage);
+    let manageItem = this.mdlCtrl.create(AddPickupModalPage,{'pickupData':pickupData,'type':'select'});
+    this.viewCtrl.dismiss();
+    manageItem.present();
+    manageItem.onDidDismiss(data=>{
+      this.getPickupAddress();
     });
   }
 
   addPickup(){
     //console.log("Add Pickup Address");
-    this.events.publish('checkStsLogin',AddPickupModalPage,{'pickupData':null,'type':'add'});
+    this.events.publish('checkStsLogin',AddPickupModalPage);
     let manageItem = this.mdlCtrl.create(AddPickupModalPage,{'pickupData':null,'type':'add'});
     manageItem.present();
     manageItem.onDidDismiss(data=>{
@@ -111,7 +118,19 @@ export class PickupAddressPage {
   }
 
   closeModal(){
-    this.viewCtrl.dismiss('no');
+    if(this.param!=null){
+      this.viewCtrl.dismiss();
+    } else {
+      this.viewCtrl.dismiss('nodata');
+    }
+  }
+
+  selected(address:any):Boolean{
+    if(address==this.display){
+      return true;
+    } else {
+      return false;
+    }
   }
 
 }

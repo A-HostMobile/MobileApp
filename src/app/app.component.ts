@@ -8,7 +8,7 @@ import {
 
 import { UserData } from '../providers/user-data';
 import { ConferenceData } from '../providers/conference-data';
-
+import { FCM } from '@ionic-native/fcm';
 import {HomePage} from "../pages/home/home";
 import {HelpPage} from "../pages/help/help";
 import {NewsPage} from "../pages/news/news";
@@ -92,7 +92,8 @@ export class TemplateApp {
     public toastCtrl: ToastController,
     public authService: AuthServiceProvider,
     public quickcodeService: QuickcodeProvider,
-    public loadCtrl: LoadingController
+    public loadCtrl: LoadingController,
+    public fcm:FCM
   ) {
 
     confData.load();
@@ -189,7 +190,7 @@ export class TemplateApp {
       content: "Please wait...",
       spinner: 'hide',
       duration: 350
-    })
+    });
     load.present();
   }
 
@@ -219,7 +220,7 @@ export class TemplateApp {
         if (activeView != null){
           if(nav.canGoBack()) {
             if(cp==NewsPage||cp==AgentNetworkPage||cp==HelpPage||cp==ProfilePage||cp==ContactPage||cp==ScheduleSearchPage){
-        nav.popToRoot();
+              nav.popToRoot();
             }else if (cp==CompletedPage) {
 
             }else {
@@ -245,7 +246,6 @@ export class TemplateApp {
   listenToEvents() {
     this.events.subscribe('user:login', (profile:any) => {
       this._profile = profile;
-      console.log(this._profile);
       this.enableMenu(true);
     });
 
