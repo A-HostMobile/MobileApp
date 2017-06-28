@@ -27,18 +27,9 @@ export class NewsPage {
     public events: Events
   ) {}
 
-  ionViewWillEnter(){
-    this.getNews();
-    this.getPromotions();
-    // console.log(this.sub);
-  }
-
-  // ionViewDidLoad() {
-  //   console.log('ionViewDidLoad NewsPage');
-  // }
-
   ionViewDidLoad(){
     this.events.publish('showLoading');
+      this.getNewsPro();
   }
 
   toDetail(item_id:number){
@@ -46,23 +37,24 @@ export class NewsPage {
     this.navCtrl.push(NewsDetailPage,item_id);
   }
 
-  private getNews(){
+  private getNewsPro(){
     this.sub = this.advertiseService.getNewsAdvertisment().subscribe(
-      (res) => this.news = res,
+      (res) => {
+        this.news = res,
+        this.advertiseService.getPromotionAdvertisment().subscribe(
+          (res) => {
+                  this.promotions = res,
+                  this.events.publish('dismissLoading')
+          },
+          (error) => {  this.errorMessage = <any> error
+                        // this.events.publish('dismissLoading')
+                     }
+        )
+      },
       (error) => {  this.errorMessage = <any> error
                     this.events.publish('dismissLoading')
-                 },
-              () => this.events.publish('dismissLoading')
-    );
-  }
-
-  private getPromotions(){
-    this.sub = this.advertiseService.getPromotionAdvertisment().subscribe(
-      (res) => this.promotions = res,
-      (error) => {  this.errorMessage = <any> error
-                    this.events.publish('dismissLoading')
-                 },
-              () => this.events.publish('dismissLoading')
+                 }
+              // () => this.events.publish('dismissLoading')
     );
   }
 
