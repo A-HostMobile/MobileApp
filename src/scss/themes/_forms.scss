@@ -1,25 +1,56 @@
-input,
-input::-webkit-input-placeholder {
+ion-input,
+ion-input::-webkit-input-placeholder {
 	font-style: italic;
     color:rgba(0,0,0,0.4);
     font-size: 0.85em;
 
 
 }
-input[type="text"], input[type="email"], input[type="number"], input[type="tel"],input[type="password"]
-{
-	font-style: normal;
-color:#000000;
+// input[type="text"],
+//  input[type="email"],
+//   input[type="number"],
+//    input[type="tel"],
+//    input[type="password"]
+ion-input
+{   font-style: normal;
+    color: #000000;
+// background-color: rgba(255,255,255,0);
+// border: 1px solid rgba(0,0,0,0.3);
 
-background-color: rgba(255,255,255,0);
-border: 1px solid rgba(0,0,0,0.3);
-// margin-right: 5%;
+// padding-left: 5%;
+// font-size: 0.85em;
+
+// padding:0px;
+// padding-top: 1.25%;
+// padding-bottom: 1.25%;
+
+// border-radius: 0.4em;
+// margin-top: 2.5px;
+// margin-bottom: 2.5px;
+
+}
+
+ion-col ion-input{
+    padding-top:0px;
+}
+
+.text-input {
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  display: inline-block;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  width: 92%;
+  width: calc(100% - 10px);
+
+  border: 1px solid rgba(0,0,0,0.3);
+  border-radius: 0.4em;
+  background: transparent;
+//   padding-top: 6px;
+// padding-bottom: 6px;
+height: 26px;
 padding-left: 5%;
-font-size: 0.85em;
-// height: 100%;
-padding-top: 1.25%;
-padding-bottom: 1.25%;
-// padding-right:5%;
-border-radius: 0.4em;
-/*background-color: #ffffff;*/
 }
