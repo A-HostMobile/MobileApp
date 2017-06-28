@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, Events } from 'ionic-angular';
 import { HistoryServiceProvider } from '../../providers/history-service/history-service';
 import { Subscription } from 'rxjs/Subscription';
 
@@ -23,13 +23,15 @@ export class HistoryDetailCourierPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public historyService: HistoryServiceProvider
+    public historyService: HistoryServiceProvider,
+    public events: Events
   ) {
     this.courierId = this.navParams.data;
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HistoryDetailCourierPage');
+    this.events.publish('showLoading');
   }
 
   ionViewWillEnter(){
@@ -47,7 +49,11 @@ export class HistoryDetailCourierPage {
       console.log(this.courierDetail)
       console.log(this.courierComment)
     },
-      (error) => { this.errorMessage = <any> error }
+      (error) => {
+        this.errorMessage = <any> error,
+        this.events.publish('dismissLoading');
+      },
+      () => this.events.publish('dismissLoading')
     );
   }
 
