@@ -61,7 +61,8 @@ export class NewsPage {
       (res) => this.promotions = res,
       (error) => {  this.errorMessage = <any> error
                     this.events.publish('dismissLoading')
-                 }
+                 },
+              () => this.events.publish('dismissLoading')
     );
   }
 
