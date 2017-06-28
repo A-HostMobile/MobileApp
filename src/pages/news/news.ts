@@ -42,6 +42,7 @@ export class NewsPage {
   }
 
   toDetail(item_id:number){
+    console.log('to detail test');
     this.navCtrl.push(NewsDetailPage,item_id);
   }
 
