@@ -47,11 +47,11 @@ export class HistoryPage {
         this.navCtrl.popToRoot();
       }
     }
+    this.events.publish('showLoading');
   }
 
   ionViewWillEnter(){
-    this.getLcl();
-    this.getCourier();
+    this.getLclCourier();
   }
 
   ionViewDidLeave(){
@@ -60,23 +60,23 @@ export class HistoryPage {
     }
   }
 
-  private getLcl(){
+  private getLclCourier(){
     this.sub = this.historyService.getLclHistory().subscribe(
       (res) => {
         this.LCLhistory = res;
-        //console.log(this.LCLhistory);
+        this.historyService.getCourierHistory().subscribe(
+          (res) => {
+            this.COURIERhistory = res;
+            this.events.publish('dismissLoading')
+            //console.log(this.COURIERhistory);
+          },
+          (error) => {this.errorMessage = <any> error}
+        );
       },
-      (error) => {this.errorMessage = <any> error}
-    );
-  }
-
-  private getCourier(){
-    this.sub = this.historyService.getCourierHistory().subscribe(
-      (res) => {
-        this.COURIERhistory = res;
-        //console.log(this.COURIERhistory);
+      (error) => {
+        this.errorMessage = <any> error,
+        this.events.publish('dismissLoading')
       },
-      (error) => {this.errorMessage = <any> error}
     );
   }
 

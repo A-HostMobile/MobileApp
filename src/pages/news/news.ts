@@ -49,9 +49,9 @@ export class NewsPage {
           (error) => {  this.errorMessage = <any> error
                         // this.events.publish('dismissLoading')
                      }
-        )
+        );
       },
-      (error) => {  this.errorMessage = <any> error
+      (error) => {  this.errorMessage = <any> error,
                     this.events.publish('dismissLoading')
                  }
               // () => this.events.publish('dismissLoading')
