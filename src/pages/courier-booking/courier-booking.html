@@ -26,23 +26,10 @@
 
     <ion-row>&nbsp;</ion-row>
     <ion-list no-padding no-lines>
-      <!--<ion-list-header class="label-title" (click)="courier.conname = 'Logistic Group';
-       courier.address ='99/999';
-        courier.country='AUSTRALIA';
-        courier.zipcode='12345';
-        courier.contname='Mr.Logistic';
-        courier.tel='00-000000';
-        courier.rmk='N/A'">
-        Destination
-      </ion-list-header>-->
       <ion-list-header class="label-title">
         Destination
       </ion-list-header>
 
-      <!--<ion-item no-padding>
-        <ion-label no-padding col-6>Consignee Name</ion-label>
-        <ion-input [(ngModel)]="courier.conname" name="conname" #conname="ngModel" type="text" placeholder="Consignee Name" required></ion-input>
-      </ion-item>-->
 
       <ion-grid no-padding>
         <ion-row no-padding>
@@ -86,7 +73,7 @@
               <ion-label no-padding text-wrap class="label-title">Country</ion-label>
             </ion-col>
             <ion-col col-7 no-padding>
-              <ion-select class="max-width-100" [(ngModel)]="courier.country" name="country" #country="ngModel"  placeholder="Please Select" required>
+              <ion-select class="max-width-100" [(ngModel)]="courier.country" name="country" #country="ngModel" (ionCancel)="touch()"  placeholder="Please Select" required>
                 <ion-option *ngFor="let country of countries" [value]="country.cz_destination">{{country.cz_destination}}</ion-option>
               </ion-select>
             </ion-col>
