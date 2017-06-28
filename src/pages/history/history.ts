@@ -22,6 +22,8 @@ export class HistoryPage {
   sub: Subscription;
   errorMessage: string;
 
+  _LCLhistory:any = [];
+
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public platform: Platform,
@@ -84,10 +86,6 @@ export class HistoryPage {
 
   toCourier(courier_id:any){
     this.navCtrl.push(HistoryDetailCourierPage,courier_id);
-  }
-
-  test(){
-
   }
 
 }
