@@ -36,11 +36,6 @@ export class CourierBooking2Page {
       this.masterData = this.navParams.get('data');
       this.work = this.navParams.get('work');
       this.getCourierData();
-
-      this.events.subscribe('deleteCourierItem',(_bookingId:any,_index:any)=>{
-        this.deleteCourierItem(_bookingId,_index);
-        // console.log('subscribe');
-      });
   }
 
   ionViewDidLoad() {
@@ -48,7 +43,14 @@ export class CourierBooking2Page {
     this.navbar.backButtonClick=(e:UIEvent)=>{
       this.toEditMasterDetail();
     }
+    this.events.subscribe('deleteCourierItem',(_bookingId:any,_index:any)=>{
+      this.deleteCourierItem(_bookingId,_index);
+      // console.log('subscribe');
+    });
+  }
 
+  ionViewWillLeave(){
+    this.events.unsubscribe('deleteCourierItem');
   }
 
   getCourierData(){
