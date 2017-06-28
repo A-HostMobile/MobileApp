@@ -2,4 +2,16 @@ page-agent-network {
   .sebm-google-map-container {
     height: 100%;
   }
+
+  div{
+    pointer-events: none;
+    cursor: default;
+    .gm-fullscreen-control{
+      display: none;
+    }
+  }
+
+  .gmnoprint{
+    display: none;
+  }
 }
