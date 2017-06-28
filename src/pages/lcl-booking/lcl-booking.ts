@@ -46,20 +46,32 @@ export class LclBookingPage {
       if(Object.keys(this.scheduleData).length != 0){
           this.maxDate = new Date(this.scheduleData.s_closing_date);
       }
+      this.getQuickcode();
 
-      this.quickcodeService.getPod().subscribe(
-        (resPod) => this.pods = resPod.responseData,
-        (error) => {  this.errorMessage = <any> error});
-      this.quickcodeService.getGwunit().subscribe(
-        (resGwunit) => this.gwunits = resGwunit.responseData,
-        (error) => {  this.errorMessage = <any> error});
-      this.quickcodeService.getPackage().subscribe(
-        (resPackage) => this.packages = resPackage.responseData,
-        (error) => {  this.errorMessage = <any> error});
-      this.quickcodeService.getCommodities().subscribe(
-        (resCommodity) => this.commodities = resCommodity.responseData,
-        (error) => {  this.errorMessage = <any> error});
+  }
 
+  getQuickcode(){
+    this.events.publish('showLoading');
+    this.quickcodeService.getPod().subscribe(
+        (resPod) => {this.pods = resPod.responseData,
+                     this.quickcodeService.getGwunit().subscribe(
+                        (resGwunit) => {this.gwunits = resGwunit.responseData,
+                                        this.quickcodeService.getPackage().subscribe(
+                                            (resPackage) => {this.packages = resPackage.responseData,
+                                                             this.quickcodeService.getCommodities().subscribe(
+                                                                (resCommodity) => {this.commodities = resCommodity.responseData,
+                                                                                   this.events.publish('dismissLoading');
+                                                                                  },
+                                                                (error) => {  this.errorMessage = <any> error});
+                                                              },
+                                            (error) => {  this.errorMessage = <any> error});
+                                        },
+                        (error) => {  this.errorMessage = <any> error});
+                    },
+        (error) => {  this.errorMessage = <any> error});
+     
+      
+     
   }
 
   toSummary(form: NgForm){
