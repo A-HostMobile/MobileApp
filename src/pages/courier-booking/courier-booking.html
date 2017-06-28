@@ -92,11 +92,11 @@
               <ion-label no-padding text-wrap class="label-title">Zip Code</ion-label>
             </ion-col>
             <ion-col col-7 no-padding>
-              <ion-input [(ngModel)]="courier.zipcode" name="zipcode" type="text" #zipcode="ngModel" placeholder="Zip code" required></ion-input>
+              <ion-input [(ngModel)]="courier.zipcode" name="zipcode" type="text" #zipcode="ngModel" placeholder="Zip code"></ion-input>
             </ion-col>
         </ion-row>
       </ion-grid>
-      <ion-badge ion-text [hidden]="zipcode.untouched" *ngIf="zipcode.invalid" float-end>Zipcode is required</ion-badge>
+      <!-- <ion-badge ion-text [hidden]="zipcode.untouched" *ngIf="zipcode.invalid" float-end>Zipcode is required</ion-badge> -->
 
       <!--<ion-item no-padding>
         <ion-label no-padding col-6>Contact Name</ion-label>
