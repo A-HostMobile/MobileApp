@@ -49,7 +49,6 @@
 		A560C1224C2D46F9B3C63FAC /* IonicKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3231ED61B75645628E03B7B6 /* IonicKeyboard.m */; };
 		A5D5FC69372A4880B0FC31EC /* CDVViewController+SplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D6BBDB4A0B46DBBF6D1533 /* CDVViewController+SplashScreen.m */; };
 		A7086D538DB840BC8D262C44 /* GCDWebServerErrorResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB4366F3550419EB4E8AF09 /* GCDWebServerErrorResponse.m */; };
-		A8B5A95B1F04E7F50059F124 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8B5A95A1F04E7F50059F124 /* GoogleService-Info.plist */; };
 		A9BEF018190E49BA9BDF4E0E /* GCDWebServerResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D23EB3866CA446BA14CB469 /* GCDWebServerResponse.m */; };
 		AB9DCE5BD3B64066BB97A58F /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3374AE3784A449388F392BC2 /* libsqlite3.0.tbd */; };
 		B2C461C39E3040CBAFEE4204 /* GCDWebServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 31433A9880A84BCCA6F9AA36 /* GCDWebServerConnection.m */; };
@@ -57,6 +56,7 @@
 		C7011C75D20A40818AE33708 /* GCDWebServerMultiPartFormRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8C780020F042809478258B /* GCDWebServerMultiPartFormRequest.m */; };
 		D4C8B500FF8E4166B1491BED /* GCDWebServerDataResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5284B1CB068640BDBFF6F70C /* GCDWebServerDataResponse.m */; };
 		E05D23B1B1584E99B261C367 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDBD2D2D701D4DC1AC72D5AA /* WebKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		E0D32EA41F04F39500F5C7B5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0D32EA31F04F39500F5C7B5 /* GoogleService-Info.plist */; };
 		EC547EDFA011414394056465 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B29DED7E5BE427F948A3F18 /* FirebaseCore.framework */; };
 		F8124232FEE944EF9072F7EA /* CDVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E51F09C4E34556AC98D0FF /* CDVLogger.m */; };
 /* End PBXBuildFile section */
@@ -151,7 +151,6 @@
 		9D3A07D1533A4173B7227012 /* GCDWebServerURLEncodedFormRequest.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = GCDWebServerURLEncodedFormRequest.h; path = "cordova-plugin-wkwebview-engine/GCDWebServerURLEncodedFormRequest.h"; sourceTree = "<group>"; };
 		A3D6BBDB4A0B46DBBF6D1533 /* CDVViewController+SplashScreen.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = "CDVViewController+SplashScreen.m"; path = "cordova-plugin-splashscreen/CDVViewController+SplashScreen.m"; sourceTree = "<group>"; };
 		A692F34E117F4CBCA5E71A27 /* CDVWKProcessPoolFactory.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVWKProcessPoolFactory.h; path = "cordova-plugin-wkwebview-engine/CDVWKProcessPoolFactory.h"; sourceTree = "<group>"; };
-		A8B5A95A1F04E7F50059F124 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ADB78EA29FCC4C2683C6A662 /* GCDWebServerDataRequest.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerDataRequest.m; path = "cordova-plugin-wkwebview-engine/GCDWebServerDataRequest.m"; sourceTree = "<group>"; };
 		AFB5BDA7BC0A4B51B3ECB568 /* CDVConnection.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVConnection.m; path = "cordova-plugin-network-information/CDVConnection.m"; sourceTree = "<group>"; };
 		B24F902D71F540B282459325 /* CDVLogger.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVLogger.h; path = "cordova-plugin-console/CDVLogger.h"; sourceTree = "<group>"; };
@@ -166,6 +165,8 @@
 		D7D4EB5B43B543F3A3B351CD /* libc++.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		DA14DB5FD4BE4A2D9FFB0D55 /* GCDWebServerPrivate.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = GCDWebServerPrivate.h; path = "cordova-plugin-wkwebview-engine/GCDWebServerPrivate.h"; sourceTree = "<group>"; };
 		DC55BCA7371046BD949523B8 /* GCDWebServerStreamedResponse.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = GCDWebServerStreamedResponse.h; path = "cordova-plugin-wkwebview-engine/GCDWebServerStreamedResponse.h"; sourceTree = "<group>"; };
+		E0D32EA31F04F39500F5C7B5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E0D32EA51F04F39D00F5C7B5 /* LogisticsDEMO.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = LogisticsDEMO.entitlements; path = LogisticsDEMO/LogisticsDEMO.entitlements; sourceTree = "<group>"; };
 		E564D0C0DA21420B8345AEBF /* GCDWebServerFileResponse.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = GCDWebServerFileResponse.h; path = "cordova-plugin-wkwebview-engine/GCDWebServerFileResponse.h"; sourceTree = "<group>"; };
 		E605A9E14DBF4A0F949D58A9 /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = "LogisticsDEMO/Plugins/cordova-plugin-fcm/GoogleInterchangeUtilities.framework"; sourceTree = "<group>"; };
 		E76A9693AA9042B9B8A5B583 /* CDVInAppBrowser.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVInAppBrowser.m; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.m"; sourceTree = "<group>"; };
@@ -235,7 +236,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				A8B5A95A1F04E7F50059F124 /* GoogleService-Info.plist */,
+				E0D32EA51F04F39D00F5C7B5 /* LogisticsDEMO.entitlements */,
+				E0D32EA31F04F39500F5C7B5 /* GoogleService-Info.plist */,
 				EB87FDF41871DAF40020F90C /* config.xml */,
 				EB87FDF31871DA8E0020F90C /* www */,
 				EB87FDF11871DA420020F90C /* Staging */,
@@ -422,6 +424,11 @@
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = R4V93Q2G69;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -471,7 +478,7 @@
 			files = (
 				302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */,
 				0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */,
-				A8B5A95B1F04E7F50059F124 /* GoogleService-Info.plist in Resources */,
+				E0D32EA41F04F39500F5C7B5 /* GoogleService-Info.plist in Resources */,
 				6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */,
 				8230A1D775AD4F8E99570037 /* GoogleService-Info.plist in Resources */,
 			);
@@ -555,6 +562,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = LogisticsDEMO/LogisticsDEMO.entitlements;
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = R4V93Q2G69;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -591,6 +599,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = LogisticsDEMO/LogisticsDEMO.entitlements;
 				COPY_PHASE_STRIP = YES;
 				DEVELOPMENT_TEAM = R4V93Q2G69;
 				FRAMEWORK_SEARCH_PATHS = (
