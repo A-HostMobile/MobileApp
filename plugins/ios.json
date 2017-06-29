@@ -1,0 +1,45 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "th.co.ahost.logisticsdev"
+        },
+        "cordova-plugin-crosswalk-webview": {
+            "PACKAGE_NAME": "th.co.ahost.logisticsdev"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "th.co.ahost.logisticsdev"
+        },
+        "cordova-plugin-fcm": {
+            "PACKAGE_NAME": "th.co.ahost.logisticsdev"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "th.co.ahost.logisticsdev"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "th.co.ahost.logisticsdev"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "th.co.ahost.logisticsdev"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "th.co.ahost.logisticsdev"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "th.co.ahost.logisticsdev"
+        },
+        "cordova-plugin-wkwebview-engine": {
+            "PACKAGE_NAME": "th.co.ahost.logisticsdev"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "th.co.ahost.logisticsdev"
+        }
+    },
+    "dependent_plugins": {}
+}
