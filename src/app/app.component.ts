@@ -97,9 +97,7 @@ export class TemplateApp {
     public loadCtrl: LoadingController,
     public fcm:FCM
   ) {
-    // this.fcm.getToken().then(token=>{
-    //     console.log("FCM TOKEN:"+token);
-    // })
+    
     confData.load();
     //first open app have to check login if loggedIn get token and profile else clear localStorage
     this.userData.hasLoggedIn().then((hasLoggedIn) => {
@@ -146,11 +144,22 @@ export class TemplateApp {
     this.quickcodeService.getCommodities().subscribe((resCommodity)=>{
         this._quickcode_commodities = resCommodity;
     });
-
-    this.fcm.onNotification().subscribe(data=>{
-      console.log("On Notification Data:"+JSON.stringify(data));
-      this.events.publish('checkStsLogin',data.type,data.bookingId,data.wasTapped);
-    });
+    
+    if(this.platform.is('cordova')){
+      
+      console.log("Run App on Mobile");
+      this.fcm.getToken().then(token=>{
+        console.log("FCM TOKEN:"+token);
+      })
+      this.fcm.onNotification().subscribe(data=>{
+        console.log("On Notification Data:"+JSON.stringify(data));
+        this.events.publish('checkStsLogin',data.type,data.bookingId,data.wasTapped);
+      });
+    }
+    else{
+      console.log("Run App on Browser");
+    }
+    
 
   }
 
@@ -247,7 +256,6 @@ export class TemplateApp {
   platformReady() {
     this.platform.ready().then(() => {
       this.splashScreen.hide()
-
     });
   }
 
