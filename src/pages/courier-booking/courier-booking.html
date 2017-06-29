@@ -62,9 +62,12 @@
               <ion-label no-padding text-wrap class="label-title">Country</ion-label>
             </ion-col>
             <ion-col col-7 no-padding>
-                <ion-select interface="popover" class="max-width-100" [(ngModel)]="courier.country" name="country" #country="ngModel" (ionCancel)="touch()"  placeholder="Please Select" required>
+              <ion-item>
+                <ion-label hidden>Select Country</ion-label>
+                <ion-select class="max-width-100" [(ngModel)]="courier.country" name="country" #country="ngModel" (ionCancel)="touch()"  placeholder="Please Select" required>
                   <ion-option *ngFor="let country of countries" [value]="country.cz_destination">{{country.cz_destination}}</ion-option>
                 </ion-select>
+              </ion-item>
 
             </ion-col>
         </ion-row>

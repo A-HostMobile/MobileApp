@@ -13,16 +13,18 @@
                     <ion-label no-padding text-wrap class="label-title">POD</ion-label>
                   </ion-col>
 
-                  <ion-col col-4 no-padding></ion-col>
-                  <ion-col col-4 no-padding >
-                    <ion-select class="max-width-100" [(ngModel)]="lcl.pod"  name="pod" #pod="ngModel" *ngIf="(scheduleData | json) == ({} | json)" placeholder="Select" required="">
-                    </ion-select>
-                      <!--<ion-select interface="popover" class="max-width-100" [(ngModel)]="lcl.pod"  name="pod" #pod="ngModel" *ngIf="(scheduleData | json) == ({} | json)" (ionCancel)="touch(1)" placeholder="Select" required>-->
-                        <!--<ion-option  *ngFor="let pod of pods" [value]="pod.qc_lookup_value2">{{pod.qc_lookup_value2}}</ion-option>-->
-                      <!--</ion-select>-->
-                      <ion-select interface="popover" class="max-width-100" [(ngModel)]="scheduleData.s_to"  name="pod" *ngIf="(scheduleData | json) != ({} | json)" required>
+                  <ion-col col-2 no-padding></ion-col>
+                  <ion-col col-6 no-padding >
+                    <ion-item >
+                      <ion-label hidden>Select POD</ion-label>
+                      <ion-select class="max-width-150" [(ngModel)]="lcl.pod"  name="pod" #pod="ngModel" *ngIf="(scheduleData | json) == ({} | json)" (ionCancel)="touch(1)" placeholder="Select" required>
+                        <ion-option  *ngFor="let pod of pods" [value]="pod.qc_lookup_value2">{{pod.qc_lookup_value2}}</ion-option>
+                      </ion-select>
+                      <ion-select class="max-width-150" [(ngModel)]="scheduleData.s_to"  name="pod" *ngIf="(scheduleData | json) != ({} | json)" required>
                         <ion-option [value]="scheduleData.s_to" [selected]="true">{{scheduleData.s_to}}</ion-option>
                       </ion-select>
+                    </ion-item>
+
 
                   </ion-col>
 
@@ -80,9 +82,12 @@
             <ion-input [(ngModel)]="lcl.gw" name="gw" type="number" placeholder="G.W." #gw="ngModel" required></ion-input>
           </ion-col>
           <ion-col col-4 no-padding>
-            <ion-select class="max-width-100" [(ngModel)]="lcl.gwunit" name="gwunit" placeholder="Select" (ionCancel)="touch(3)" interface="popover" required>
-              <ion-option *ngFor="let gwunit of gwunits" [value]="gwunit">{{gwunit.qc_lookup_value1}}</ion-option>
-            </ion-select>
+            <ion-item>
+              <ion-label hidden>Select Unit</ion-label>
+              <ion-select class="max-width-100" [(ngModel)]="lcl.gwunit" name="gwunit" placeholder="Select" (ionCancel)="touch(3)" required>
+                <ion-option *ngFor="let gwunit of gwunits" [value]="gwunit">{{gwunit.qc_lookup_value1}}</ion-option>
+              </ion-select>
+            </ion-item>
           </ion-col>
         </ion-row>
     </ion-grid>
