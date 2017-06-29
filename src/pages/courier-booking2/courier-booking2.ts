@@ -71,7 +71,7 @@ export class CourierBooking2Page {
 
   addCourierItem(action: String) {
     //console.log("Action:"+action);
-    this.events.publish('checkStsLogin',CourierItemModalPage);
+    this.events.publish('checkStsLogin','check');
     let addItem = this.mdlCtrl.create(CourierItemModalPage,{type:action,id:this.masterData.bookingId,data:null});
     addItem.present();
     addItem.onDidDismiss(data=>{
@@ -82,7 +82,7 @@ export class CourierBooking2Page {
   editCourierItem(action: String,itemData:any) {
     //console.log("Action:"+action);
     //console.log("Item Data:"+JSON.stringify(itemData));
-    this.events.publish('checkStsLogin',CourierItemModalPage);
+    this.events.publish('checkStsLogin','check');
     let editItem = this.mdlCtrl.create(CourierItemModalPage,{type:action,data:itemData});
     editItem.present();
     editItem.onDidDismiss(data=>{

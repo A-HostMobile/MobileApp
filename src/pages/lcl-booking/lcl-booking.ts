@@ -69,9 +69,9 @@ export class LclBookingPage {
                         (error) => {  this.errorMessage = <any> error});
                     },
         (error) => {  this.errorMessage = <any> error});
-     
-      
-     
+
+
+
   }
 
   toSummary(form: NgForm){
@@ -90,6 +90,7 @@ export class LclBookingPage {
 
   touch(num: number){
     if(num == 1){
+      alert('fuck');
       this.selectcancel = true;
      } else if(num==2) {
       this.datecancel = true;

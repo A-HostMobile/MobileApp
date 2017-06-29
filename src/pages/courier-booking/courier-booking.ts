@@ -120,7 +120,7 @@ export class CourierBookingPage {
 
   openPickupModal()
     {
-      this.events.publish('checkStsLogin', PickupAddressPage);
+      this.events.publish('checkStsLogin', 'check');
       let openPickup = this.mdlCtrl.create(PickupAddressPage,{address:this.dataogj});
       openPickup.present();
       openPickup.onDidDismiss(data => {

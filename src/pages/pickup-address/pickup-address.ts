@@ -64,7 +64,7 @@ export class PickupAddressPage {
 
   editPickup(pickupData:any){
     console.log('edit')
-    this.events.publish('checkStsLogin',AddPickupModalPage);
+    this.events.publish('checkStsLogin','check');
     let manageItem = this.mdlCtrl.create(AddPickupModalPage,{'pickupData':pickupData,'type':'edit'});
     manageItem.present();
     manageItem.onDidDismiss(data=>{
@@ -74,7 +74,7 @@ export class PickupAddressPage {
 
   editSelect(pickupData:any){
     console.log('edit')
-    this.events.publish('checkStsLogin',AddPickupModalPage);
+    this.events.publish('checkStsLogin','check');
     let manageItem = this.mdlCtrl.create(AddPickupModalPage,{'pickupData':pickupData,'type':'select'});
     manageItem.present();
     this.viewCtrl.dismiss();
@@ -85,7 +85,7 @@ export class PickupAddressPage {
 
   addPickup(){
     //console.log("Add Pickup Address");
-    this.events.publish('checkStsLogin',AddPickupModalPage);
+    this.events.publish('checkStsLogin','check');
     let manageItem = this.mdlCtrl.create(AddPickupModalPage,{'pickupData':null,'type':'add'});
     manageItem.present();
     manageItem.onDidDismiss(data=>{
@@ -96,7 +96,7 @@ export class PickupAddressPage {
   }
 
   selectPickup(pickupData:any) {
-    this.events.publish('checkStsLogin',PickupAddressPage);
+    this.events.publish('checkStsLogin','check');
     this.param = 1;
     this.closeModal(pickupData);
     //console.log("Select Data:"+JSON.stringify(pickupData));

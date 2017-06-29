@@ -3,7 +3,7 @@ import {Network} from "@ionic-native/network";
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {
   App, Events, MenuController, ModalController, Nav, Platform, ToastController, LoadingController,
-  AlertController
+  AlertController, Keyboard
 } from 'ionic-angular';
 
 import { UserData } from '../providers/user-data';
@@ -27,6 +27,8 @@ import { QuickcodeProvider } from '../providers/quickcode/quickcode';
 import {AddPickupModalPage} from "../pages/add-pickup-modal/add-pickup-modal";
 import {PickupAddressPage} from "../pages/pickup-address/pickup-address";
 import {CourierItemModalPage} from "../pages/courier-item-modal/courier-item-modal";
+import {HistoryDetailPage} from "../pages/history-detail/history-detail";
+import {HistoryDetailCourierPage} from "../pages/history-detail-courier/history-detail-courier";
 
 
 
@@ -104,7 +106,7 @@ export class TemplateApp {
         if(hasLoggedIn == true){
           let token = localStorage.getItem('token');
           if(token){
-            this.events.publish('checkStsLogin',HomePage);
+            this.events.publish('checkStsLogin','check');
             let profile = localStorage.getItem('profile');
             if(profile){
               this._profile = JSON.parse(profile);
@@ -127,7 +129,7 @@ export class TemplateApp {
 
     this.backButton();
 
-    this.status.hide();
+    //this.status.hide();
 
     this.quickcodeService.getPod().subscribe((resPod)=>{
         this._quickcode_pod = resPod;
@@ -156,7 +158,7 @@ export class TemplateApp {
 
 
   }
-  
+
 
   ConfirmBox(_Id:any,_Index:any,_pages:any){
     console.log('alert')
@@ -194,7 +196,6 @@ export class TemplateApp {
     });
     this._alert.present();
   }
-
 
   showLoading(): Promise<any>{
     this._loading = this.loadCtrl.create({
@@ -258,7 +259,7 @@ export class TemplateApp {
   platformReady() {
     this.platform.ready().then(() => {
       this.splashScreen.hide()
-      
+
     });
   }
 
@@ -311,21 +312,18 @@ export class TemplateApp {
       if(profile.responseCode == 0){
         this.userData.login(profile);
         console.log('Login and Get profile');
-        if(pages== CourierItemModalPage || pages == PickupAddressPage || pages == AddPickupModalPage){
-
-        }
-        else if(pages!=HomePage){
-          this.app.getRootNav().push(pages,params);
-        }
-        else{
+        if(pages==HomePage){
           this.app.getRootNav().popToRoot();
+        }
+        else if(pages!='check'){
+          this.app.getRootNav().push(pages,params);
         }
       }else{
         this.userData.logout();
         console.log('Logout Code: '+profile.responseCode);
         let nav = this.app.getActiveNav();
         let activeView = nav.getActive();
-        if (pages == LclBookingPage || pages == CourierBookingPage) {
+        if (pages == LclBookingPage || pages == CourierBookingPage || pages == HistoryDetailPage || pages == HistoryDetailCourierPage) {
           this.authService.OpenModal(pages, params);
         }
         else if(nav.canGoBack()) {

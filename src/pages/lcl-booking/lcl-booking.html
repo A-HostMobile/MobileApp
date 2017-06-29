@@ -14,17 +14,16 @@
                   </ion-col>
 
                   <ion-col col-4 no-padding></ion-col>
-
                   <ion-col col-4 no-padding >
-                  
-                    <ion-select class="max-width-100" [(ngModel)]="lcl.pod"  name="pod" #pod="ngModel" *ngIf="(scheduleData | json) == ({} | json)" (ionCancel)="touch(1)" placeholder="Select" required>
-                      <ion-option  *ngFor="let pod of pods" [value]="pod.qc_lookup_value2">{{pod.qc_lookup_value2}}</ion-option>
-                    </ion-select>
-                    <ion-select class="max-width-100" [(ngModel)]="scheduleData.s_to"  name="pod" *ngIf="(scheduleData | json) != ({} | json)" required>
-                      <ion-option [value]="scheduleData.s_to" [selected]="true">{{scheduleData.s_to}}</ion-option>
-                    </ion-select>
+                      <ion-select interface="popover" class="max-width-100" [(ngModel)]="lcl.pod"  name="pod" #pod="ngModel" *ngIf="(scheduleData | json) == ({} | json)" (ionCancel)="touch(1)" placeholder="Select" required>
+                        <ion-option  *ngFor="let pod of pods" [value]="pod.qc_lookup_value2">{{pod.qc_lookup_value2}}</ion-option>
+                      </ion-select>
+                      <ion-select interface="popover" class="max-width-100" [(ngModel)]="scheduleData.s_to"  name="pod" *ngIf="(scheduleData | json) != ({} | json)" required>
+                        <ion-option [value]="scheduleData.s_to" [selected]="true">{{scheduleData.s_to}}</ion-option>
+                      </ion-select>
 
                   </ion-col>
+
               </ion-row>
       </ion-grid>
 
@@ -39,8 +38,8 @@
 
             <ion-col col-6 no-padding>
               <ion-item no-lines >
-                <ion-datetime   *ngIf="(scheduleData | json) != ({} | json)" displayFormat="DDD DD MMM YY" min="{{maxDate | date:'yyyy'}}" max="{{maxDate | date:'yyyy-MM-dd'}}" (ionCancel)="touch(2)" [(ngModel)]="lcl.loadDate" name="loadDate" #loadDate="ngModel" placeholder="Select" required></ion-datetime>
-                <ion-datetime   *ngIf="(scheduleData | json) == ({} | json)" displayFormat="DDD DD MMM YY" (ionCancel)="touch(2)" [(ngModel)]="lcl.loadDate" name="loadDate" #loadDate="ngModel" placeholder="Select" required></ion-datetime>
+                <ion-datetime *ngIf="(scheduleData | json) != ({} | json)" displayFormat="DDD DD MMM YY" min="{{maxDate | date:'yyyy'}}" max="{{maxDate | date:'yyyy-MM-dd'}}" (ionCancel)="touch(2)" [(ngModel)]="lcl.loadDate" name="loadDate" #loadDate="ngModel" placeholder="Select" required></ion-datetime>
+                <ion-datetime *ngIf="(scheduleData | json) == ({} | json)" displayFormat="DDD DD MMM YY" (ionCancel)="touch(2)" [(ngModel)]="lcl.loadDate" name="loadDate" #loadDate="ngModel" placeholder="Select" required></ion-datetime>
               </ion-item>
             </ion-col>
 
@@ -51,6 +50,7 @@
             </ion-col>
         </ion-row>
       </ion-grid>
+    <ion-badge *ngIf="datecancel" [hidden]="lclbooking.value.loadDate!=null" float-end="">Please select date</ion-badge>
 
       <ion-grid no-padding>
         <ion-row no-padding>
@@ -78,13 +78,13 @@
             <ion-input [(ngModel)]="lcl.gw" name="gw" type="number" placeholder="G.W." #gw="ngModel" required></ion-input>
           </ion-col>
           <ion-col col-4 no-padding>
-            <ion-select class="max-width-100" [(ngModel)]="lcl.gwunit" name="gwunit" placeholder="Select" (ionCancel)="touch(3)" required>
-              <ion-option   *ngFor="let gwunit of gwunits" [value]="gwunit">{{gwunit.qc_lookup_value1}}</ion-option>
+            <ion-select class="max-width-100" [(ngModel)]="lcl.gwunit" name="gwunit" placeholder="Select" (ionCancel)="touch(3)" interface="popover" required>
+              <ion-option *ngFor="let gwunit of gwunits" [value]="gwunit">{{gwunit.qc_lookup_value1}}</ion-option>
             </ion-select>
           </ion-col>
         </ion-row>
     </ion-grid>
-   
+
       <ion-badge ion-text *ngIf="gw.invalid" [hidden]="!gw.touched" float-end>
         Gross Weight is required
       </ion-badge>
@@ -94,7 +94,7 @@
         Please select unit
       </ion-badge>
       <ion-row *ngIf="unitcancel" [hidden]="lclbooking.value.gwunit!=null || gw.invalid" >&nbsp;</ion-row>
-      
+
     <button color="primary" (click)="showMore=!showMore" ion-button icon-right small outline class="align-right more-button margin-bottom-2">
 
 			<span *ngIf="!showMore">More detail
@@ -123,7 +123,7 @@
                 <ion-option *ngFor="let commodity of commodities" [value]="commodity"  >{{commodity.qc_lookup_value1}}</ion-option>
               </ion-select>
             </ion-col>
-  
+
         </ion-row>
     </ion-grid>
 
@@ -142,7 +142,7 @@
                 <ion-option *ngFor="let package of packages" [value]="package" >{{package.qc_lookup_value1}}</ion-option>
             </ion-select>
             </ion-col>
-  
+
         </ion-row>
     </ion-grid>
 
@@ -154,7 +154,7 @@
             <ion-col col-8 no-padding>
              <ion-input type="text" placeholder="Additional Detail" [(ngModel)]="lcl.detail" name="detail"></ion-input>
             </ion-col>
-            
+
         </ion-row>
       </ion-grid>
 
@@ -179,6 +179,7 @@
       <ion-icon ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>
     </button>
   </form>
+
 
 
 </ion-content>
