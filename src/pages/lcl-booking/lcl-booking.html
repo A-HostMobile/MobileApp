@@ -15,7 +15,7 @@
 
                   <ion-col col-2 no-padding></ion-col>
                   <ion-col col-6 no-padding >
-                    <ion-item >
+                    <ion-item no-lines>
                       <ion-label hidden>Select POD</ion-label>
                       <ion-select class="max-width-150" [(ngModel)]="lcl.pod"  name="pod" #pod="ngModel" *ngIf="(scheduleData | json) == ({} | json)" (ionCancel)="touch(1)" placeholder="Select" required>
                         <ion-option  *ngFor="let pod of pods" [value]="pod.qc_lookup_value2">{{pod.qc_lookup_value2}}</ion-option>
@@ -41,7 +41,7 @@
 
 
             <ion-col col-6 no-padding>
-              <ion-item no-lines >
+              <ion-item no-lines>
                 <ion-datetime *ngIf="(scheduleData | json) != ({} | json)" displayFormat="DDD DD MMM YY" min="{{maxDate | date:'yyyy'}}" max="{{maxDate | date:'yyyy-MM-dd'}}" (ionCancel)="touch(2)" [(ngModel)]="lcl.loadDate" name="loadDate" #loadDate="ngModel" placeholder="Select" required></ion-datetime>
                 <ion-datetime *ngIf="(scheduleData | json) == ({} | json)" displayFormat="DDD DD MMM YY" (ionCancel)="touch(2)" [(ngModel)]="lcl.loadDate" name="loadDate" #loadDate="ngModel" placeholder="Select" required></ion-datetime>
               </ion-item>
@@ -82,7 +82,7 @@
             <ion-input [(ngModel)]="lcl.gw" name="gw" type="number" placeholder="G.W." #gw="ngModel" required></ion-input>
           </ion-col>
           <ion-col col-4 no-padding>
-            <ion-item>
+            <ion-item no-lines>
               <ion-label hidden>Select Unit</ion-label>
               <ion-select class="max-width-100" [(ngModel)]="lcl.gwunit" name="gwunit" placeholder="Select" (ionCancel)="touch(3)" required>
                 <ion-option *ngFor="let gwunit of gwunits" [value]="gwunit">{{gwunit.qc_lookup_value1}}</ion-option>
@@ -126,9 +126,13 @@
             <ion-col col-4 no-padding></ion-col>
 
             <ion-col col-4 no-padding>
-              <ion-select class="max-width-100" [(ngModel)]="lcl.commodities" name="commodities" placeholder="Select">
-                <ion-option *ngFor="let commodity of commodities" [value]="commodity"  >{{commodity.qc_lookup_value1}}</ion-option>
-              </ion-select>
+              <ion-item no-lines>
+                <ion-label hidden>Select Commodity</ion-label>
+                <ion-select class="max-width-100" [(ngModel)]="lcl.commodities" name="commodities" placeholder="Select">
+                  <ion-option *ngFor="let commodity of commodities" [value]="commodity"  >{{commodity.qc_lookup_value1}}</ion-option>
+                </ion-select>
+              </ion-item>
+
             </ion-col>
 
         </ion-row>
@@ -145,9 +149,13 @@
             </ion-col>
 
             <ion-col col-4 no-padding>
-             <ion-select class="max-width-100" [(ngModel)]="lcl.package" name="package" placeholder="Select">
-                <ion-option *ngFor="let package of packages" [value]="package" >{{package.qc_lookup_value1}}</ion-option>
-            </ion-select>
+              <ion-item no-lines>
+                <ion-label hidden>Select Package</ion-label>
+                <ion-select class="max-width-100" [(ngModel)]="lcl.package" name="package" placeholder="Select">
+                  <ion-option *ngFor="let package of packages" [value]="package" >{{package.qc_lookup_value1}}</ion-option>
+                </ion-select>
+              </ion-item>
+
             </ion-col>
 
         </ion-row>

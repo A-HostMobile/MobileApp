@@ -42,12 +42,11 @@
       </ion-item>
       <ion-badge [hidden]="zipcode.untouched || addpick.value.zipcode !=null" *ngIf="zipcode.invalid" float-end>Zipcode is required</ion-badge>
 
-      <ion-item no-padding>
+      <ion-item no-padding no-lines>
         <ion-label class="label-title" no-padding col-5>Country</ion-label>
           <ion-select [(ngModel)]="countries.country_name" #country="ngModel" name="country" required>
             <ion-option  [value]="countries.country_name" [selected]="true">{{countries.country_name}}</ion-option>
           </ion-select>
-
       </ion-item>
       <ion-badge [hidden]="country.untouched && addpick.value.country !=null" *ngIf="country.invalid" float-end>Country is required</ion-badge>
 

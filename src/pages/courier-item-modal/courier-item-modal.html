@@ -18,14 +18,12 @@
                   <ion-label no-padding class="label-title">Commodity</ion-label>
                 </ion-col>
                 <ion-col col-7 no-padding>
-                  <ion-item>
+                  <ion-item no-lines>
                     <ion-label hidden>Select Commodity</ion-label>
                       <ion-select class="max-width-100" [(ngModel)]="item.commodity" name="commodity" #commodity="ngModel" placeholder="Please Select" (ionCancel)="touch()" (ionChange)="checkDimension(item.commodity)" required>
                         <ion-option *ngFor="let commodity of commodities" [value]="commodity.qc_lookup_code" [selected]="commodity.qc_lookup_code == item.commodity">{{commodity.qc_lookup_value1}}</ion-option>
                       </ion-select>
-
                   </ion-item>
-
                 </ion-col>
             </ion-row>
       </ion-grid>
