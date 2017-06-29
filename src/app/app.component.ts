@@ -8,7 +8,7 @@ import {
 
 import { UserData } from '../providers/user-data';
 import { ConferenceData } from '../providers/conference-data';
-//import { FCM } from '@ionic-native/fcm';
+import { FCM } from '@ionic-native/fcm';
 import {HomePage} from "../pages/home/home";
 import {HelpPage} from "../pages/help/help";
 import {NewsPage} from "../pages/news/news";
@@ -94,8 +94,8 @@ export class TemplateApp {
     public toastCtrl: ToastController,
     public authService: AuthServiceProvider,
     public quickcodeService: QuickcodeProvider,
-    public loadCtrl: LoadingController//,
-    //public fcm:FCM
+    public loadCtrl: LoadingController,
+    public fcm:FCM
   ) {
     // this.fcm.getToken().then(token=>{
     //     console.log("FCM TOKEN:"+token);
@@ -147,15 +147,10 @@ export class TemplateApp {
         this._quickcode_commodities = resCommodity;
     });
 
-    // this.fcm.onNotification().subscribe(data=>{
-    //   console.log("On Notification Data:"+JSON.stringify(data));
-    //   if(data.wasTapped){
-    //     console.log("Received in background");
-    //   } else {
-    //     console.log("Received in foreground");
-    //   };
-    // })
-
+    this.fcm.onNotification().subscribe(data=>{
+      console.log("On Notification Data:"+JSON.stringify(data));
+      this.events.publish('checkStsLogin',data.type,data.bookingId,data.wasTapped);
+    });
 
   }
 
@@ -291,9 +286,9 @@ export class TemplateApp {
       this.dismissLoading();
     });
 
-    this.events.subscribe('checkStsLogin',(pages:any,params:any)=>{
+    this.events.subscribe('checkStsLogin',(pages:any,params:any,wasTapped:any)=>{
       if(pages!=null){
-        this.checkStatusLogin(pages,params);
+        this.checkStatusLogin(pages,params,wasTapped);
       }
     });
 
@@ -306,7 +301,7 @@ export class TemplateApp {
     });
   }
 
-  checkStatusLogin(pages:any,params:any){
+  checkStatusLogin(pages:any,params:any,wasTapped:any){
     this.authService.getProfile().subscribe((res)=>{
       let profile = res;
       if(profile.responseCode == 0){
@@ -314,8 +309,23 @@ export class TemplateApp {
         console.log('Login and Get profile');
         if(pages==HomePage){
           this.app.getRootNav().popToRoot();
-        }
-        else if(pages!='check'){
+        }else if(pages == 1 || pages == 2){
+          //set page
+          if(pages == 1){
+            pages = HistoryDetailPage
+          }
+          else{
+            pages = HistoryDetailCourierPage
+          }
+          //check wasTapped
+          if(wasTapped){
+            console.log('Run background was tapped');
+            this.app.getRootNav().push(pages,params);
+          }else{
+            console.log('Run foreground');
+            this.popupPushNoti(pages,params);
+          }
+        }else if(pages!='check'){
           this.app.getRootNav().push(pages,params);
         }
       }else{
@@ -339,6 +349,29 @@ export class TemplateApp {
         }
       }
     });
+  }
+
+  popupPushNoti(page:any,param:any){
+      this._alert = this.alert.create({
+        title: 'Booking ID: '+ param,
+        message: 'Do you want to open '+ page + 'page?',
+        buttons: [
+          {
+            text: 'Cancel',
+            role: 'cancel',
+            handler: () => {
+                console.log('cancel');
+            }
+          },
+          {
+            text: 'Ok',
+            handler: () => {
+              this.app.getRootNav().push(page,param);
+            }
+          }
+        ]
+      });
+      this._alert.present();
   }
 
   checkConnection() {
