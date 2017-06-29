@@ -15,9 +15,11 @@
 
                   <ion-col col-4 no-padding></ion-col>
                   <ion-col col-4 no-padding >
-                      <ion-select interface="popover" class="max-width-100" [(ngModel)]="lcl.pod"  name="pod" #pod="ngModel" *ngIf="(scheduleData | json) == ({} | json)" (ionCancel)="touch(1)" placeholder="Select" required>
-                        <ion-option  *ngFor="let pod of pods" [value]="pod.qc_lookup_value2">{{pod.qc_lookup_value2}}</ion-option>
-                      </ion-select>
+                    <ion-select class="max-width-100" [(ngModel)]="lcl.pod"  name="pod" #pod="ngModel" *ngIf="(scheduleData | json) == ({} | json)" placeholder="Select" required="">
+                    </ion-select>
+                      <!--<ion-select interface="popover" class="max-width-100" [(ngModel)]="lcl.pod"  name="pod" #pod="ngModel" *ngIf="(scheduleData | json) == ({} | json)" (ionCancel)="touch(1)" placeholder="Select" required>-->
+                        <!--<ion-option  *ngFor="let pod of pods" [value]="pod.qc_lookup_value2">{{pod.qc_lookup_value2}}</ion-option>-->
+                      <!--</ion-select>-->
                       <ion-select interface="popover" class="max-width-100" [(ngModel)]="scheduleData.s_to"  name="pod" *ngIf="(scheduleData | json) != ({} | json)" required>
                         <ion-option [value]="scheduleData.s_to" [selected]="true">{{scheduleData.s_to}}</ion-option>
                       </ion-select>

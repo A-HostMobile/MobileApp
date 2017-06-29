@@ -90,7 +90,6 @@ export class LclBookingPage {
 
   touch(num: number){
     if(num == 1){
-      alert('fuck');
       this.selectcancel = true;
      } else if(num==2) {
       this.datecancel = true;
