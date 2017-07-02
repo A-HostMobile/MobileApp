@@ -64,6 +64,7 @@ import { HistoryServiceProvider } from '../providers/history-service/history-ser
 
 import { PickupAddressServiceProvider } from '../providers/pickup-address-service/pickup-address-service';
 import { CountryZoneProvider } from '../providers/country-zone/country-zone';
+import { FcmServiceProvider } from '../providers/fcm-service/fcm-service';
 
 
 @NgModule({
@@ -169,7 +170,8 @@ import { CountryZoneProvider } from '../providers/country-zone/country-zone';
     HistoryServiceProvider,
     PickupAddressServiceProvider,
     CountryZoneProvider,
-    FCM
+    FCM,
+    FcmServiceProvider
   ]
 })
 export class AppModule { }
