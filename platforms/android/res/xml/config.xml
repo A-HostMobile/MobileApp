@@ -31,10 +31,14 @@
     </feature>
     <name>LogisticsDEMO</name>
     <description>
+
         Smart Logistic Mobile Application by A-Host
+
   </description>
     <author email="ahostmobile@gmail.com" href="http://a-host.co.th/">
+
       A-Host Mobil Team
+
   </author>
     <content src="index.html" />
     <access origin="*" />
@@ -73,19 +77,19 @@
     <preference name="xwalkCommandLine" value="--disable-pull-to-refresh-effect" />
     <preference name="xwalkMode" value="embedded" />
     <preference name="xwalkMultipleApk" value="true" />
-    <preference name="loadUrlTimeoutValue" value="700000" />
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="16" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="StatusBarStyle" value="default" />
-    <preference name="SplashScreen" value="none" />
     <preference name="orientation" value="default" />
     <preference name="SplashMaintainAspectRatio" value="true" />
     <preference name="FadeSplashScreenDuration" value="300" />
     <preference name="ShowSplashScreenSpinner" value="false" />
-    <preference name="AutoHideSplashScreen" value="false" />
     <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
     <preference name="SplashScreenDelay" value="3000" />
+    <preference name="loadUrlTimeoutValue" value="700000" />
+    <preference name="SplashScreen" value="screen" />
+    <preference name="AutoHideSplashScreen" value="false" />
 </widget>

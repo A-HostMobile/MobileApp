@@ -98,68 +98,68 @@ export class TemplateApp {
     public fcm:FCM
   ) {
     
-    confData.load();
-    //first open app have to check login if loggedIn get token and profile else clear localStorage
-    this.userData.hasLoggedIn().then((hasLoggedIn) => {
-        if(hasLoggedIn == true){
-          let token = localStorage.getItem('token');
-          if(token){
-            this.events.publish('checkStsLogin','check');
-            let profile = localStorage.getItem('profile');
-            if(profile){
-              this._profile = JSON.parse(profile);
+    this.platform.ready().then(() => {
+        this.splashScreen.hide();
+        this.userData.hasLoggedIn().then((hasLoggedIn) => {
+          if(hasLoggedIn == true){
+            let token = localStorage.getItem('token');
+            if(token){
+              this.events.publish('checkStsLogin','check');
+              let profile = localStorage.getItem('profile');
+              if(profile){
+                this._profile = JSON.parse(profile);
+              }
             }
+            console.log('loggedIn')
+          }else{
+            this.userData.hasLoggedIn().then((hasLoggedIn)=>{
+              console.log('Have not login')
+              this.events.publish('user:logout');
+            });
           }
-          console.log('loggedIn')
-        }else{
-          this.userData.hasLoggedIn().then((hasLoggedIn)=>{
-            console.log('Have not login')
-            this.events.publish('user:logout');
-          });
-        }
-    });
-
-    this.enableMenu(true);
-
-    this.checkConnection();
-
-    this.listenToEvents();
-
-    this.backButton();
-
-    //this.status.hide();
-
-    this.quickcodeService.getPod().subscribe((resPod)=>{
-        this._quickcode_pod = resPod;
-    });
-    this.quickcodeService.getPackage().subscribe((resPackage)=>{
-        this._quickcode_package = resPackage;
-    });
-    this.quickcodeService.getGwunit().subscribe((resGwunit)=>{
-        this._quickcode_gwunit = resGwunit;
-    });
-    this.quickcodeService.getCountrycode().subscribe((resCountry)=>{
-        this._quickcode_countrycode = resCountry;
-    });
-    this.quickcodeService.getCommodities().subscribe((resCommodity)=>{
-        this._quickcode_commodities = resCommodity;
-    });
-    
-    if(this.platform.is('cordova')){
-      
-      console.log("Run App on Mobile");
-      this.fcm.getToken().then(token=>{
-        console.log("FCM TOKEN:"+token);
-      })
-      this.fcm.onNotification().subscribe(data=>{
-        console.log("On Notification Data:"+JSON.stringify(data));
-        this.events.publish('checkStsLogin',data.type,data.bookingId,data.wasTapped);
       });
-    }
-    else{
-      console.log("Run App on Browser");
-    }
-    
+  
+      this.enableMenu(true);
+  
+      this.checkConnection();
+  
+      this.listenToEvents();
+  
+      this.backButton();
+  
+      //this.status.hide();
+  
+      this.quickcodeService.getPod().subscribe((resPod)=>{
+          this._quickcode_pod = resPod;
+      });
+      this.quickcodeService.getPackage().subscribe((resPackage)=>{
+          this._quickcode_package = resPackage;
+      });
+      this.quickcodeService.getGwunit().subscribe((resGwunit)=>{
+          this._quickcode_gwunit = resGwunit;
+      });
+      this.quickcodeService.getCountrycode().subscribe((resCountry)=>{
+          this._quickcode_countrycode = resCountry;
+      });
+      this.quickcodeService.getCommodities().subscribe((resCommodity)=>{
+          this._quickcode_commodities = resCommodity;
+      });
+      
+      if(this.platform.is('cordova')){
+        
+        console.log("Run App on Mobile");
+        this.fcm.getToken().then(token=>{
+          console.log("FCM TOKEN:"+token);
+        })
+        this.fcm.onNotification().subscribe(data=>{
+          console.log("On Notification Data:"+JSON.stringify(data));
+          this.events.publish('checkStsLogin',data.type,data.bookingId,data.wasTapped);
+        });
+      }
+      else{
+        console.log("Run App on Browser");
+      }
+    });
 
   }
 
@@ -253,11 +253,7 @@ export class TemplateApp {
     })
   }
 
-  platformReady() {
-    this.platform.ready().then(() => {
-      this.splashScreen.hide()
-    });
-  }
+  
 
   listenToEvents() {
     this.events.subscribe('user:login', (profile:any) => {
