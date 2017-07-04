@@ -100,6 +100,7 @@ export class TemplateApp {
 
     this.platform.ready().then(() => {
         this.splashScreen.hide();
+        this.checkConnection();
         this.userData.hasLoggedIn().then((hasLoggedIn) => {
           if(hasLoggedIn == true){
             let token = localStorage.getItem('token');
@@ -381,8 +382,9 @@ export class TemplateApp {
           }]
         }).present();
         this.count++;
+
       }
-      else if(this.count==2){
+      else if(this.count==3){
         this.mdlCtrl.create(NoInternetModalPage).present();
         this.count++;
       }
@@ -393,10 +395,9 @@ export class TemplateApp {
         discon.unsubscribe();
       });
     });
-
     setTimeout(()=>{
-      this.count=2;
-    },3000);
+      this.count=3;
+    },10000);
   }
 
   openPage(page: PageInterface) {
