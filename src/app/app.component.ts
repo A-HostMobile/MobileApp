@@ -100,19 +100,7 @@ export class TemplateApp {
 
     this.platform.ready().then(() => {
         this.splashScreen.hide();
-        if(this.platform.is('android')){
-          this.checkConnection();
-        }
-        else if(this.platform.is('ios')){
-          if(this.network.type === 'none'){
-
-            this.mdlCtrl.create(NoInternetModalPage).present();
-          }
-          this.network.onDisconnect().subscribe(()=>{
-            this.mdlCtrl.create(NoInternetModalPage).present();
-          });
-          console.log('Type : '+this.network.type);
-        }
+        this.checkConnection();
         this.userData.hasLoggedIn().then((hasLoggedIn) => {
           if(hasLoggedIn == true){
             let token = localStorage.getItem('token');
@@ -132,13 +120,9 @@ export class TemplateApp {
 
       this.enableMenu(true);
 
-      // this.checkConnection();
-
       this.listenToEvents();
 
       this.backButton();
-
-      //this.status.hide();
 
       this.quickcodeService.getPod().subscribe((resPod)=>{
           this._quickcode_pod = resPod;
@@ -383,8 +367,8 @@ export class TemplateApp {
   }
 
   checkConnection() {
-    let discon = this.network.onDisconnect().subscribe(()=> {
-      if(this.count==0){
+    if(this.network.type === 'none'){
+      if(this.platform.is('android')){
         this.alert.create({
           title: 'No Connection Access',
           message: 'Please Check Your Internet Connection',
@@ -395,23 +379,14 @@ export class TemplateApp {
             }
           }]
         }).present();
-        this.count++;
-
-      }
-      else if(this.count==3){
+      } else if(this.platform.is('ios')){
         this.mdlCtrl.create(NoInternetModalPage).present();
-        this.count++;
       }
-    });
-    this.network.onConnect().subscribe(()=>{
+    } else {
       this.network.onDisconnect().subscribe(()=> {
         this.mdlCtrl.create(NoInternetModalPage).present();
-        discon.unsubscribe();
       });
-    });
-    setTimeout(()=>{
-      this.count=3;
-    },10000);
+    }
   }
 
   openPage(page: PageInterface) {
