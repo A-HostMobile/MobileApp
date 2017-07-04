@@ -86,7 +86,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		fBXvTIj1forNBCrnBnLPnnkg7sg=
+		iQMYXr0z8tuhtW5tByOn7W52gkM=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -94,7 +94,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		8oix0tlXi5v9KVZgmh95I9GGDWE=
+		Ol3VdaXUl0/985EZCIKcg3qv03Q=
 		</data>
 		<key>GoogleService-Info.plist</key>
 		<data>
@@ -162,7 +162,7 @@
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
-		IGYjDoVGV2VjjQVTm603mY2i/Dw=
+		WnZN8YH15n2Rv7G1yUdrm4sAxzA=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -554,11 +554,11 @@
 		</data>
 		<key>www/build/main.js</key>
 		<data>
-		lts1PMw0qCGgbBEgqbITOvWOw+0=
+		uFg+RRHrz+g5OuSOULjVB+Ev/90=
 		</data>
 		<key>www/build/main.js.map</key>
 		<data>
-		TgpJaWrlUJA4XPbiRtM3BYjG34o=
+		TqGdxyElE+6jlCh7UZuY4dmEYRw=
 		</data>
 		<key>www/build/polyfills.js</key>
 		<data>
@@ -871,11 +871,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			fBXvTIj1forNBCrnBnLPnnkg7sg=
+			iQMYXr0z8tuhtW5tByOn7W52gkM=
 			</data>
 			<key>hash2</key>
 			<data>
-			AWTiOJbMya2/UfY1Z2RBFo0b5M0hOOf2P066dARB8t8=
+			4v3NPmK0GdvBN8q5vZnLKVGYu1WIcPQXsmmrwFTcUOk=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
@@ -893,11 +893,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			8oix0tlXi5v9KVZgmh95I9GGDWE=
+			Ol3VdaXUl0/985EZCIKcg3qv03Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			8umyBVvK4eEwpYJuCKiGEtAJr1feIjQLSRE75gd+QS4=
+			A3ZiKwSAgfcJ/AFfbmONhp00jMSbrj4/fh+YAk2NUfo=
 			</data>
 		</dict>
 		<key>GoogleService-Info.plist</key>
@@ -1069,11 +1069,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			IGYjDoVGV2VjjQVTm603mY2i/Dw=
+			WnZN8YH15n2Rv7G1yUdrm4sAxzA=
 			</data>
 			<key>hash2</key>
 			<data>
-			JkgSd82IU82C6LrKAjf5cATrkcorxlaLXWlw6QbRhkQ=
+			pqK5ZCvt9NfFYFzfy5jJgmeoEM7atYjjlAUC/Oq7/QY=
 			</data>
 		</dict>
 		<key>archived-expanded-entitlements.xcent</key>
@@ -2136,22 +2136,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			lts1PMw0qCGgbBEgqbITOvWOw+0=
+			uFg+RRHrz+g5OuSOULjVB+Ev/90=
 			</data>
 			<key>hash2</key>
 			<data>
-			J+8S/XAJlNN+Jd8dfKgRgBnXhst2o1AcZIM83YmEXiQ=
+			WOXKrOAYZNCkldfPfo+Uppmq7bqi89fG8pz8WLHoiC4=
 			</data>
 		</dict>
 		<key>www/build/main.js.map</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			TgpJaWrlUJA4XPbiRtM3BYjG34o=
+			TqGdxyElE+6jlCh7UZuY4dmEYRw=
 			</data>
 			<key>hash2</key>
 			<data>
-			ECRykPVl9u3hXagpMjWbRV93vRnCaEai3FF8tp1YuG0=
+			B2TnJqGd00a5W90Y0P7MN+Vgjatf6VpPUSkDYoveH18=
 			</data>
 		</dict>
 		<key>www/build/polyfills.js</key>
