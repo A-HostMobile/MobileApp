@@ -51,7 +51,7 @@ export class LclBookingPage {
   }
 
   getQuickcode(){
-    this.events.publish('showLoading');
+    //this.events.publish('showLoading');
     this.quickcodeService.getPod().subscribe(
         (resPod) => {this.pods = resPod.responseData,
                      this.quickcodeService.getGwunit().subscribe(
@@ -77,7 +77,7 @@ export class LclBookingPage {
   toSummary(form: NgForm){
     this.submitted = true;
     if(form.valid) {
-      this.events.publish('loadpage');
+      this.events.publish('showLoading');
       this.events.publish('checkStsLogin',LclSummaryPage,
        {
        firstPassed: form.value,

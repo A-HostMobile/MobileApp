@@ -53,7 +53,11 @@ export class HomePage {
   }
 
   openPage(pageNb: number) {
-    this.events.publish('loadpage');
+    this.userData.hasLoggedIn().then((hasLoggedIn) => {
+      if (hasLoggedIn == true) {
+        this.events.publish('showLoading');
+      }
+    });
     let  page: any;
     if(pageNb == 1){ page = LclBookingPage; }
     else { page = CourierBookingPage; }

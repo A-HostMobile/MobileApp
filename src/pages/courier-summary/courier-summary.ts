@@ -33,10 +33,12 @@ export class CourierSummaryPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CourierSummaryPage');
+    this.events.publish('dismissLoading');
   }
 
   toComplete(bookingId:any){
     console.log("BookinID :"+bookingId);
+    this.events.publish('showLoading');
     this.bookingServiceProvider.updateBookingStatus(this.bookingData[0].master[0].bc_booking_id,30,2).subscribe(
               (res) => {
                         if(res.responseCode == 0){
@@ -63,9 +65,9 @@ export class CourierSummaryPage {
                                type:"Courier",
                                work:this.work,
                                status:'error'
-                            })  
+                            })
                         }
-                        
+
                       },
               (error) => {  this.errorMessage = <any> error,
                             this.events.publish('checkStsLogin',CompletedPage,
@@ -76,7 +78,7 @@ export class CourierSummaryPage {
                                status:'error'
                             })
                           });
-    
+
     //this.events.publish('loadpage');
     //this.events.publish('checkStsLogin',CompletedPage);
   }

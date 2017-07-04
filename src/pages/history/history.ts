@@ -47,7 +47,6 @@ export class HistoryPage {
         this.navCtrl.popToRoot();
       }
     }
-    this.events.publish('showLoading');
   }
 
   ionViewWillEnter(){

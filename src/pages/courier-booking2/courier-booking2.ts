@@ -54,12 +54,11 @@ export class CourierBooking2Page {
   }
 
   getCourierData(){
-    this.events.publish('showLoading');
       this.bookingServiceProvider.getCourierDetail(this.masterData.bookingId).subscribe(
         (res) => {
                   this.bookingData = res,
                   this.checkCourierDetail(res[0].detail),
-                  this.events.publish('dismissLoading')
+                  this.events.publish('dismissLoading');
                   //console.log("Detail Data :"+JSON.stringify(this.bookingData));
                 },
         (error) => {  this.errorMessage = <any> error});
@@ -108,7 +107,7 @@ export class CourierBooking2Page {
   }
 
   toSummary(){
-    this.events.publish('loadpage');
+    this.events.publish('showLoading');
     //console.log('login from courier page 2');
     this.events.publish('checkStsLogin',CourierSummaryPage,{bookingData:this.bookingData,work:this.work});
 

@@ -30,13 +30,14 @@ export class CompletedPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CompletedPage');
+    this.events.publish('dismissLoading');
   }
 
   toHome(){
     this.navCtrl.popToRoot();
   }
   toHistory(){
-    this.events.publish('loadpage');
+    this.events.publish('showLoading');
     this.navCtrl.push(HistoryPage,CompletedPage);
   }
 

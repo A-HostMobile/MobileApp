@@ -59,8 +59,8 @@ export class CourierBookingPage {
       else{
           this.navCtrl.pop()
       }
-
     }
+    this.events.publish('dismissLoading');
   }
 
   ionViewCanEnter() {
@@ -83,6 +83,7 @@ export class CourierBookingPage {
 
   toCourier2(form: NgForm){
     if(form.valid) {
+      this.events.publish('showLoading')
         if(form.value.bookingId==null){
             //console.log("After Booking Courier Insert:"+form.value.bookingId);
 

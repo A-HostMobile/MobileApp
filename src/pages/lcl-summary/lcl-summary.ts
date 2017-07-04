@@ -54,10 +54,11 @@ export class LclSummaryPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LclSummaryPage');
+    this.events.publish('dismissLoading');
   }
 
   toCompleted(){
-    this.events.publish('loadpage');
+    this.events.publish('showLoading');
     let responseData:any;
     let checkRemark = this.prepareData(this.scheduleData);
     if(checkRemark){
@@ -72,7 +73,7 @@ export class LclSummaryPage {
               numGwunit = this.lclFormData.gwunit.qc_lookup_no;
         }
         this.bookingService.insertBookingLCL(this.lclFormData,this.dateUnix,this.remarkData,numCommodity,numGwunit,numGwunit).subscribe(
-            (resData) => {  
+            (resData) => {
                             if(resData.responseCode == 0){
                                 this.events.publish('checkStsLogin',CompletedPage,
                                    {
