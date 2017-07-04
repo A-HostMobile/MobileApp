@@ -2,11 +2,270 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f44e5d9-4dc2-467a-85f4-e79ac08cf5ea" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/3.2/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/3.2/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/3.2/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/3.2/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/3.2/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/3.2/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/3.2/taskArtifacts/taskArtifacts.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/3.2/taskArtifacts/taskArtifacts.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/3.3/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/3.3/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/3.3/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/3.3/taskArtifacts/taskArtifacts.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/3.3/taskArtifacts/taskArtifacts.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/3.3/tasks/_compileArmv7DebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/3.3/tasks/_compileArmv7DebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/3.3/tasks/_compileArmv7DebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/3.3/tasks/_compileArmv7DebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/3.3/tasks/_compileArmv7DebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/3.3/tasks/_compileArmv7DebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/3.3/tasks/_compileArmv7DebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/3.3/tasks/_compileArmv7DebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/3.3/tasks/_compileX86DebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/3.3/tasks/_compileX86DebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/3.3/tasks/_compileX86DebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/3.3/tasks/_compileX86DebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/3.3/tasks/_compileX86DebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/3.3/tasks/_compileX86DebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/3.3/tasks/_compileX86DebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/3.3/tasks/_compileX86DebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/outputs/aar/CordovaLib-debug.aar" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/outputs/aar/CordovaLib-debug.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/outputs/aar/CordovaLib-release.aar" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/outputs/aar/CordovaLib-release.aar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/add-pickup-modal/add-pickup-modal.html" afterPath="$PROJECT_DIR$/src/pages/add-pickup-modal/add-pickup-modal.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/courier-booking/courier-booking.html" afterPath="$PROJECT_DIR$/src/pages/courier-booking/courier-booking.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/courier-item-modal/courier-item-modal.html" afterPath="$PROJECT_DIR$/src/pages/courier-item-modal/courier-item-modal.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/lcl-booking/lcl-booking.html" afterPath="$PROJECT_DIR$/src/pages/lcl-booking/lcl-booking.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.xml" afterPath="$PROJECT_DIR$/config.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/CHANGELOG.md" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/CHANGELOG.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/README.md" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/base.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/base.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/base.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/base.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/build.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/build.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/build.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/build.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/compile.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/compile.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/compile.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/compile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/emulate.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/emulate.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/emulate.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/emulate.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/index.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/index.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/index.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/platform.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/platform.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/platform.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/platform.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/plugin.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/plugin.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/plugin.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/plugin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/prepare.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/prepare.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/prepare.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/prepare.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/resources.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/resources.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/resources.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/resources.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/run.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/run.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/run.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/commands/run.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/definitions.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/definitions.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/definitions.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/definitions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/index.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/index.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/index.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/lib/modules.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/lib/modules.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/lib/modules.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/lib/modules.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/lib/resources.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/lib/resources.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/lib/resources.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/lib/resources.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/lib/utils/configXmlUtils.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/lib/utils/configXmlUtils.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/lib/utils/configXmlUtils.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/lib/utils/configXmlUtils.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/lib/utils/cordova.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/lib/utils/cordova.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/lib/utils/cordova.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/lib/utils/cordova.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/lib/utils/setup.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/lib/utils/setup.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/lib/utils/setup.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/lib/utils/setup.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/resources.json" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/dist/resources.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/CHANGELOG.md" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/CHANGELOG.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/README.md" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/definitions.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/definitions.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/definitions.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/definitions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/guards.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/guards.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/guards.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/guards.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/index.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/index.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/index.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/app.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/app.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/app.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/command/command.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/command/command.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/command/command.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/command/command.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/command/index.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/command/index.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/command/index.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/command/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/command/namespace.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/command/namespace.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/command/namespace.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/command/namespace.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/command/utils.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/command/utils.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/command/utils.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/command/utils.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/config.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/config.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/config.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/deploy.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/deploy.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/deploy.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/deploy.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/errors.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/errors.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/errors.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/errors.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/help.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/help.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/help.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/help.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/hooks.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/hooks.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/hooks.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/hooks.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/http.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/http.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/http.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/http.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/login.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/login.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/login.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/login.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/modules.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/modules.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/modules.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/modules.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/package.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/package.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/package.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/package.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/plugins.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/plugins.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/plugins.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/plugins.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/project.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/project.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/project.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/project.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/prompts.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/prompts.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/prompts.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/prompts.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/security.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/security.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/security.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/security.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/session.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/session.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/session.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/session.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/shell.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/shell.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/shell.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/shell.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/telemetry.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/telemetry.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/telemetry.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/telemetry.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/archive.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/archive.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/archive.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/archive.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/array.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/array.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/array.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/array.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/aws.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/aws.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/aws.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/aws.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/environmentInfo.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/environmentInfo.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/environmentInfo.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/environmentInfo.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/format.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/format.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/format.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/format.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/fs.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/fs.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/fs.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/fs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/logger.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/logger.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/logger.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/logger.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/network.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/network.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/network.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/network.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/npm.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/npm.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/npm.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/npm.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/promise.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/promise.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/promise.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/promise.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/shell.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/shell.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/shell.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/shell.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/string.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/string.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/string.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/string.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/task.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/task.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/task.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/utils/task.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/validators.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/validators.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/validators.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/dist/lib/validators.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/package.json" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/@ionic/cli-utils/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/string-width/index.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/string-width/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/string-width/license" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/string-width/license" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/string-width/package.json" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/string-width/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/string-width/readme.md" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/node_modules/string-width/readme.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/package.json" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/resources.json" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-cordova/resources.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-ionic-angular/CHANGELOG.md" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-ionic-angular/CHANGELOG.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-ionic-angular/README.md" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-ionic-angular/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-ionic-angular/dist/build.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-ionic-angular/dist/build.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-ionic-angular/dist/build.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-ionic-angular/dist/build.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-ionic-angular/dist/generate.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-ionic-angular/dist/generate.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-ionic-angular/dist/generate.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-ionic-angular/dist/generate.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-ionic-angular/dist/index.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-ionic-angular/dist/index.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-ionic-angular/dist/index.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-ionic-angular/dist/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-ionic-angular/dist/lib/modules.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-ionic-angular/dist/lib/modules.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-ionic-angular/dist/lib/modules.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-ionic-angular/dist/lib/modules.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-ionic-angular/dist/serve.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-ionic-angular/dist/serve.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-ionic-angular/dist/serve.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-ionic-angular/dist/serve.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-ionic-angular/dist/utils/generate.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-ionic-angular/dist/utils/generate.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-ionic-angular/dist/utils/generate.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-ionic-angular/dist/utils/generate.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-ionic-angular/package.json" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-plugin-ionic-angular/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/CHANGELOG.md" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/CHANGELOG.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/README.md" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/definitions.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/definitions.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/definitions.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/definitions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/guards.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/guards.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/guards.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/guards.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/index.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/index.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/index.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/app.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/app.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/app.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/command/command.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/command/command.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/command/command.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/command/command.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/command/index.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/command/index.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/command/index.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/command/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/command/namespace.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/command/namespace.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/command/namespace.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/command/namespace.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/command/utils.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/command/utils.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/command/utils.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/command/utils.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/config.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/config.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/config.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/deploy.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/deploy.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/deploy.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/deploy.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/errors.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/errors.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/errors.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/errors.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/help.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/help.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/help.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/help.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/hooks.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/hooks.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/hooks.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/hooks.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/http.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/http.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/http.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/http.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/login.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/login.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/login.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/login.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/modules.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/modules.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/modules.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/modules.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/package.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/package.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/package.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/package.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/plugins.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/plugins.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/plugins.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/plugins.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/project.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/project.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/project.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/project.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/prompts.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/prompts.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/prompts.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/prompts.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/security.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/security.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/security.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/security.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/session.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/session.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/session.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/session.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/shell.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/shell.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/shell.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/shell.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/telemetry.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/telemetry.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/telemetry.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/telemetry.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/archive.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/archive.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/archive.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/archive.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/array.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/array.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/array.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/array.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/aws.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/aws.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/aws.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/aws.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/environmentInfo.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/environmentInfo.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/environmentInfo.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/environmentInfo.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/format.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/format.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/format.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/format.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/fs.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/fs.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/fs.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/fs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/logger.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/logger.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/logger.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/logger.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/network.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/network.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/network.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/network.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/npm.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/npm.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/npm.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/npm.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/promise.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/promise.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/promise.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/promise.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/shell.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/shell.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/shell.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/shell.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/string.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/string.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/string.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/string.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/task.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/task.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/task.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/utils/task.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/validators.d.ts" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/validators.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/validators.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/dist/lib/validators.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/node_modules/string-width/index.js" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/node_modules/string-width/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/node_modules/string-width/license" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/node_modules/string-width/license" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/node_modules/string-width/package.json" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/node_modules/string-width/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/node_modules/string-width/readme.md" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/node_modules/string-width/readme.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/package.json" afterPath="$PROJECT_DIR$/node_modules/@ionic/cli-utils/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/AndroidManifest.xml" afterPath="$PROJECT_DIR$/platforms/android/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/generated/source/buildConfig/debug/org/apache/cordova/BuildConfig.java" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/generated/source/buildConfig/debug/org/apache/cordova/BuildConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/generated/source/buildConfig/release/org/apache/cordova/BuildConfig.java" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/generated/source/buildConfig/release/org/apache/cordova/BuildConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/bundles/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/bundles/debug/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/bundles/release/AndroidManifest.xml" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/bundles/release/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/incremental/mergeDebugAssets/merger.xml" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/incremental/mergeDebugAssets/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/incremental/mergeDebugShaders/merger.xml" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/incremental/mergeDebugShaders/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/incremental/mergeReleaseAssets/merger.xml" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/incremental/mergeReleaseAssets/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/incremental/mergeReleaseJniLibFolders/merger.xml" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/incremental/mergeReleaseJniLibFolders/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/incremental/mergeReleaseShaders/merger.xml" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/incremental/mergeReleaseShaders/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/incremental/packageDebugResources/merger.xml" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/incremental/packageDebugResources/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/incremental/packageReleaseResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/incremental/packageReleaseResources/compile-file-map.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/incremental/packageReleaseResources/merger.xml" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/incremental/packageReleaseResources/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/manifests/aapt/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/manifests/aapt/debug/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/manifests/aapt/release/AndroidManifest.xml" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/manifests/aapt/release/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/android.json" afterPath="$PROJECT_DIR$/platforms/android/android.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/build.gradle" afterPath="$PROJECT_DIR$/platforms/android/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/res/values/strings.xml" afterPath="$PROJECT_DIR$/platforms/android/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/res/xml/config.xml" afterPath="$PROJECT_DIR$/platforms/android/res/xml/config.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/settings.gradle" afterPath="$PROJECT_DIR$/platforms/android/settings.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.component.ts" afterPath="$PROJECT_DIR$/src/app/app.component.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,107 +280,37 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="_boxsizings.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scss/frameworks/_boxsizings.scss">
+      <file leaf-file-name="home.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/home/home.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5857">
-              <caret line="6" column="9" lean-forward="false" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+            <state relative-caret-position="449">
+              <caret line="42" column="52" lean-forward="false" selection-start-line="42" selection-start-column="52" selection-end-line="42" selection-end-column="52" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_grids.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scss/themes/_grids.scss">
+      <file leaf-file-name="app.component.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="15" lean-forward="false" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="lcl-booking.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/pages/lcl-booking/lcl-booking.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="132" column="29" lean-forward="true" selection-start-line="132" selection-start-column="29" selection-end-line="132" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="courier-booking.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/courier-booking/courier-booking.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="65" column="40" lean-forward="false" selection-start-line="65" selection-start-column="34" selection-end-line="65" selection-end-column="40" />
+            <state relative-caret-position="536">
+              <caret line="386" column="21" lean-forward="false" selection-start-line="386" selection-start-column="21" selection-end-line="386" selection-end-column="21" />
               <folding>
-                <marker date="1498725899710" expanded="true" signature="5383:5398" ph="..." />
+                <element signature="n#!!block;n#ConfirmBox#0;n#TemplateApp#0" expanded="false" />
+                <element signature="n#!!block;n#showLoading#0;n#TemplateApp#0" expanded="false" />
+                <element signature="n#!!block;n#LoadingPage#0;n#TemplateApp#0" expanded="false" />
+                <element signature="n#!!block;n#dismissLoading#0;n#TemplateApp#0" expanded="false" />
+                <element signature="n#!!block;n#exit#0;n#TemplateApp#0" expanded="false" />
+                <element signature="n#!!block;n#backButton#0;n#TemplateApp#0" expanded="false" />
+                <element signature="n#!!block;n#listenToEvents#0;n#TemplateApp#0" expanded="false" />
+                <element signature="n#!!block;n#checkStatusLogin#0;n#TemplateApp#0" expanded="false" />
+                <element signature="n#!!block;n#popupPushNoti#0;n#TemplateApp#0" expanded="false" />
+                <element signature="n#!!block;n#openPage#0;n#TemplateApp#0" expanded="false" />
+                <element signature="n#!!block;n#enableMenu#0;n#TemplateApp#0" expanded="false" />
+                <element signature="n#!!block;n#isActive#0;n#TemplateApp#0" expanded="false" />
+                <element signature="n#!!block;n#alertToHomeAddPick#0;n#TemplateApp#0" expanded="false" />
+                <element signature="n#!!block;n#alertToHomeModal#0;n#TemplateApp#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="add-pickup-modal.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/add-pickup-modal/add-pickup-modal.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="44" column="35" lean-forward="false" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="courier-item-modal.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/courier-item-modal/courier-item-modal.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1053">
-              <caret line="25" column="29" lean-forward="false" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_forms.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scss/themes/_forms.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="55" column="17" lean-forward="false" selection-start-line="55" selection-start-column="17" selection-end-line="55" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="courier-booking.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/courier-booking/courier-booking.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="lcl-booking.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/lcl-booking/lcl-booking.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-              <folding>
-                <marker date="1498724885960" expanded="true" signature="17:101" ph="{...}" />
-                <marker date="1498724885960" expanded="true" signature="61:98" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/app.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -217,15 +406,15 @@
         <option value="$PROJECT_DIR$/src/pages/pickup-address/pickup-address.ts" />
         <option value="$PROJECT_DIR$/src/pages/courier-booking/courier-booking.ts" />
         <option value="$PROJECT_DIR$/src/pages/pickup-address/pickup-address.html" />
-        <option value="$PROJECT_DIR$/src/app/app.component.ts" />
         <option value="$PROJECT_DIR$/src/pages/lcl-booking/lcl-booking.ts" />
         <option value="$PROJECT_DIR$/src/scss/themes/_grids.scss" />
         <option value="$PROJECT_DIR$/src/pages/lcl-booking/lcl-booking.scss" />
         <option value="$PROJECT_DIR$/src/scss/themes/_forms.scss" />
-        <option value="$PROJECT_DIR$/src/pages/lcl-booking/lcl-booking.html" />
         <option value="$PROJECT_DIR$/src/pages/courier-booking/courier-booking.html" />
         <option value="$PROJECT_DIR$/src/pages/add-pickup-modal/add-pickup-modal.html" />
         <option value="$PROJECT_DIR$/src/pages/courier-item-modal/courier-item-modal.html" />
+        <option value="$PROJECT_DIR$/src/pages/lcl-booking/lcl-booking.html" />
+        <option value="$PROJECT_DIR$/src/app/app.component.ts" />
       </list>
     </option>
   </component>
@@ -261,8 +450,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -303,351 +490,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="theme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TemplateApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scss" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TemplateApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scss" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="frameworks" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TemplateApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scss" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="configs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TemplateApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="providers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TemplateApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="providers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pickup-address-service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TemplateApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="providers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="auth-service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TemplateApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TemplateApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="schedule-result" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TemplateApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="profile-edit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TemplateApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="profile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TemplateApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pickup-address" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TemplateApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="news-detail" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TemplateApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="news" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TemplateApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="login-modal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TemplateApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lcl-summary" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TemplateApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lcl-booking" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -687,269 +530,19 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="history-detail-courier" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TemplateApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="history-detail" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TemplateApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="history" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TemplateApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="courier-summary" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TemplateApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="courier-item-modal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TemplateApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="courier-booking2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TemplateApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="courier-booking" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TemplateApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="completed" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TemplateApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="agent-network" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TemplateApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="add-pickup-modal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TemplateApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TemplateApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TemplateApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugins" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="D:/IONIC/LEO10Mar2017" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/Project/MobileApp/src/pages/login-modal/login-modal.ts" />
@@ -1113,18 +706,19 @@
       <workItem from="1498619578883" duration="2582000" />
       <workItem from="1498636998107" duration="6821000" />
       <workItem from="1498703284878" duration="10070000" />
+      <workItem from="1499137109767" duration="3396000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="368043000" />
+    <option name="totallyTimeSpent" value="371439000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3109375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.140625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1151,7 +745,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="39" />
+      <option name="time" value="42" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1195,22 +789,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/home/home.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="59" column="46" lean-forward="false" selection-start-line="59" selection-start-column="46" selection-end-line="59" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/news/news.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
-            <marker date="1498620960230" expanded="true" signature="1631:1675" ph="{...}" />
-            <marker date="1498620960230" expanded="true" signature="1631:1686" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1219,9 +803,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1237,9 +818,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="84" column="46" lean-forward="false" selection-start-line="84" selection-start-column="46" selection-end-line="84" selection-end-column="46" />
-          <folding>
-            <marker date="1498643383054" expanded="true" signature="1757:1761" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1255,7 +834,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="3" column="49" lean-forward="false" selection-start-line="3" selection-start-column="49" selection-end-line="3" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1275,19 +853,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="191" column="0" lean-forward="false" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/scss/themes/_animates.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="96" column="7" lean-forward="false" selection-start-line="96" selection-start-column="7" selection-end-line="96" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1295,7 +864,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1303,7 +871,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1311,7 +878,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1319,7 +885,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1327,7 +892,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1335,7 +899,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1343,7 +906,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1351,7 +913,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1359,7 +920,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1367,7 +927,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1375,7 +934,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1383,7 +941,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1391,7 +948,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1399,7 +955,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1403">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1407,7 +962,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1275">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1415,7 +969,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1423,7 +976,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-580">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1431,7 +983,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1439,7 +990,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1447,7 +997,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1455,7 +1004,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1463,7 +1011,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1471,7 +1018,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1479,7 +1025,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1487,7 +1032,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
           <caret line="35" column="6" lean-forward="false" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1499,37 +1043,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/lcl-booking/lcl-booking.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <marker date="1498724885960" expanded="true" signature="17:101" ph="{...}" />
-            <marker date="1498724885960" expanded="true" signature="61:98" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/courier-booking/courier-booking.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/scss/frameworks/_boxsizings.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5857">
+        <state relative-caret-position="102">
           <caret line="6" column="9" lean-forward="false" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/lcl-booking/lcl-booking.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="132" column="29" lean-forward="false" selection-start-line="132" selection-start-column="29" selection-end-line="132" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/courier-booking/courier-booking.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="65" column="40" lean-forward="false" selection-start-line="65" selection-start-column="34" selection-end-line="65" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/add-pickup-modal/add-pickup-modal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="44" column="35" lean-forward="false" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/courier-item-modal/courier-item-modal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="25" column="29" lean-forward="false" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -1542,37 +1091,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/add-pickup-modal/add-pickup-modal.html">
+    <entry file="file://$PROJECT_DIR$/src/pages/courier-booking/courier-booking.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="44" column="35" lean-forward="false" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
+        <state relative-caret-position="187">
+          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/courier-item-modal/courier-item-modal.html">
+    <entry file="file://$PROJECT_DIR$/src/pages/lcl-booking/lcl-booking.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1053">
-          <caret line="25" column="29" lean-forward="false" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
+        <state relative-caret-position="102">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/courier-booking/courier-booking.html">
+    <entry file="file://$PROJECT_DIR$/src/app/app.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="65" column="40" lean-forward="false" selection-start-line="65" selection-start-column="34" selection-end-line="65" selection-end-column="40" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/home/home.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="449">
+          <caret line="42" column="52" lean-forward="false" selection-start-line="42" selection-start-column="52" selection-end-line="42" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="536">
+          <caret line="386" column="21" lean-forward="false" selection-start-line="386" selection-start-column="21" selection-end-line="386" selection-end-column="21" />
           <folding>
-            <marker date="1498725899710" expanded="true" signature="5383:5398" ph="..." />
+            <element signature="n#!!block;n#ConfirmBox#0;n#TemplateApp#0" expanded="false" />
+            <element signature="n#!!block;n#showLoading#0;n#TemplateApp#0" expanded="false" />
+            <element signature="n#!!block;n#LoadingPage#0;n#TemplateApp#0" expanded="false" />
+            <element signature="n#!!block;n#dismissLoading#0;n#TemplateApp#0" expanded="false" />
+            <element signature="n#!!block;n#exit#0;n#TemplateApp#0" expanded="false" />
+            <element signature="n#!!block;n#backButton#0;n#TemplateApp#0" expanded="false" />
+            <element signature="n#!!block;n#listenToEvents#0;n#TemplateApp#0" expanded="false" />
+            <element signature="n#!!block;n#checkStatusLogin#0;n#TemplateApp#0" expanded="false" />
+            <element signature="n#!!block;n#popupPushNoti#0;n#TemplateApp#0" expanded="false" />
+            <element signature="n#!!block;n#openPage#0;n#TemplateApp#0" expanded="false" />
+            <element signature="n#!!block;n#enableMenu#0;n#TemplateApp#0" expanded="false" />
+            <element signature="n#!!block;n#isActive#0;n#TemplateApp#0" expanded="false" />
+            <element signature="n#!!block;n#alertToHomeAddPick#0;n#TemplateApp#0" expanded="false" />
+            <element signature="n#!!block;n#alertToHomeModal#0;n#TemplateApp#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/lcl-booking/lcl-booking.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="132" column="29" lean-forward="true" selection-start-line="132" selection-start-column="29" selection-end-line="132" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>

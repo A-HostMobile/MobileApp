@@ -97,7 +97,7 @@ export class TemplateApp {
     public loadCtrl: LoadingController,
     public fcm:FCM
   ) {
-    
+
     this.platform.ready().then(() => {
         this.splashScreen.hide();
         this.userData.hasLoggedIn().then((hasLoggedIn) => {
@@ -112,23 +112,21 @@ export class TemplateApp {
             }
             console.log('loggedIn')
           }else{
-            this.userData.hasLoggedIn().then((hasLoggedIn)=>{
-              console.log('Have not login')
-              this.events.publish('user:logout');
-            });
+            console.log('Have not login')
+            this.events.publish('user:logout');
           }
       });
-  
+
       this.enableMenu(true);
-  
+
       this.checkConnection();
-  
+
       this.listenToEvents();
-  
+
       this.backButton();
-  
+
       //this.status.hide();
-  
+
       this.quickcodeService.getPod().subscribe((resPod)=>{
           this._quickcode_pod = resPod;
       });
@@ -144,9 +142,9 @@ export class TemplateApp {
       this.quickcodeService.getCommodities().subscribe((resCommodity)=>{
           this._quickcode_commodities = resCommodity;
       });
-      
+
       if(this.platform.is('cordova')){
-        
+
         console.log("Run App on Mobile");
         this.fcm.getToken().then(token=>{
           console.log("FCM TOKEN:"+token);
@@ -252,8 +250,6 @@ export class TemplateApp {
       })
     })
   }
-
-  
 
   listenToEvents() {
     this.events.subscribe('user:login', (profile:any) => {
@@ -374,6 +370,19 @@ export class TemplateApp {
   checkConnection() {
     let discon = this.network.onDisconnect().subscribe(()=> {
       if(this.count==0){
+        this.alert.create({
+          title: 'No Connection Access',
+          message: 'Please Check Your Internet Connection',
+          buttons:[{
+            text: 'OK',
+            handler: ()=>{
+              this.platform.exitApp();
+            }
+          }]
+        }).present();
+        this.count++;
+      }
+      else if(this.count==2){
         this.mdlCtrl.create(NoInternetModalPage).present();
         this.count++;
       }
@@ -384,6 +393,10 @@ export class TemplateApp {
         discon.unsubscribe();
       });
     });
+
+    setTimeout(()=>{
+      this.count=2;
+    },3000);
   }
 
   openPage(page: PageInterface) {
