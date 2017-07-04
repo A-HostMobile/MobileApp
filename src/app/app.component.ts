@@ -100,7 +100,14 @@ export class TemplateApp {
 
     this.platform.ready().then(() => {
         this.splashScreen.hide();
-        this.checkConnection();
+        if(this.platform.is('android')){
+          this.checkConnection();
+        }
+        else if(this.platform.is('ios')){
+          this.alert.create({
+            message: 'ios'
+          }).present();
+        }
         this.userData.hasLoggedIn().then((hasLoggedIn) => {
           if(hasLoggedIn == true){
             let token = localStorage.getItem('token');
@@ -120,7 +127,7 @@ export class TemplateApp {
 
       this.enableMenu(true);
 
-      this.checkConnection();
+      // this.checkConnection();
 
       this.listenToEvents();
 
@@ -152,7 +159,16 @@ export class TemplateApp {
         })
         this.fcm.onNotification().subscribe(data=>{
           console.log("On Notification Data:"+JSON.stringify(data));
-          this.events.publish('checkStsLogin',data.type,data.bookingId,data.wasTapped);
+          console.log(data.bookingId);
+          let _page:any;
+          //set page
+          if(data.type == 1){
+            _page = HistoryDetailPage
+          }
+          else{
+            _page = HistoryDetailCourierPage
+          }
+          this.events.publish('checkStsLogin',_page,data.bookingId,data.wasTapped);
         });
       }
       else{
@@ -303,14 +319,7 @@ export class TemplateApp {
         console.log('Login and Get profile');
         if(pages==HomePage){
           this.app.getRootNav().popToRoot();
-        }else if(pages == 1 || pages == 2){
-          //set page
-          if(pages == 1){
-            pages = HistoryDetailPage
-          }
-          else{
-            pages = HistoryDetailCourierPage
-          }
+        }else if(pages == HistoryDetailPage || pages == HistoryDetailCourierPage){
           //check wasTapped
           if(wasTapped){
             console.log('Run background was tapped');

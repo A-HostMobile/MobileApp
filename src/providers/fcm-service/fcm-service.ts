@@ -33,7 +33,6 @@ export class FcmServiceProvider {
   }
 
   FCMDeleteTokenFn():Observable<any>{
-    let _body = ({'party_id':this.partyId});
     return this.http.delete(`${AppSettings.API_ENDPOINT}token/${this.partyId}`,this._options)
     .map((res:Response) => <any> res.json().responseData)
     .catch(this.handleError);
