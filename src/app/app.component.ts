@@ -104,9 +104,14 @@ export class TemplateApp {
           this.checkConnection();
         }
         else if(this.platform.is('ios')){
-          this.alert.create({
-            message: 'ios'
-          }).present();
+          if(this.network.type === 'none'){
+
+            this.mdlCtrl.create(NoInternetModalPage).present();
+          }
+          this.network.onDisconnect().subscribe(()=>{
+            this.mdlCtrl.create(NoInternetModalPage).present();
+          });
+          console.log('Type : '+this.network.type);
         }
         this.userData.hasLoggedIn().then((hasLoggedIn) => {
           if(hasLoggedIn == true){
