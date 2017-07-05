@@ -382,9 +382,15 @@ export class TemplateApp {
   }
 
   popupPushNoti(page:any,param:any){
+    let NamePage:any;
+      if(page == HistoryDetailPage){
+        NamePage = 'History LCL ';
+      }else if(page == HistoryDetailCourierPage){
+        NamePage = 'History Courier ';
+      }
       this._alert = this.alert.create({
         title: 'Booking ID: '+ param,
-        message: 'Do you want to open '+ page + 'page?',
+        message: 'Do you want to open '+ NamePage + 'page?',
         buttons: [
           {
             text: 'Cancel',
@@ -450,7 +456,26 @@ export class TemplateApp {
       });
     }
     if (page.logsOut === true) {
-      this.userData.logout();
+      this._alert = this.alert.create({
+        title: 'Logout',
+        message: 'Do you want to logout from system?',
+        buttons: [
+          {
+            text: 'Cancel',
+            role: 'cancel',
+            handler: () => {
+                console.log('cancel');
+            }
+          },
+          {
+            text: 'Ok',
+            handler: () => {
+              this.userData.logout();
+            }
+          }
+        ]
+      });
+      this._alert.present();
     }
   }
 
