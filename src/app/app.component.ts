@@ -215,7 +215,7 @@ export class TemplateApp {
 
   InsertToken(FCM_PartyId:any,FCMtoken:any){
     this.fcmService.FCMInsertTokenFn(FCM_PartyId,FCMtoken).subscribe(
-      (res) => this.fcmInsertToken = res,
+      (res) => {this.fcmInsertToken = res;console.log('InsertTokenSUb: '+JSON.stringify(this.fcmInsertToken));},
       (error) => this.errorMessage = <any>error
     );
     console.log('partyId from InsertToken: '+FCM_PartyId);

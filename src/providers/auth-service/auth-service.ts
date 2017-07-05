@@ -41,7 +41,7 @@ export class AuthServiceProvider {
   //profile
   public getProfile():Observable<any>{
     let token = localStorage.getItem('token');
-    
+
     let myHeader = new Headers({ 'Authorization': `Bearer ${token}` });
     //myHeader.append('Access-Control-Allow-Origin', '*');
     let _options = new RequestOptions({headers: myHeader});
