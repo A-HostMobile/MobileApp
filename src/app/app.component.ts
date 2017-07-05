@@ -140,9 +140,6 @@ export class TemplateApp {
       if(this.platform.is('cordova')){
 
         console.log("Run App on Mobile");
-        this.fcm.getToken().then(token=>{
-          console.log("FCM TOKEN:"+token);
-        })
         this.fcm.onNotification().subscribe(data=>{
           // console.log("On Notification Data:"+JSON.stringify(data));
           console.log(data.bookingId);
@@ -156,10 +153,7 @@ export class TemplateApp {
           }
           this.events.publish('checkStsLogin',_page,data.bookingId,data.wasTapped);
         });
-        this.fcm.onTokenRefresh().subscribe(token=>{
-          console.log('On Refresh: '+JSON.stringify(token));
-          this.events.publish('FCMInsert',token);
-        });
+
       }
       else{
         console.log("Run App on Browser");
@@ -210,8 +204,8 @@ export class TemplateApp {
       this.ConfirmBox(_Id,_Index,_pages);
     });
 
-    this.events.subscribe('FCMInsert',(fcmToken:any)=>{
-      this.InsertToken(fcmToken);
+    this.events.subscribe('FCMInsert',(fcmParty:any,fcmToken:any)=>{
+      this.InsertToken(fcmParty,fcmToken);
     });
 
     this.events.subscribe('FCMDelete',()=>{
@@ -219,8 +213,8 @@ export class TemplateApp {
     });
   }
 
-  InsertToken(FCMtoken:any){
-    this.fcmService.FCMInsertTokenFn(FCMtoken).subscribe(
+  InsertToken(FCM_PartyId:any,FCMtoken:any){
+    this.fcmService.FCMInsertTokenFn(FCM_PartyId,FCMtoken).subscribe(
       (res) => this.fcmInsertToken = res,
       (error) => this.errorMessage = <any>error
     );
@@ -328,6 +322,15 @@ export class TemplateApp {
     this.authService.getProfile().subscribe((res)=>{
       let profile = res;
       if(profile.responseCode == 0){
+        if(this.platform.is('cordova')){
+          this.fcm.getToken().then(token=>{
+            console.log("FCM TOKEN:"+token);
+          })
+          this.fcm.onTokenRefresh().subscribe(token=>{
+            console.log('On Refresh: '+JSON.stringify(token));
+            this.events.publish('FCMInsert',token);
+          });
+        }
         this.userData.login(profile);
         console.log('Login and Get profile');
         if(pages==HomePage){

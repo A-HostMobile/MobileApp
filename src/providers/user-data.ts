@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 
-import { Events } from 'ionic-angular';
+import { Events, Platform } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-
 
 @Injectable()
 export class UserData {
@@ -11,7 +10,8 @@ export class UserData {
 
   constructor(
     public events: Events,
-    public storage: Storage
+    public storage: Storage,
+    public platform: Platform
   ) {}
 
   login(profile:any): void {
@@ -20,7 +20,9 @@ export class UserData {
   };
 
   logout(): void {
-    this.events.publish('FCMDelete');
+    if(this.platform.is('cordova')){
+      this.events.publish('FCMDelete');
+    }
     this.storage.remove(this.HAS_LOGGED_IN);
     this.storage.remove('username');
     this.events.publish('user:logout');
