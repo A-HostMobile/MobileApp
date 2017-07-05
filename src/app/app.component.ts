@@ -142,7 +142,7 @@ export class TemplateApp {
         console.log("Run App on Mobile");
         this.fcm.onNotification().subscribe(data=>{
           console.log("On Notification Data:"+JSON.stringify(data));
-          console.log('DataBooking: '+JSON.stringify(data.bookingId));
+          console.log('DataBooking: '+JSON.stringify(data.bookingID));
           console.log('DataType: '+JSON.stringify(data.type));
           console.log('DatawasTap: '+JSON.stringify(data.wasTapped));
           let _page:any;
@@ -153,7 +153,7 @@ export class TemplateApp {
           else{
             _page = HistoryDetailCourierPage
           }
-          this.events.publish('checkStsLogin',_page,data.bookingId,data.wasTapped);
+          this.events.publish('checkStsLogin',_page,data.bookingID,data.wasTapped);
         });
 
       }
