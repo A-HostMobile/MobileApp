@@ -19,12 +19,11 @@ export class ProfilePage {
 
 
   toHistory(){
-    console.log('yea');
+    this.events.publish('showLoading');
     this.events.publish('checkStsLogin',HistoryPage,ProfilePage);
   }
 
   openPickupModal(){
-    console.log('sus');
     let manageItem = this.mdlCtrl.create(PickupAddressPage,{page:'ProfilePage'});
     manageItem.present();
   }

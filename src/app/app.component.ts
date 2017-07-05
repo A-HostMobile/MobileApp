@@ -411,7 +411,11 @@ export class TemplateApp {
           }]
         }).present();
       } else if(this.platform.is('ios')){
-        this.mdlCtrl.create(NoInternetModalPage).present();
+        this.alert.create({
+          title: 'No Connection Access',
+          message: 'Please exit this appliction and try again',
+          enableBackdropDismiss : false
+        }).present();
       }
     } else {
       this.network.onDisconnect().subscribe(()=> {
