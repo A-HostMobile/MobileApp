@@ -1,11 +1,10 @@
 import {Component, ViewChild} from '@angular/core';
-import {App, Navbar, NavParams, ViewController, AlertController, Events} from 'ionic-angular';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {LclBookingPage} from "../lcl-booking/lcl-booking";
-import {CourierBookingPage} from "../courier-booking/courier-booking";
-import {ScheduleResultPage} from "../schedule-result/schedule-result";
-import {UserData} from "../../providers/user-data";
+import {App, Navbar, NavParams, ViewController, AlertController, Events} from 'ionic-angular';
 
+import {ScheduleResultPage} from "../schedule-result/schedule-result";
+
+import {UserData} from "../../providers/user-data";
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 
 @Component({
@@ -22,13 +21,13 @@ export class LoginPage {
   password: AbstractControl;
 
   constructor(public app: App,
-              public navParam: NavParams,
+              public events: Events,
               public userData: UserData,
+              public navParam: NavParams,
               public viewCtrl: ViewController,
               public formBuilder: FormBuilder,
-              public authService:AuthServiceProvider,
               public alertCtrl: AlertController,
-              public events: Events
+              public authService:AuthServiceProvider,
             ) {
     this.page = this.navParam.get('page');
     this.param = this.navParam.get('param');

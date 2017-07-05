@@ -1,12 +1,11 @@
-
 import {Component, ViewChild} from '@angular/core';
 import {NavController, NavParams, ModalController, ViewController, Platform, Nav, MenuController, Events} from 'ionic-angular';
 
-import {UserData} from "../../providers/user-data";
 import {LclBookingPage} from "../lcl-booking/lcl-booking";
 import {CourierBookingPage} from "../courier-booking/courier-booking";
-import {LoginPage} from "../login-modal/login-modal";
 import {NewsDetailPage} from "../news-detail/news-detail";
+
+import {UserData} from "../../providers/user-data";
 import {AdvertisementProvider} from "../../providers/advertisement/advertisement"
 import {AuthServiceProvider} from '../../providers/auth-service/auth-service';
 

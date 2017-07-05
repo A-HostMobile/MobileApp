@@ -18,14 +18,15 @@ export class LclSummaryPage {
   remarkData:string ="";
 
   constructor(
-    public navCtrl: NavController,
-    public navParams: NavParams,
     public events: Events,
-    public scheduleService:ScheduleServiceProvider,
-    public bookingService:BookingServiceProvider,
     public userData: UserData,
+    public navParams: NavParams,
+    public navCtrl: NavController,
+    public mdlCtrl: ModalController,
     public loadingCtrl: LoadingController,
-    public mdlCtrl: ModalController
+    public bookingService:BookingServiceProvider,
+    public scheduleService:ScheduleServiceProvider,
+
   ) {
       let loadingPopup = this.loadingCtrl.create({
         content: 'Loading data...'
@@ -134,7 +135,6 @@ export class LclSummaryPage {
       if(schedule.s_eta!=null){
           this.remarkData = this.remarkData+"ETA: "+schedule.s_eta;
       }
-
 
     return true;
   }

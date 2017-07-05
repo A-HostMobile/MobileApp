@@ -31,14 +31,15 @@ export class CourierBookingPage {
     rmk?:string,
     work?:any}={booking:null};
 
-  constructor(public navCtrl: NavController,
+  constructor(
+              public events: Events,
+              public userData: UserData,
               public navParams: NavParams,
+              public navCtrl: NavController,
               public viewCtrl: ViewController,
+              public mdlCtrl: ModalController,
               public countryZoneProvider: CountryZoneProvider,
               public bookingServiceProvider: BookingServiceProvider,
-              public mdlCtrl: ModalController,
-              public userData: UserData,
-              public events: Events
             ) {
       this.countryZoneProvider.getCountryZone().subscribe(
         (res) => this.countries = res,

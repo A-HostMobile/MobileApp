@@ -1,14 +1,11 @@
 import {Component, ViewChild} from '@angular/core';
 import {ModalController, Navbar, NavController, NavParams, ViewController, Events} from 'ionic-angular';
 import { NgForm } from '@angular/forms';
-import { first } from 'rxjs/operator/first';
 
 import {LclSummaryPage} from "../lcl-summary/lcl-summary";
 import {UserData} from "../../providers/user-data";
 import {QuickcodeProvider} from '../../providers/quickcode/quickcode';
 import {ScheduleServiceProvider} from '../../providers/schedule-service/schedule-service';
-
-
 
 @Component({
   selector: 'page-lcl-booking',
@@ -26,7 +23,6 @@ export class LclBookingPage {
   datecancel:boolean = false;
   selectcancel:boolean = false;
   unitcancel:boolean = false;
-  minDate:string;
   maxDate:any;
 
   lcl:{pod?:string,loadDate?:string,volume?:string,gw?:string,gwunit?:string,commodities?:string,detail?:string,quantity?:string,package?:string} = {pod:null,gwunit:null,commodities:null,package:null};

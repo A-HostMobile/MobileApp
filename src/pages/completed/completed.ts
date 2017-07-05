@@ -15,7 +15,12 @@ export class CompletedPage {
   work:any;
   status:any;
   message:any;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public userdata: UserData,public events: Events) {
+  constructor(
+    public events: Events,
+    public userdata: UserData,
+    public navParams: NavParams,
+    public navCtrl: NavController,
+  ) {
       this.bookingId = this.navParams.get("booking_id");
       this.type = this.navParams.get("type");
       this.work = this.navParams.get("work");
