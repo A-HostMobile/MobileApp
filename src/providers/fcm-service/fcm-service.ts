@@ -6,34 +6,35 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 
 import { AppSettings } from '../AppSettings';
-import { FCM } from '@ionic-native/fcm';
 
 @Injectable()
 export class FcmServiceProvider {
 
   token: any = localStorage.getItem('token');
-  profiles: any = localStorage.getItem('profile');
-  _profile = JSON.parse(this.profiles);
-  partyId = this._profile.p_party_id;
 
   _header: any = new Headers({ 'Authorization': `Bearer ${this.token}`,'Content-Type':'application/x-www-form-urlencoded' });
   _options = new RequestOptions({headers: this._header});
 
-  FCMtoken:any;
+  constructor(public http: Http) {}
 
-  constructor(public http: Http, public fcm:FCM) {
-    this.FCMtoken = this.fcm.getToken();
-  }
+  FCMInsertTokenFn(FCMtoken:any):Observable<any>{
+    let profiles: any = localStorage.getItem('profile');
+    let _profile = JSON.parse(profiles);
+    let partyId = _profile.p_party_id;
 
-  FCMInsertTokenFn():Observable<any>{
-    let _body = ({'party_id':this.partyId,'token': this.FCMtoken});
-    return this.http.post(`${AppSettings.API_ENDPOINT}token`,_body,this._options)
+    let _body = ({'party_id':partyId,'token': FCMtoken});
+
+    return this.http.post(AppSettings.API_ENDPOINT+'token',_body,this._options)
     .map((res:Response) => <any> res.json().responseData)
     .catch(this.handleError);
   }
 
   FCMDeleteTokenFn():Observable<any>{
-    return this.http.delete(`${AppSettings.API_ENDPOINT}token/${this.partyId}`,this._options)
+    let profiles: any = localStorage.getItem('profile');
+    let _profile = JSON.parse(profiles);
+    let partyId = _profile.p_party_id;
+
+    return this.http.delete(AppSettings.API_ENDPOINT+'token/'+partyId,this._options)
     .map((res:Response) => <any> res.json().responseData)
     .catch(this.handleError);
   }

@@ -29,7 +29,7 @@ import {PickupAddressPage} from "../pages/pickup-address/pickup-address";
 import {CourierItemModalPage} from "../pages/courier-item-modal/courier-item-modal";
 import {HistoryDetailPage} from "../pages/history-detail/history-detail";
 import {HistoryDetailCourierPage} from "../pages/history-detail-courier/history-detail-courier";
-
+import {FcmServiceProvider} from '../providers/fcm-service/fcm-service';
 
 
 export interface PageInterface {
@@ -60,6 +60,9 @@ export class TemplateApp {
   _loading: any;
   _alert:any;
   _clicked:any;
+  fcmInsertToken:any;
+  fcmDeleteToken:any;
+  errorMessage:string;
 
   appPages: PageInterface[] = [
     { title: 'Home', name: 'HomePage', component: HomePage, icon: 'ios-home' },
@@ -95,7 +98,8 @@ export class TemplateApp {
     public authService: AuthServiceProvider,
     public quickcodeService: QuickcodeProvider,
     public loadCtrl: LoadingController,
-    public fcm:FCM
+    public fcm:FCM,
+    public fcmService: FcmServiceProvider
   ) {
 
     this.platform.ready().then(() => {
@@ -147,7 +151,7 @@ export class TemplateApp {
           console.log("FCM TOKEN:"+token);
         })
         this.fcm.onNotification().subscribe(data=>{
-          console.log("On Notification Data:"+JSON.stringify(data));
+          // console.log("On Notification Data:"+JSON.stringify(data));
           console.log(data.bookingId);
           let _page:any;
           //set page
@@ -159,6 +163,10 @@ export class TemplateApp {
           }
           this.events.publish('checkStsLogin',_page,data.bookingId,data.wasTapped);
         });
+        this.fcm.onTokenRefresh().subscribe(token=>{
+          console.log('On Refresh: '+JSON.stringify(token));
+          this.events.publish('FCMInsert',token);
+        });
       }
       else{
         console.log("Run App on Browser");
@@ -167,6 +175,72 @@ export class TemplateApp {
 
   }
 
+  listenToEvents() {
+    this.events.subscribe('user:login', (profile:any) => {
+      this._profile = profile;
+      this.enableMenu(true);
+    });
+
+    this.events.subscribe('user:logout', () => {
+      this.enableMenu(false);
+      localStorage.removeItem('token');
+      localStorage.removeItem('profile');
+    });
+
+    this.events.subscribe('backButton',()=>{
+      this.backButton();
+    });
+
+    this.events.subscribe('exit',()=>{
+      this.exit();
+    });
+
+    this.events.subscribe('showLoading',()=>{
+      this.showLoading();
+    });
+
+    this.events.subscribe('dismissLoading',()=>{
+      this.dismissLoading();
+    });
+
+    this.events.subscribe('checkStsLogin',(pages:any,params:any,wasTapped:any)=>{
+      if(pages!=null){
+        this.checkStatusLogin(pages,params,wasTapped);
+      }
+    });
+
+    this.events.subscribe('loadpage',()=>{
+      this.LoadingPage();
+    });
+
+    this.events.subscribe('confirmBox',(_Id:any,_Index:any,_pages:any)=>{
+      this.ConfirmBox(_Id,_Index,_pages);
+    });
+
+    this.events.subscribe('FCMInsert',(fcmToken:any)=>{
+      this.InsertToken(fcmToken);
+    });
+
+    this.events.subscribe('FCMDelete',()=>{
+      this.DeleteToken();
+    });
+  }
+
+  InsertToken(FCMtoken:any){
+    this.fcmService.FCMInsertTokenFn(FCMtoken).subscribe(
+      (res) => this.fcmInsertToken = res,
+      (error) => this.errorMessage = <any>error
+    );
+    console.log('InsertToken: '+FCMtoken);
+  }
+
+  DeleteToken(){
+    console.log('delete token function test');
+    this.fcmService.FCMDeleteTokenFn().subscribe(
+      (res)=> this.fcmDeleteToken = res,
+      (error)=> this.errorMessage = <any> error
+    );
+  }
 
   ConfirmBox(_Id:any,_Index:any,_pages:any){
       this._alert = this.alert.create({
@@ -255,49 +329,6 @@ export class TemplateApp {
         }
       })
     })
-  }
-
-  listenToEvents() {
-    this.events.subscribe('user:login', (profile:any) => {
-      this._profile = profile;
-      this.enableMenu(true);
-    });
-
-    this.events.subscribe('user:logout', () => {
-      this.enableMenu(false);
-      localStorage.removeItem('token');
-      localStorage.removeItem('profile');
-    });
-
-    this.events.subscribe('backButton',()=>{
-      this.backButton();
-    });
-
-    this.events.subscribe('exit',()=>{
-      this.exit();
-    });
-
-    this.events.subscribe('showLoading',()=>{
-      this.showLoading();
-    });
-
-    this.events.subscribe('dismissLoading',()=>{
-      this.dismissLoading();
-    });
-
-    this.events.subscribe('checkStsLogin',(pages:any,params:any,wasTapped:any)=>{
-      if(pages!=null){
-        this.checkStatusLogin(pages,params,wasTapped);
-      }
-    });
-
-    this.events.subscribe('loadpage',()=>{
-      this.LoadingPage();
-    });
-
-    this.events.subscribe('confirmBox',(_Id:any,_Index:any,_pages:any)=>{
-      this.ConfirmBox(_Id,_Index,_pages);
-    });
   }
 
   checkStatusLogin(pages:any,params:any,wasTapped:any){
