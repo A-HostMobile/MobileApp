@@ -225,7 +225,10 @@ export class TemplateApp {
       (res) => this.fcmInsertToken = res,
       (error) => this.errorMessage = <any>error
     );
-    console.log('InsertToken: '+FCMtoken);
+    console.log('partyId from InsertToken: '+FCM_PartyId);
+    console.log('Token from Insert token: '+FCMtoken);
+    console.log('InsertToken: '+JSON.stringify(this.fcmInsertToken));
+    console.log('error log: '+this.errorMessage);
   }
 
   DeleteToken(){
@@ -332,10 +335,12 @@ export class TemplateApp {
         if(this.platform.is('cordova')){
           this.fcm.getToken().then(token=>{
             console.log("FCM TOKEN:"+token);
+            this.events.publish('FCMInsert',profile.responseData.p_party_id,token);
           })
           this.fcm.onTokenRefresh().subscribe(token=>{
             console.log('On Refresh: '+JSON.stringify(token));
-            this.events.publish('FCMInsert',token);
+            console.log(profile.responseData.p_party_id);
+            this.events.publish('FCMInsert',profile.responseData.p_party_id,token);
           });
         }
         this.userData.login(profile);
