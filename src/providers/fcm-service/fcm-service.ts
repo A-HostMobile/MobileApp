@@ -17,12 +17,9 @@ export class FcmServiceProvider {
 
   constructor(public http: Http) {}
 
-  FCMInsertTokenFn(FCMtoken:any):Observable<any>{
-    let profiles: any = localStorage.getItem('profile');
-    let _profile = JSON.parse(profiles);
-    let partyId = _profile.p_party_id;
+  FCMInsertTokenFn(FCMParty_id:any,FCMtoken:any):Observable<any>{
 
-    let _body = ({'party_id':partyId,'token': FCMtoken});
+    let _body = ({'party_id':FCMParty_id,'token': FCMtoken});
 
     return this.http.post(AppSettings.API_ENDPOINT+'token',_body,this._options)
     .map((res:Response) => <any> res.json().responseData)
