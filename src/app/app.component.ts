@@ -340,7 +340,7 @@ export class TemplateApp {
         console.log('Login and Get profile');
         if(pages==HomePage){
           this.app.getRootNav().popToRoot();
-        }else if(pages == HistoryDetailPage || pages == HistoryDetailCourierPage){
+        }else if(pages == 'HistoryDetailPage' || pages == 'HistoryDetailCourierPage'){
           //check wasTapped
           if(wasTapped){
             console.log('Run background was tapped');
