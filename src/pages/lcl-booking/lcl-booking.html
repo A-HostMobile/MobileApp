@@ -4,7 +4,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="no-scroll">
   <form #lclbooking="ngForm" novalidate>
 
       <ion-grid no-padding>
@@ -169,11 +169,9 @@
             <ion-col col-8 no-padding>
              <ion-input type="text" placeholder="Additional Detail" [(ngModel)]="lcl.detail" name="detail"></ion-input>
             </ion-col>
-
         </ion-row>
       </ion-grid>
 
-      <br/>
       <div *ngIf="(scheduleData | json) != ({} | json)" >
         <ion-list-header class="label-title">
           Shipper Reference
@@ -194,7 +192,5 @@
       <ion-icon ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>
     </button>
   </form>
-
-
 
 </ion-content>
