@@ -86,7 +86,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		16FVAm5s9BSkCLhPfZeWf+sUuek=
+		PUES+Zh21zk6CMo3vxaYjnLgwiM=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -94,11 +94,11 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		Qb0t3BGvOuDbbPj5RzObANqEqPw=
+		5Z3DlkWMrf37l0OVbSSkdh/XpIE=
 		</data>
 		<key>GoogleService-Info.plist</key>
 		<data>
-		N7lVLNYuUmqMbhqrdbLJXj9vgDc=
+		zmV6UqBSo6r1NOz798vd5O4zTBA=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -162,7 +162,7 @@
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
-		GsYY1bJArE+BOKGOuZAIMfhE+GU=
+		bVADRyOMtQJrMtuuUe37ImVmpao=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -554,11 +554,11 @@
 		</data>
 		<key>www/build/main.js</key>
 		<data>
-		3nCHXbApUklHb5oXUcHShQWroyM=
+		4+0ATibSpySk5rY/TfFlrbY6wuU=
 		</data>
 		<key>www/build/main.js.map</key>
 		<data>
-		ueYHeUSl5cV8pNxBrREFuLjdJXc=
+		eAVW3jdX3iU0ISrHhQa9khP0oxY=
 		</data>
 		<key>www/build/polyfills.js</key>
 		<data>
@@ -871,11 +871,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			16FVAm5s9BSkCLhPfZeWf+sUuek=
+			PUES+Zh21zk6CMo3vxaYjnLgwiM=
 			</data>
 			<key>hash2</key>
 			<data>
-			6L+fr3YUqUxT8z8RsMtu19n2XPHcg3yXhgIUGiV3aFA=
+			8ZM0p1oH6gZXIVT/H2vr6R2E55O3RMQxQEpu/yuuPtY=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
@@ -893,22 +893,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Qb0t3BGvOuDbbPj5RzObANqEqPw=
+			5Z3DlkWMrf37l0OVbSSkdh/XpIE=
 			</data>
 			<key>hash2</key>
 			<data>
-			OI3VZo/u1ibtttulmQqtqgte4DPH54nE/Xkobh5brwM=
+			GmZWc2Ep6K8L9dB+BxGb5h3ymYGRta2iUJP1m8TM80w=
 			</data>
 		</dict>
 		<key>GoogleService-Info.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			N7lVLNYuUmqMbhqrdbLJXj9vgDc=
+			zmV6UqBSo6r1NOz798vd5O4zTBA=
 			</data>
 			<key>hash2</key>
 			<data>
-			bk4Sbg3nRVfD+s/Iw1ObQMxY1A41XhU8aooozC4zAxw=
+			kmHsztpgjvF0JW5f3HdMHm49z1M0CcG8OT1JDQHHE/E=
 			</data>
 		</dict>
 		<key>LaunchImage-568h@2x.png</key>
@@ -1069,11 +1069,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			GsYY1bJArE+BOKGOuZAIMfhE+GU=
+			bVADRyOMtQJrMtuuUe37ImVmpao=
 			</data>
 			<key>hash2</key>
 			<data>
-			PUJMwYyVBwPHs10NpWH5juoFAkwOQx7R6q6H4kH/Y4w=
+			ky+xPAWrUP9WMs+yRTjgy7+aPI5U7TMdSfJ1C4yb4AY=
 			</data>
 		</dict>
 		<key>archived-expanded-entitlements.xcent</key>
@@ -2136,22 +2136,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			3nCHXbApUklHb5oXUcHShQWroyM=
+			4+0ATibSpySk5rY/TfFlrbY6wuU=
 			</data>
 			<key>hash2</key>
 			<data>
-			bkVLDdvbrfR+YoWhUMURq7FnnzYI4xuHnV9lqTr9MkM=
+			mdDqet+Z7CM/I3NPqtZ7Ri8uqCfbvZg1K5/LGSuyb60=
 			</data>
 		</dict>
 		<key>www/build/main.js.map</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ueYHeUSl5cV8pNxBrREFuLjdJXc=
+			eAVW3jdX3iU0ISrHhQa9khP0oxY=
 			</data>
 			<key>hash2</key>
 			<data>
-			YC42oqqtJe/VsWBo5q1LY1bVscrieRfBgqzimLRCwOQ=
+			c42NvTdwcjBLRtMcgwkp65OJE+D+ZDT1rLPW3FlJE3c=
 			</data>
 		</dict>
 		<key>www/build/polyfills.js</key>
