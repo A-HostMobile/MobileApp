@@ -9,10 +9,13 @@ import {Network} from "@ionic-native/network";
 export class NoInternetModalPage {
   bpress: number = 0;
 
-  constructor(public network: Network,
-              public platform: Platform,
-              public events: Events,
-              public view: ViewController){
+  constructor(
+    public events: Events,
+    public network: Network,
+    public platform: Platform,
+    public view: ViewController
+  ){
+
     this.platform.ready().then(() => {
       this.platform.registerBackButtonAction(() => {
         this.events.publish('exit');

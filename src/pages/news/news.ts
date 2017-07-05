@@ -20,11 +20,10 @@ export class NewsPage {
   promotions: Array<any>;
 
   constructor(
+    public events: Events,
     public navCtrl: NavController,
     public viewCtrl:ViewController,
     public advertiseService:AdvertisementProvider,
-    public loadCtrl:LoadingController,
-    public events: Events
   ) {}
 
   ionViewDidLoad(){

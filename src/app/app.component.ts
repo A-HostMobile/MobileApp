@@ -1,13 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
 import {Network} from "@ionic-native/network";
-import { SplashScreen } from '@ionic-native/splash-screen';
-import {
-  App, Events, MenuController, ModalController, Nav, Platform, ToastController, LoadingController,
-  AlertController, Keyboard
-} from 'ionic-angular';
+import {StatusBar} from "@ionic-native/status-bar";
+import {SplashScreen} from '@ionic-native/splash-screen';
+import {App, Events, MenuController, ModalController, Nav, Platform, ToastController, LoadingController, AlertController} from 'ionic-angular';
 
-import { UserData } from '../providers/user-data';
-import { ConferenceData } from '../providers/conference-data';
 import { FCM } from '@ionic-native/fcm';
 import {HomePage} from "../pages/home/home";
 import {HelpPage} from "../pages/help/help";
@@ -15,22 +11,21 @@ import {NewsPage} from "../pages/news/news";
 import {ContactPage} from "../pages/contact/contact";
 import {ProfilePage} from "../pages/profile/profile";
 import {LoginPage} from "../pages/login-modal/login-modal";
+import {CompletedPage} from "../pages/completed/completed";
 import {LclBookingPage} from "../pages/lcl-booking/lcl-booking";
 import {AgentNetworkPage} from "../pages/agent-network/agent-network";
+import {PickupAddressPage} from "../pages/pickup-address/pickup-address";
+import {HistoryDetailPage} from "../pages/history-detail/history-detail";
 import {CourierBookingPage} from "../pages/courier-booking/courier-booking";
 import {ScheduleSearchPage} from "../pages/schedule-search/schedule-search";
-import {NoInternetModalPage} from "../pages/no-internet-modal/no-internet-modal";
-import {CompletedPage} from "../pages/completed/completed";
-import {StatusBar} from "@ionic-native/status-bar";
-import {AuthServiceProvider} from '../providers/auth-service/auth-service';
-import { QuickcodeProvider } from '../providers/quickcode/quickcode';
 import {AddPickupModalPage} from "../pages/add-pickup-modal/add-pickup-modal";
-import {PickupAddressPage} from "../pages/pickup-address/pickup-address";
-import {CourierItemModalPage} from "../pages/courier-item-modal/courier-item-modal";
-import {HistoryDetailPage} from "../pages/history-detail/history-detail";
+import {NoInternetModalPage} from "../pages/no-internet-modal/no-internet-modal";
 import {HistoryDetailCourierPage} from "../pages/history-detail-courier/history-detail-courier";
-import {FcmServiceProvider} from '../providers/fcm-service/fcm-service';
 
+import { UserData } from '../providers/user-data';
+import {QuickcodeProvider} from '../providers/quickcode/quickcode';
+import {FcmServiceProvider} from '../providers/fcm-service/fcm-service';
+import {AuthServiceProvider} from '../providers/auth-service/auth-service';
 
 export interface PageInterface {
   title: string;
@@ -59,7 +54,6 @@ export class TemplateApp {
   _quickcode_commodities:any;
   _loading: any;
   _alert:any;
-  _clicked:any;
   fcmInsertToken:any;
   fcmDeleteToken:any;
   errorMessage:string;
@@ -84,22 +78,21 @@ export class TemplateApp {
 
   constructor(
     public app: App,
-    public alert: AlertController,
+    public fcm: FCM,
     public events: Events,
     public network: Network,
     public status: StatusBar,
     public userData: UserData,
     public platform: Platform,
     public menu: MenuController,
+    public alert: AlertController,
     public mdlCtrl: ModalController,
-    public confData: ConferenceData,
-    public splashScreen: SplashScreen,
     public toastCtrl: ToastController,
-    public authService: AuthServiceProvider,
-    public quickcodeService: QuickcodeProvider,
+    public splashScreen: SplashScreen,
     public loadCtrl: LoadingController,
-    public fcm:FCM,
-    public fcmService: FcmServiceProvider
+    public fcmService: FcmServiceProvider,
+    public authService: AuthServiceProvider,
+    public quickcodeService: QuickcodeProvider
   ) {
 
     this.platform.ready().then(() => {

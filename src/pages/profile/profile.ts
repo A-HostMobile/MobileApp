@@ -10,7 +10,12 @@ import {PickupAddressPage} from "../pickup-address/pickup-address";
 })
 export class ProfilePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public mdlCtrl: ModalController,public events: Events) {
+  constructor(
+    public events: Events,
+    public navParams: NavParams,
+    public navCtrl: NavController,
+    public mdlCtrl: ModalController,
+    ) {
   }
 
   ionViewDidLoad() {
