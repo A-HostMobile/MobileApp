@@ -141,8 +141,10 @@ export class TemplateApp {
 
         console.log("Run App on Mobile");
         this.fcm.onNotification().subscribe(data=>{
-          // console.log("On Notification Data:"+JSON.stringify(data));
+          console.log("On Notification Data:"+JSON.stringify(data));
           console.log('DataBooking: '+JSON.stringify(data.bookingId));
+          console.log('DataType: '+JSON.stringify(data.type));
+          console.log('DatawasTap: '+JSON.stringify(data.wasTapped));
           let _page:any;
           //set page
           if(data.type == 1){
