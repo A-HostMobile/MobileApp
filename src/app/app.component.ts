@@ -142,14 +142,14 @@ export class TemplateApp {
         console.log("Run App on Mobile");
         this.fcm.onNotification().subscribe(data=>{
           // console.log("On Notification Data:"+JSON.stringify(data));
-          console.log('DataBooking: '+JSON.stringify(data));
+          console.log('DataBooking: '+JSON.stringify(data.bookingId));
           let _page:any;
           //set page
           if(data.type == 1){
-            _page = 'HistoryDetailPage'
+            _page = HistoryDetailPage
           }
           else{
-            _page = 'HistoryDetailCourierPage'
+            _page = HistoryDetailCourierPage
           }
           this.events.publish('checkStsLogin',_page,data.bookingId,data.wasTapped);
         });
@@ -340,7 +340,7 @@ export class TemplateApp {
         console.log('Login and Get profile');
         if(pages==HomePage){
           this.app.getRootNav().popToRoot();
-        }else if(pages == 'HistoryDetailPage' || pages == 'HistoryDetailCourierPage'){
+        }else if(pages == HistoryDetailPage || pages == HistoryDetailCourierPage){
           //check wasTapped
           if(wasTapped){
             console.log('Run background was tapped');
