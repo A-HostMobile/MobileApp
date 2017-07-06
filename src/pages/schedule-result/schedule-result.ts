@@ -21,12 +21,12 @@ export class ScheduleResultPage {
   errorMessage:string;
 
   constructor(
-    public navCtrl: NavController,
+    public events: Events,
+    public userData: UserData,
     public navParams: NavParams,
+    public navCtrl: NavController,
     public viewCtrl: ViewController,
     public scheduleService:ScheduleServiceProvider,
-    public userData: UserData,
-    public events: Events
   ) {
     this.cname = this.navParams.data;
 }

@@ -13,7 +13,7 @@ import { HistoryServiceProvider } from '../../providers/history-service/history-
 export class HistoryPage {
 
   @ViewChild(Navbar) navbar:Navbar;
-  historyTab: string = "lcl";
+  historyTab: string;
   isAndroid: boolean = false;
   before: any;
 
@@ -30,7 +30,7 @@ export class HistoryPage {
               public events: Events,
               public historyService: HistoryServiceProvider
             ) {
-    this.before = this.navParams.data;
+    this.before = this.navParams.get('pages');
     if(this.before==CompletedPage){
       this.platform.ready().then(()=>{
         this.platform.registerBackButtonAction(()=>{
@@ -38,6 +38,16 @@ export class HistoryPage {
         })
       });
     }
+    if(this.navParams.get('params')!=null){
+      if(this.navParams.get('params')==1){
+        this.historyTab = 'lcl';
+      } else {
+        this.historyTab = 'courier'
+      }
+    } else {
+      this.historyTab = 'lcl';
+    }
+
   }
 
   ionViewDidLoad() {

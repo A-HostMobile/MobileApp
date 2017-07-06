@@ -61,6 +61,9 @@ export class CourierBookingPage {
           this.navCtrl.pop()
       }
     }
+  }
+
+  ionViewDidEnter(){
     this.events.publish('dismissLoading');
   }
 

@@ -29,7 +29,7 @@ export class ProfilePage {
   }
 
   openPickupModal(){
-    let manageItem = this.mdlCtrl.create(PickupAddressPage,{page:'ProfilePage'});
+    let manageItem = this.mdlCtrl.create(PickupAddressPage,{pages:'ProfilePage'});
     manageItem.present();
   }
 

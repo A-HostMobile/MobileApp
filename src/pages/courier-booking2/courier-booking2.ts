@@ -75,6 +75,9 @@ export class CourierBooking2Page {
     addItem.present();
     addItem.onDidDismiss(data=>{
       this.getCourierData();
+      /*if(data!=null){
+        this.events.publish('dismissLoading');
+      }*/
     });
   }
 

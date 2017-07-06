@@ -43,7 +43,7 @@ export class CompletedPage {
   }
   toHistory(){
     this.events.publish('showLoading');
-    this.navCtrl.push(HistoryPage,CompletedPage);
+    this.navCtrl.push(HistoryPage,{pages:CompletedPage,params:this.type});
   }
 
 }
