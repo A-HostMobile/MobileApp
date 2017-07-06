@@ -143,6 +143,9 @@ export class TemplateApp {
         this.config.set( 'scrollPadding', false );
     		this.config.set( 'scrollAssist', false );
     		this.config.set( 'autoFocusAssist', false );
+        // android
+    		this.config.set( 'android', 'scrollAssist', true );
+    		this.config.set( 'android', 'autoFocusAssist', 'delay' );
 
         console.log("Run App on Mobile");
         this.fcm.onNotification().subscribe(data=>{
