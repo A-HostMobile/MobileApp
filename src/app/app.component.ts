@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import {Network} from "@ionic-native/network";
 import {StatusBar} from "@ionic-native/status-bar";
 import {SplashScreen} from '@ionic-native/splash-screen';
-import {App, Events, MenuController, ModalController, Nav, Platform, ToastController, LoadingController, AlertController} from 'ionic-angular';
+import {App, Events, MenuController, ModalController, Nav, Platform, ToastController, LoadingController, AlertController, Config} from 'ionic-angular';
 
 import { FCM } from '@ionic-native/fcm';
 import {HomePage} from "../pages/home/home";
@@ -92,7 +92,8 @@ export class TemplateApp {
     public loadCtrl: LoadingController,
     public fcmService: FcmServiceProvider,
     public authService: AuthServiceProvider,
-    public quickcodeService: QuickcodeProvider
+    public quickcodeService: QuickcodeProvider,
+    public config: Config
   ) {
 
     this.platform.ready().then(() => {
@@ -138,6 +139,10 @@ export class TemplateApp {
       });
 
       if(this.platform.is('cordova')){
+
+        this.config.set( 'scrollPadding', false );
+    		this.config.set( 'scrollAssist', false );
+    		this.config.set( 'autoFocusAssist', false );
 
         console.log("Run App on Mobile");
         this.fcm.onNotification().subscribe(data=>{
