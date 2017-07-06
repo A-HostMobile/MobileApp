@@ -6,7 +6,7 @@
 </ion-header>
 
 <ion-content padding>
-<form #courierbooking="ngForm" (ngSubmit)="toCourier2(courierbooking)" novalidate>
+<form #courierbooking="ngForm" novalidate>
   <ion-input [hidden]="true"  [(ngModel)]="courier.booking" name="bookingId" [value]="courier.booking"></ion-input>
   <ion-grid no-padding>
     <ion-row no-padding>
@@ -121,7 +121,7 @@
       </ion-grid>
 
     </ion-list>
-    <button type="submit" [disabled]="!courierbooking.form.valid" ion-button icon-right block >
+    <button (click)="toCourier2(courierbooking)" [disabled]="!courierbooking.form.valid" ion-button icon-right block >
       Next
       <ion-icon ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>
   </button>
