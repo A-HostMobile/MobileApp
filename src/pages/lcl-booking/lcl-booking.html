@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content padding class="no-scroll">
-  <form #lclbooking="ngForm" novalidate>
+  <form #lclbooking="ngForm" (ngSubmit)="toSummary(lclbooking)" novalidate>
 
       <ion-grid no-padding>
               <ion-row no-padding>
@@ -187,7 +187,7 @@
       </div>
 
     </ion-list>
-    <button (click)="toSummary(lclbooking)" ion-button icon-right block type="submit" [disabled]="!lclbooking.form.valid">
+    <button ion-button icon-right block type="submit" [disabled]="!lclbooking.form.valid">
       Next
       <ion-icon ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>
     </button>

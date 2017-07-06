@@ -11,7 +11,7 @@
 
 
 <ion-content padding>
-  <form #addpick="ngForm">
+  <form #addpick="ngForm" (ngSubmit)="addAddress(addpick)">
     <ion-list no-lines>
       <ion-input [hidden]="true" [(ngModel)]="pickupAddress.pa_address_id" name="pickup_id"></ion-input>
       <ion-item no-padding>
@@ -59,7 +59,7 @@
       <ion-icon name="md-create"></ion-icon>
       Edit
     </button>
-    <button *ngIf="pickupType == 'add'" [disabled]="!addpick.form.valid" (click)="addAddress(addpick)" ion-button icon-left block >
+    <button *ngIf="pickupType == 'add'" [disabled]="!addpick.form.valid" ion-button icon-left block >
       <ion-icon name="add"></ion-icon>
       Add
     </button>

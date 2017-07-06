@@ -119,10 +119,10 @@
       </ion-grid>
     <ion-badge ion-text *ngIf="quantity.invalid" [hidden]="!quantity.touched" float-end>Quantity is required</ion-badge>
     <ion-row *ngIf="quantity.invalid" [hidden]="!quantity.touched">&nbsp;</ion-row>
-  <button *ngIf="type == 'Add'" (click)="addItem(citem)" [disabled]="!citem.form.valid" ion-button block >
+  <button *ngIf="type == 'Add'" type="submit" (click)="addItem(citem)" [disabled]="!citem.form.valid" ion-button block >
     {{type}}
   </button>
-  <button *ngIf="type == 'Edit'" (click)="editItem(citem)" [disabled]="!citem.form.valid" ion-button block >
+  <button *ngIf="type == 'Edit'" type="submit" (click)="editItem(citem)" [disabled]="!citem.form.valid" ion-button block >
     {{type}}
   </button>
 
