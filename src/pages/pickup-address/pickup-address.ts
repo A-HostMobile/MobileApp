@@ -40,14 +40,17 @@ export class PickupAddressPage {
     this.events.subscribe('deletePickup',(_pickupId:any)=>{
       this.deletePickup(_pickupId);
       console.log('event delete')
+      // this.getPickupAddress();
       // console.log(_pickupId+'subscr delete');
     });
-
+  }
+  ionViewWillLeave(){
+    this.events.unsubscribe('deletePickup');
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PickupAddressPage');
     this.getPickupAddress();
+    console.log('ionViewDidLoad PickupAddressPage');
   }
 
   getPickupAddress(){
@@ -102,7 +105,7 @@ export class PickupAddressPage {
 
   confirmDelete(_pickupId:any){
     this.events.publish('confirmBox',_pickupId,null,'PickupAddressPage','Delete');
-    // console.log('con publish');
+    console.log('con publish');
   }
 
   deletePickup(pickupId:any){

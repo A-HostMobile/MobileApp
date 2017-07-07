@@ -261,13 +261,13 @@ export class TemplateApp {
               console.log('firm')
               if(_pages == 'PickupAddressPage'){
                   this.events.publish('deletePickup',_Id,null);
-                  console.log('pickup page con')
+                  console.log('pickup page con:'+_Id)
               }else if (_pages == 'CourierBooking2Page'){
                   this.events.publish('deleteCourierItem',_Id,_Index);
-                  console.log('courier page con')
+                  console.log('courier page con:'+_Id+' :: '+_Index)
               }else{
                   this.events.publish('BookingNullCheck',_Id,null);
-                  console.log('courier page con 2')
+                  console.log('courier page con 2:'+_Id)
               }
           }
         }
