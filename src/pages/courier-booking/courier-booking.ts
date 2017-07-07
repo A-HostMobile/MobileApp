@@ -1,5 +1,5 @@
 import {Component, ViewChild} from '@angular/core';
-import {Navbar, NavController, NavParams, ViewController, ModalController, Events, App} from 'ionic-angular';
+import {Navbar, NavController, NavParams, ViewController, ModalController, Events, App, ToastController} from 'ionic-angular';
 import {UserData} from "../../providers/user-data";
 import {LoginPage} from "../login-modal/login-modal";
 import {CourierBooking2Page} from "../courier-booking2/courier-booking2";
@@ -49,6 +49,7 @@ export class CourierBookingPage {
     public mdlCtrl: ModalController,
     public countryZoneProvider: CountryZoneProvider,
     public bookingServiceProvider: BookingServiceProvider,
+    public toastCtrl: ToastController
   ) {
     this.countryZoneProvider.getCountryZone().subscribe(
       (res) => this.countries = res,
@@ -82,7 +83,7 @@ export class CourierBookingPage {
     console.log('ionViewDidLoad CourierBookingPage');
     this.navbar.backButtonClick=(e:UIEvent)=>{
       if(this.courier.value.booking != null){
-          this.events.publish('confirmBox',this.courier.value.booking,null,'CourierBookingPage','Close')
+          this.events.publish('confirmBox',this.courier.value.booking,null,'CourierBookingPage','Cancel Booking Courier');
       }
       else{
         this.navCtrl.pop()
@@ -116,6 +117,9 @@ export class CourierBookingPage {
     this.bookingServiceProvider.updateBookingStatus(bookingId,40,2).subscribe(
       (res) => {this.app.getActiveNav().pop(); console.log('nav pop courier')},
       (error) => {  this.errorMessage = <any> error});
+
+    let toast = this.toastCtrl.create({message:'Booking ID: '+this.courier.value.booking+' canceled',duration:3000,position: 'middle'});
+    toast.present();
   }
 
   touch() {
