@@ -97,7 +97,6 @@ export class CourierBookingPage {
   ionViewDidLeave(){
     this.events.unsubscribe('setaddress');
     this.events.unsubscribe('pickup');
-    this.events.unsubscribe('BookingNullCheck');
   }
 
   ionViewDidEnter(){
@@ -124,7 +123,10 @@ export class CourierBookingPage {
       (error) => {  this.errorMessage = <any> error});
 
     let toast = this.toastCtrl.create({message:'Booking ID: '+this.courier.value.booking+' canceled',duration:3000,position: 'middle'});
-    toast.present();
+    toast.present().then(()=>{
+      this.events.unsubscribe('BookingNullCheck');
+      console.log('toast dot then')
+    });
   }
 
   touch() {
