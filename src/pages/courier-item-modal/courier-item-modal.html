@@ -11,98 +11,96 @@
 
 
 <ion-content padding>
-<form #citem="ngForm" novalidate>
-     <ion-grid no-padding>
-            <ion-row no-padding>
-                <ion-col col-5 no-padding>
-                  <ion-label no-padding class="label-title">Commodity</ion-label>
-                </ion-col>
-                <ion-col col-7 no-padding>
-                  <ion-item no-lines>
-                    <ion-label hidden>Select Commodity</ion-label>
-                      <ion-select class="max-width-100" [(ngModel)]="item.commodity" name="commodity" #commodity="ngModel" placeholder="Please Select" (ionCancel)="touch()" (ionChange)="checkDimension(item.commodity)" required>
-                        <ion-option *ngFor="let commodity of commodities" [value]="commodity.qc_lookup_code" [selected]="commodity.qc_lookup_code == item.commodity">{{commodity.qc_lookup_value1}}</ion-option>
-                      </ion-select>
-                  </ion-item>
-                </ion-col>
-            </ion-row>
-      </ion-grid>
-      <ion-badge ion-text *ngIf="selectcancel" [hidden]="citem.value.commodity!=null" float-end>Commodity is required</ion-badge>
-
-  <ion-row>&nbsp;</ion-row>
-  <ion-list no-lines>
-    <!--<ion-list-header class="label-title" (click)="
-    item.weight=1;
-    item.quantity=1;">
-      <span no-padding col-6>Dimension</span>
-    </ion-list-header>-->
-    <ion-list-header class="label-title">
-      <span no-padding col-6>Dimension</span>
-    </ion-list-header>
-
-    <ion-item no-padding>
-      <ion-label no-padding>Width &nbsp;x&nbsp; Length &nbsp;x&nbsp; Height </ion-label>
-    </ion-item>
-
-
+  <form #citem="ngForm" novalidate>
       <ion-grid no-padding>
               <ion-row no-padding>
-                  <ion-col col-2 no-padding>
-                    <ion-input [(ngModel)]="item.dwidth" name="dwidth" #dwidth="ngModel" type="number" [value]="item.dwidth" placeholder="W" [readonly]="fixDimension" required></ion-input>
+                  <ion-col col-5 no-padding>
+                    <ion-label no-padding class="label-title">Commodity</ion-label>
                   </ion-col>
-                  <ion-col col-1 no-padding>
-                    <ion-label no-padding>x</ion-label>
-                  </ion-col>
-                  <ion-col col-2 no-padding>
-                    <ion-input  [(ngModel)]="item.dlength" name="dlength" #dlength="ngModel" type="number" [value]="item.dlength" placeholder="L" [readonly]="fixDimension" required></ion-input>
-                  </ion-col>
-                  <ion-col col-1 no-padding>
-                    <ion-label no-padding>x</ion-label>
-                  </ion-col>
-                  <ion-col col-2 no-padding>
-                    <ion-input  [(ngModel)]="item.dheight" name="dheight" #dheight="ngModel" type="number" [value]="item.dheight" placeholder="H" [readonly]="fixDimension" required></ion-input>
-                  </ion-col>
-                  <ion-col col-2 no-padding>
-                    <ion-label no-padding>cm.</ion-label>
+                  <ion-col col-7 no-padding>
+                    <ion-item no-lines>
+                      <ion-label hidden>Select Commodity</ion-label>
+                        <ion-select class="max-width-100" [(ngModel)]="item.commodity" name="commodity" #commodity="ngModel" placeholder="Please Select" (ionCancel)="touch()" (ionChange)="checkDimension(item.commodity)" required>
+                          <ion-option *ngFor="let commodity of commodities" [value]="commodity.qc_lookup_code" [selected]="commodity.qc_lookup_code == item.commodity">{{commodity.qc_lookup_value1}}</ion-option>
+                        </ion-select>
+                    </ion-item>
                   </ion-col>
               </ion-row>
+        </ion-grid>
+        <ion-badge ion-text *ngIf="selectcancel" [hidden]="citem.value.commodity!=null" float-end>Commodity is required</ion-badge>
+
+    <ion-row>&nbsp;</ion-row>
+    <ion-list no-lines>
+      <!--<ion-list-header class="label-title" (click)="
+      item.weight=1;
+      item.quantity=1;">
+        <span no-padding col-6>Dimension</span>
+      </ion-list-header>-->
+      <ion-list-header class="label-title">
+        <span no-padding col-6>Dimension</span>
+      </ion-list-header>
+
+      <ion-item no-padding>
+        <ion-label no-padding>Width &nbsp;x&nbsp; Length &nbsp;x&nbsp; Height </ion-label>
+      </ion-item>
+      <ion-grid no-padding>
+        <ion-row no-padding>
+            <ion-col col-2 no-padding>
+              <ion-input [(ngModel)]="item.dwidth" name="dwidth" #dwidth="ngModel" type="number" [value]="item.dwidth" placeholder="W" [readonly]="fixDimension" required></ion-input>
+            </ion-col>
+            <ion-col col-1 no-padding>
+              <ion-label no-padding>x</ion-label>
+            </ion-col>
+            <ion-col col-2 no-padding>
+              <ion-input  [(ngModel)]="item.dlength" name="dlength" #dlength="ngModel" type="number" [value]="item.dlength" placeholder="L" [readonly]="fixDimension" required></ion-input>
+            </ion-col>
+            <ion-col col-1 no-padding>
+              <ion-label no-padding>x</ion-label>
+            </ion-col>
+            <ion-col col-2 no-padding>
+              <ion-input  [(ngModel)]="item.dheight" name="dheight" #dheight="ngModel" type="number" [value]="item.dheight" placeholder="H" [readonly]="fixDimension" required></ion-input>
+            </ion-col>
+            <ion-col col-2 no-padding>
+              <ion-label no-padding>cm.</ion-label>
+            </ion-col>
+        </ion-row>
       </ion-grid>
 
-    <ion-row *ngIf="dheight.invalid" [hidden]="!dheight.touched || fixDimension">
-      <ion-col col-5 push-7>
-         <ion-badge ion-text  float-end>Height is required</ion-badge>
-      </ion-col>
-    </ion-row>
+      <ion-row *ngIf="dheight.invalid" [hidden]="!dheight.touched || fixDimension">
+        <ion-col col-5 push-7>
+          <ion-badge ion-text  float-end>Height is required</ion-badge>
+        </ion-col>
+      </ion-row>
 
-    <ion-row *ngIf="dlength.invalid" [hidden]="!dlength.touched || fixDimension">
-      <ion-col col-5 push-7>
-         <ion-badge ion-text  float-end>Length is required</ion-badge>
-      </ion-col>
-    </ion-row>
+      <ion-row *ngIf="dlength.invalid" [hidden]="!dlength.touched || fixDimension">
+        <ion-col col-5 push-7>
+          <ion-badge ion-text  float-end>Length is required</ion-badge>
+        </ion-col>
+      </ion-row>
 
-    <ion-row *ngIf="dwidth.invalid" [hidden]="!dwidth.touched || fixDimension">
-      <ion-col col-5 push-7>
-         <ion-badge ion-text  float-end>Width is required</ion-badge>
-      </ion-col>
-    </ion-row>
+      <ion-row *ngIf="dwidth.invalid" [hidden]="!dwidth.touched || fixDimension">
+        <ion-col col-5 push-7>
+          <ion-badge ion-text  float-end>Width is required</ion-badge>
+        </ion-col>
+      </ion-row>
 
-  </ion-list>
+    </ion-list>
 
 
     <ion-grid no-padding>
-              <ion-row no-padding>
-                  <ion-col col-5 no-padding>
-                    <ion-label no-padding class="label-title">Weight</ion-label>
-                  </ion-col>
-                  <ion-col col-4 no-padding>
-                    <ion-input [(ngModel)]="item.weight" name="weight" #weight="ngModel" type="number" [value]="item.weight" placeholder="Input Weight" required></ion-input>
-                  </ion-col>
+      <ion-row no-padding>
+          <ion-col col-5 no-padding>
+            <ion-label no-padding class="label-title">Weight</ion-label>
+          </ion-col>
+          <ion-col col-4 no-padding>
+            <ion-input [(ngModel)]="item.weight" name="weight" #weight="ngModel" type="number" [value]="item.weight" placeholder="Input Weight" required></ion-input>
+          </ion-col>
 
-                  <ion-col col-3 no-padding>
-                  <ion-label no-padding col-6 class="label-title">Kgs.</ion-label>
-                  </ion-col>
-              </ion-row>
-      </ion-grid>
+          <ion-col col-3 no-padding>
+          <ion-label no-padding col-6 class="label-title">Kgs.</ion-label>
+          </ion-col>
+      </ion-row>
+    </ion-grid>
     <ion-badge ion-text *ngIf="weight.invalid" [hidden]="!weight.touched" float-end="">Weight is required</ion-badge>
 
 
@@ -112,20 +110,21 @@
               <ion-label no-padding class="label-title">Quantity</ion-label>
             </ion-col>
             <ion-col col-7 no-padding>
-             <ion-input [(ngModel)]="item.quantity" name="quantity" #quantity="ngModel" type="number" [value]="item.quantity" placeholder="Input Quantity" required></ion-input>
+              <ion-input [(ngModel)]="item.quantity" name="quantity" #quantity="ngModel" type="number" [value]="item.quantity" placeholder="Input Quantity" required></ion-input>
             </ion-col>
 
         </ion-row>
-      </ion-grid>
+    </ion-grid>
     <ion-badge ion-text *ngIf="quantity.invalid" [hidden]="!quantity.touched" float-end>Quantity is required</ion-badge>
     <ion-row *ngIf="quantity.invalid" [hidden]="!quantity.touched">&nbsp;</ion-row>
-  <button *ngIf="type == 'Add'" type="submit" (click)="addItem(citem)" [disabled]="!citem.form.valid" ion-button block >
-    {{type}}
-  </button>
-  <button *ngIf="type == 'Edit'" type="submit" (click)="editItem(citem)" [disabled]="!citem.form.valid" ion-button block >
-    {{type}}
-  </button>
 
+    <button *ngIf="type == 'Add'" type="submit" (click)="addItem(citem)" [disabled]="!citem.form.valid" ion-button block >
+      {{type}}
+    </button>
+
+    <button *ngIf="type == 'Edit'" type="submit" (click)="editItem(citem)" [disabled]="!citem.form.valid" ion-button block >
+      {{type}}
+    </button>
   </form>
 
 </ion-content>

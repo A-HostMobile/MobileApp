@@ -13,40 +13,30 @@
 <img class="width-80 margin-left-10 margin-bottom-7 margin-top-5" src="assets/img/logoTemp.png" />
   <form [formGroup]="authForm" (ngSubmit)="onLogin(authForm.value.username,authForm.value.password)">
 
-    <!--<ion-item>
-      <ion-label floating>Username</ion-label>
-      <ion-input type="text" value="" formControlName="username" [(ngModel)]="user"></ion-input>
-      <ion-badge *ngIf="username.hasError('required') && submitted" item-end>Username Required</ion-badge>
-    </ion-item>-->
     <ion-grid no-padding>
-        <ion-row no-padding>
-            <ion-col col-4 >
-              <ion-label no-padding text-wrap class="label-title">Username</ion-label>
-            </ion-col>
-            <ion-col col-8 >
-              <ion-input type="text" value="" placeholder="Input Username" formControlName="username" [(ngModel)]="user"></ion-input>
-            </ion-col>
-        </ion-row>
+      <ion-row no-padding>
+        <ion-col col-4 >
+          <ion-label no-padding text-wrap class="label-title">Username</ion-label>
+        </ion-col>
+        <ion-col col-8 >
+          <ion-input type="text" value="" placeholder="Input Username" formControlName="username" [(ngModel)]="user"></ion-input>
+        </ion-col>
+      </ion-row>
     
-    <ion-badge *ngIf="username.hasError('required') && submitted" item-end>Username Required</ion-badge>
+      <ion-badge *ngIf="username.hasError('required') && submitted" item-end>Username Required</ion-badge>
 
-      
-        <ion-row no-padding>
-            <ion-col col-4 >
-              <ion-label no-padding text-wrap class="label-title">Password</ion-label>
-            </ion-col>
-            <ion-col col-8 >
-              <ion-input type="password" value="" placeholder="Input Password" formControlName="password" [(ngModel)]="pass"></ion-input>
-            </ion-col>
-        </ion-row>
+      <ion-row no-padding>
+          <ion-col col-4 >
+            <ion-label no-padding text-wrap class="label-title">Password</ion-label>
+          </ion-col>
+          <ion-col col-8 >
+            <ion-input type="password" value="" placeholder="Input Password" formControlName="password" [(ngModel)]="pass"></ion-input>
+          </ion-col>
+      </ion-row>
     </ion-grid>
+
     <ion-badge *ngIf="password.hasError('required') && submitted" item-end>Password Required</ion-badge>
     <br/>
-    <!--<ion-item>
-      <ion-label floating>Password</ion-label>
-      <ion-input type="password" value="" formControlName="password" [(ngModel)]="pass"></ion-input>
-      <ion-badge *ngIf="password.hasError('required') && submitted" item-end>Password Required</ion-badge>
-    </ion-item>-->
     <button ion-button type="submit" block>Login</button>
   </form>
  <!--<button ion-button (click)="user ='test123' ; pass = '123456';">Test Account</button>-->

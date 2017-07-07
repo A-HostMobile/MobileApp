@@ -6,67 +6,65 @@
 
 <ion-content padding>
   <form #lclbooking="ngForm" (ngSubmit)="toSummary(lclbooking)" novalidate>
+    <ion-grid no-padding>
+      <ion-row no-padding>
 
-      <ion-grid no-padding>
-              <ion-row no-padding>
-                  <ion-col col-4 no-padding>
-                    <ion-label no-padding text-wrap class="label-title">POD</ion-label>
-                  </ion-col>
+          <ion-col col-4 no-padding>
+            <ion-label no-padding text-wrap class="label-title">POD</ion-label>
+          </ion-col>
 
-                  <ion-col col-2 no-padding></ion-col>
-                  <ion-col col-6 no-padding >
-                    <ion-item no-lines>
-                      <ion-label hidden>Select POD</ion-label>
-                      <ion-select class="max-width-150" [(ngModel)]="lcl.pod"  name="pod" #pod="ngModel" *ngIf="(scheduleData | json) == ({} | json)" (ionCancel)="touch(1)" placeholder="Select" required>
-                        <ion-option  *ngFor="let pod of pods" [value]="pod.qc_lookup_value2">{{pod.qc_lookup_value2}}</ion-option>
-                      </ion-select>
-                      <ion-select class="max-width-150" [(ngModel)]="scheduleData.s_to"  name="pod" *ngIf="(scheduleData | json) != ({} | json)" required>
-                        <ion-option [value]="scheduleData.s_to" [selected]="true">{{scheduleData.s_to}}</ion-option>
-                      </ion-select>
-                    </ion-item>
+          <ion-col col-2 no-padding></ion-col>
 
+          <ion-col col-6 no-padding >
+            <ion-item no-lines>
+              <ion-label hidden>Select POD</ion-label>
+              <ion-select class="max-width-150" [(ngModel)]="lcl.pod"  name="pod" #pod="ngModel" *ngIf="(scheduleData | json) == ({} | json)" (ionCancel)="touch(1)" placeholder="Select" required>
+                <ion-option  *ngFor="let pod of pods" [value]="pod.qc_lookup_value2">{{pod.qc_lookup_value2}}</ion-option>
+              </ion-select>
+              <ion-select class="max-width-150" [(ngModel)]="scheduleData.s_to"  name="pod" *ngIf="(scheduleData | json) != ({} | json)" required>
+                <ion-option [value]="scheduleData.s_to" [selected]="true">{{scheduleData.s_to}}</ion-option>
+              </ion-select>
+            </ion-item>
+          </ion-col>
 
-                  </ion-col>
+      </ion-row>
+    </ion-grid>
 
-              </ion-row>
-      </ion-grid>
+    <ion-badge *ngIf="selectcancel" [hidden]="lclbooking.value.pod!=null" float-end>Please select POD</ion-badge>
 
-      <ion-badge *ngIf="selectcancel" [hidden]="lclbooking.value.pod!=null" float-end>Please select POD</ion-badge>
+    <ion-grid no-padding>
+      <ion-row no-padding>
+          <ion-col col-4 no-padding>
+            <ion-label no-padding text-wrap class="label-title">Loading Date</ion-label>
+          </ion-col>
 
-      <ion-grid no-padding>
-        <ion-row no-padding>
-            <ion-col col-4 no-padding>
-              <ion-label no-padding text-wrap class="label-title">Loading Date</ion-label>
-            </ion-col>
+          <ion-col col-6 no-padding>
+            <ion-item no-lines>
+              <ion-datetime *ngIf="(scheduleData | json) != ({} | json)" displayFormat="DDD DD MMM YY" min="{{maxDate | date:'yyyy'}}" max="{{maxDate | date:'yyyy-MM-dd'}}" (ionCancel)="touch(2)" [(ngModel)]="lcl.loadDate" name="loadDate" #loadDate="ngModel" placeholder="Select" required></ion-datetime>
+              <ion-datetime *ngIf="(scheduleData | json) == ({} | json)" displayFormat="DDD DD MMM YY" (ionCancel)="touch(2)" [(ngModel)]="lcl.loadDate" name="loadDate" #loadDate="ngModel" placeholder="Select" required></ion-datetime>
+            </ion-item>
+          </ion-col>
 
-
-            <ion-col col-6 no-padding>
-              <ion-item no-lines>
-                <ion-datetime *ngIf="(scheduleData | json) != ({} | json)" displayFormat="DDD DD MMM YY" min="{{maxDate | date:'yyyy'}}" max="{{maxDate | date:'yyyy-MM-dd'}}" (ionCancel)="touch(2)" [(ngModel)]="lcl.loadDate" name="loadDate" #loadDate="ngModel" placeholder="Select" required></ion-datetime>
-                <ion-datetime *ngIf="(scheduleData | json) == ({} | json)" displayFormat="DDD DD MMM YY" (ionCancel)="touch(2)" [(ngModel)]="lcl.loadDate" name="loadDate" #loadDate="ngModel" placeholder="Select" required></ion-datetime>
-              </ion-item>
-            </ion-col>
-
-            <ion-col col-2 no-padding>
-              <ion-item no-lines>
-                <ion-icon  name="md-calendar" color="primary" item-end  ></ion-icon>
-              </ion-item>
-            </ion-col>
-        </ion-row>
-      </ion-grid>
+          <ion-col col-2 no-padding>
+            <ion-item no-lines>
+              <ion-icon  name="md-calendar" color="primary" item-end  ></ion-icon>
+            </ion-item>
+          </ion-col>
+      </ion-row>
+    </ion-grid>
     <ion-badge *ngIf="datecancel" [hidden]="lclbooking.value.loadDate!=null" float-end="">Please select date</ion-badge>
 
       <ion-grid no-padding>
         <ion-row no-padding>
-            <ion-col col-4 no-padding>
-              <ion-label no-padding text-wrap class="label-title">Volume</ion-label>
-            </ion-col>
-            <ion-col col-4 no-padding>
-              <ion-input [(ngModel)]="lcl.volume" name="volume" type="number" placeholder="Volume" #volume="ngModel" required></ion-input>
-            </ion-col>
-            <ion-col col-4 no-padding>
-              <ion-label no-padding text-wrap float-end>CBM</ion-label>
-            </ion-col>
+          <ion-col col-4 no-padding>
+            <ion-label no-padding text-wrap class="label-title">Volume</ion-label>
+          </ion-col>
+          <ion-col col-4 no-padding>
+            <ion-input [(ngModel)]="lcl.volume" name="volume" type="number" placeholder="Volume" #volume="ngModel" required></ion-input>
+          </ion-col>
+          <ion-col col-4 no-padding>
+            <ion-label no-padding text-wrap float-end>CBM</ion-label>
+          </ion-col>
         </ion-row>
       </ion-grid>
       <ion-badge ion-text [hidden]="!volume.touched" *ngIf="volume.invalid" float-end>
@@ -116,80 +114,79 @@
 
     <ion-list [class.hide]="!showMore" no-lines>
 
-
     <ion-grid no-padding>
-        <ion-row no-padding>
-            <ion-col col-4 no-padding>
-              <ion-label no-padding class="label-title">Commodity</ion-label>
-            </ion-col>
+      <ion-row no-padding>
+        <ion-col col-4 no-padding>
+          <ion-label no-padding class="label-title">Commodity</ion-label>
+        </ion-col>
 
-            <ion-col col-4 no-padding></ion-col>
+        <ion-col col-4 no-padding></ion-col>
 
-            <ion-col col-4 no-padding>
-              <ion-item no-lines>
-                <ion-label hidden>Select Commodity</ion-label>
-                <ion-select class="max-width-100" [(ngModel)]="lcl.commodities" name="commodities" placeholder="Select">
-                  <ion-option *ngFor="let commodity of commodities" [value]="commodity"  >{{commodity.qc_lookup_value1}}</ion-option>
-                </ion-select>
-              </ion-item>
+        <ion-col col-4 no-padding>
+          <ion-item no-lines>
+            <ion-label hidden>Select Commodity</ion-label>
+            <ion-select class="max-width-100" [(ngModel)]="lcl.commodities" name="commodities" placeholder="Select">
+              <ion-option *ngFor="let commodity of commodities" [value]="commodity"  >{{commodity.qc_lookup_value1}}</ion-option>
+            </ion-select>
+          </ion-item>
 
-            </ion-col>
+        </ion-col>
 
-        </ion-row>
+      </ion-row>
     </ion-grid>
 
     <ion-grid no-padding>
-        <ion-row no-padding>
-            <ion-col col-4 no-padding>
-              <ion-label no-padding class="label-title">Quantity</ion-label>
-            </ion-col>
+      <ion-row no-padding>
+        <ion-col col-4 no-padding>
+          <ion-label no-padding class="label-title">Quantity</ion-label>
+        </ion-col>
 
-            <ion-col col-4 no-padding>
-              <ion-input type="number" [(ngModel)]="lcl.quantity" name="quantity" placeholder="Quantity"></ion-input>
-            </ion-col>
+        <ion-col col-4 no-padding>
+          <ion-input type="number" [(ngModel)]="lcl.quantity" name="quantity" placeholder="Quantity"></ion-input>
+        </ion-col>
 
-            <ion-col col-4 no-padding>
-              <ion-item no-lines>
-                <ion-label hidden>Select Package</ion-label>
-                <ion-select class="max-width-100" [(ngModel)]="lcl.package" name="package" placeholder="Select">
-                  <ion-option *ngFor="let package of packages" [value]="package" >{{package.qc_lookup_value1}}</ion-option>
-                </ion-select>
-              </ion-item>
+        <ion-col col-4 no-padding>
+          <ion-item no-lines>
+            <ion-label hidden>Select Package</ion-label>
+            <ion-select class="max-width-100" [(ngModel)]="lcl.package" name="package" placeholder="Select">
+              <ion-option *ngFor="let package of packages" [value]="package" >{{package.qc_lookup_value1}}</ion-option>
+            </ion-select>
+          </ion-item>
 
-            </ion-col>
+        </ion-col>
 
-        </ion-row>
+      </ion-row>
     </ion-grid>
 
     <ion-grid no-padding>
-        <ion-row no-padding>
-            <ion-col col-4 text-wrap no-padding>
-              <ion-label no-padding class="label-title">Additional Detail</ion-label>
-            </ion-col>
-            <ion-col col-8 no-padding>
-             <ion-input type="text" placeholder="Additional Detail" [(ngModel)]="lcl.detail" name="detail"></ion-input>
-            </ion-col>
-        </ion-row>
-      </ion-grid>
+      <ion-row no-padding>
+          <ion-col col-4 text-wrap no-padding>
+            <ion-label no-padding class="label-title">Additional Detail</ion-label>
+          </ion-col>
+          <ion-col col-8 no-padding>
+            <ion-input type="text" placeholder="Additional Detail" [(ngModel)]="lcl.detail" name="detail"></ion-input>
+          </ion-col>
+      </ion-row>
+    </ion-grid>
 
-      <div *ngIf="(scheduleData | json) != ({} | json)" >
-        <ion-list-header class="label-title">
-          Shipper Reference
-        </ion-list-header>
-        <ion-list>
-            <ion-item *ngIf="scheduleData.s_carrier!=null" no-padding >Carrier : &nbsp;&nbsp;{{scheduleData.s_carrier}}</ion-item>
-            <ion-item *ngIf="scheduleData.s_vessel!=null" no-padding >Vessel : &nbsp;&nbsp;{{scheduleData.s_vessel}}&nbsp;&nbsp;{{scheduleData.s_voy}}</ion-item>
-            <ion-item *ngIf="scheduleData.s_feeder!=null" no-padding >Feeder : &nbsp;&nbsp;{{scheduleData.s_feeder}}&nbsp;&nbsp;{{scheduleData.s_fvoy}}</ion-item>
-            <ion-item *ngIf="scheduleData.s_closing_date!=null" no-padding>Closing Date : &nbsp;&nbsp;{{scheduleData.s_closing_date}}</ion-item>
-            <ion-item *ngIf="scheduleData.s_etd!=null" no-padding >ETD : &nbsp;&nbsp;{{scheduleData.s_etd}}</ion-item>
-            <ion-item *ngIf="scheduleData.s_eta!=null" no-padding >ETA : &nbsp;&nbsp;{{scheduleData.s_eta}}</ion-item>
-        </ion-list>
-      </div>
+    <div *ngIf="(scheduleData | json) != ({} | json)" >
+      <ion-list-header class="label-title">
+        Shipper Reference
+      </ion-list-header>
+      <ion-list>
+          <ion-item *ngIf="scheduleData.s_carrier!=null" no-padding >Carrier : &nbsp;&nbsp;{{scheduleData.s_carrier}}</ion-item>
+          <ion-item *ngIf="scheduleData.s_vessel!=null" no-padding >Vessel : &nbsp;&nbsp;{{scheduleData.s_vessel}}&nbsp;&nbsp;{{scheduleData.s_voy}}</ion-item>
+          <ion-item *ngIf="scheduleData.s_feeder!=null" no-padding >Feeder : &nbsp;&nbsp;{{scheduleData.s_feeder}}&nbsp;&nbsp;{{scheduleData.s_fvoy}}</ion-item>
+          <ion-item *ngIf="scheduleData.s_closing_date!=null" no-padding>Closing Date : &nbsp;&nbsp;{{scheduleData.s_closing_date}}</ion-item>
+          <ion-item *ngIf="scheduleData.s_etd!=null" no-padding >ETD : &nbsp;&nbsp;{{scheduleData.s_etd}}</ion-item>
+          <ion-item *ngIf="scheduleData.s_eta!=null" no-padding >ETA : &nbsp;&nbsp;{{scheduleData.s_eta}}</ion-item>
+      </ion-list>
+    </div>
 
     </ion-list>
     <button ion-button icon-right block type="submit" [disabled]="!lclbooking.form.valid">
       Next
-      <ion-icon ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>
+    <ion-icon ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>
     </button>
   </form>
 
