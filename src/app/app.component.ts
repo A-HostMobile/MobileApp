@@ -26,6 +26,7 @@ import { UserData } from '../providers/user-data';
 import {QuickcodeProvider} from '../providers/quickcode/quickcode';
 import {FcmServiceProvider} from '../providers/fcm-service/fcm-service';
 import {AuthServiceProvider} from '../providers/auth-service/auth-service';
+import {CourierItemModalPage} from "../pages/courier-item-modal/courier-item-modal";
 
 export interface PageInterface {
   title: string;
@@ -376,13 +377,15 @@ export class TemplateApp {
         }
         else if(nav.canGoBack()) {
           if(activeView.instance instanceof AddPickupModalPage){
+            console.log('addpick')
             this.alertToHomeAddPick();
           }
           else{
             this.alertToHome();
           }
         }
-        else {
+        else if(activeView.instance instanceof PickupAddressPage || activeView.instance instanceof CourierItemModalPage){
+          console.log('modal')
           this.alertToHomeModal();
         }
       }

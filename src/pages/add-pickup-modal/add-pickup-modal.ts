@@ -1,5 +1,5 @@
 import {Component, ViewChild, forwardRef} from '@angular/core';
-import {Events, ViewController,NavParams} from 'ionic-angular';
+import {Events, ViewController,NavParams, App} from 'ionic-angular';
 import {NgForm} from "@angular/forms";
 import {PickupAddressServiceProvider} from '../../providers/pickup-address-service/pickup-address-service';
 import {CourierBookingPage} from "../courier-booking/courier-booking";
@@ -19,6 +19,7 @@ export class AddPickupModalPage {
 
   constructor(public viewCtrl: ViewController,
               public navParams: NavParams,
+              public app: App,
               public pickupAddressService:PickupAddressServiceProvider,
               public events: Events) {
 
@@ -73,7 +74,9 @@ export class AddPickupModalPage {
         /*this.cb.setAddress(resData.pa_address_display);*/
         console.log(resData);
         this.events.publish('setaddress',form.value);
-        this.viewCtrl.dismiss();
+        this.viewCtrl.dismiss().then(()=>{
+          this.app.getActiveNav().pop()
+        });
         this.events.publish('dismissLoading');
       },
       (error) => { this.errorMessage = <any> error,

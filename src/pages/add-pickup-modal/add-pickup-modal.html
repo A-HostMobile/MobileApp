@@ -11,7 +11,7 @@
 
 
 <ion-content padding>
-  <form #addpick="ngForm" (ngSubmit)="addAddress(addpick)">
+  <form #addpick="ngForm">
     <ion-list no-lines>
       <ion-input [hidden]="true" [(ngModel)]="pickupAddress.pa_address_id" name="pickup_id"></ion-input>
       <ion-item no-padding>

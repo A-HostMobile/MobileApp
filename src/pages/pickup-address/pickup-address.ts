@@ -28,7 +28,7 @@ export class PickupAddressPage {
               public mdlCtrl: ModalController,
               public pickupAddressService:PickupAddressServiceProvider,
               public events: Events
-            ) {
+  ) {
 
     this.param = this.navParams.get('address');
     if(this.param!=null){
@@ -63,9 +63,9 @@ export class PickupAddressPage {
   }
 
   editPickup(pickupData:any){
-    console.log('edit')
     this.events.publish('checkStsLogin','check');
     let manageItem = this.mdlCtrl.create(AddPickupModalPage,{'pickupData':pickupData,'type':'edit'});
+    console.log('edit')
     manageItem.present();
     manageItem.onDidDismiss(data=>{
       this.getPickupAddress();
@@ -73,20 +73,18 @@ export class PickupAddressPage {
   }
 
   editSelect(pickupData:any){
-    console.log('edit')
     this.events.publish('checkStsLogin','check');
     let manageItem = this.mdlCtrl.create(AddPickupModalPage,{'pickupData':pickupData,'type':'select'});
+    console.log('select');
     manageItem.present();
-    this.viewCtrl.dismiss();
-    manageItem.onDidDismiss(data=>{
-      this.getPickupAddress();
-    });
+    //this.viewCtrl.dismiss();
   }
 
   addPickup(){
     //console.log("Add Pickup Address");
     this.events.publish('checkStsLogin','check');
     let manageItem = this.mdlCtrl.create(AddPickupModalPage,{'pickupData':null,'type':'add'});
+    console.log('add')
     manageItem.present();
     manageItem.onDidDismiss(data=>{
       if(data!=null){
@@ -111,18 +109,18 @@ export class PickupAddressPage {
     //console.log("Delete Data:"+JSON.stringify(pickupId));
     console.log('before delete');
     this.sub = this.pickupAddressService.deletePickupAddress(pickupId).subscribe(
-        (resData) => {
-                      //console.log("Delete Pickup Address Success :"+JSON.stringify(resData)),
-                      if(this.selected(pickupId)){
-                        this.param = null;
-                      }
-                      this.getPickupAddress();
-                      this.sub.unsubscribe();
-                      console.log('unsub');
-                     },
-        (error) => { this.errorMessage = <any> error,
-                     this.events.publish('dismissLoading');
-                   });
+      (resData) => {
+        //console.log("Delete Pickup Address Success :"+JSON.stringify(resData)),
+        if(this.selected(pickupId)){
+          this.param = null;
+        }
+        this.getPickupAddress();
+        this.sub.unsubscribe();
+        console.log('unsub');
+      },
+      (error) => { this.errorMessage = <any> error,
+        this.events.publish('dismissLoading');
+      });
   }
 
   closeModal(data:any){
@@ -143,3 +141,4 @@ export class PickupAddressPage {
   }
 
 }
+
