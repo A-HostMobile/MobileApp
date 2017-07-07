@@ -73,6 +73,9 @@ export class CourierBookingPage {
     this.events.subscribe('setaddress',(data:any)=>{
       this.courier.value.pickup = data.contactname+"\nTel : "+data.tel+"\nE-Mail : "+data.email+"\n"+data.address+"\n"+data.zipcode+"\n"+data.country;
     });
+    this.events.subscribe('pickup',()=>{
+      this.Pickup();
+    })
     this.events.subscribe('BookingNullCheck',(BookingId:any)=>{
       this.BookingNullCheck(BookingId);
     });
@@ -92,6 +95,8 @@ export class CourierBookingPage {
 
   ionViewDidLeave(){
     this.events.unsubscribe('setaddress');
+    this.events.unsubscribe('pickup');
+    this.events.unsubscribe('BookingNullCheck');
   }
 
   ionViewDidEnter(){
@@ -176,17 +181,24 @@ export class CourierBookingPage {
 
   openPickupModal()
   {
-    this.events.publish('checkStsLogin', 'check');
+    this.events.publish('checkStsLogin', PickupAddressPage);
+  }
+
+  Pickup(){
+    console.log('openpcik')
     let openPickup = this.mdlCtrl.create(PickupAddressPage,{address:this.dataogj});
     openPickup.present();
     openPickup.onDidDismiss(data => {
+      console.log('lol');
       if (data != null) {
         if (data == 'nodata') {
           this.pick = false;
           this.pickupadd = this.courier.value.pickup = null;
+          console.log('olo')
         } else {
           this.dataogj = data;
           this.pickupadd = this.courier.value.pickup = data.pa_address_display;
+          console.log('8=D')
         }
       }
     });

@@ -367,6 +367,8 @@ export class TemplateApp {
             console.log('page push: '+pages);
             console.log('param booking: '+params);
           }
+        }else if(pages==PickupAddressPage){
+          this.events.publish('pickup');
         }else if(pages!='check'){
           this.app.getRootNav().push(pages,params);
         }
