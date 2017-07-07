@@ -11,3 +11,11 @@
 .max-width-150{
   max-width: 150%;
 }
+
+.no-scroll .scroll-content {
+  overflow-y: hidden;
+  /*scroll;*/
+}
+::-webkit-scrollbar{
+  display: none;
+}
