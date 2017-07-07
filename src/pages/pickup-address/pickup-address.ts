@@ -34,7 +34,7 @@ export class PickupAddressPage {
     if(this.param!=null){
       this.display = this.param.pa_address_id;
     }
-    this.checkFromPage = this.navParams.get('page');
+    this.checkFromPage = this.navParams.get('pages');
     console.log(this.display);
 
     this.events.subscribe('deletePickup',(_pickupId:any)=>{
