@@ -40,7 +40,6 @@ export class PickupAddressPage {
     this.events.subscribe('deletePickup',(_pickupId:any)=>{
       this.deletePickup(_pickupId);
       console.log('event delete')
-      // this.getPickupAddress();
       // console.log(_pickupId+'subscr delete');
     });
   }
