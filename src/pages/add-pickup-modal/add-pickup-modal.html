@@ -59,7 +59,7 @@
       <ion-icon name="md-create"></ion-icon>
       Edit
     </button>
-    <button *ngIf="pickupType == 'add'" [disabled]="!addpick.form.valid" ion-button icon-left block >
+    <button *ngIf="pickupType == 'add'" [disabled]="!addpick.form.valid" (click)="addAddress(addpick)" ion-button icon-left block >
       <ion-icon name="add"></ion-icon>
       Add
     </button>

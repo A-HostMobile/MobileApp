@@ -93,7 +93,7 @@ export class CourierBooking2Page {
   }
 
   confirmDelete(_Id:any,_InDex:any){
-    this.events.publish('confirmBox',_Id,_InDex);
+    this.events.publish('confirmBox',_Id,_InDex,'CourierBooking2Page','Delete');
     // console.log('con publish');
   }
 

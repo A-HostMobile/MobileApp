@@ -1,5 +1,5 @@
 import {Component, ViewChild} from '@angular/core';
-import {Navbar, NavController, NavParams, ViewController, ModalController, Events} from 'ionic-angular';
+import {Navbar, NavController, NavParams, ViewController, ModalController, Events, App} from 'ionic-angular';
 import {UserData} from "../../providers/user-data";
 import {LoginPage} from "../login-modal/login-modal";
 import {CourierBooking2Page} from "../courier-booking2/courier-booking2";
@@ -39,6 +39,7 @@ export class CourierBookingPage {
   tel:AbstractControl;
 
   constructor(
+    public app: App,
     public events: Events,
     public userData: UserData,
     public navParams: NavParams,
@@ -72,15 +73,16 @@ export class CourierBookingPage {
     this.events.subscribe('setaddress',(data:any)=>{
       this.courier.value.pickup = data.contactname+"\nTel : "+data.tel+"\nE-Mail : "+data.email+"\n"+data.address+"\n"+data.zipcode+"\n"+data.country;
     });
+    this.events.subscribe('BookingNullCheck',(BookingId:any)=>{
+      this.BookingNullCheck(BookingId);
+    });
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CourierBookingPage');
     this.navbar.backButtonClick=(e:UIEvent)=>{
       if(this.courier.value.booking != null){
-        this.bookingServiceProvider.updateBookingStatus(this.courier.value.booking,40,2).subscribe(
-          (res) => this.navCtrl.pop(),
-          (error) => {  this.errorMessage = <any> error});
+          this.events.publish('confirmBox',this.courier.value.booking,null,'CourierBookingPage','Close')
       }
       else{
         this.navCtrl.pop()
@@ -110,6 +112,12 @@ export class CourierBookingPage {
     });
   }
 
+  BookingNullCheck(bookingId:any){
+    this.bookingServiceProvider.updateBookingStatus(bookingId,40,2).subscribe(
+      (res) => {this.app.getActiveNav().pop(); console.log('nav pop courier')},
+      (error) => {  this.errorMessage = <any> error});
+  }
+
   touch() {
     this.submitted = true;
   }
@@ -118,10 +126,11 @@ export class CourierBookingPage {
     form.value.pickup = this.pickupadd;
     console.log(form.value);
     if(form.value.pickup!=null) {
+      console.log('pickup != null')
       if (this.courier.valid) {
         this.events.publish('showLoading')
         if (form.value.booking == null) {
-          //console.log("After Booking Courier Insert:"+form.value.bookingId);
+          // console.log("After Booking Courier Insert:"+form.value.bookingId);
           this.bookingServiceProvider.insertBookingCourier(form.value).subscribe(
             (res) => {
               form.value.bookingId = res.booking_id;
@@ -141,6 +150,7 @@ export class CourierBookingPage {
               this.errorMessage = <any> error
             });
         } else {
+          console.log('booking != null')
           this.bookingServiceProvider.updateBookingCourier(form.value).subscribe(
             (res) => {
               //console.log("Update MasterData Success:"+JSON.stringify(res)),
@@ -183,5 +193,3 @@ export class CourierBookingPage {
   }
 
 }
-
-

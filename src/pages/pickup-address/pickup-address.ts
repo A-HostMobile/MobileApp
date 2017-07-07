@@ -101,7 +101,7 @@ export class PickupAddressPage {
   }
 
   confirmDelete(_pickupId:any){
-    this.events.publish('confirmBox',_pickupId,null,'PickupAddressPage');
+    this.events.publish('confirmBox',_pickupId,null,'PickupAddressPage','Delete');
     // console.log('con publish');
   }
 
@@ -141,4 +141,3 @@ export class PickupAddressPage {
   }
 
 }
-

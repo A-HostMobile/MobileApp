@@ -211,8 +211,8 @@ export class TemplateApp {
       this.LoadingPage();
     });
 
-    this.events.subscribe('confirmBox',(_Id:any,_Index:any,_pages:any)=>{
-      this.ConfirmBox(_Id,_Index,_pages);
+    this.events.subscribe('confirmBox',(_Id:any,_Index:any,_pages:any,Action:any)=>{
+      this.ConfirmBox(_Id,_Index,_pages,Action);
     });
 
     this.events.subscribe('FCMInsert',(fcmParty:any,fcmToken:any)=>{
@@ -243,10 +243,10 @@ export class TemplateApp {
     );
   }
 
-  ConfirmBox(_Id:any,_Index:any,_pages:any){
+  ConfirmBox(_Id:any,_Index:any,_pages:any,Action:any){
       this._alert = this.alert.create({
-      title: 'Confirm Delete',
-      message: 'Do you want to delete this address?',
+      title: 'Confirm '+Action,
+      message: 'Do you want to ' +Action+ ' this?',
       buttons: [
         {
           text: 'Cancel',
@@ -262,9 +262,12 @@ export class TemplateApp {
               if(_pages == 'PickupAddressPage'){
                   this.events.publish('deletePickup',_Id,null);
                   console.log('pickup page con')
-              }else{
+              }else if (_pages == 'CourierBooking2Page'){
                   this.events.publish('deleteCourierItem',_Id,_Index);
                   console.log('courier page con')
+              }else{
+                  this.events.publish('BookingNullCheck',_Id,null);
+                  console.log('courier page con 2')
               }
           }
         }
