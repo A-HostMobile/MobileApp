@@ -72,7 +72,7 @@ export class CourierBookingPage {
     this.contname = this.courier.controls['contname'];
     this.tel = this.courier.controls['tel'];
     this.events.subscribe('setaddress',(data:any)=>{
-      this.courier.value.pickup = data.contactname+"\nTel : "+data.tel+"\nE-Mail : "+data.email+"\n"+data.address+"\n"+data.zipcode+"\n"+data.country;
+      this.pickupadd = data.contactname+"\nTel : "+data.tel+"\nE-Mail : "+data.email+"\n"+data.address+"\n"+data.zipcode+"\n"+data.country;
     });
     this.events.subscribe('pickup',()=>{
       this.Pickup();
@@ -191,7 +191,6 @@ export class CourierBookingPage {
   }
 
   Pickup(){
-    console.log('openpcik')
     let openPickup = this.mdlCtrl.create(PickupAddressPage,{address:this.dataogj});
     openPickup.present();
     openPickup.onDidDismiss(data => {
@@ -200,11 +199,10 @@ export class CourierBookingPage {
         if (data == 'nodata') {
           this.pick = false;
           this.pickupadd = this.courier.value.pickup = null;
-          console.log('olo')
         } else {
           this.dataogj = data;
+          console.log(data.pa_address_display);
           this.pickupadd = this.courier.value.pickup = data.pa_address_display;
-          console.log('8=D')
         }
       }
     });
