@@ -21,7 +21,6 @@
 
 <ion-content>
 
-
   <div *ngIf="np =='news'">
     <ion-card (click)="toDetail(n.b_item_id);" *ngFor="let n of news" class="padding-bottom-2">
       <img [src]="n.image" />

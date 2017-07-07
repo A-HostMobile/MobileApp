@@ -11,17 +11,17 @@
 
   <ion-card *ngFor="let d of NewsDetail">
     <div>
-    <ion-slides effect="slide" autoplay="5000" loop pager paginationType="bullet">
-      <ion-slide *ngFor="let de of d.detail">
-        <img [src]="de.img" />
-      </ion-slide>
-    </ion-slides>
+      <ion-slides effect="slide" autoplay="5000" loop pager paginationType="bullet">
+        <ion-slide *ngFor="let de of d.detail">
+          <img [src]="de.img" />
+        </ion-slide>
+      </ion-slides>
     </div>
 
     <ion-card-content>
-        <ion-card-title>
-          {{d.master.topic}}
-        </ion-card-title>
+      <ion-card-title>
+        {{d.master.topic}}
+      </ion-card-title>
       <p>
         {{d.master.content}}
       </p>
