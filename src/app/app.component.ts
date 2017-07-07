@@ -245,8 +245,8 @@ export class TemplateApp {
 
   ConfirmBox(_Id:any,_Index:any,_pages:any,Action:any){
       this._alert = this.alert.create({
-      title: 'Confirm '+Action,
-      message: 'Do you want to ' +Action+ ' this?',
+      title: Action,
+      message: 'Do you want to ' +Action+ ' ?',
       buttons: [
         {
           text: 'Cancel',
